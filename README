@@ -1,0 +1,13 @@
+MySQL
+-----
+
+None yet.
+
+PostgreSQL
+----------
+
+To import txt file in the database, first copy the file so it can be read
+from postgres (say /var/lib/pgsql/fr.txt), then login as postrges user
+on your galette database and then run the COPY command:
+$ psql -u postgres galette
+galette=# COPY galette_maps_towns FROM '/var/lib/pgsql/fr.txt' WITH CSV HEADER DELIMITER E'\t' QUOTE '|';

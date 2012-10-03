@@ -1,0 +1,86 @@
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.4.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
+<script type="text/javascript">
+
+    /**
+        * Returns element height, including margins
+        */
+    function _eltRealSize(_elt) {
+        var _s = 0;
+        _s += _elt.outerHeight();
+        _s += parseFloat(_elt.css('margin-top').replace('px', ''));
+        _s += parseFloat(_elt.css('margin-bottom').replace('px', ''));
+        return _s;
+    }
+
+    /**
+        * Rewrite maps height
+        */
+    function _hresize() {
+        var wheight = $(window).height();
+        var _oSize = 0;
+
+        //récuperation de la taille des autres lignes
+{if $is_public}
+        $('#map').parents('section').siblings(':not(script)').each(function(){
+            _oSize += _eltRealSize($(this));
+        });
+{else}
+        $('#map').parents('section').siblings(':not(script)').each(function(){
+            _oSize += _eltRealSize($(this));
+        });
+        _oSize += _eltRealSize($('footer'));
+        _oSize += parseFloat($('#content').css('margin-top').replace('px', ''));
+{/if}
+
+        //calcul et applicaiton de la nouvelle taille
+        var newHeight = Math.floor(wheight - _oSize) + "px";
+        $("#map").css("height", newHeight);
+    }
+
+    $(function(){
+        _hresize();
+
+        var _lat = {if $town}{$town['latitude']}{else}51.505{/if};
+        var _lon = {if $town}{$town['longitude']}{else}-0.09{/if};
+
+        var map = L.map('map').setView([_lat, _lon], 13);
+
+        L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
+            maxZoom: 18,
+            attribution: '{_T string="Map data ©"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors"}</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, {_T string="Imagery ©"} <a href="http://cloudmade.com">CloudMade</a>'
+        }).addTo(map);
+
+{if $is_public}
+{else}
+        L.marker([_lat, _lon]).addTo(map)
+            .bindPopup('{$member->sfullname}').openPopup();
+{/if}
+        /*L.marker([51.5, -0.09]).addTo(map)
+            .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();*/
+
+        /*L.circle([51.508, -0.11], 500, {
+            color: 'red',
+            fillColor: '#f03',
+            fillOpacity: 0.5
+        }).addTo(map).bindPopup("I am a circle.");*/
+
+        /*L.polygon([
+            [51.509, -0.08],
+            [51.503, -0.06],
+            [51.51, -0.047]
+        ]).addTo(map).bindPopup("I am a polygon.");*/
+
+
+        var popup = L.popup();
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+    });
+</script>
+
