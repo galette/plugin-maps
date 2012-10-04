@@ -1,1 +1,9 @@
 #map { height: 300px; }
+
+#possible_towns li {
+    cursor: pointer;
+}
+
+#possible_towns li:hover {
+    background-color: #DDDDFF;
+}

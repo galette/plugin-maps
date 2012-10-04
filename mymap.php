@@ -38,9 +38,9 @@
  * @since     Available since 0.7.4dev - 2012-10-03
  */
 
-
-use GaletteMaps\Towns as Towns;
 use Galette\Entity\Adherent as Adherent;
+use GaletteMaps\Towns as Towns;
+use GaletteMaps\Coordinates as Coordinates;
 
 $base_path = '../../';
 require_once $base_path . 'includes/galette.inc.php';
@@ -48,13 +48,18 @@ require_once $base_path . 'includes/galette.inc.php';
 //Constants and classes from plugin
 require_once '_config.inc.php';
 require_once 'lib/GaletteMaps/Towns.php';
+require_once 'lib/GaletteMaps/Coordinates.php';
 
 $member = new Adherent($login->login);
+$coords = new Coordinates();
+$mcoords = $coords->getCoords($member->id);
 
-$results = false;
-if ( $member->town != '') {
-    $t = new Towns();
-    $results= $t->search($member->town);
+$towns = false;
+if ( count($mcoords) === 0 ) {
+    if ( $member->town != '') {
+        $t = new Towns();
+        $towns = $t->search($member->town);
+    }
 }
 
 $orig_template_path = $tpl->template_dir;
@@ -76,9 +81,10 @@ $tpl->assign(
     'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
 );
 $tpl->assign('page_title', _T("Maps"));
-$tpl->assign('results', $results);
+$tpl->assign('towns', $towns);
 $tpl->assign('member', $member);
-$tpl->assign('town', $results[7]);
+$tpl->assign('town', $mcoords);
+$tpl->assign('require_dialog', true);
 $content = $tpl->fetch('mymap.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
 //Set path back to main Galette's template

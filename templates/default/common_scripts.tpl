@@ -37,50 +37,45 @@
         $("#map").css("height", newHeight);
     }
 
+    function _iLiveHere(_id){
+        $('#' + _id).click(function(e){
+            alert('One day, that will be stored in the database, stay in touch!!');
+            return false;
+        });
+    }
+
     $(function(){
         _hresize();
 
-        var _lat = {if $town}{$town['latitude']}{else}51.505{/if};
-        var _lon = {if $town}{$town['longitude']}{else}-0.09{/if};
-
-        var map = L.map('map').setView([_lat, _lon], 13);
+        var _lat = {if $town}{$town['latitude']}{else}46.830133640447386{/if};
+        var _lon = {if $town}{$town['longitude']}{else}2.4609375{/if};
+        var map = L.map('map').setView([_lat, _lon], 6);
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
             attribution: '{_T string="Map data ©"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors"}</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, {_T string="Imagery ©"} <a href="http://cloudmade.com">CloudMade</a>'
         }).addTo(map);
 
-{if $is_public}
-{else}
-        L.marker([_lat, _lon]).addTo(map)
-            .bindPopup('{$member->sfullname}').openPopup();
-{/if}
-        /*L.marker([51.5, -0.09]).addTo(map)
-            .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();*/
-
-        /*L.circle([51.508, -0.11], 500, {
-            color: 'red',
-            fillColor: '#f03',
-            fillOpacity: 0.5
-        }).addTo(map).bindPopup("I am a circle.");*/
-
-        /*L.polygon([
-            [51.509, -0.08],
-            [51.503, -0.06],
-            [51.51, -0.047]
-        ]).addTo(map).bindPopup("I am a polygon.");*/
-
-
         var popup = L.popup();
 
         function onMapClick(e) {
+            var _clat = e.latlng.lat.toString();
+            var _clng = e.latlng.lng.toString();
+            var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
             popup
                 .setLatLng(e.latlng)
-                .setContent("You clicked the map at " + e.latlng.toString())
+                .setContent('<p>' + '{_T string="You clicked at %p"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!"}</a></p>')
                 .openOn(map);
+            _iLiveHere(_id);
         }
 
         map.on('click', onMapClick);
+        try {
+            _mapsBinded(map);
+        } catch (err) {
+            //fortunately, nothing to do here.
+            //_mapsBinded function can be missing
+        }
     });
 </script>
 
