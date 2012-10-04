@@ -38,8 +38,24 @@
     }
 
     function _iLiveHere(_id){
-        $('#' + _id).click(function(e){
-            alert('One day, that will be stored in the database, stay in touch!!');
+        $('#' + _id).click(function(e, f,g){
+            var _a = $(this);
+            var _latlng = _a.data('latlng');
+            $.ajax({
+                url: 'ajax_ilivehere.php',
+                type: 'POST',
+                data: {
+                    latitude: _latlng.lat,
+                    longitude: _latlng.lng
+                },
+                {include file="../../../../templates/default/js_loader.tpl"},
+                success: function(res){
+                    alert(res);
+                },
+                error: function(){
+                    alert("{_T string="An error occured during 'I live here' process :(" escaped="js"}")
+                }
+            });
             return false;
         });
     }
@@ -56,20 +72,6 @@
             attribution: '{_T string="Map data ©"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors"}</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, {_T string="Imagery ©"} <a href="http://cloudmade.com">CloudMade</a>'
         }).addTo(map);
 
-        var popup = L.popup();
-
-        function onMapClick(e) {
-            var _clat = e.latlng.lat.toString();
-            var _clng = e.latlng.lng.toString();
-            var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
-            popup
-                .setLatLng(e.latlng)
-                .setContent('<p>' + '{_T string="You clicked at %p"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!"}</a></p>')
-                .openOn(map);
-            _iLiveHere(_id);
-        }
-
-        map.on('click', onMapClick);
         try {
             _mapsBinded(map);
         } catch (err) {

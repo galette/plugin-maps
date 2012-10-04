@@ -14,6 +14,29 @@
 <script type="text/javascript">
     var _mapsBinded = function(map)
     {
+
+        function onMapClick(e) {
+            var _clat = e.latlng.lat.toString();
+            var _clng = e.latlng.lng.toString();
+            var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
+            var popup = L.popup();
+            popup
+                .setLatLng(e.latlng)
+                .setContent('<p>' + '{_T string="You clicked at %p"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!"}</a></p>')
+                .openOn(map);
+        }
+
+        map.on('click', onMapClick);
+
+        //bind "I live here" event on popupopen
+        map.on('popupopen', function(e){
+            var _links = $(e.popup._container).find('a');
+            _a = $(_links[1]);
+            _a.data('latlng', e.popup._latlng);
+            _iLiveHere(_a.attr('id'));
+        });
+
+
 {if $town}
     {* Town is known, just display *}
         var _lat = {$town['latitude']};
@@ -28,6 +51,7 @@
             width: '400px',
             position: ['right', 'middle']
         });
+
         _towns.find('li').click(function(e){
             var _elt = $(this);
             var _name = _elt.find('strong')[0].innerHTML;
@@ -38,7 +62,6 @@
             var _id = 'coords_' + _slat.replace('.', '_') + _slon.replace('.', '_');
             L.marker([_slat, _slon]).addTo(map)
                 .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a id="' + _id + '" href="#">{_T string="I live here!"}</a></p>').openPopup();
-            _iLiveHere(_id);
         });
 {/if}
     }

@@ -71,7 +71,7 @@ class Coordinates
         try {
             $select = new \Zend_Db_Select($zdb->db);
             $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll()[0];
         } catch (\Exception $e) {
             $log->log(
                 'Unable to retrieve members coordinates for "' .
@@ -80,6 +80,54 @@ class Coordinates
             );
             $log->log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
+                KLogger::ERR
+            );
+            return false;
+        }
+    }
+
+    /**
+     * Set member coordinates
+     *
+     * @param int   $id        Member id
+     * @param float $latitude  Latitude
+     * @param float $longitude Longitude
+     *
+     * @return boolean
+     */
+    public function setCoords($id, $latitude, $longitude)
+    {
+        global $zdb, $log;
+
+        try {
+            $res = null;
+            $coords = $this->getCoords($id);
+            if ( count($coords) === 0 ) {
+                //cordinates does not exists yet
+                $res = $zdb->db->insert(
+                    $this->getTableName(),
+                    array(
+                        self::PK    => $id,
+                        'latitude'  => $latitude,
+                        'longitude' => $longitude
+                    )
+                );
+            } else {
+                //coordinates already exists, just update
+                $res = $zdb->db->update(
+                    $this->getTableName(),
+                    array(
+                        'latitude'  => $latitude,
+                        'longitude' => $longitude
+                    ),
+                    self::PK . '=' . $id
+                );
+            }
+            return ($res > 0);
+        } catch ( Exception $e ) {
+            $log->log(
+                'Unable to set coordinatates for member ' .
+                $id_adh . ' | ' . $e->getMessage(),
                 KLogger::ERR
             );
             return false;

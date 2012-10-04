@@ -81,7 +81,9 @@ $tpl->assign(
     'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
 );
 $tpl->assign('page_title', _T("Maps"));
-$tpl->assign('towns', $towns);
+if ( $towns !== false ) {
+    $tpl->assign('towns', $towns);
+}
 $tpl->assign('member', $member);
 $tpl->assign('town', $mcoords);
 $tpl->assign('require_dialog', true);
