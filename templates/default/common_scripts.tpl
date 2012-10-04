@@ -50,7 +50,9 @@
                 },
                 {include file="../../../../templates/default/js_loader.tpl"},
                 success: function(res){
+                    //not very pretty... but that works for the moment :)
                     alert(res);
+                    window.location.reload();
                 },
                 error: function(){
                     alert("{_T string="An error occured during 'I live here' process :(" escaped="js"}")
@@ -65,7 +67,7 @@
 
         var _lat = {if $town}{$town['latitude']}{else}46.830133640447386{/if};
         var _lon = {if $town}{$town['longitude']}{else}2.4609375{/if};
-        var map = L.map('map').setView([_lat, _lon], 6);
+        var map = L.map('map').setView([_lat, _lon], {if $town}12{else}6{/if});
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
