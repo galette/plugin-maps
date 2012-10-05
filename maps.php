@@ -77,9 +77,5 @@ $content = $tpl->fetch('maps.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
-if ( !$login->isLogged() ) {
-    $tpl->display('public_page.tpl', MAPS_SMARTY_PREFIX);
-} else {
-    $tpl->display('page.tpl', MAPS_SMARTY_PREFIX);
-}
+$tpl->display('page.tpl', MAPS_SMARTY_PREFIX);
 ?>
