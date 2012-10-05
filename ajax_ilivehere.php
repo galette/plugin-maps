@@ -69,18 +69,25 @@ if ( $member === null ) {
 }
 
 $coords = new Coordinates();
-$res = $coords->setCoords(
-    $member->id,
-    $_POST['latitude'],
-    $_POST['longitude']
-);
+if ( isset($_POST['latitude']) && isset($_POST['longitude']) ) {
+    $res = $coords->setCoords(
+        $member->id,
+        $_POST['latitude'],
+        $_POST['longitude']
+    );
 
-$message = '';
-if ( $res === true ) {
-    $message = _T("New coordinates has been stored!");
-} else {
-    $message = _T("Coordinates has not been stored :(");
+    $message = '';
+    if ( $res === true ) {
+        $message = _T("New coordinates has been stored!");
+    } else {
+        $message = _T("Coordinates has not been stored :(");
+    }
+
+    die($message);
 }
 
-echo $message;
+if ( isset($_POST['remove']) ) {
+    $res = $coords->removeCoords($member->id);
+    die(($res > 0) ? 'true' : 'false');
+}
 ?>

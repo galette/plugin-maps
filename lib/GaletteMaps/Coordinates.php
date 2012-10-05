@@ -200,6 +200,34 @@ class Coordinates
     }
 
     /**
+     * Remove member coordinates
+     *
+     * @param int $id Member id
+     *
+     * @return boolean
+     */
+    public function removeCoords($id)
+    {
+        global $zdb, $log;
+
+        try {
+            $del = $zdb->db->delete(
+                $this->getTableName(),
+                self::PK . '=' . $id
+            );
+            return ($del > 0);
+        } catch ( \Exception $e ) {
+            $log->log(
+                'Unable to set coordinatates for member ' .
+                $id_adh . ' | ' . $e->getMessage(),
+                KLogger::ERR
+            );
+            return false;
+        }
+
+    }
+
+    /**
      * Get table's name
      *
      * @return string
