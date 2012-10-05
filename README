@@ -1,7 +1,12 @@
 MySQL
 -----
 
-None yet.
+To import txt file in the database, first copy the file so it can be read
+from mysql (say /var/lib/mysql/fr.txt), then login as galette user
+on your galette database and then run the LOAD DATA command:
+$ mysql -u galette -P galette
+mysql> LOAD DATA INFILE '/var/lib/mysql/fr.txt' INTO TABLE galette_maps_towns;
+
 
 PostgreSQL
 ----------

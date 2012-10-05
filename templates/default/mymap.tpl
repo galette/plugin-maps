@@ -43,7 +43,43 @@
         var _lon = {$town['longitude']};
 
         L.marker([_lat, _lon]).addTo(map)
-            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!"}').openPopup();
+            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!"}<br/><span id="removecoords">{_T string="Remove"}</span>').openPopup();
+        $('#removecoords').click(function(){
+            var _d = $('<div title="{_T string="Remove my coordinates"}">{_T string="Are you sure you want to remove your coordinates from the database?"}</div>');
+            _d.dialog({
+                modal: true,
+                width: '40%',
+                buttons: {
+                    '{_T string="Remove"}': function(){
+                        $.ajax({
+                            url: 'ajax_ilivehere.php',
+                            type: 'POST',
+                            data: {
+                                remove: true
+                            },
+                            {include file="../../../../templates/default/js_loader.tpl"},
+                            success: function(res){
+                                if ( $.trim(res) == 'true' ) {
+                                    _d.dialog('close');
+                                    alert('{_T string="Your coordinates has been removed"}');
+                                    //map.setView([46.830133640447386, 2.4609375], 6, true);
+                                    //not very pretty... but that works for the moment :)
+                                    window.location.reload();
+                                } else {
+                                    alert("{_T string="An error occured removing your coordinates :(" escaped="js"}")
+                                }
+                            },
+                            error: function(){
+                                alert("{_T string="An error occured removing your coordinates :(" escaped="js"}")
+                            }
+                        });
+                    },
+                    '{_T string="Cancel"}': function(){
+                        $(this).dialog('close');
+                    }
+                }
+            });
+        });
 {elseif $towns}
     {* Town is not known. Show possibilities *}
         var _towns = $('#possible_towns');

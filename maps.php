@@ -38,11 +38,17 @@
  * @since     Available since 0.7.4dev - 2012-10-02
  */
 
+use GaletteMaps\Coordinates as Coordinates;
+
 $base_path = '../../';
 require_once $base_path . 'includes/galette.inc.php';
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
+require_once 'lib/GaletteMaps/Coordinates.php';
+
+$coords = new Coordinates();
+$list = $coords->listCoords();
 
 $orig_template_path = $tpl->template_dir;
 $tpl->template_dir = 'templates/' . $preferences->pref_theme;
@@ -66,13 +72,10 @@ if ( !$login->isLogged() ) {
     $tpl->assign('is_public', true);
 }
 $tpl->assign('page_title', _T("Maps"));
+$tpl->assign('list', $list);
 $content = $tpl->fetch('maps.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
-if ( !$login->isLogged() ) {
-    $tpl->display('public_page.tpl', MAPS_SMARTY_PREFIX);
-} else {
-    $tpl->display('page.tpl', MAPS_SMARTY_PREFIX);
-}
+$tpl->display('page.tpl', MAPS_SMARTY_PREFIX);
 ?>

@@ -45,6 +45,11 @@ use GaletteMaps\Coordinates as Coordinates;
 $base_path = '../../';
 require_once $base_path . 'includes/galette.inc.php';
 
+if ( !$login->isLogged() ) {
+    header('location: ../../index.php');
+    die();
+}
+
 //Constants and classes from plugin
 require_once '_config.inc.php';
 require_once 'lib/GaletteMaps/Towns.php';

@@ -38,6 +38,8 @@
 namespace GaletteMaps;
 
 use Galette\Common\KLogger as KLogger;
+use Galette\Entity\Adherent as Adherent;
+use Galette\Repository\Members as Members;
 
 /**
  * Members GPS coordinates
@@ -71,7 +73,8 @@ class Coordinates
         try {
             $select = new \Zend_Db_Select($zdb->db);
             $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll()[0];
+            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            return $res[0];
         } catch (\Exception $e) {
             $log->log(
                 'Unable to retrieve members coordinates for "' .
@@ -83,6 +86,69 @@ class Coordinates
                 KLogger::ERR
             );
             return false;
+        }
+    }
+
+    /**
+     * Returns list of all know coordinates, filtered on publically
+     * visible profile for non admins and non staff
+     *
+     * @return array
+     */
+    public function listCoords()
+    {
+        global $zdb, $log, $login;
+
+        try {
+            $select = new \Zend_Db_Select($zdb->db);
+            $select->from(
+                array(
+                    'c' => $this->getTableName()
+                )
+            )->join(
+                array(
+                    'a' => PREFIX_DB . Adherent::TABLE
+                ),
+                'a.' . self::PK . '=' . 'c.' . self::PK
+            )->where(
+                'date_echeance > ? OR bool_exempt_adh = true',
+                date('Y-m-d')
+            );
+            if ( !$login->isAdmin()
+                && !$login->isStaff()
+                && !$login->isSuperAdmin()
+            ) {
+                //limit query to public profiles
+                $select->where(
+                    'bool_display_info = ?', true
+                );
+            }
+
+            $rs = $select->query()->fetchAll();
+
+            $res = array();
+
+            foreach ( $rs as $r ) {
+                $a = new Adherent($r);
+                $res[] = array(
+                    'id_adh'    => $a->id,
+                    'lat'       => $r->latitude,
+                    'lng'       => $r->longitude,
+                    'name'      => $a->sname
+                );
+            }
+
+            return $res;
+        } catch ( \Exception $e) {
+            $log->log(
+                'Unable to retrieve members coordinates list "' .
+                '". | ' . $e->getMessage(),
+                KLogger::WARN
+            );
+            $log->log(
+                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
+                KLogger::ERR
+            );
         }
     }
 
@@ -124,7 +190,7 @@ class Coordinates
                 );
             }
             return ($res > 0);
-        } catch ( Exception $e ) {
+        } catch ( \Exception $e ) {
             $log->log(
                 'Unable to set coordinatates for member ' .
                 $id_adh . ' | ' . $e->getMessage(),
@@ -132,6 +198,34 @@ class Coordinates
             );
             return false;
         }
+    }
+
+    /**
+     * Remove member coordinates
+     *
+     * @param int $id Member id
+     *
+     * @return boolean
+     */
+    public function removeCoords($id)
+    {
+        global $zdb, $log;
+
+        try {
+            $del = $zdb->db->delete(
+                $this->getTableName(),
+                self::PK . '=' . $id
+            );
+            return ($del > 0);
+        } catch ( \Exception $e ) {
+            $log->log(
+                'Unable to set coordinatates for member ' .
+                $id_adh . ' | ' . $e->getMessage(),
+                KLogger::ERR
+            );
+            return false;
+        }
+
     }
 
     /**

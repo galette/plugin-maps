@@ -1,0 +1,82 @@
+#: ../templates/default/mymap.tpl:77
+msgid "Cancel"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:74
+msgid "Imagery ©"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:74
+msgid "Map data ©"
+msgstr ""
+
+#: ../maps_preferences.php:57
+msgid "Maps Settings"
+msgstr ""
+
+#: ../maps.php:74 ../mymap.php:88
+#: ../templates/default/menu.tpl:2 ../templates/default/menu.tpl:7
+msgid "Maps"
+msgstr ""
+
+#: ../ajax_ilivehere.php:81
+msgid "New coordinates has been stored!"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:69 ../templates/default/mymap.tpl:73
+msgid "An error occured removing your coordinates :("
+msgstr ""
+
+#: ../templates/default/mymap.tpl:46 ../templates/default/mymap.tpl:53
+msgid "Remove"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:48
+msgid "Remove my coordinates"
+msgstr ""
+
+#: ../templates/default/menu.tpl:9
+msgid "Maps Preferences"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:64
+msgid "Your coordinates has been removed"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:48
+msgid "Are you sure you want to remove your coordinates from the database?"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:58
+msgid "An error occured during 'I live here' process :("
+msgstr ""
+
+#: ../templates/default/mymap.tpl:25
+msgid "You clicked at %p"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:4
+msgid "Choose your location"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:74
+msgid "OpenStreetMap contributors"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:25 ../templates/default/mymap.tpl:46
+#: ../templates/default/mymap.tpl:100
+msgid "I live here!"
+msgstr ""
+
+#: ../templates/default/menu.tpl:5
+msgid "My localization"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:5
+msgid "Select your town."
+msgstr ""
+
+#: ../ajax_ilivehere.php:83
+msgid "Coordinates has not been stored :("
+msgstr ""
+
