@@ -45,7 +45,7 @@
         L.marker([_lat, _lon]).addTo(map)
             .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!"}<br/><span id="removecoords">{_T string="Remove"}</span>').openPopup();
         $('#removecoords').click(function(){
-            var _d = $('<div title="{_T string="Remove my coordinates"}">{_T string="Are you sure yout want to remove your coordinates from the database?"}</div>');
+            var _d = $('<div title="{_T string="Remove my coordinates"}">{_T string="Are you sure you want to remove your coordinates from the database?"}</div>');
             _d.dialog({
                 modal: true,
                 width: '40%',
