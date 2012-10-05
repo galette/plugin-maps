@@ -20,17 +20,14 @@
         var _oSize = 0;
 
         //récuperation de la taille des autres lignes
-{if $is_public}
-        $('#map').parents('section').siblings(':not(script)').each(function(){
-            _oSize += _eltRealSize($(this));
-        });
-{else}
         $('#map').parents('section').siblings(':not(script)').each(function(){
             _oSize += _eltRealSize($(this));
         });
         _oSize += _eltRealSize($('footer'));
-        _oSize += parseFloat($('#content').css('margin-top').replace('px', ''));
-{/if}
+        var _c = $('#content');
+        _oSize += parseFloat(_c.css('margin-top').replace('px', ''));
+        _oSize += parseFloat(_c.css('padding-top').replace('px', ''));
+        _oSize += parseFloat(_c.css('padding-bottom').replace('px', ''));
 
         //calcul et applicaiton de la nouvelle taille
         var newHeight = Math.floor(wheight - _oSize) + "px";
