@@ -73,7 +73,8 @@ class Coordinates
         try {
             $select = new \Zend_Db_Select($zdb->db);
             $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll()[0];
+            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+            return $res[0];
         } catch (\Exception $e) {
             $log->log(
                 'Unable to retrieve members coordinates for "' .
