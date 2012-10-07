@@ -7,7 +7,7 @@
 {foreach $list as $l}
 
         L.marker([{$l.lat}, {$l.lng}]).addTo(map)
-            .bindPopup('<p><strong>{$l.name}</strong>').openPopup();
+            .bindPopup('<p><strong>{$l.name}</strong>');
 {/foreach}
     }
 </script>
