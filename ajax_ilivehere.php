@@ -41,8 +41,8 @@ use Galette\Common\KLogger as KLogger;
 use Galette\Entity\Adherent as Adherent;
 use GaletteMaps\Coordinates as Coordinates;
 
-$base_path = '../../';
-require_once $base_path . 'includes/galette.inc.php';
+define('GALETTE_BASE_PATH', '../../');
+require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 require_once '_config.inc.php';
 require_once 'lib/GaletteMaps/Coordinates.php';
 

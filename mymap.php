@@ -42,8 +42,8 @@ use Galette\Entity\Adherent as Adherent;
 use GaletteMaps\Towns as Towns;
 use GaletteMaps\Coordinates as Coordinates;
 
-$base_path = '../../';
-require_once $base_path . 'includes/galette.inc.php';
+define('GALETTE_BASE_PATH', '../../');
+require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 
 if ( !$login->isLogged() ) {
     header('location: ../../index.php');
