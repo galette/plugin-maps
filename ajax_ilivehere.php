@@ -37,7 +37,7 @@
  * @since     Available since 0.7.4dev - 2012-10-04
  */
 
-use Galette\Common\KLogger as KLogger;
+use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use GaletteMaps\Coordinates as Coordinates;
 
@@ -47,9 +47,9 @@ require_once '_config.inc.php';
 require_once 'lib/GaletteMaps/Coordinates.php';
 
 if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
-    $log->log(
+    Analog::log(
         'Trying to display ajax_ilivehere.php without appropriate permissions',
-        KLogger::INFO
+        Analog::INFO
     );
     die();
 }
@@ -57,9 +57,9 @@ if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
 $member = null;
 
 if ( $login->isSuperAdmin() && $member !== null ) {
-    $log->log(
+    Analog::log(
         'SuperAdmin does note live anywhere!',
-        KLogger::INFO
+        Analog::INFO
     );
     die();
 }

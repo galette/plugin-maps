@@ -37,7 +37,7 @@
 
 namespace GaletteMaps;
 
-use Galette\Common\KLogger as KLogger;
+use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Repository\Members as Members;
 
@@ -68,7 +68,7 @@ class Coordinates
      */
     public function getCoords($id)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
@@ -76,14 +76,14 @@ class Coordinates
             $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
             return $res[0];
         } catch (\Exception $e) {
-            $log->log(
+            Analog::log(
                 'Unable to retrieve members coordinates for "' .
                 $id  . '". | ' . $e->getMessage(),
-                KLogger::WARN
+                Analog::WARNING
             );
-            $log->log(
+            Analog::log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }
@@ -97,7 +97,7 @@ class Coordinates
      */
     public function listCoords()
     {
-        global $zdb, $log, $login;
+        global $zdb, $login;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
@@ -140,14 +140,14 @@ class Coordinates
 
             return $res;
         } catch ( \Exception $e) {
-            $log->log(
+            Analog::log(
                 'Unable to retrieve members coordinates list "' .
                 '". | ' . $e->getMessage(),
-                KLogger::WARN
+                Analog::WARNING
             );
-            $log->log(
+            Analog::log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                KLogger::ERR
+                Analog::ERROR
             );
         }
     }
@@ -163,7 +163,7 @@ class Coordinates
      */
     public function setCoords($id, $latitude, $longitude)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $res = null;
@@ -191,10 +191,10 @@ class Coordinates
             }
             return ($res > 0);
         } catch ( \Exception $e ) {
-            $log->log(
+            Analog::log(
                 'Unable to set coordinatates for member ' .
                 $id_adh . ' | ' . $e->getMessage(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }
@@ -209,7 +209,7 @@ class Coordinates
      */
     public function removeCoords($id)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $del = $zdb->db->delete(
@@ -218,10 +218,10 @@ class Coordinates
             );
             return ($del > 0);
         } catch ( \Exception $e ) {
-            $log->log(
+            Analog::log(
                 'Unable to set coordinatates for member ' .
                 $id_adh . ' | ' . $e->getMessage(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }

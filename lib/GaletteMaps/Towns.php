@@ -37,7 +37,7 @@
 
 namespace GaletteMaps;
 
-use Galette\Common\KLogger as KLogger;
+use Analog\Analog as Analog;
 
 /**
  * Towns GPS coordinates
@@ -66,7 +66,7 @@ class Towns
      */
     public function search($town)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
@@ -94,13 +94,13 @@ class Towns
             );
             return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
         } catch (\Exception $e) {
-            $log->log(
+            Analog::log(
                 'Unable to find town "' . $town  . '". | ' . $e->getMessage(),
-                KLogger::WARN
+                Analog::WARNING
             );
-            $log->log(
+            Analog::log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }
