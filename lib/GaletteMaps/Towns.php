@@ -70,12 +70,19 @@ class Towns
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
+
+            $rtown = preg_replace(
+                array('/-/', '/_/', '/ /'),
+                '',
+                $town
+            );
+
             $select->from(
                 $this->getTableName(),
                 array('full_name_nd_ro', 'latitude', 'longitude')
             )->where(
                 'LOWER(sort_name_ro) LIKE ?',
-                '%' . strtolower($town) . '%'
+                '%' . strtolower($rtown) . '%'
             )->orWhere(
                 'LOWER(full_name_ro) LIKE ?',
                 '%' . strtolower($town) . '%'
@@ -84,7 +91,7 @@ class Towns
                 '%' . strtolower($town) . '%'
             )->orWhere(
                 'LOWER(sort_name_rg) LIKE ?',
-                '%' . strtolower($town) . '%'
+                '%' . strtolower($rtown) . '%'
             )->orWhere(
                 'LOWER(full_name_rg) LIKE ?',
                 '%' . strtolower($town) . '%'
