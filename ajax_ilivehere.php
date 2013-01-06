@@ -10,7 +10,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012 The Galette Team
+ * Copyright © 2012-2013 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -30,26 +30,26 @@
  * @category  Plugins
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012 The Galette Team
+ * @copyright 2012-2013 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7.4dev - 2012-10-04
  */
 
-use Galette\Common\KLogger as KLogger;
+use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use GaletteMaps\Coordinates as Coordinates;
 
-$base_path = '../../';
-require_once $base_path . 'includes/galette.inc.php';
+define('GALETTE_BASE_PATH', '../../');
+require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 require_once '_config.inc.php';
 require_once 'lib/GaletteMaps/Coordinates.php';
 
 if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
-    $log->log(
+    Analog::log(
         'Trying to display ajax_ilivehere.php without appropriate permissions',
-        KLogger::INFO
+        Analog::INFO
     );
     die();
 }
@@ -57,9 +57,9 @@ if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
 $member = null;
 
 if ( $login->isSuperAdmin() && $member !== null ) {
-    $log->log(
+    Analog::log(
         'SuperAdmin does note live anywhere!',
-        KLogger::INFO
+        Analog::INFO
     );
     die();
 }

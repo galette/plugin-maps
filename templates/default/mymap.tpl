@@ -22,7 +22,7 @@
             var popup = L.popup();
             popup
                 .setLatLng(e.latlng)
-                .setContent('<p>' + '{_T string="You clicked at %p"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!"}</a></p>')
+                .setContent('<p>' + '{_T string="You clicked at %p" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!" escape="js"}</a></p>')
                 .openOn(map);
         }
 
@@ -43,9 +43,9 @@
         var _lon = {$town['longitude']};
 
         L.marker([_lat, _lon]).addTo(map)
-            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!"}<br/><span id="removecoords">{_T string="Remove"}</span>').openPopup();
+            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!" escape="js"}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
         $('#removecoords').click(function(){
-            var _d = $('<div title="{_T string="Remove my coordinates"}">{_T string="Are you sure you want to remove your coordinates from the database?"}</div>');
+            var _d = $('<div title="{_T string="Remove my coordinates" escape="js"}">{_T string="Are you sure you want to remove your coordinates from the database?" escape="js"}</div>');
             _d.dialog({
                 modal: true,
                 width: '40%',
@@ -61,20 +61,20 @@
                             success: function(res){
                                 if ( $.trim(res) == 'true' ) {
                                     _d.dialog('close');
-                                    alert('{_T string="Your coordinates has been removed"}');
+                                    alert('{_T string="Your coordinates has been removed" escape="js"}');
                                     //map.setView([46.830133640447386, 2.4609375], 6, true);
                                     //not very pretty... but that works for the moment :)
                                     window.location.reload();
                                 } else {
-                                    alert("{_T string="An error occured removing your coordinates :(" escaped="js"}")
+                                    alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
                                 }
                             },
                             error: function(){
-                                alert("{_T string="An error occured removing your coordinates :(" escaped="js"}")
+                                alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
                             }
                         });
                     },
-                    '{_T string="Cancel"}': function(){
+                    '{_T string="Cancel" escape="js"}': function(){
                         $(this).dialog('close');
                     }
                 }
@@ -97,7 +97,7 @@
             map.setView([parseFloat(_slat), parseFloat(_slon)], 13);
             var _id = 'coords_' + _slat.replace('.', '_') + _slon.replace('.', '_');
             L.marker([_slat, _slon]).addTo(map)
-                .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a id="' + _id + '" href="#">{_T string="I live here!"}</a></p>').openPopup();
+                .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a id="' + _id + '" href="#">{_T string="I live here!" escape="js"}</a></p>').openPopup();
         });
 {/if}
     }

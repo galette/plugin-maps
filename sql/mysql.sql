@@ -35,7 +35,7 @@ CREATE TABLE galette_maps_towns (
 
 DROP TABLE IF EXISTS galette_maps_coordinates CASCADE;
 CREATE TABLE galette_maps_coordinates (
-    id_adh int(10) unsigned NOT NULL auto_increment,
+    id_adh int(10) unsigned NOT NULL,
     latitude real NOT NULL,
     longitude real NOT NULL,
     PRIMARY KEY (id_adh),

@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012 The Galette Team
+ * Copyright © 2012-2013 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012 The Galette Team
+ * @copyright 2012-2013 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -37,7 +37,7 @@
 
 namespace GaletteMaps;
 
-use Galette\Common\KLogger as KLogger;
+use Analog\Analog as Analog;
 
 /**
  * Towns GPS coordinates
@@ -46,7 +46,7 @@ use Galette\Common\KLogger as KLogger;
  * @name      Towns
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012 The Galette Team
+ * @copyright 2012-2013 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7.4dev - 2012-10-03
@@ -66,16 +66,23 @@ class Towns
      */
     public function search($town)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
+
+            $rtown = preg_replace(
+                array('/-/', '/_/', '/ /'),
+                '',
+                $town
+            );
+
             $select->from(
                 $this->getTableName(),
                 array('full_name_nd_ro', 'latitude', 'longitude')
             )->where(
                 'LOWER(sort_name_ro) LIKE ?',
-                '%' . strtolower($town) . '%'
+                '%' . strtolower($rtown) . '%'
             )->orWhere(
                 'LOWER(full_name_ro) LIKE ?',
                 '%' . strtolower($town) . '%'
@@ -84,7 +91,7 @@ class Towns
                 '%' . strtolower($town) . '%'
             )->orWhere(
                 'LOWER(sort_name_rg) LIKE ?',
-                '%' . strtolower($town) . '%'
+                '%' . strtolower($rtown) . '%'
             )->orWhere(
                 'LOWER(full_name_rg) LIKE ?',
                 '%' . strtolower($town) . '%'
@@ -94,13 +101,13 @@ class Towns
             );
             return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
         } catch (\Exception $e) {
-            $log->log(
+            Analog::log(
                 'Unable to find town "' . $town  . '". | ' . $e->getMessage(),
-                KLogger::WARN
+                Analog::WARNING
             );
-            $log->log(
+            Analog::log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }

@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012 The Galette Team
+ * Copyright © 2012-2013 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012 The Galette Team
+ * @copyright 2012-2013 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -37,7 +37,7 @@
 
 namespace GaletteMaps;
 
-use Galette\Common\KLogger as KLogger;
+use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Repository\Members as Members;
 
@@ -48,7 +48,7 @@ use Galette\Repository\Members as Members;
  * @name      Towns
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012 The Galette Team
+ * @copyright 2012-2013 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7.4dev - 2012-10-04
@@ -68,22 +68,26 @@ class Coordinates
      */
     public function getCoords($id)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
             $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
             $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
-            return $res[0];
+            if ( count($res) > 0 ) {
+                return $res[0];
+            } else {
+                return array();
+            }
         } catch (\Exception $e) {
-            $log->log(
+            Analog::log(
                 'Unable to retrieve members coordinates for "' .
                 $id  . '". | ' . $e->getMessage(),
-                KLogger::WARN
+                Analog::WARNING
             );
-            $log->log(
+            Analog::log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }
@@ -97,7 +101,7 @@ class Coordinates
      */
     public function listCoords()
     {
-        global $zdb, $log, $login;
+        global $zdb, $login;
 
         try {
             $select = new \Zend_Db_Select($zdb->db);
@@ -140,14 +144,14 @@ class Coordinates
 
             return $res;
         } catch ( \Exception $e) {
-            $log->log(
+            Analog::log(
                 'Unable to retrieve members coordinates list "' .
                 '". | ' . $e->getMessage(),
-                KLogger::WARN
+                Analog::WARNING
             );
-            $log->log(
+            Analog::log(
                 'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                KLogger::ERR
+                Analog::ERROR
             );
         }
     }
@@ -163,7 +167,7 @@ class Coordinates
      */
     public function setCoords($id, $latitude, $longitude)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $res = null;
@@ -191,10 +195,10 @@ class Coordinates
             }
             return ($res > 0);
         } catch ( \Exception $e ) {
-            $log->log(
+            Analog::log(
                 'Unable to set coordinatates for member ' .
                 $id_adh . ' | ' . $e->getMessage(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }
@@ -209,7 +213,7 @@ class Coordinates
      */
     public function removeCoords($id)
     {
-        global $zdb, $log;
+        global $zdb;
 
         try {
             $del = $zdb->db->delete(
@@ -218,10 +222,10 @@ class Coordinates
             );
             return ($del > 0);
         } catch ( \Exception $e ) {
-            $log->log(
+            Analog::log(
                 'Unable to set coordinatates for member ' .
                 $id_adh . ' | ' . $e->getMessage(),
-                KLogger::ERR
+                Analog::ERROR
             );
             return false;
         }
