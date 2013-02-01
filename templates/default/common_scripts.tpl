@@ -62,9 +62,9 @@
     $(function(){
         _hresize();
 
-        var _lat = {if $town}{$town['latitude']}{else}46.830133640447386{/if};
-        var _lon = {if $town}{$town['longitude']}{else}2.4609375{/if};
-        var map = L.map('map').setView([_lat, _lon], {if $town}12{else}6{/if});
+        var _lat = {if isset($town)}{$town['latitude']}{else}46.830133640447386{/if};
+        var _lon = {if isset($town)}{$town['longitude']}{else}2.4609375{/if};
+        var map = L.map('map').setView([_lat, _lon], {if isset($town)}12{else}6{/if});
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
