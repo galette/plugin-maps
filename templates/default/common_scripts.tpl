@@ -1,4 +1,4 @@
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.4.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.5.1/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
 <script type="text/javascript">
 
     /**
@@ -62,9 +62,9 @@
     $(function(){
         _hresize();
 
-        var _lat = {if $town}{$town['latitude']}{else}46.830133640447386{/if};
-        var _lon = {if $town}{$town['longitude']}{else}2.4609375{/if};
-        var map = L.map('map').setView([_lat, _lon], {if $town}12{else}6{/if});
+        var _lat = {if isset($town)}{$town['latitude']}{else}46.830133640447386{/if};
+        var _lon = {if isset($town)}{$town['longitude']}{else}2.4609375{/if};
+        var map = L.map('map').setView([_lat, _lon], {if isset($town)}12{else}6{/if});
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,

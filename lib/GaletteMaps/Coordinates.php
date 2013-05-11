@@ -138,7 +138,8 @@ class Coordinates
                     'id_adh'    => $a->id,
                     'lat'       => $r->latitude,
                     'lng'       => $r->longitude,
-                    'name'      => $a->sname
+                    'name'      => $a->sname,
+                    'nickname'  => $a->nickname
                 );
             }
 

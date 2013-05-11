@@ -90,7 +90,9 @@ if ( $towns !== false ) {
     $tpl->assign('towns', $towns);
 }
 $tpl->assign('member', $member);
-$tpl->assign('town', $mcoords);
+if ( count($mcoords) > 0 ) {
+    $tpl->assign('town', $mcoords);
+}
 $tpl->assign('require_dialog', true);
 $content = $tpl->fetch('mymap.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
