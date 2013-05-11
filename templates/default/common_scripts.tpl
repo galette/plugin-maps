@@ -1,4 +1,4 @@
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.4.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.5.1/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
 <script type="text/javascript">
 
     /**
