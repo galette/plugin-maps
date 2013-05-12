@@ -2,11 +2,15 @@
 msgid "Cancel"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:74
+#: ../templates/default/common_scripts.tpl:71
 msgid "Imagery ©"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:74
+#: ../templates/default/maps.tpl:10
+msgid "aka"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:71
 msgid "Map data ©"
 msgstr ""
 
@@ -47,7 +51,7 @@ msgstr ""
 msgid "Are you sure you want to remove your coordinates from the database?"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:58
+#: ../templates/default/common_scripts.tpl:55
 msgid "An error occured during 'I live here' process :("
 msgstr ""
 
@@ -59,7 +63,7 @@ msgstr ""
 msgid "Choose your location"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:74
+#: ../templates/default/common_scripts.tpl:71
 msgid "OpenStreetMap contributors"
 msgstr ""
 

@@ -1,12 +1,12 @@
 <?php
-// This file was automatically generated on Fri Oct  5 16:24:27 2012 (GMT)
+// This file was automatically generated on Sun May 12 12:46:52 2013 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
 // ../templates/default/mymap.tpl:25 ../templates/default/mymap.tpl:46 ../templates/default/mymap.tpl:100 
 $lang['I live here!'] = 'I live here!';
 
-// ../templates/default/common_scripts.tpl:58 
+// ../templates/default/common_scripts.tpl:55 
 $lang['An error occured during \'I live here\' process :('] = 'An error occured during \'I live here\' process :(';
 
 // ../ajax_ilivehere.php:81 
@@ -24,22 +24,22 @@ $lang['Your coordinates has been removed'] = 'Your coordinates has been removed'
 // ../maps_preferences.php:57 
 $lang['Maps Settings'] = 'Maps Settings';
 
-// ../templates/default/common_scripts.tpl:74 
+// ../templates/default/common_scripts.tpl:71 
 $lang['Map data ©'] = 'Map data ©';
 
-// ../ajax_ilivehere.php:83 
-$lang['Coordinates has not been stored :('] = 'Coordinates has not been stored :(';
+// ../templates/default/mymap.tpl:25 
+$lang['You clicked at %p'] = 'You clicked at %p';
 
 // ../templates/default/mymap.tpl:48 
 $lang['Remove my coordinates'] = 'Remove my coordinates';
 
-// ../templates/default/common_scripts.tpl:74 
+// ../templates/default/common_scripts.tpl:71 
 $lang['Imagery ©'] = 'Imagery ©';
 
 // ../templates/default/menu.tpl:5 
 $lang['My localization'] = 'My localization';
 
-// ../templates/default/common_scripts.tpl:74 
+// ../templates/default/common_scripts.tpl:71 
 $lang['OpenStreetMap contributors'] = 'OpenStreetMap contributors';
 
 // ../templates/default/mymap.tpl:46 ../templates/default/mymap.tpl:53 
@@ -57,10 +57,13 @@ $lang['Cancel'] = 'Cancel';
 // ../templates/default/mymap.tpl:4 
 $lang['Choose your location'] = 'Choose your location';
 
+// ../templates/default/maps.tpl:10 
+$lang['aka'] = 'aka';
+
+// ../ajax_ilivehere.php:83 
+$lang['Coordinates has not been stored :('] = 'Coordinates has not been stored :(';
+
 // ../templates/default/mymap.tpl:48 
 $lang['Are you sure you want to remove your coordinates from the database?'] = 'Are you sure you want to remove your coordinates from the database?';
-
-// ../templates/default/mymap.tpl:25 
-$lang['You clicked at %p'] = 'You clicked at %p';
 
 ?>

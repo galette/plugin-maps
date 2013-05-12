@@ -1,10 +1,10 @@
 # Header entry was created by Lokalize.
 #
-# , 2012.
+# , 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2012-10-05 18:24+0200\n"
+"PO-Revision-Date: 2013-05-12 14:46+0200\n"
 "Last-Translator: \n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -18,11 +18,15 @@ msgstr ""
 msgid "Cancel"
 msgstr "Cancel"
 
-#: ../templates/default/common_scripts.tpl:74
+#: ../templates/default/common_scripts.tpl:71
 msgid "Imagery ©"
 msgstr "Imagery ©"
 
-#: ../templates/default/common_scripts.tpl:74
+#: ../templates/default/maps.tpl:10
+msgid "aka"
+msgstr "aka"
+
+#: ../templates/default/common_scripts.tpl:71
 msgid "Map data ©"
 msgstr "Map data ©"
 
@@ -63,7 +67,7 @@ msgstr "Your coordinates has been removed"
 msgid "Are you sure you want to remove your coordinates from the database?"
 msgstr "Are you sure you want to remove your coordinates from the database?"
 
-#: ../templates/default/common_scripts.tpl:58
+#: ../templates/default/common_scripts.tpl:55
 msgid "An error occured during 'I live here' process :("
 msgstr "An error occured during 'I live here' process :("
 
@@ -75,7 +79,7 @@ msgstr "You clicked at %p"
 msgid "Choose your location"
 msgstr "Choose your location"
 
-#: ../templates/default/common_scripts.tpl:74
+#: ../templates/default/common_scripts.tpl:71
 msgid "OpenStreetMap contributors"
 msgstr "OpenStreetMap contributors"
 
@@ -95,3 +99,4 @@ msgstr "Select your town."
 #: ../ajax_ilivehere.php:83
 msgid "Coordinates has not been stored :("
 msgstr "Coordinates has not been stored :("
+
