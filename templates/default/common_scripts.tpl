@@ -1,9 +1,12 @@
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
+{if $PAGENAME eq "mymap.php"}
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
+{/if}
 <script type="text/javascript">
 
     /**
-        * Returns element height, including margins
-        */
+     * Returns element height, including margins
+     */
     function _eltRealSize(_elt) {
         var _s = 0;
         _s += _elt.outerHeight();
@@ -13,8 +16,8 @@
     }
 
     /**
-        * Rewrite maps height
-        */
+     * Rewrite maps height
+     */
     function _hresize() {
         var wheight = $(window).height();
         var _oSize = 0;
@@ -65,6 +68,16 @@
         var _lat = {if isset($town)}{$town['latitude']}{else}46.830133640447386{/if};
         var _lon = {if isset($town)}{$town['longitude']}{else}2.4609375{/if};
         var map = L.map('map').setView([_lat, _lon], {if isset($town)}12{else}6{/if});
+
+{if $PAGENAME eq "mymap.php"}
+        L.control.locate({
+            strings: {
+                title: '{_T string="Show me where I am"}',
+                popup: '{_T string="You are within {ldelim}distance{rdelim} {ldelim}unit{rdelim} from this point"}',
+                outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map"}'
+            }
+        }).addTo(map);
+{/if}
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
