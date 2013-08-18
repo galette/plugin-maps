@@ -16,13 +16,10 @@
     {
 
         function onMapClick(e) {
-            var _clat = e.latlng.lat.toString();
-            var _clng = e.latlng.lng.toString();
-            var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
             var popup = L.popup();
             popup
                 .setLatLng(e.latlng)
-                .setContent('<p>' + '{_T string="You clicked at %p" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!" escape="js"}</a></p>')
+                .setContent('SELECTPOPUP')
                 .openOn(map);
         }
 
@@ -30,7 +27,17 @@
 
         //bind "I live here" event on popupopen
         map.on('popupopen', function(e){
-            var _links = $(e.popup._container).find('a');
+            var _popup = e.popup;
+            var _container = $(_popup._container);
+            if ( _container.find('.leaflet-popup-content').html() == 'SELECTPOPUP' ) {
+                var _clat = _popup._latlng.lat.toString();
+                var _clng = _popup._latlng.lng.toString();
+                var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
+
+                _popup.setContent('<p>' + '{_T string="You clicked at %p" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!" escape="js"}</a></p>');
+            }
+
+            var _links = $(_container).find('a');
             _a = $(_links[1]);
             _a.data('latlng', e.popup._latlng);
             _iLiveHere(_a.attr('id'));

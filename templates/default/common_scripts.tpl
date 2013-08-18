@@ -73,7 +73,7 @@
         L.control.locate({
             strings: {
                 title: '{_T string="Show me where I am"}',
-                popup: '{_T string="You are within {ldelim}distance{rdelim} {ldelim}unit{rdelim} from this point"}',
+                popup: 'SELECTPOPUP',
                 outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map"}'
             }
         }).addTo(map);
