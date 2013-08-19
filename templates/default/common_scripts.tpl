@@ -1,8 +1,8 @@
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
-{if $PAGENAME eq "mymap.php"}
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.control.geosearch.js"></script>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"></script>
+{if $PAGENAME eq "mymap.php"}
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
 {/if}
 <script type="text/javascript">
 
@@ -39,6 +39,17 @@
         $("#map").css("height", newHeight);
     }
 
+    /**
+     * Galette specific marker icon
+     */
+    var galetteIcon = L.icon({
+        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+
     function _iLiveHere(_id){
         $('#' + _id).click(function(e, f,g){
             var _a = $(this);
@@ -71,6 +82,17 @@
         var _lon = {if isset($town)}{$town['longitude']}{else}2.4609375{/if};
         var map = L.map('map').setView([_lat, _lon], {if isset($town)}12{else}6{/if});
 
+        new L.Control.GeoSearch({
+            provider: new L.GeoSearch.Provider.OpenStreetMap(),
+{if $PAGENAME eq "mymap.php" and !isset($town)}
+            searchLabel: '{_T string="Search your town..."}',
+{else}
+            searchLabel: '{_T string="Search a town..."}',
+{/if}
+            notFoundMessage: '{_T string="Sorry, that town could not be found."}',
+            zoomLevel: 13
+        }).addTo(map);
+
 {if $PAGENAME eq "mymap.php"}
         L.control.locate({
             strings: {
@@ -79,15 +101,6 @@
                 outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map"}'
             }
         }).addTo(map);
-
-    {if !isset($town)}
-        new L.Control.GeoSearch({
-            provider: new L.GeoSearch.Provider.OpenStreetMap(),
-            searchLabel: '{_T string="Search your town..."}',
-            notFoundMessage: '{_T string="Sorry, that town could not be found."}',
-            zoomLevel: 13
-        }).addTo(map);
-    {/if}
 {/if}
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {

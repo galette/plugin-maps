@@ -90,7 +90,7 @@
             });
         };
 
-        L.marker([_lat, _lon]).addTo(map)
+        L.marker([_lat, _lon], {ldelim}icon: galetteIcon{rdelim}).addTo(map)
             .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!" escape="js"}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
         _bind_removecoords();
 {elseif isset($towns)}
