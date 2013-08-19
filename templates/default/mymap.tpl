@@ -1,6 +1,6 @@
 <section>
     <div id="map"></div>
-{if $towns|@count > 0}
+{if isset($towns) and $towns|@count > 0}
     <aside id="possible_towns" title="{_T string="Choose your location"}">
         <p>{_T string="Select your town."}</p>
         <ul>
@@ -29,7 +29,9 @@
         map.on('popupopen', function(e){
             var _popup = e.popup;
             var _container = $(_popup._container);
-            if ( _container.find('.leaflet-popup-content').html() == 'SELECTPOPUP' ) {
+            if ( _container.find('#removecoords').length > 0 ) {
+                _bind_removecoords();
+            } else if ( _container.find('.leaflet-popup-content').html() == 'SELECTPOPUP' ) {
                 var _clat = _popup._latlng.lat.toString();
                 var _clng = _popup._latlng.lng.toString();
                 var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
@@ -44,50 +46,54 @@
         });
 
 
-{if $town}
+{if isset($town)}
     {* Town is known, just display *}
         var _lat = {$town['latitude']};
         var _lon = {$town['longitude']};
 
-        L.marker([_lat, _lon]).addTo(map)
-            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!" escape="js"}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
-        $('#removecoords').click(function(){
-            var _d = $('<div title="{_T string="Remove my coordinates" escape="js"}">{_T string="Are you sure you want to remove your coordinates from the database?" escape="js"}</div>');
-            _d.dialog({
-                modal: true,
-                width: '40%',
-                buttons: {
-                    '{_T string="Remove"}': function(){
-                        $.ajax({
-                            url: 'ajax_ilivehere.php',
-                            type: 'POST',
-                            data: {
-                                remove: true
-                            },
-                            {include file="../../../../templates/default/js_loader.tpl"},
-                            success: function(res){
-                                if ( $.trim(res) == 'true' ) {
-                                    _d.dialog('close');
-                                    alert('{_T string="Your coordinates has been removed" escape="js"}');
-                                    //map.setView([46.830133640447386, 2.4609375], 6, true);
-                                    //not very pretty... but that works for the moment :)
-                                    window.location.reload();
-                                } else {
+        var _bind_removecoords = function(){
+            $('#removecoords').click(function(){
+                var _d = $('<div title="{_T string="Remove my coordinates" escape="js"}">{_T string="Are you sure you want to remove your coordinates from the database?" escape="js"}</div>');
+                _d.dialog({
+                    modal: true,
+                    width: '40%',
+                    buttons: {
+                        '{_T string="Remove"}': function(){
+                            $.ajax({
+                                url: 'ajax_ilivehere.php',
+                                type: 'POST',
+                                data: {
+                                    remove: true
+                                },
+                                {include file="../../../../templates/default/js_loader.tpl"},
+                                success: function(res){
+                                    if ( $.trim(res) == 'true' ) {
+                                        _d.dialog('close');
+                                        alert('{_T string="Your coordinates has been removed" escape="js"}');
+                                        //map.setView([46.830133640447386, 2.4609375], 6, true);
+                                        //not very pretty... but that works for the moment :)
+                                        window.location.reload();
+                                    } else {
+                                        alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
+                                    }
+                                },
+                                error: function(){
                                     alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
                                 }
-                            },
-                            error: function(){
-                                alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
-                            }
-                        });
-                    },
-                    '{_T string="Cancel" escape="js"}': function(){
-                        $(this).dialog('close');
+                            });
+                        },
+                        '{_T string="Cancel" escape="js"}': function(){
+                            $(this).dialog('close');
+                        }
                     }
-                }
+                });
             });
-        });
-{elseif $towns}
+        };
+
+        L.marker([_lat, _lon]).addTo(map)
+            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!" escape="js"}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
+        _bind_removecoords();
+{elseif isset($towns)}
     {* Town is not known. Show possibilities *}
         var _towns = $('#possible_towns');
         _towns.dialog({

@@ -80,12 +80,14 @@
             }
         }).addTo(map);
 
+    {if !isset($town)}
         new L.Control.GeoSearch({
             provider: new L.GeoSearch.Provider.OpenStreetMap(),
             searchLabel: '{_T string="Search your town..."}',
             notFoundMessage: '{_T string="Sorry, that town could not be found."}',
             zoomLevel: 13
         }).addTo(map);
+    {/if}
 {/if}
 
         L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
