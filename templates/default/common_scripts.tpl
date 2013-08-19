@@ -1,6 +1,8 @@
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
 {if $PAGENAME eq "mymap.php"}
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.control.geosearch.js"></script>
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"></script>
 {/if}
 <script type="text/javascript">
 
@@ -76,6 +78,13 @@
                 popup: 'SELECTPOPUP',
                 outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map"}'
             }
+        }).addTo(map);
+
+        new L.Control.GeoSearch({
+            provider: new L.GeoSearch.Provider.OpenStreetMap(),
+            searchLabel: '{_T string="Search your town..."}',
+            notFoundMessage: '{_T string="Sorry, that town could not be found."}',
+            zoomLevel: 13
         }).addTo(map);
 {/if}
 
