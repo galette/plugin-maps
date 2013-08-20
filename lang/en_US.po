@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2013-05-12 14:46+0200\n"
+"PO-Revision-Date: 2013-08-20 07:51+0200\n"
 "Last-Translator: \n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -14,87 +14,107 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: ../templates/default/mymap.tpl:77
-msgid "Cancel"
-msgstr "Cancel"
-
-#: ../templates/default/common_scripts.tpl:71
+#: ../templates/default/common_scripts.tpl:108
 msgid "Imagery ©"
 msgstr "Imagery ©"
 
-#: ../templates/default/maps.tpl:10
-msgid "aka"
-msgstr "aka"
-
-#: ../templates/default/common_scripts.tpl:71
-msgid "Map data ©"
-msgstr "Map data ©"
+#: ../templates/default/menu.tpl:5
+msgid "My localization"
+msgstr "My localization"
 
 #: ../maps_preferences.php:57
 msgid "Maps Settings"
 msgstr "Maps Settings"
+
+#: ../ajax_ilivehere.php:81
+msgid "New coordinates has been stored!"
+msgstr "New coordinates has been stored!"
+
+#: ../templates/default/mymap.tpl:39
+msgid "You clicked at %p"
+msgstr "You clicked at %p"
+
+#: ../templates/default/mymap.tpl:77 ../templates/default/mymap.tpl:81
+msgid "An error occured removing your coordinates :("
+msgstr "An error occured removing your coordinates :("
+
+#: ../templates/default/common_scripts.tpl:71
+msgid "An error occured during 'I live here' process :("
+msgstr "An error occured during 'I live here' process :("
+
+#: ../templates/default/mymap.tpl:5
+msgid "Select your town."
+msgstr "Select your town."
+
+#: ../templates/default/common_scripts.tpl:108
+msgid "Map data ©"
+msgstr "Map data ©"
 
 #: ../maps.php:74 ../mymap.php:88 ../templates/default/menu.tpl:2
 #: ../templates/default/menu.tpl:7
 msgid "Maps"
 msgstr "Maps"
 
-#: ../ajax_ilivehere.php:81
-msgid "New coordinates has been stored!"
-msgstr "New coordinates has been stored!"
+#: ../templates/default/common_scripts.tpl:99
+msgid "Show me where I am"
+msgstr "Show me where I am"
 
-#: ../templates/default/mymap.tpl:69 ../templates/default/mymap.tpl:73
-msgid "An error occured removing your coordinates :("
-msgstr "An error occured removing your coordinates :("
-
-#: ../templates/default/mymap.tpl:46 ../templates/default/mymap.tpl:53
-msgid "Remove"
-msgstr "Remove"
-
-#: ../templates/default/mymap.tpl:48
-msgid "Remove my coordinates"
-msgstr "Remove my coordinates"
-
-#: ../templates/default/menu.tpl:9
-msgid "Maps Preferences"
-msgstr "Maps Preferences"
-
-#: ../templates/default/mymap.tpl:64
-msgid "Your coordinates has been removed"
-msgstr "Your coordinates has been removed"
-
-#: ../templates/default/mymap.tpl:48
+#: ../templates/default/mymap.tpl:56
 msgid "Are you sure you want to remove your coordinates from the database?"
 msgstr "Are you sure you want to remove your coordinates from the database?"
-
-#: ../templates/default/common_scripts.tpl:55
-msgid "An error occured during 'I live here' process :("
-msgstr "An error occured during 'I live here' process :("
-
-#: ../templates/default/mymap.tpl:25
-msgid "You clicked at %p"
-msgstr "You clicked at %p"
 
 #: ../templates/default/mymap.tpl:4
 msgid "Choose your location"
 msgstr "Choose your location"
 
-#: ../templates/default/common_scripts.tpl:71
-msgid "OpenStreetMap contributors"
-msgstr "OpenStreetMap contributors"
-
-#: ../templates/default/mymap.tpl:25 ../templates/default/mymap.tpl:46
-#: ../templates/default/mymap.tpl:100
+#: ../templates/default/mymap.tpl:39 ../templates/default/mymap.tpl:94
+#: ../templates/default/mymap.tpl:113
 msgid "I live here!"
 msgstr "I live here!"
 
-#: ../templates/default/menu.tpl:5
-msgid "My localization"
-msgstr "My localization"
+#: ../templates/default/common_scripts.tpl:101
+msgid "You seem located outside the boundaries of the map"
+msgstr "You seem located outside the boundaries of the map"
 
-#: ../templates/default/mymap.tpl:5
-msgid "Select your town."
-msgstr "Select your town."
+#: ../templates/default/common_scripts.tpl:88
+msgid "Search your town..."
+msgstr "Search your town..."
+
+#: ../templates/default/common_scripts.tpl:92
+msgid "Sorry, that town could not be found."
+msgstr "Sorry, that town could not be found."
+
+#: ../templates/default/common_scripts.tpl:90
+msgid "Search a town..."
+msgstr "Search a town..."
+
+#: ../templates/default/mymap.tpl:72
+msgid "Your coordinates has been removed"
+msgstr "Your coordinates has been removed"
+
+#: ../templates/default/mymap.tpl:85
+msgid "Cancel"
+msgstr "Cancel"
+
+#: ../templates/default/menu.tpl:9
+msgid "Maps Preferences"
+msgstr "Maps Preferences"
+
+#: ../templates/default/mymap.tpl:61 ../templates/default/mymap.tpl:94
+msgid "Remove"
+msgstr "Remove"
+
+#: ../templates/default/common_scripts.tpl:108
+msgid "OpenStreetMap contributors"
+msgstr "OpenStreetMap contributors"
+
+#: ../templates/default/mymap.tpl:56
+msgid "Remove my coordinates"
+msgstr "Remove my coordinates"
+
+#: ../templates/default/maps.tpl:10
+msgid "aka"
+msgstr "aka"
 
 #: ../ajax_ilivehere.php:83
 msgid "Coordinates has not been stored :("
