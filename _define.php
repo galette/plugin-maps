@@ -39,7 +39,7 @@ $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '0.0.6dev',         //Version
+    '1.0.0',            //Version
     '0.7.5',            //Galette compatible version
     null                //Permissions needed - not yet implemented
 );
