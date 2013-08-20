@@ -85,20 +85,20 @@
         new L.Control.GeoSearch({
             provider: new L.GeoSearch.Provider.OpenStreetMap(),
 {if $PAGENAME eq "mymap.php" and !isset($town)}
-            searchLabel: '{_T string="Search your town..."}',
+            searchLabel: '{_T string="Search your town..." escape="js"}',
 {else}
-            searchLabel: '{_T string="Search a town..."}',
+            searchLabel: '{_T string="Search a town..." escape="js"}',
 {/if}
-            notFoundMessage: '{_T string="Sorry, that town could not be found."}',
+            notFoundMessage: '{_T string="Sorry, that town could not be found." escape="js"}',
             zoomLevel: 13
         }).addTo(map);
 
 {if $PAGENAME eq "mymap.php"}
         L.control.locate({
             strings: {
-                title: '{_T string="Show me where I am"}',
+                title: '{_T string="Show me where I am" escape="js"}',
                 popup: 'SELECTPOPUP',
-                outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map"}'
+                outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map" escape="js"}'
             }
         }).addTo(map);
 {/if}
