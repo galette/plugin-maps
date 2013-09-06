@@ -20,3 +20,8 @@
     /* Dialog should be on top of search box dans © box */
     z-index: 1005;
 }
+
+.leaflet-control-legend a {
+    background-image: url(images/legend.png);
+    background-position: -2px -2px;
+}

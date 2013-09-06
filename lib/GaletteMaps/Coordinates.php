@@ -134,13 +134,17 @@ class Coordinates
 
             foreach ( $rs as $r ) {
                 $a = new Adherent($r);
-                $res[] = array(
+                $m = array(
                     'id_adh'    => $a->id,
                     'lat'       => $r->latitude,
                     'lng'       => $r->longitude,
                     'name'      => $a->sname,
                     'nickname'  => $a->nickname
                 );
+                if ( $a->isCompany() ) {
+                    $m['company'] = $a->company_name;
+                }
+                $res[] = $m;
             }
 
             return $res;

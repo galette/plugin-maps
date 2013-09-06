@@ -71,6 +71,7 @@ $tpl->assign(
 if ( !$login->isLogged() ) {
     $tpl->assign('is_public', true);
 }
+$tpl->assign('require_dialog', true);
 $tpl->assign('page_title', _T("Maps"));
 $tpl->assign('list', $list);
 $content = $tpl->fetch('maps.tpl', MAPS_SMARTY_PREFIX);

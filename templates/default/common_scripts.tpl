@@ -1,9 +1,39 @@
+<div id="legende" title="{_T string="Legend"}">
+    <h1>{_T string="Legend"}</h1>
+    <table>
+        <tr>
+            <th>
+                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette.png" alt="{_T string="Member"}"/>
+            </th>
+            <td>
+                {_T string="Member"}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette-pro.png" alt="{_T string="Member (company)"}"/>
+            </th>
+            <td>
+                {_T string="Member (company)"}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-icon.png" alt="{_T string="Search result"}"/>
+            </th>
+            <td>
+                {_T string="Search result"}
+            </td>
+        </tr>
+    </table>
+</div>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.control.geosearch.js"></script>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"></script>
 {if $PAGENAME eq "mymap.php"}
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
 {/if}
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-legendcontrol/L.Control.Legend.js"></script>
 <script type="text/javascript">
 
     /**
@@ -49,6 +79,13 @@
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
+    var galetteProIcon = L.icon({
+        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette-pro.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
 
     function _iLiveHere(_id){
         $('#' + _id).click(function(e, f,g){
@@ -76,6 +113,14 @@
     }
 
     $(function(){
+        $('#legende h1').remove();
+        $('#legende').dialog({
+            autoOpen: false,
+            modal: true,
+            hide: 'fold',
+            width: '40%'
+        }).dialog('close');
+
         _hresize();
 
         var _lat = {if isset($town)}{$town['latitude']}{else}46.830133640447386{/if};
@@ -91,6 +136,12 @@
 {/if}
             notFoundMessage: '{_T string="Sorry, that town could not be found." escape="js"}',
             zoomLevel: 13
+        }).addTo(map);
+
+        L.control.legend({
+            strings: {
+                title: '{_T string="Show legend"}'
+            }
         }).addTo(map);
 
 {if $PAGENAME eq "mymap.php"}
