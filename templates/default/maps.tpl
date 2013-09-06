@@ -12,7 +12,7 @@
         {assign var=icon value='galetteIcon'}
     {/if}
         L.marker([{$l.lat}, {$l.lng}], {ldelim}icon: {$icon}{rdelim}).addTo(map)
-            .bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company}{/if}</p>');
+            .bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>');
 {/foreach}
     }
 </script>
