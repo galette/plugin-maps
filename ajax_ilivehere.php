@@ -44,7 +44,6 @@ use GaletteMaps\Coordinates as Coordinates;
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 require_once '_config.inc.php';
-require_once 'lib/GaletteMaps/Coordinates.php';
 
 if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
     Analog::log(

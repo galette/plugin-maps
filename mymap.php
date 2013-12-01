@@ -52,8 +52,6 @@ if ( !$login->isLogged() ) {
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
-require_once 'lib/GaletteMaps/Towns.php';
-require_once 'lib/GaletteMaps/Coordinates.php';
 
 $member = new Adherent($login->login);
 $coords = new Coordinates();
