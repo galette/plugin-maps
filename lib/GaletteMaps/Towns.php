@@ -38,6 +38,8 @@
 namespace GaletteMaps;
 
 use Analog\Analog as Analog;
+use Zend\Db\Sql\Predicate\PredicateSet;
+use Zend\Db\Sql\Predicate\Expression;
 
 /**
  * Towns GPS coordinates
@@ -69,7 +71,7 @@ class Towns
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
+            $select = $zdb->select($this->getTableName());
 
             $rtown = preg_replace(
                 array('/-/', '/_/', '/ /'),
@@ -77,37 +79,44 @@ class Towns
                 $town
             );
 
-            $select->from(
-                $this->getTableName(),
+            $select->columns(
                 array('full_name_nd_ro', 'latitude', 'longitude')
             )->where(
-                'LOWER(sort_name_ro) LIKE ?',
-                '%' . strtolower($rtown) . '%'
-            )->orWhere(
-                'LOWER(full_name_ro) LIKE ?',
-                '%' . strtolower($town) . '%'
-            )->orWhere(
-                'LOWER(full_name_nd_ro) LIKE ?',
-                '%' . strtolower($town) . '%'
-            )->orWhere(
-                'LOWER(sort_name_rg) LIKE ?',
-                '%' . strtolower($rtown) . '%'
-            )->orWhere(
-                'LOWER(full_name_rg) LIKE ?',
-                '%' . strtolower($town) . '%'
-            )->orWhere(
-                'LOWER(full_name_nd_rg) LIKE ?',
-                '%' . strtolower($town) . '%'
+                array(
+                    new PredicateSet(
+                        array(
+                            new Expression(
+                                'LOWER(sort_name_ro) LIKE ?',
+                                '%' . strtolower($rtown) . '%'
+                            ),
+                            new Expression(
+                                'LOWER(full_name_ro) LIKE ?',
+                                '%' . strtolower($town) . '%'
+                            ),
+                            new Expression(
+                                'LOWER(full_name_nd_ro) LIKE ?',
+                                '%' . strtolower($town) . '%'
+                            ),
+                            new Expression(
+                                'LOWER(sort_name_rg) LIKE ?',
+                                '%' . strtolower($rtown) . '%'
+                            ),
+                            new Expression(
+                                'LOWER(full_name_nd_rg) LIKE ?',
+                                '%' . strtolower($town) . '%'
+                            )
+                        ),
+                        PredicateSet::OP_OR
+                    )
+                )
             );
-            return $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
+
+            $results = $zdb->execute($select);
+            return $results;
         } catch (\Exception $e) {
             Analog::log(
                 'Unable to find town "' . $town  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -120,7 +129,7 @@ class Towns
      */
     protected function getTableName()
     {
-        return PREFIX_DB . MAPS_PREFIX  . self::TABLE;
+        return MAPS_PREFIX  . self::TABLE;
     }
 }
-?>
+

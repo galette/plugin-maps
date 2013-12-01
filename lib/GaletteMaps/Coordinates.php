@@ -40,6 +40,10 @@ namespace GaletteMaps;
 use Analog\Analog as Analog;
 use Galette\Entity\Adherent as Adherent;
 use Galette\Repository\Members as Members;
+use Zend\Db\Sql\Expression;
+use Zend\Db\Sql\Predicate\PredicateSet;
+use Zend\Db\Sql\Predicate\Operator;
+use Zend\Db\Sql\Predicate\Expression as PredicateExpression;
 
 /**
  * Members GPS coordinates
@@ -71,11 +75,12 @@ class Coordinates
         global $zdb;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
-            $select->from($this->getTableName())->where(self::PK . ' = ?', $id);
-            $res = $select->query(\Zend_Db::FETCH_ASSOC)->fetchAll();
-            if ( count($res) > 0 ) {
-                return $res[0];
+            $select = $zdb->select($this->getTableName());
+            $select->where(self::PK . ' = ' . $id);
+            $results = $zdb->execute($select);
+
+            if ( $results->count() > 0 ) {
+                return $results->current();
             } else {
                 return array();
             }
@@ -84,10 +89,6 @@ class Coordinates
                 'Unable to retrieve members coordinates for "' .
                 $id  . '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
             return false;
         }
@@ -104,41 +105,71 @@ class Coordinates
         global $zdb, $login;
 
         try {
-            $select = new \Zend_Db_Select($zdb->db);
-            $select->from(
-                array(
-                    'c' => $this->getTableName()
-                )
-            )->join(
+            $select = $zdb->select($this->getTableName(), 'c');
+            $select->join(
                 array(
                     'a' => PREFIX_DB . Adherent::TABLE
                 ),
                 'a.' . self::PK . '=' . 'c.' . self::PK
-            )->where('activite_adh=true');
+            )->where->equalTo(
+                'activite_adh',
+                new Expression('true')
+            );
 
             if ( !$login->isAdmin()
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
-                //limit query to public profiles
+                //limit query to public up to date profiles
                 $select->where(
-                    'date_echeance > ? OR bool_exempt_adh = true',
-                    date('Y-m-d')
-                )->where(
-                    'bool_display_info = ?', true
+                    array(
+                        new PredicateSet(
+                            array(
+                                new Operator(
+                                    'date_echeance',
+                                    '>=',
+                                    date('Y-m-d')
+                                ),
+                                new Operator(
+                                    'bool_exempt_adh',
+                                    '=',
+                                    new Expression('true')
+                                )
+                            ),
+                            PredicateSet::OP_OR
+                        ),
+                        new PredicateSet(
+                            array(
+                                new Operator(
+                                    'bool_display_info',
+                                    '=',
+                                    new Expression('true')
+                                )
+                            )
+                        )
+                    )
                 );
-                if ( $login->isLogged() ) {
-                    $select->orWhere(
-                        'a.' . Adherent::PK . ' = ' . $login->id
+
+                if ( $login->isLogged() && !$login->isSuperAdmin() ) {
+                    $select->where(
+                        new PredicateSet(
+                            array(
+                                new Operator(
+                                    'a.' . Adherent::PK,
+                                    '=',
+                                    $login->id
+                                )
+                            )
+                        ),
+                        PredicateSet::OP_OR
                     );
                 }
             }
 
-            $rs = $select->query()->fetchAll();
+            $results = $zdb->execute($select);
 
             $res = array();
-
-            foreach ( $rs as $r ) {
+            foreach ( $results as $r ) {
                 $a = new Adherent($r);
                 $m = array(
                     'id_adh'    => $a->id,
@@ -159,10 +190,6 @@ class Coordinates
                 'Unable to retrieve members coordinates list "' .
                 '". | ' . $e->getMessage(),
                 Analog::WARNING
-            );
-            Analog::log(
-                'Query was: ' . $select->__toString() . ' ' . $e->__toString(),
-                Analog::ERROR
             );
         }
     }
@@ -185,26 +212,29 @@ class Coordinates
             $coords = $this->getCoords($id);
             if ( count($coords) === 0 ) {
                 //cordinates does not exists yet
-                $res = $zdb->db->insert(
-                    $this->getTableName(),
+                $insert = $zdb->insert($this->getTableName());
+                $insert->values(
                     array(
                         self::PK    => $id,
                         'latitude'  => $latitude,
                         'longitude' => $longitude
                     )
                 );
+                $results = $zdb->execute($insert);
             } else {
                 //coordinates already exists, just update
-                $res = $zdb->db->update(
-                    $this->getTableName(),
+                $update = $zdb->update($this->getTableName());
+                $update->set(
                     array(
                         'latitude'  => $latitude,
                         'longitude' => $longitude
-                    ),
+                    )
+                )->where(
                     self::PK . '=' . $id
                 );
+                $results = $zdb->execute($update);
             }
-            return ($res > 0);
+            return ($results->count() > 0);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set coordinatates for member ' .
@@ -227,11 +257,10 @@ class Coordinates
         global $zdb;
 
         try {
-            $del = $zdb->db->delete(
-                $this->getTableName(),
-                self::PK . '=' . $id
-            );
-            return ($del > 0);
+            $delete = $zdb->delete($this->getTableName);
+            $delete->where(self::PK . '=' . $id);
+            $del = $zdb->execute($delete);
+            return ($del->count() > 0);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set coordinatates for member ' .
@@ -250,7 +279,7 @@ class Coordinates
      */
     protected function getTableName()
     {
-        return PREFIX_DB . MAPS_PREFIX  . self::TABLE;
+        return MAPS_PREFIX  . self::TABLE;
     }
 }
-?>
+
