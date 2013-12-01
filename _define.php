@@ -40,7 +40,7 @@ $this->register(
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
     '1.1.0',            //Version
-    '0.7.8',            //Galette compatible version
+    '0.8',              //Galette compatible version
     '2013-12-21',       //Release date
     null                //Permissions needed - not yet implemented
 );
