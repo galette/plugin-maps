@@ -6,6 +6,7 @@
         <![endif]-->
         <link rel="stylesheet" type="text/css" href="{$galette_base_path}{$maps_tpl_dir}galette_maps.css"/>
         <link rel="stylesheet" type="text/css" href="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/css/l.geosearch.css"/>
+        <link rel="stylesheet" type="text/css" href="{$galette_base_path}{$pluginc_dir}leaflet-fullscreencontrol/Control.FullScreen.css"/>
 {/if}
 {if $PAGENAME eq "mymap.php"}
         <link rel="stylesheet" type="text/css" href="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.css"/>

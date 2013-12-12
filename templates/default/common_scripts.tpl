@@ -34,6 +34,7 @@
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
 {/if}
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-legendcontrol/L.Control.Legend.js"></script>
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-fullscreencontrol/Control.FullScreen.js"></script>
 <script type="text/javascript">
 
     /**
@@ -64,7 +65,7 @@
         _oSize += parseFloat(_c.css('padding-top').replace('px', ''));
         _oSize += parseFloat(_c.css('padding-bottom').replace('px', ''));
 
-        //calcul et applicaiton de la nouvelle taille
+        //calcul et application de la nouvelle taille
         var newHeight = Math.floor(wheight - _oSize) + "px";
         $("#map").css("height", newHeight);
     }
@@ -125,7 +126,15 @@
 
         var _lat = {if isset($town)}{$town['latitude']}{else}46.830133640447386{/if};
         var _lon = {if isset($town)}{$town['longitude']}{else}2.4609375{/if};
-        var map = L.map('map').setView([_lat, _lon], {if isset($town)}12{else}6{/if});
+        var map = L.map(
+            'map', {
+                fullscreenControl: true,
+                fullscreenControlOptions: {
+                    title: "{_T string="Display map in full screen"}",
+                    forceSeparateButton:true
+                }
+            }
+        ).setView([_lat, _lon], {if isset($town)}12{else}6{/if});
 
         new L.Control.GeoSearch({
             provider: new L.GeoSearch.Provider.OpenStreetMap(),
