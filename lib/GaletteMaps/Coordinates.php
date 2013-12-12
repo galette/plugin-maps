@@ -128,6 +128,12 @@ class Coordinates
                 );
             }
 
+            if ( $login->isLogged() && !$login->isSuperAdmin() ) {
+                $select->orWhere(
+                    'a.' . Adherent::PK . ' = ' . $login->id
+                );
+            }
+
             $rs = $select->query()->fetchAll();
 
             $res = array();
