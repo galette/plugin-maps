@@ -45,7 +45,7 @@ L.Control.Legend = L.Control.extend({
             .on(link, 'click', L.DomEvent.stopPropagation)
             .on(link, 'click', L.DomEvent.preventDefault)
             .on(link, 'click', function() {
-                $('#legende').dialog('open');
+                $('.legend').toggle();
             })
             .on(link, 'dblclick', L.DomEvent.stopPropagation);
 

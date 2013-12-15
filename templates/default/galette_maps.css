@@ -25,3 +25,18 @@
     background-image: url(images/legend.png);
     background-position: -2px -2px;
 }
+
+#map .legend {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 6px;
+}
+
+#pmaps {
+    background-image:url(images/maps.png), url("jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png");
+}
+#pmaps.ui-state-hover {
+    background-image:url(images/maps.png), url("jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png");
+}

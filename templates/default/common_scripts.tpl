@@ -45,6 +45,8 @@
         _s += _elt.outerHeight();
         _s += parseFloat(_elt.css('margin-top').replace('px', ''));
         _s += parseFloat(_elt.css('margin-bottom').replace('px', ''));
+        _s += parseFloat(_elt.css('padding-top').replace('px', ''));
+        _s += parseFloat(_elt.css('padding-bottom').replace('px', ''));
         return _s;
     }
 
@@ -57,13 +59,16 @@
 
         //récuperation de la taille des autres lignes
         $('#map').parents('section').siblings(':not(script)').each(function(){
-            _oSize += _eltRealSize($(this));
+            var _this = $(this);
+            if ( !_this.hasClass('ui-dialog') ) {
+                _oSize += _eltRealSize($(this));
+            }
         });
-        _oSize += _eltRealSize($('footer'));
-        var _c = $('#content');
-        _oSize += parseFloat(_c.css('margin-top').replace('px', ''));
-        _oSize += parseFloat(_c.css('padding-top').replace('px', ''));
-        _oSize += parseFloat(_c.css('padding-bottom').replace('px', ''));
+        if ( $('#content').length > 0 ) {
+            _oSize += _eltRealSize($('footer'));
+            _oSize += parseFloat($('#content').css('padding-top').replace('px', ''));
+            _oSize += parseFloat($('#content').css('padding-bottom').replace('px', ''));
+        }
 
         //calcul et application de la nouvelle taille
         var newHeight = Math.floor(wheight - _oSize) + "px";
@@ -114,13 +119,9 @@
     }
 
     $(function(){
-        $('#legende h1').remove();
-        $('#legende').dialog({
-            autoOpen: false,
-            modal: true,
-            hide: 'fold',
-            width: '40%'
-        }).dialog('close');
+        var _legendhtml = $('#legende').clone();
+        _legendhtml.find('h1').remove()
+        $('#legende').remove();
 
         _hresize();
 
@@ -152,6 +153,16 @@
                 title: '{_T string="Show legend"}'
             }
         }).addTo(map);
+
+        _legend = L.control({
+            position: 'bottomright'
+        });
+        _legend.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'info legend');
+            div.innerHTML = _legendhtml.html();
+            return div;
+        }
+        _legend.addTo(map);
 
 {if $PAGENAME eq "mymap.php"}
         L.control.locate({
