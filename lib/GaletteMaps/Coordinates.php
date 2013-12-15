@@ -114,16 +114,17 @@ class Coordinates
                     'a' => PREFIX_DB . Adherent::TABLE
                 ),
                 'a.' . self::PK . '=' . 'c.' . self::PK
-            )->where(
-                'date_echeance > ? OR bool_exempt_adh = true',
-                date('Y-m-d')
             );
+
             if ( !$login->isAdmin()
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
                 //limit query to public profiles
                 $select->where(
+                    'date_echeance > ? OR bool_exempt_adh = true',
+                    date('Y-m-d')
+                )->where(
                     'bool_display_info = ?', true
                 );
             }
