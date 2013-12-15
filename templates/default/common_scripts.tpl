@@ -3,7 +3,7 @@
     <table>
         <tr>
             <th>
-                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette.png" alt="{_T string="Member"}"/>
+                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette.png" alt="{_T string="Member"}"/>
             </th>
             <td>
                 {_T string="Member"}
@@ -11,7 +11,7 @@
         </tr>
         <tr>
             <th>
-                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette-pro.png" alt="{_T string="Member (company)"}"/>
+                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette-pro.png" alt="{_T string="Member (company)"}"/>
             </th>
             <td>
                 {_T string="Member (company)"}
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <th>
-                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-icon.png" alt="{_T string="Search result"}"/>
+                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-icon.png" alt="{_T string="Search result"}"/>
             </th>
             <td>
                 {_T string="Search result"}
@@ -27,7 +27,7 @@
         </tr>
     </table>
 </div>
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
+<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.control.geosearch.js"></script>
 <script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"></script>
 {if $PAGENAME eq "mymap.php"}
@@ -79,14 +79,14 @@
      * Galette specific marker icon
      */
     var galetteIcon = L.icon({
-        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette.png',
+        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
     var galetteProIcon = L.icon({
-        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.6.4/images/marker-galette-pro.png',
+        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette-pro.png',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
