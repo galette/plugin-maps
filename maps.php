@@ -84,4 +84,4 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 $tpl->display('public_page.tpl', MAPS_SMARTY_PREFIX);
-?>
+

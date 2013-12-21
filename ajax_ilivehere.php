@@ -93,4 +93,4 @@ if ( isset($_POST['remove']) ) {
     $res = $coords->removeCoords($member->id);
     die(($res > 0) ? 'true' : 'false');
 }
-?>
+
