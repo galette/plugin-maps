@@ -1,8 +1,8 @@
 <section>
     <div id="map"></div>
 {if isset($towns) and $towns|@count > 0}
-    <aside id="possible_towns" title="{_T string="Choose your location"}">
-        <p>{_T string="Select your town."}</p>
+    <aside id="possible_towns" title="{if isset($adhmap)}{_T string="Choose %member location" pattern="/%member/" replace=$member->sname}{else}{_T string="Choose your location"}{/if}">
+        <p>{_T string="Select your town."}<br/>{_T string="In the database, town is set to: '%town'" pattern="/%town/" replace=$member->town}</p>
         <ul>
     {foreach $towns as $t}
             <li><strong>{$t.full_name_nd_ro}</strong> (<em><span class="lat">{$t.latitude}</span>/<span class="lon">{$t.longitude}</span></em>)</li>
@@ -36,7 +36,7 @@
                 var _clng = _popup._latlng.lng.toString();
                 var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
 
-                _popup.setContent('<p>' + '{_T string="You clicked at %p" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{_T string="I live here!" escape="js"}</a></p>');
+                _popup.setContent('<p>' + '{_T string="You clicked at %p" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}</a></p>');
             }
 
             var _links = $(_container).find('a');
@@ -53,7 +53,7 @@
 
         var _bind_removecoords = function(){
             $('#removecoords').click(function(){
-                var _d = $('<div title="{_T string="Remove my coordinates" escape="js"}">{_T string="Are you sure you want to remove your coordinates from the database?" escape="js"}</div>');
+                var _d = $('<div title="{if isset($adhmap)}{_T string="Remove member coordinates" escape="js"}{else}{_T string="Remove my coordinates" escape="js"}{/if}">{_T string="Are you sure you want to remove coordinates from the database?" escape="js"}</div>');
                 _d.dialog({
                     modal: true,
                     width: '40%',
@@ -63,22 +63,23 @@
                                 url: 'ajax_ilivehere.php',
                                 type: 'POST',
                                 data: {
-                                    remove: true
+                                    remove: true{if isset($adhmap)},
+                                    id_adh: {$member->id}{/if}
                                 },
                                 {include file="../../../../templates/default/js_loader.tpl"},
                                 success: function(res){
                                     if ( $.trim(res) == 'true' ) {
                                         _d.dialog('close');
-                                        alert('{_T string="Your coordinates has been removed" escape="js"}');
+                                        alert('{_T string="Coordinates has been removed" escape="js"}');
                                         //map.setView([46.830133640447386, 2.4609375], 6, true);
                                         //not very pretty... but that works for the moment :)
                                         window.location.reload();
                                     } else {
-                                        alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
+                                        alert("{_T string="An error occured removing coordinates :(" escape="js"}")
                                     }
                                 },
                                 error: function(){
-                                    alert("{_T string="An error occured removing your coordinates :(" escape="js"}")
+                                    alert("{_T string="An error occured removing coordinates :(" escape="js"}")
                                 }
                             });
                         },
@@ -91,7 +92,7 @@
         };
 
         L.marker([_lat, _lon], {ldelim}icon: galetteIcon{rdelim}).addTo(map)
-            .bindPopup('<strong>{$member->sfullname}</strong><br/>{_T string="I live here!" escape="js"}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
+            .bindPopup('<strong>{$member->sfullname}</strong><br/>{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
         _bind_removecoords();
 {elseif isset($towns)}
     {* Town is not known. Show possibilities *}
@@ -110,7 +111,7 @@
             map.setView([parseFloat(_slat), parseFloat(_slon)], 13);
             var _id = 'coords_' + _slat.replace('.', '_') + _slon.replace('.', '_');
             L.marker([_slat, _slon]).addTo(map)
-                .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a id="' + _id + '" href="#">{_T string="I live here!" escape="js"}</a></p>').openPopup();
+                .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a id="' + _id + '" href="#">{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}</a></p>').openPopup();
         });
 {/if}
     }

@@ -52,8 +52,6 @@ if ( !$login->isLogged() ) {
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
-require_once 'lib/GaletteMaps/Towns.php';
-require_once 'lib/GaletteMaps/Coordinates.php';
 
 $member = new Adherent($login->login);
 $coords = new Coordinates();
@@ -99,4 +97,4 @@ $tpl->assign('content', $content);
 //Set path back to main Galette's template
 $tpl->template_dir = $orig_template_path;
 $tpl->display('page.tpl', MAPS_SMARTY_PREFIX);
-?>
+

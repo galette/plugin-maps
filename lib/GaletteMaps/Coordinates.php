@@ -114,18 +114,24 @@ class Coordinates
                     'a' => PREFIX_DB . Adherent::TABLE
                 ),
                 'a.' . self::PK . '=' . 'c.' . self::PK
-            )->where(
-                'date_echeance > ? OR bool_exempt_adh = true',
-                date('Y-m-d')
-            );
+            )->where('activite_adh=true');
+
             if ( !$login->isAdmin()
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
                 //limit query to public profiles
                 $select->where(
+                    'date_echeance > ? OR bool_exempt_adh = true',
+                    date('Y-m-d')
+                )->where(
                     'bool_display_info = ?', true
                 );
+                if ( $login->isLogged() ) {
+                    $select->orWhere(
+                        'a.' . Adherent::PK . ' = ' . $login->id
+                    );
+                }
             }
 
             $rs = $select->query()->fetchAll();
@@ -134,13 +140,17 @@ class Coordinates
 
             foreach ( $rs as $r ) {
                 $a = new Adherent($r);
-                $res[] = array(
+                $m = array(
                     'id_adh'    => $a->id,
                     'lat'       => $r->latitude,
                     'lng'       => $r->longitude,
                     'name'      => $a->sname,
                     'nickname'  => $a->nickname
                 );
+                if ( $a->isCompany() ) {
+                    $m['company'] = $a->company_name;
+                }
+                $res[] = $m;
             }
 
             return $res;

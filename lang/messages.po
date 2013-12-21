@@ -1,16 +1,32 @@
-#: ../templates/default/common_scripts.tpl:108
+#: ../templates/default/mymap.tpl:5
+msgid "In the database, town is set to: '%town'"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:14 ../templates/default/common_scripts.tpl:17
+msgid "Member (company)"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:5
+msgid "Select your town."
+msgstr ""
+
+#: ../templates/default/adh_actions.tpl:1 ../templates/default/adh_fiche_action.tpl:2
+msgid "Geolocalize member"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:180
 msgid "Imagery ©"
 msgstr ""
 
-#: ../templates/default/menu.tpl:5
-msgid "My localization"
+#: ../adh_map.php:95
+msgid "%member geographic position"
 msgstr ""
 
-#: ../maps_preferences.php:57
+#: ../maps_preferences.php:56
 msgid "Maps Settings"
 msgstr ""
 
-#: ../ajax_ilivehere.php:81
+#: ../ajax_ilivehere.php:84
 msgid "New coordinates has been stored!"
 msgstr ""
 
@@ -18,89 +34,123 @@ msgstr ""
 msgid "You clicked at %p"
 msgstr ""
 
-#: ../templates/default/mymap.tpl:77 ../templates/default/mymap.tpl:81
-msgid "An error occured removing your coordinates :("
+#: ../templates/default/common_scripts.tpl:135
+msgid "Display map in full screen"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:71
+#: ../templates/default/common_scripts.tpl:115
 msgid "An error occured during 'I live here' process :("
 msgstr ""
 
-#: ../templates/default/mymap.tpl:5
-msgid "Select your town."
+#: ../templates/default/mymap.tpl:4
+msgid "Choose %member location"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:108
-msgid "Map data ©"
-msgstr ""
-
-#: ../maps.php:74 ../mymap.php:88
-#: ../templates/default/menu.tpl:2 ../templates/default/menu.tpl:7
-msgid "Maps"
-msgstr ""
-
-#: ../templates/default/common_scripts.tpl:99
-msgid "Show me where I am"
+#: ../templates/default/mymap.tpl:78 ../templates/default/mymap.tpl:82
+msgid "An error occured removing coordinates :("
 msgstr ""
 
 #: ../templates/default/mymap.tpl:56
-msgid "Are you sure you want to remove your coordinates from the database?"
+msgid "Remove member coordinates"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:180
+msgid "Map data ©"
+msgstr ""
+
+#: ../maps.php:80 ../mymap.php:86
+#: ../adh_map.php:92 ../templates/default/menu.tpl:2
+#: ../templates/default/public_menu.tpl:2 ../templates/default/public_menu.tpl:4
+msgid "Maps"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:171
+msgid "Show me where I am"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:22 ../templates/default/common_scripts.tpl:25
+msgid "Search result"
 msgstr ""
 
 #: ../templates/default/mymap.tpl:4
 msgid "Choose your location"
 msgstr ""
 
-#: ../templates/default/mymap.tpl:39 ../templates/default/mymap.tpl:94
-#: ../templates/default/mymap.tpl:113
+#: ../templates/default/mymap.tpl:39 ../templates/default/mymap.tpl:95
+#: ../templates/default/mymap.tpl:114
 msgid "I live here!"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:101
+#: ../templates/default/menu.tpl:4
+msgid "My localization"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:173
 msgid "You seem located outside the boundaries of the map"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:88
+#: ../templates/default/common_scripts.tpl:144
 msgid "Search your town..."
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:92
-msgid "Sorry, that town could not be found."
+#: ../templates/default/common_scripts.tpl:6 ../templates/default/common_scripts.tpl:9
+msgid "Member"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:90
+#: ../templates/default/mymap.tpl:39 ../templates/default/mymap.tpl:95
+#: ../templates/default/mymap.tpl:114
+msgid "Member lives here!"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:154
+msgid "Show legend"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:56
+msgid "Are you sure you want to remove coordinates from the database?"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:146
 msgid "Search a town..."
 msgstr ""
 
-#: ../templates/default/mymap.tpl:72
-msgid "Your coordinates has been removed"
+#: ../templates/default/common_scripts.tpl:1 ../templates/default/common_scripts.tpl:2
+msgid "Legend"
 msgstr ""
 
-#: ../templates/default/mymap.tpl:85
+#: ../templates/default/mymap.tpl:86
 msgid "Cancel"
 msgstr ""
 
-#: ../templates/default/menu.tpl:9
-msgid "Maps Preferences"
-msgstr ""
-
-#: ../templates/default/mymap.tpl:61 ../templates/default/mymap.tpl:94
+#: ../templates/default/mymap.tpl:61 ../templates/default/mymap.tpl:95
 msgid "Remove"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:108
+#: ../templates/default/common_scripts.tpl:148
+msgid "Sorry, that town could not be found."
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:180
 msgid "OpenStreetMap contributors"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:73
+msgid "Coordinates has been removed"
 msgstr ""
 
 #: ../templates/default/mymap.tpl:56
 msgid "Remove my coordinates"
 msgstr ""
 
-#: ../templates/default/maps.tpl:10
+#: ../templates/default/adh_actions.tpl:1
+msgid "Geolocalize %membername"
+msgstr ""
+
+#: ../templates/default/maps.tpl:15
 msgid "aka"
 msgstr ""
 
-#: ../ajax_ilivehere.php:83
+#: ../ajax_ilivehere.php:86
 msgid "Coordinates has not been stored :("
 msgstr ""
 

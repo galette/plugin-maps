@@ -44,7 +44,6 @@ use GaletteMaps\Coordinates as Coordinates;
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 require_once '_config.inc.php';
-require_once 'lib/GaletteMaps/Coordinates.php';
 
 if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
     Analog::log(
@@ -56,7 +55,11 @@ if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
 
 $member = null;
 
-if ( $login->isSuperAdmin() && $member !== null ) {
+if ( isset($_POST['id_adh'])
+    && ($login->isSuperAdmin() || $login->isAdmin() || $login->isStaff())
+) {
+    $member = new Adherent((int)$_POST['id_adh']);
+} else if ( $login->isSuperAdmin() ) {
     Analog::log(
         'SuperAdmin does note live anywhere!',
         Analog::INFO
@@ -90,4 +93,4 @@ if ( isset($_POST['remove']) ) {
     $res = $coords->removeCoords($member->id);
     die(($res > 0) ? 'true' : 'false');
 }
-?>
+

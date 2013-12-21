@@ -52,7 +52,6 @@ if ( !$login->isAdmin() && !$login->isStaff() ) {
 
 //Constants and classes from plugin
 require_once '_config.inc.php';
-//require_once 'classes/';
 
 $tpl->assign('page_title', _T("Maps Settings"));
 
@@ -69,4 +68,3 @@ $tpl->assign('content', $content);
 $tpl->template_dir = $orig_template_path;
 $tpl->display('page.tpl', MAPS_SMARTY_PREFIX);
 
-?>
