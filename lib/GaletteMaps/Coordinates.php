@@ -114,7 +114,7 @@ class Coordinates
                     'a' => PREFIX_DB . Adherent::TABLE
                 ),
                 'a.' . self::PK . '=' . 'c.' . self::PK
-            );
+            )->where('activite_adh=true');
 
             if ( !$login->isAdmin()
                 && !$login->isStaff()
