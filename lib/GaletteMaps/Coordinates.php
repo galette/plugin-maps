@@ -127,12 +127,11 @@ class Coordinates
                 )->where(
                     'bool_display_info = ?', true
                 );
-            }
-
-            if ( $login->isLogged() && !$login->isSuperAdmin() ) {
-                $select->orWhere(
-                    'a.' . Adherent::PK . ' = ' . $login->id
-                );
+                if ( $login->isLogged() ) {
+                    $select->orWhere(
+                        'a.' . Adherent::PK . ' = ' . $login->id
+                    );
+                }
             }
 
             $rs = $select->query()->fetchAll();
