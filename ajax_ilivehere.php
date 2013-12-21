@@ -55,7 +55,11 @@ if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
 
 $member = null;
 
-if ( $login->isSuperAdmin() && $member !== null ) {
+if ( isset($_POST['id_adh'])
+    && ($login->isSuperAdmin() || $login->isAdmin() || $login->isStaff())
+) {
+    $member = new Adherent((int)$_POST['id_adh']);
+} else if ( $login->isSuperAdmin() ) {
     Analog::log(
         'SuperAdmin does note live anywhere!',
         Analog::INFO

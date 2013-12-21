@@ -45,7 +45,11 @@ use GaletteMaps\Coordinates as Coordinates;
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
 
-if ( !$login->isLogged() ) {
+if ( !$login->isLogged()
+    && !$login->isAdmin()
+    && !$login->isSatffMember()
+    && !$login->isSuperAdmin()
+) {
     header('location: ../../index.php');
     die();
 }
@@ -53,7 +57,7 @@ if ( !$login->isLogged() ) {
 //Constants and classes from plugin
 require_once '_config.inc.php';
 
-$member = new Adherent($login->login);
+$member = new Adherent((int)$_GET['id_adh']);
 $coords = new Coordinates();
 $mcoords = $coords->getCoords($member->id);
 
@@ -83,7 +87,14 @@ $tpl->assign(
     'plugin_url',
     'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
 );
-$tpl->assign('page_title', _T("Maps"));
+$tpl->assign(
+    'page_title',
+    _T("Maps") . ' - ' . str_replace(
+        '%member',
+        $member->sfullname,
+        _T("%member geographic position")
+    )
+);
 if ( $towns !== false ) {
     $tpl->assign('towns', $towns);
 }
@@ -92,6 +103,7 @@ if ( count($mcoords) > 0 ) {
     $tpl->assign('town', $mcoords);
 }
 $tpl->assign('require_dialog', true);
+$tpl->assign('adhmap', true);
 $content = $tpl->fetch('mymap.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
 //Set path back to main Galette's template
