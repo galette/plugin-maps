@@ -41,4 +41,3 @@ $_tpl_assignments = array(
     'pluginc_dir'   => '__plugin_include_dir__/'
 );
 
-?>
