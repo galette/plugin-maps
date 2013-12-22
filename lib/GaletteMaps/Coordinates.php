@@ -85,11 +85,19 @@ class Coordinates
                 return array();
             }
         } catch (\Exception $e) {
-            Analog::log(
-                'Unable to retrieve members coordinates for "' .
-                $id  . '". | ' . $e->getMessage(),
-                Analog::WARNING
-            );
+            if ( $e->getCode() == '42S02' ) {
+                Analog::log(
+                    'Maps coordinates table does not exists',
+                    Analog::WARNING
+                );
+                return false;
+            } else {
+                Analog::log(
+                    'Unable to retrieve members coordinates for "' .
+                    $id  . '". | ' . $e->getMessage(),
+                    Analog::WARNING
+                );
+            }
             return false;
         }
     }
@@ -186,11 +194,19 @@ class Coordinates
 
             return $res;
         } catch ( \Exception $e) {
-            Analog::log(
-                'Unable to retrieve members coordinates list "' .
-                '". | ' . $e->getMessage(),
-                Analog::WARNING
-            );
+            if ( $e->getCode() == '42S02' ) {
+                Analog::log(
+                    'Maps coordinates table does not exists',
+                    Analog::WARNING
+                );
+            } else {
+                Analog::log(
+                    'Unable to retrieve members coordinates list "' .
+                    '". | ' . $e->getMessage(),
+                    Analog::WARNING
+                );
+            }
+            return false;
         }
     }
 

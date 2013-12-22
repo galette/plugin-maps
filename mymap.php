@@ -88,7 +88,13 @@ if ( $towns !== false ) {
     $tpl->assign('towns', $towns);
 }
 $tpl->assign('member', $member);
-if ( count($mcoords) > 0 ) {
+if ( $mcoords === false ) {
+    $tpl->assign(
+        'error_detected', array(
+            _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+        )
+    );
+} else if ( count($mcoords) > 0 ) {
     $tpl->assign('town', $mcoords);
 }
 $tpl->assign('require_dialog', true);

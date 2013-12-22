@@ -78,7 +78,15 @@ if ( !$login->isLogged() ) {
 }
 $tpl->assign('require_dialog', true);
 $tpl->assign('page_title', _T("Maps"));
-$tpl->assign('list', $list);
+if ( $list !== false ) {
+    $tpl->assign('list', $list);
+} else {
+    $tpl->assign(
+        'error_detected', array(
+            _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+        )
+    );
+}
 $content = $tpl->fetch('maps.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
 //Set path back to main Galette's template
