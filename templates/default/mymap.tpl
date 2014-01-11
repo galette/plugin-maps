@@ -92,7 +92,7 @@
         };
 
         L.marker([_lat, _lon], {ldelim}icon: galetteIcon{rdelim}).addTo(map)
-            .bindPopup('<strong>{$member->sfullname}</strong><br/>{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
+            .bindPopup('<strong>{$member->sfullname|escape}</strong><br/>{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
         _bind_removecoords();
 {elseif isset($towns)}
     {* Town is not known. Show possibilities *}
