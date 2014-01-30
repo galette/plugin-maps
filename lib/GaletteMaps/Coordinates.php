@@ -273,14 +273,14 @@ class Coordinates
         global $zdb;
 
         try {
-            $delete = $zdb->delete($this->getTableName);
+            $delete = $zdb->delete($this->getTableName());
             $delete->where(self::PK . '=' . $id);
             $del = $zdb->execute($delete);
             return ($del->count() > 0);
         } catch ( \Exception $e ) {
             Analog::log(
                 'Unable to set coordinatates for member ' .
-                $id_adh . ' | ' . $e->getMessage(),
+                $id . ' | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
