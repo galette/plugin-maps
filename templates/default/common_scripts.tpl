@@ -71,8 +71,12 @@
         }
 
         //calcul et application de la nouvelle taille
-        var newHeight = Math.floor(wheight - _oSize) + "px";
-        $("#map").css("height", newHeight);
+        var newHeight = Math.floor(wheight - _oSize);
+        var minHeight = 300;
+        if ( newHeight < minHeight ) {
+            newHeight = minHeight;
+        }
+        $("#map").css("height", newHeight + "px");
     }
 
     /**
