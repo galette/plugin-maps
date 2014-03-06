@@ -179,9 +179,10 @@
         }).addTo(map);
 {/if}
 
-        L.tileLayer('http://{ldelim}s{rdelim}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
+        L.tileLayer('http://{ldelim}s{rdelim}.mqcdn.com/tiles/1.0.0/map/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.jpg', {
+            subdomains: ['otile1', 'otile2', 'otile3', 'otile4'],
             maxZoom: 18,
-            attribution: '{_T string="Map data ©" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" escape="js"}</a>, {_T string="Imagery ©" escape="js"} <a href="http://cloudmade.com">CloudMade</a>'
+            attribution: '{_T string="Map data ©" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" escape="js"}</a>, {_T string="Imagery ©" escape="js"} <a href="http://www.mapquest.com">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
         }).addTo(map);
 
         try {
