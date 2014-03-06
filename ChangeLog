@@ -1,3 +1,6 @@
+* 2014-03-06 - 1.1.2
+- Switch tile provider to MapQuest
+
 * 2014-02-20 - 1.1.1
 - Set minimal map height to prevent display issues
 - OSM licence has changed
