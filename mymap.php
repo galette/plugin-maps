@@ -11,7 +11,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2013 The Galette Team
+ * Copyright © 2012-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -31,16 +31,16 @@
  * @category  Plugins
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2013 The Galette Team
+ * @copyright 2012-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7.4dev - 2012-10-03
  */
 
-use Galette\Entity\Adherent as Adherent;
-use GaletteMaps\Towns as Towns;
-use GaletteMaps\Coordinates as Coordinates;
+use Galette\Entity\Adherent;
+use GaletteMaps\NominatimTowns;
+use GaletteMaps\Coordinates;
 
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
@@ -60,8 +60,11 @@ $mcoords = $coords->getCoords($member->id);
 $towns = false;
 if ( count($mcoords) === 0 ) {
     if ( $member->town != '') {
-        $t = new Towns();
-        $towns = $t->search($member->town);
+        $t = new NominatimTowns();
+        $towns = $t->search(
+            $member->town,
+            $member->country
+        );
     }
 }
 
@@ -88,7 +91,13 @@ if ( $towns !== false ) {
     $tpl->assign('towns', $towns);
 }
 $tpl->assign('member', $member);
-if ( count($mcoords) > 0 ) {
+if ( $mcoords === false ) {
+    $tpl->assign(
+        'error_detected', array(
+            _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+        )
+    );
+} else if ( count($mcoords) > 0 ) {
     $tpl->assign('town', $mcoords);
 }
 $tpl->assign('require_dialog', true);

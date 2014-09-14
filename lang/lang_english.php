@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Sat Dec 21 09:14:37 2013 (GMT)
+// This file was automatically generated on Sat Jan 11 08:56:23 2014 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -98,6 +98,9 @@ $lang['New coordinates has been stored!'] = 'New coordinates has been stored!';
 
 // ../templates/default/common_scripts.tpl:14 ../templates/default/common_scripts.tpl:17 
 $lang['Member (company)'] = 'Member (company)';
+
+// ../maps.php:86 ../mymap.php:94 ../adh_map.php:106 
+$lang['Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?'] = 'Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?';
 
 // ../templates/default/mymap.tpl:56 
 $lang['Remove my coordinates'] = 'Remove my coordinates';

@@ -5,7 +5,7 @@
         <p>{_T string="Select your town."}<br/>{_T string="In the database, town is set to: '%town'" pattern="/%town/" replace=$member->town}</p>
         <ul>
     {foreach $towns as $t}
-            <li><strong>{$t.full_name_nd_ro}</strong> (<em><span class="lat">{$t.latitude}</span>/<span class="lon">{$t.longitude}</span></em>)</li>
+            <li><strong>{$t.full_name}</strong> (<em><span class="lat">{$t.latitude}</span>/<span class="lon">{$t.longitude}</span></em>)</li>
     {/foreach}
         </ul>
     </aside>
@@ -92,7 +92,7 @@
         };
 
         L.marker([_lat, _lon], {ldelim}icon: galetteIcon{rdelim}).addTo(map)
-            .bindPopup('<strong>{$member->sfullname}</strong><br/>{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
+            .bindPopup('<strong>{$member->sfullname|escape}</strong><br/>{if isset($adhmap)}{_T string="Member lives here!" escape="js"}{else}{_T string="I live here!" escape="js"}{/if}<br/><span id="removecoords">{_T string="Remove" escape="js"}</span>').openPopup();
         _bind_removecoords();
 {elseif isset($towns)}
     {* Town is not known. Show possibilities *}

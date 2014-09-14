@@ -1,3 +1,11 @@
+* 2014-09-14 - 1.2
+- Galette 0.8 compatible
+- Use nominatim API to retrieve towns coordinates
+- Center and zoom map according to known markers 
+- Fix coordinates deletion
+- Display a message if tables does not exists
+- Escape member name to prevent JS issues
+
 * 2014-03-06 - 1.1.2
 - Switch tile provider to MapQuest
 
@@ -15,7 +23,7 @@
 - Use public pages restriction
 - Display all members (except inactive) for admins and staff
 - Improve legend
-- Admis and staff can manage members coordinates
+- Admins and staff can manage members coordinates
 
 * 2013-08-20 - 1.0.0
 - First stable release

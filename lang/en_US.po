@@ -1,10 +1,10 @@
 # Header entry was created by Lokalize.
 #
-# , 2013.
+# , 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2013-12-21 10:12+0100\n"
+"PO-Revision-Date: 2014-01-11 09:55+0100\n"
 "Last-Translator: \n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -125,6 +125,14 @@ msgstr "Member lives here!"
 #: ../templates/default/common_scripts.tpl:154
 msgid "Show legend"
 msgstr "Show legend"
+
+#: ../maps.php:86 ../mymap.php:94 ../adh_map.php:106
+msgid ""
+"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
+"datatabase?"
+msgstr ""
+"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
+"datatabase?"
 
 #: ../templates/default/mymap.tpl:56
 msgid "Are you sure you want to remove coordinates from the database?"

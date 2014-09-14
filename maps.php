@@ -11,7 +11,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2013 The Galette Team
+ * Copyright © 2012-2014 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -31,7 +31,7 @@
  * @category  Plugins
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2013 The Galette Team
+ * @copyright 2012-2014 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -78,7 +78,15 @@ if ( !$login->isLogged() ) {
 }
 $tpl->assign('require_dialog', true);
 $tpl->assign('page_title', _T("Maps"));
-$tpl->assign('list', $list);
+if ( $list !== false ) {
+    $tpl->assign('list', $list);
+} else {
+    $tpl->assign(
+        'error_detected', array(
+            _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+        )
+    );
+}
 $content = $tpl->fetch('maps.tpl', MAPS_SMARTY_PREFIX);
 $tpl->assign('content', $content);
 //Set path back to main Galette's template
