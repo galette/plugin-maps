@@ -1,32 +1,4 @@
-Data
-----
+A Galette map plugin to geolocalize members.
 
-You can grab the data from http://earth-info.nga.mil/gns/html/namefiles.htm
-(that is freely [as in free beer!] available).
-
-The whole countries database is about 1.7Gb, queries performances are for
-the moment too slow to use that one, but you should need only one
-(maybe two, at least) country.
-
-Download the file you want to import (ie. fr.zip), and unzip it under a
-location your database server can read in (typically
-/var/lib/mysql for MySQL or /var/lib/pgsql for PostgreSQL).
-
-MySQL
------
-
-To import txt file in the database, first copy the file so it can be read
-from mysql (say /var/lib/mysql/fr.txt), then login as galette user
-on your galette database and then run the LOAD DATA command:
-$ mysql -u galette -P galette
-mysql> LOAD DATA INFILE '/var/lib/mysql/fr.txt' INTO TABLE galette_maps_towns;
-
-
-PostgreSQL
-----------
-
-To import txt file in the database, first copy the file so it can be read
-from postgres (say /var/lib/pgsql/fr.txt), then login as postgres user
-on your galette database and then run the COPY command:
-$ psql -u postgres galette
-galette=# COPY galette_maps_towns FROM '/var/lib/pgsql/fr.txt' WITH CSV HEADER DELIMITER E'\t' QUOTE '|';
+Map display uses Leaflet project (http://leafletjs.com/) while
+search is provided by Nominatim (http://nominatim.openstreetmap.org/) API.

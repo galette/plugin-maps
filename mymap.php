@@ -38,9 +38,9 @@
  * @since     Available since 0.7.4dev - 2012-10-03
  */
 
-use Galette\Entity\Adherent as Adherent;
-use GaletteMaps\Towns as Towns;
-use GaletteMaps\Coordinates as Coordinates;
+use Galette\Entity\Adherent;
+use GaletteMaps\NominatimTowns;
+use GaletteMaps\Coordinates;
 
 define('GALETTE_BASE_PATH', '../../');
 require_once GALETTE_BASE_PATH . 'includes/galette.inc.php';
@@ -60,8 +60,11 @@ $mcoords = $coords->getCoords($member->id);
 $towns = false;
 if ( count($mcoords) === 0 ) {
     if ( $member->town != '') {
-        $t = new Towns();
-        $towns = $t->search($member->town);
+        $t = new NominatimTowns();
+        $towns = $t->search(
+            $member->town,
+            $member->country
+        );
     }
 }
 

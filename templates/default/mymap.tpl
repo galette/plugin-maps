@@ -5,7 +5,7 @@
         <p>{_T string="Select your town."}<br/>{_T string="In the database, town is set to: '%town'" pattern="/%town/" replace=$member->town}</p>
         <ul>
     {foreach $towns as $t}
-            <li><strong>{$t.full_name_nd_ro}</strong> (<em><span class="lat">{$t.latitude}</span>/<span class="lon">{$t.longitude}</span></em>)</li>
+            <li><strong>{$t.full_name}</strong> (<em><span class="lat">{$t.latitude}</span>/<span class="lon">{$t.longitude}</span></em>)</li>
     {/foreach}
         </ul>
     </aside>

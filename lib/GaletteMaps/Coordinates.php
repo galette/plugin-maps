@@ -37,9 +37,9 @@
 
 namespace GaletteMaps;
 
-use Analog\Analog as Analog;
-use Galette\Entity\Adherent as Adherent;
-use Galette\Repository\Members as Members;
+use Analog\Analog;
+use Galette\Entity\Adherent;
+use Galette\Repository\Members;
 use Zend\Db\Sql\Expression;
 use Zend\Db\Sql\Predicate\PredicateSet;
 use Zend\Db\Sql\Predicate\Operator;
@@ -49,7 +49,7 @@ use Zend\Db\Sql\Predicate\Expression as PredicateExpression;
  * Members GPS coordinates
  *
  * @category  Plugins
- * @name      Towns
+ * @name      Coordinates
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
  * @copyright 2012-2014 The Galette Team
