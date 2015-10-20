@@ -56,18 +56,36 @@ if ( !$login->isLogged() /*|| !$login->isAdmin() && !$login->isStaff()*/ ) {
 $member = null;
 
 if ( isset($_POST['id_adh'])
-    && ($login->isSuperAdmin() || $login->isAdmin() || $login->isStaff())
+    && ($login->isSuperAdmin() || $login->isAdmin() || $login->isStaff() || $login->isGroupManager())
 ) {
     $member = new Adherent((int)$_POST['id_adh']);
+    if (!$login->isAdmin() && !$login->isStaff() && $login->isGroupManager()) {
+        //check if current logged in user can manage loaded member
+        $groups = $member->groups;
+        $can_manage = false;
+        foreach ($groups as $group) {
+            if ($login->isGroupManager($group->getId())) {
+                $can_manage = true;
+                break;
+            }
+        }
+        if ($can_manage !== true) {
+            Analog::log(
+                'Logged in member ' . $login->login .
+                ' has tried to load member #' . $_POST['id_adh'] .
+                ' but do not manage any groups he belongs to.',
+                Analog::WARNING
+            );
+            die(_T("Coordinates has not been stored :("));
+        }
+    }
 } else if ( $login->isSuperAdmin() ) {
     Analog::log(
         'SuperAdmin does note live anywhere!',
         Analog::INFO
     );
     die();
-}
-
-if ( $member === null ) {
+} else {
     $member = new Adherent($login->login);
 }
 
