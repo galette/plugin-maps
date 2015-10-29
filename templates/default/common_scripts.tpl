@@ -1,40 +1,16 @@
-<div id="legende" title="{_T string="Legend"}">
-    <h1>{_T string="Legend"}</h1>
-    <table>
-        <tr>
-            <th>
-                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette.png" alt="{_T string="Member"}"/>
-            </th>
-            <td>
-                {_T string="Member"}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette-pro.png" alt="{_T string="Member (company)"}"/>
-            </th>
-            <td>
-                {_T string="Member (company)"}
-            </td>
-        </tr>
-        <tr>
-            <th>
-                <img src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-icon.png" alt="{_T string="Search result"}"/>
-            </th>
-            <td>
-                {_T string="Search result"}
-            </td>
-        </tr>
-    </table>
-</div>
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/leaflet{if $GALETTE_MODE eq 'DEV'}-src{/if}.js"></script>
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.control.geosearch.js"></script>
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"></script>
-{if $PAGENAME eq "mymap.php"}
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-locatecontrol/L.Control.Locate.js"></script>
+{if $GALETTE_MODE eq 'DEV'}
+    {assign var=mainleaflet value="leaflet-0.7.1/leaflet-src.js" }
+{else}
+    {assign var=mainleaflet value="leaflet-0.7.1/leaflet.js" }
 {/if}
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-legendcontrol/L.Control.Legend.js"></script>
-<script type="text/javascript" src="{$galette_base_path}{$pluginc_dir}leaflet-fullscreencontrol/Control.FullScreen.js"></script>
+<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
+<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.control.geosearch.js"]}"></script>
+<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"]}"></script>
+{if $cur_route eq 'maps_localize_member'}
+<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.js"]}"></script>
+{/if}
+<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-legendcontrol/L.Control.Legend.js"]}"></script>
+<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-fullscreencontrol/Control.FullScreen.js"]}"></script>
 <script type="text/javascript">
 
     /**
@@ -83,14 +59,14 @@
      * Galette specific marker icon
      */
     var galetteIcon = L.icon({
-        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette.png',
+        iconUrl: '{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette.png"]}',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
     var galetteProIcon = L.icon({
-        iconUrl: '{$galette_base_path}{$pluginc_dir}leaflet-0.7.1/images/marker-galette-pro.png',
+        iconUrl: '{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette-pro.png"]}',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -109,7 +85,7 @@
                     longitude: _latlng.lng{if isset($adhmap)},
                     id_adh: {$member->id}{/if}
                 },
-                {include file="../../../../templates/default/js_loader.tpl"},
+                {include file="js_loader.tpl"},
                 success: function(res){
                     //not very pretty... but that works for the moment :)
                     alert(res);
@@ -144,7 +120,7 @@
 
         new L.Control.GeoSearch({
             provider: new L.GeoSearch.Provider.OpenStreetMap(),
-{if $PAGENAME eq "mymap.php" and !isset($town)}
+{if $cur_route eq 'maps_localize_member' and !isset($town)}
             searchLabel: '{_T string="Search your town..." escape="js"}',
 {else}
             searchLabel: '{_T string="Search a town..." escape="js"}',
@@ -169,7 +145,7 @@
         }
         _legend.addTo(map);
 
-{if $PAGENAME eq "mymap.php"}
+{if $cur_route eq 'maps_localize_member'}
         L.control.locate({
             strings: {
                 title: '{_T string="Show me where I am" escape="js"}',

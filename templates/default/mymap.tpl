@@ -1,3 +1,5 @@
+{extends file="page.tpl"}
+{block name="content"}
 <section>
     <div id="map"></div>
 {if isset($towns) and $towns|@count > 0}
@@ -11,6 +13,11 @@
     </aside>
 {/if}
 </section>
+{include file='file:[maps]common_html.tpl'}
+{/block}
+
+{block name="javascripts"}
+{include file='file:[maps]common_scripts.tpl'}
 <script type="text/javascript">
     var _mapsBinded = function(map)
     {
@@ -116,5 +123,4 @@
 {/if}
     }
 </script>
-{include file='common_scripts.tpl'}
-
+{/block}
