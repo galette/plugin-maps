@@ -52,8 +52,8 @@ $app->get(
 $app->get(
     '/localize-member/:id',
     $authenticate(),
-    function ($id) use ($app, $module, $preferences, $module_id, $login) {
-
+    function ($id) use ($app, $module, $module_id) {
+        $login = $app->login;
         $member = new Adherent((int)$id);
 
         if ($login->id != $id && !$login->isAdmin() && !$login->isStaff()) {
@@ -90,7 +90,7 @@ $app->get(
 
         $smarty = $app->view()->getInstance();
         $smarty->addTemplateDir(
-            $module['root'] . '/templates/' . $preferences->pref_theme,
+            $module['root'] . '/templates/' . $app->preferences->pref_theme,
             $module['route']
         );
         $smarty->compile_id = MAPS_SMARTY_PREFIX;
@@ -146,13 +146,13 @@ $app->get(
 $app->get(
     '/mymap',
     $authenticate(),
-    function () use ($app, $login) {
+    function () use ($app) {
         $deps = array(
             'picture'   => false,
             'groups'    => false,
             'dues'      => false
         );
-        $member = new Adherent($login->login, $deps);
+        $member = new Adherent((int)$app->login->login, $deps);
         $app->redirect(
             $app->urlFor('maps_localize_member', [$member->id])
         );
@@ -162,9 +162,9 @@ $app->get(
 //global map page
 $app->get(
     '/map',
-    function () use ($app, $login, $preferences, $module, $module_id) {
-
-        if (!$preferences->showPublicPages($login)) {
+    function () use ($app, $module, $module_id) {
+        $login = $app->login;
+        if (!$app->preferences->showPublicPages($login)) {
             //public pages are not actives
             $app->redirect(
                 $app->urlFor('slash')
@@ -176,7 +176,7 @@ $app->get(
 
         $smarty = $app->view()->getInstance();
         $smarty->addTemplateDir(
-            $module['root'] . '/templates/' . $preferences->pref_theme,
+            $module['root'] . '/templates/' . $app->preferences->pref_theme,
             $module['route']
         );
         $smarty->compile_id = MAPS_SMARTY_PREFIX;
