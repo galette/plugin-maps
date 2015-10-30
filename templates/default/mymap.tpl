@@ -73,7 +73,7 @@
                                     remove: true{if isset($adhmap)},
                                     id_adh: {$member->id}{/if}
                                 },
-                                {include file="../../../../templates/default/js_loader.tpl"},
+                                {include file="js_loader.tpl"},
                                 success: function(res){
                                     if ( $.trim(res) == 'true' ) {
                                         _d.dialog('close');

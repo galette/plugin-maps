@@ -44,6 +44,7 @@ $this->register(
     '2016-09-18',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'staff',
+        'maps_mymap'            => 'member'
     ]
 );
 

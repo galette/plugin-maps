@@ -52,8 +52,28 @@ $app->get(
 $app->get(
     '/localize-member/:id',
     $authenticate(),
-    function ($id) use ($app, $module, $preferences, $module_id) {
-        $member = new Adherent($id);
+    function ($id) use ($app, $module, $preferences, $module_id, $login) {
+
+        $member = new Adherent((int)$id);
+
+        if ($login->id != $id && !$login->isAdmin() && !$login->isStaff()) {
+            //check if requested member is part of managed groups
+            $groups = $member->groups;
+            $is_managed = false;
+            foreach ($groups as $g) {
+                if ($login->isGroupManager($g->getId())) {
+                    $is_managed = true;
+                    break;
+                }
+            }
+            if ($is_managed !== true) {
+                //requested member is not part of managed groups, fall back to logged
+                //in member
+                $member->load($login->id);
+                $id = $login->id;
+            }
+        }
+
         $coords = new Coordinates();
         $mcoords = $coords->getCoords($member->id);
 
@@ -106,20 +126,14 @@ $app->get(
             $params['towns'] = $towns;
         }
 
-        /*if ( $mcoords === false ) {
-            $tpl->assign(
-                'error_detected', array(
-                    _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
-                )
+        if ($mcoords === false) {
+            $app->flash(
+                'error_detected',
+                _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
             );
-        } else if ( count($mcoords) > 0 ) {
-            $tpl->assign('town', $mcoords);
+        } elseif (count($mcoords) > 0) {
+            $params['town'] = $mcoords;
         }
-        $content = $tpl->fetch('mymap.tpl', MAPS_SMARTY_PREFIX);
-        $tpl->assign('content', $content);*/
-        //Set path back to main Galette's template
-        /*$smarty->template_dir = $orig_template_path;*/
-        /*$smarty->display('page.tpl', MAPS_SMARTY_PREFIX);*/
 
         $app->render(
             'file:[' . $module['route'] . ']mymap.tpl',
@@ -127,3 +141,19 @@ $app->get(
         );
     }
 )->name('maps_localize_member');
+
+$app->get(
+    '/mymap',
+    $authenticate(),
+    function () use ($app, $login) {
+        $deps = array(
+            'picture'   => false,
+            'groups'    => false,
+            'dues'      => false
+        );
+        $member = new Adherent($login->login, $deps);
+        $app->redirect(
+            $app->urlFor('maps_localize_member', [$member->id])
+        );
+    }
+)->name('maps_mymap');
