@@ -1,7 +1,13 @@
+{extends file="page.tpl"}
+{block name="content"}
 <section>
     <div id="map"></div>
 </section>
-{include file='common_scripts.tpl'}
+{include file='file:[maps]common_html.tpl'}
+{/block}
+
+{block name="javascripts"}
+{include file='file:[maps]common_scripts.tpl'}
 <script type="text/javascript">
     var _mapsBinded = function(map)
     {
@@ -24,4 +30,4 @@
         );
     }
 </script>
-
+{/block}

@@ -142,6 +142,7 @@ $app->get(
     }
 )->name('maps_localize_member');
 
+//member self localization
 $app->get(
     '/mymap',
     $authenticate(),
@@ -157,3 +158,67 @@ $app->get(
         );
     }
 )->name('maps_mymap');
+
+//global map page
+$app->get(
+    '/map',
+    function () use ($app, $login, $preferences, $module, $module_id) {
+
+        if (!$preferences->showPublicPages($login)) {
+            //public pages are not actives
+            $app->redirect(
+                $app->urlFor('slash')
+            );
+        }
+
+        $coords = new Coordinates();
+        $list = $coords->listCoords();
+
+        $smarty = $app->view()->getInstance();
+        $smarty->addTemplateDir(
+            $module['root'] . '/templates/' . $preferences->pref_theme,
+            $module['route']
+        );
+        $smarty->compile_id = MAPS_SMARTY_PREFIX;
+
+        //set util paths
+        /*$plugin_dir = basename(dirname($_SERVER['SCRIPT_NAME']));
+        $tpl->assign(
+            'galette_url',
+            'http://' . $_SERVER['HTTP_HOST'] .
+            preg_replace(
+                "/\/plugins\/" . $plugin_dir . '/',
+                "/",
+                dirname($_SERVER['SCRIPT_NAME'])
+            )
+        );
+        $tpl->assign(
+            'plugin_url',
+            'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
+        );*/
+
+        $params = [
+            'require_dialog'    => true,
+            'page_title'        => _T("Maps"),
+            'module_id'         => $module_id
+        ];
+
+        if (!$login->isLogged()) {
+            $params['is_public'] = true;
+        }
+
+        if ($list !== false) {
+            $params['list'] = $list;
+        } else {
+            $app->flash(
+                'error_detected',
+                _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+            );
+        }
+
+        $app->render(
+            'file:[' . $module['route'] . ']maps.tpl',
+            $params
+        );
+    }
+)->name('maps_map');

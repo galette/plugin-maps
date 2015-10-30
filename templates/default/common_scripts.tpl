@@ -6,7 +6,7 @@
 <script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
 <script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.control.geosearch.js"]}"></script>
 <script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"]}"></script>
-{if $cur_route eq 'maps_localize_member'}
+{if $cur_route eq 'maps_localize_member' or $cur_route eq 'maps_mymap'}
 <script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.js"]}"></script>
 {/if}
 <script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-legendcontrol/L.Control.Legend.js"]}"></script>
