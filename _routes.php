@@ -2,6 +2,7 @@
 
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
+use Analog\Analog;
 use Galette\Entity\Adherent;
 use GaletteMaps\NominatimTowns;
 use GaletteMaps\Coordinates;
@@ -56,7 +57,7 @@ $app->get(
         $login = $app->login;
         $member = new Adherent((int)$id);
 
-        if ($login->id != $id && !$login->isAdmin() && !$login->isStaff()) {
+        if ($login->id != $id && !$login->isAdmin() && !$login->isStaff() && $login->isGroupManager()) {
             //check if requested member is part of managed groups
             $groups = $member->groups;
             $is_managed = false;
@@ -135,6 +136,10 @@ $app->get(
             $params['town'] = $mcoords;
         }
 
+        if ($member->login == $login->login) {
+            $params['mymap'] = true;
+        }
+
         $app->render(
             'file:[' . $module['route'] . ']mymap.tpl',
             $params
@@ -152,9 +157,9 @@ $app->get(
             'groups'    => false,
             'dues'      => false
         );
-        $member = new Adherent((int)$app->login->login, $deps);
+        $member = new Adherent($app->login->login, $deps);
         $app->redirect(
-            $app->urlFor('maps_localize_member', [$member->id])
+            $app->urlFor('maps_localize_member', ['id' => $member->id])
         );
     }
 )->name('maps_mymap');
@@ -222,3 +227,86 @@ $app->get(
         );
     }
 )->name('maps_map');
+
+$app->post(
+    '/-i-live-here(/:id)',
+    $authenticate(),
+    function ($id = null) use ($app) {
+        $login = $app->login;
+        $error = null;
+        $message = null;
+
+        if ($id === null && $login->isSuperAdmin()) {
+            Analog::log(
+                'SuperAdmin does note live anywhere!',
+                Analog::INFO
+            );
+            $error = _T("Superadmin cannot be localized.");
+        } elseif ($id === null) {
+            $member = new Adherent($login->login);
+            $id = $member->id;
+        } elseif (!$login->isSuperAdmin()
+            && !$login->isAdmin()
+            && !$login->isStaff()
+            && $login->isGroupManager()
+        ) {
+            $member = new Adherent((int)$id);
+            //check if current logged in user can manage loaded member
+            $groups = $member->groups;
+            $can_manage = false;
+            foreach ($groups as $group) {
+                if ($login->isGroupManager($group->getId())) {
+                    $can_manage = true;
+                    break;
+                }
+            }
+            if ($can_manage !== true) {
+                Analog::log(
+                    'Logged in member ' . $login->login .
+                    ' has tried to load member #' . $id .
+                    ' but do not manage any groups he belongs to.',
+                    Analog::WARNING
+                );
+                $error = _T("Coordinates has not been removed :(");
+            }
+        }
+
+        if ($error === null) {
+            $coords = new Coordinates();
+            if ($app->request->post('remove') !== null) {
+                $res = $coords->removeCoords($id);
+                if ($res > 0) {
+                    $message = _T("Coordinates has been removed!");
+                } else {
+                    $error = _T("Coordinates has not been removed :(");
+                }
+            } elseif ($app->request->post('latitude') !== null
+                && $app->request->post('longitude') !== null
+            ) {
+                $res = $coords->setCoords(
+                    $id,
+                    $app->request->post('latitude'),
+                    $app->request->post('longitude')
+                );
+
+                if ($res === true) {
+                    $message = _T("New coordinates has been stored!");
+                } else {
+                    $error = _T("Coordinates has not been stored :(");
+                }
+            } else {
+                $error = _T("Something went wrong :(");
+            }
+        }
+
+        $response = $app->response;
+        $response->headers->set('Content-Type', 'application/json');
+
+        $res = [
+            'res'       => $error === null,
+            'message'   => ($error === null ? $message : $error)
+        ];
+
+        $response->body(json_encode($res));
+    }
+)->name('maps_ilivehere');

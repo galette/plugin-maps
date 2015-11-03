@@ -73,23 +73,25 @@
         shadowSize: [41, 41]
     });
 
+{if $cur_route neq 'maps_map'}
     function _iLiveHere(_id){
         $('#' + _id).click(function(e, f,g){
             var _a = $(this);
             var _latlng = _a.data('latlng');
             $.ajax({
-                url: 'ajax_ilivehere.php',
+                url: '{if isset($mymap)}{urlFor name="maps_ilivehere"}{else}{urlFor name="maps_ilivehere" options=[id => $member->id]}{/if}',
                 type: 'POST',
                 data: {
                     latitude: _latlng.lat,
-                    longitude: _latlng.lng{if isset($adhmap)},
-                    id_adh: {$member->id}{/if}
+                    longitude: _latlng.lng
                 },
                 {include file="js_loader.tpl"},
                 success: function(res){
-                    //not very pretty... but that works for the moment :)
-                    alert(res);
-                    window.location.reload();
+                    alert(res.message);
+                    if (res.res == true) {
+                        //not very pretty... but that works for the moment :)
+                        window.location.reload();
+                    }
                 },
                 error: function(){
                     alert("{_T string="An error occured during 'I live here' process :(" escape="js"}")
@@ -98,6 +100,7 @@
             return false;
         });
     }
+{/if}
 
     $(function(){
         var _legendhtml = $('#legende').clone();

@@ -43,8 +43,9 @@ $this->register(
     '0.9',              //Galette compatible version
     '2016-09-18',       //Release date
     [   //Permissions needed
-        'maps_localize_member'  => 'staff',
-        'maps_mymap'            => 'member'
+        'maps_localize_member'  => 'member',
+        'maps_mymap'            => 'member',
+        'maps_ilivehere'        => 'member'
     ]
 );
 
