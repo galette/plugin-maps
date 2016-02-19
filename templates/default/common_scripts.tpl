@@ -3,14 +3,14 @@
 {else}
     {assign var=mainleaflet value="leaflet-0.7.1/leaflet.js" }
 {/if}
-<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
-<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.control.geosearch.js"]}"></script>
-<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.control.geosearch.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"]}"></script>
 {if $cur_route eq 'maps_localize_member' or $cur_route eq 'maps_mymap'}
-<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.js"]}"></script>
 {/if}
-<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-legendcontrol/L.Control.Legend.js"]}"></script>
-<script type="text/javascript" src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-fullscreencontrol/Control.FullScreen.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-legendcontrol/L.Control.Legend.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-fullscreencontrol/Control.FullScreen.js"]}"></script>
 <script type="text/javascript">
 
     /**
@@ -59,14 +59,14 @@
      * Galette specific marker icon
      */
     var galetteIcon = L.icon({
-        iconUrl: '{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette.png"]}',
+        iconUrl: '{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette.png"]}',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
     var galetteProIcon = L.icon({
-        iconUrl: '{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette-pro.png"]}',
+        iconUrl: '{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette-pro.png"]}',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -79,7 +79,7 @@
             var _a = $(this);
             var _latlng = _a.data('latlng');
             $.ajax({
-                url: '{if isset($mymap)}{urlFor name="maps_ilivehere"}{else}{urlFor name="maps_ilivehere" options=[id => $member->id]}{/if}',
+                url: '{if isset($mymap)}{path_for name="maps_ilivehere"}{else}{path_for name="maps_ilivehere" data=[id => $member->id]}{/if}',
                 type: 'POST',
                 data: {
                     latitude: _latlng.lat,

@@ -3,7 +3,7 @@
     <table>
         <tr>
             <th>
-                <img src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette.png"]}" alt="{_T string="Member"}"/>
+                <img src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette.png"]}" alt="{_T string="Member"}"/>
             </th>
             <td>
                 {_T string="Member"}
@@ -11,7 +11,7 @@
         </tr>
         <tr>
             <th>
-                <img src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette-pro.png"]}" alt="{_T string="Member (company)"}"/>
+                <img src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette-pro.png"]}" alt="{_T string="Member (company)"}"/>
             </th>
             <td>
                 {_T string="Member (company)"}
@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <th>
-                <img src="{urlFor name="plugin_res" options=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-icon.png"]}" alt="{_T string="Search result"}"/>
+                <img src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-icon.png"]}" alt="{_T string="Search result"}"/>
             </th>
             <td>
                 {_T string="Search result"}

@@ -43,26 +43,29 @@ use GaletteMaps\Coordinates;
 //Constants and classes from plugin
 require_once $module['root'] . '/_config.inc.php';
 
-$app->get(
+$this->get(
     '/',
-    function () use ($app) {
+    function () {
         echo 'Coucou de Maps !';
     }
-)->name('maps');
+)->setName('maps');
 
-$app->get(
-    '/localize-member/:id',
-    $authenticate(),
-    function ($id) use ($app, $module, $module_id) {
-        $login = $app->login;
+$this->get(
+    '/localize-member/{id:\d+}',
+    function ($request, $response, $args) use ($module, $module_id) {
+        $id = $args['id'];
         $member = new Adherent((int)$id);
 
-        if ($login->id != $id && !$login->isAdmin() && !$login->isStaff() && $login->isGroupManager()) {
+        if ($this->login->id != $id
+            && !$this->login->isAdmin()
+            && !$this->login->isStaff()
+            && $this->login->isGroupManager()
+        ) {
             //check if requested member is part of managed groups
             $groups = $member->groups;
             $is_managed = false;
             foreach ($groups as $g) {
-                if ($login->isGroupManager($g->getId())) {
+                if ($this->login->isGroupManager($g->getId())) {
                     $is_managed = true;
                     break;
                 }
@@ -70,8 +73,8 @@ $app->get(
             if ($is_managed !== true) {
                 //requested member is not part of managed groups, fall back to logged
                 //in member
-                $member->load($login->id);
-                $id = $login->id;
+                $member->load($this->login->id);
+                $id = $this->login->id;
             }
         }
 
@@ -89,9 +92,9 @@ $app->get(
             }
         }
 
-        $smarty = $app->view()->getInstance();
+        $smarty = $this->view->getSmarty();
         $smarty->addTemplateDir(
-            $module['root'] . '/templates/' . $app->preferences->pref_theme,
+            $module['root'] . '/templates/' . $this->preferences->pref_theme,
             $module['route']
         );
         $smarty->compile_id = MAPS_SMARTY_PREFIX;
@@ -128,7 +131,7 @@ $app->get(
         }
 
         if ($mcoords === false) {
-            $app->flash(
+            $this->flash->addMessage(
                 'error_detected',
                 _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
             );
@@ -136,52 +139,54 @@ $app->get(
             $params['town'] = $mcoords;
         }
 
-        if ($member->login == $login->login) {
+        if ($member->login == $this->login->login) {
             $params['mymap'] = true;
         }
 
-        $app->render(
+        // display page
+        $this->view->render(
+            $response,
             'file:[' . $module['route'] . ']mymap.tpl',
             $params
         );
+        return $response;
     }
-)->name('maps_localize_member');
+)->setName('maps_localize_member')->add($authenticate);
 
 //member self localization
-$app->get(
+$this->get(
     '/mymap',
-    $authenticate(),
-    function () use ($app) {
+    function ($request, $response) {
         $deps = array(
             'picture'   => false,
             'groups'    => false,
             'dues'      => false
         );
-        $member = new Adherent($app->login->login, $deps);
-        $app->redirect(
-            $app->urlFor('maps_localize_member', ['id' => $member->id])
-        );
+        $member = new Adherent($this->login->login, $deps);
+        return $response
+            ->withStatus(301)
+            ->withHeader('Location', $this->router->pathFor('maps_localize_member', ['id' => $member->id]));
     }
-)->name('maps_mymap');
+)->setName('maps_mymap')->add($authenticate);
 
 //global map page
-$app->get(
+$this->get(
     '/map',
-    function () use ($app, $module, $module_id) {
-        $login = $app->login;
-        if (!$app->preferences->showPublicPages($login)) {
+    function ($request, $response) use ($module, $module_id) {
+        $login = $this->login;
+        if (!$this->preferences->showPublicPages($login)) {
             //public pages are not actives
-            $app->redirect(
-                $app->urlFor('slash')
-            );
+            return $response
+                ->withStatus(301)
+                ->withHeader('Location', $this->router->pathFor('slash'));
         }
 
         $coords = new Coordinates();
         $list = $coords->listCoords();
 
-        $smarty = $app->view()->getInstance();
+        $smarty = $this->view->getSmarty();
         $smarty->addTemplateDir(
-            $module['root'] . '/templates/' . $app->preferences->pref_theme,
+            $module['root'] . '/templates/' . $this->preferences->pref_theme,
             $module['route']
         );
         $smarty->compile_id = MAPS_SMARTY_PREFIX;
@@ -215,24 +220,30 @@ $app->get(
         if ($list !== false) {
             $params['list'] = $list;
         } else {
-            $app->flash(
+            $this->flash->addMessage(
                 'error_detected',
                 _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
             );
         }
 
-        $app->render(
+        // display page
+        $this->view->render(
+            $response,
             'file:[' . $module['route'] . ']maps.tpl',
             $params
         );
+        return $response;
     }
-)->name('maps_map');
+)->setName('maps_map');
 
-$app->post(
-    '/-i-live-here(/:id)',
-    $authenticate(),
-    function ($id = null) use ($app) {
-        $login = $app->login;
+$this->post(
+    '/-i-live-here[/{id:\d+}]',
+    function ($request, $response, $args) {
+        $id = null;
+        if (isset($args['id'])) {
+            $id = $args['id'];
+        }
+        $login = $this->login;
         $error = null;
         $message = null;
 
@@ -272,21 +283,22 @@ $app->post(
         }
 
         if ($error === null) {
+            $post = $request->getParsedBody();
             $coords = new Coordinates();
-            if ($app->request->post('remove') !== null) {
+            if (isset($post['remove'])) {
                 $res = $coords->removeCoords($id);
                 if ($res > 0) {
                     $message = _T("Coordinates has been removed!");
                 } else {
                     $error = _T("Coordinates has not been removed :(");
                 }
-            } elseif ($app->request->post('latitude') !== null
-                && $app->request->post('longitude') !== null
+            } elseif (isset($post['latitude'])
+                && isset($post['longitude'])
             ) {
                 $res = $coords->setCoords(
                     $id,
-                    $app->request->post('latitude'),
-                    $app->request->post('longitude')
+                    $post['latitude'],
+                    $post['longitude']
                 );
 
                 if ($res === true) {
@@ -299,14 +311,14 @@ $app->post(
             }
         }
 
-        $response = $app->response;
-        $response->headers->set('Content-Type', 'application/json');
+        $response = $response->withHeader('Content-type', 'application/json');
 
         $res = [
             'res'       => $error === null,
             'message'   => ($error === null ? $message : $error)
         ];
 
-        $response->body(json_encode($res));
+        $body = $response->getBody();
+        $body->write(json_encode($res));
     }
-)->name('maps_ilivehere');
+)->setName('maps_ilivehere')->add($authenticate);

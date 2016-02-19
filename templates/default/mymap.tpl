@@ -69,7 +69,7 @@
                     buttons: {
                         '{_T string="Remove"}': function(){
                             $.ajax({
-                                url: '{if isset($mymap)}{urlFor name="maps_ilivehere"}{else}{urlFor name="maps_ilivehere" options=["id" => $member->id]}{/if}',
+                                url: '{if isset($mymap)}{path_for name="maps_ilivehere"}{else}{path_for name="maps_ilivehere" data=["id" => $member->id]}{/if}',
                                 type: 'POST',
                                 data: {
                                     remove: true
