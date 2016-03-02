@@ -320,5 +320,7 @@ $this->post(
 
         $body = $response->getBody();
         $body->write(json_encode($res));
+
+        return $response;
     }
 )->setName('maps_ilivehere')->add($authenticate);
