@@ -39,9 +39,9 @@ $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '1.2',              //Version
+    '1.2.1',            //Version
     '0.8',              //Galette compatible version
-    '2014-09-14',       //Release date
+    '2016-07-28',       //Release date
     null                //Permissions needed - not yet implemented
 );
 

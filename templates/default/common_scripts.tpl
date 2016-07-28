@@ -179,10 +179,9 @@
         }).addTo(map);
 {/if}
 
-        L.tileLayer('http://{ldelim}s{rdelim}.mqcdn.com/tiles/1.0.0/map/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.jpg', {
-            subdomains: ['otile1', 'otile2', 'otile3', 'otile4'],
+        L.tileLayer('http://{ldelim}s{rdelim}.basemaps.cartocdn.com/light_all/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
-            attribution: '{_T string="Map data ©" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" escape="js"}</a>, {_T string="Imagery ©" escape="js"} <a href="http://www.mapquest.com">MapQuest</a> <img src="http://developer.mapquest.com/content/osm/mq_logo.png">'
+            attribution: '{_T string="Map data ©" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" escape="js"}</a>, {_T string="Imagery ©" escape="js"} <a href="https://cartodb.com/attributions">CartoDB</a>'
         }).addTo(map);
 
         try {
