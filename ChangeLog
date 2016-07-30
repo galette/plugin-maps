@@ -1,3 +1,6 @@
+* 2016-07-28 - 1.2.1
+- Switch tile provider to CartoDB
+
 * 2014-09-14 - 1.2
 - Galette 0.8 compatible
 - Use nominatim API to retrieve towns coordinates
