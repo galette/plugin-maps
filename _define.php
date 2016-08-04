@@ -41,6 +41,7 @@ $this->register(
     'Johan Cwiklinski', //Author
     '1.3dev',           //Version
     '0.9',              //Galette compatible version
+    'maps',             //routing name
     '2016-09-18',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'member',
@@ -48,4 +49,3 @@ $this->register(
         'maps_ilivehere'        => 'member'
     ]
 );
-
