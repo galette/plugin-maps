@@ -178,7 +178,7 @@ class Coordinates
 
             $res = array();
             foreach ( $results as $r ) {
-                $a = new Adherent($r);
+                $a = new Adherent($zdb, $r);
                 $m = array(
                     'id_adh'    => $a->id,
                     'lat'       => $r->latitude,
