@@ -1,5 +1,5 @@
 <?php
-// This file was automatically generated on Sun Nov 20 11:46:12 2016 (GMT)
+// This file was automatically generated on Sun Nov 20 13:00:37 2016 (GMT)
 // Don't modify it by hand, rather use the target lang from the Makefile.
 
 
@@ -9,19 +9,13 @@ $lang['maps']['I live here!'] = 'J\'y habite !';
 // ../templates/default/mymap.tpl:7 
 $lang['maps']['In the database, town is set to: \'%town\''] = 'Dans la base, la ville définie est « %town »';
 
-// ../_routes.php:121 ../adh_map.php:98 
+// ../_routes.php:121 
 $lang['maps']['%member geographic position'] = 'Position géographique de %member';
 
 // ../templates/default/common_scripts.tpl:154 
 $lang['maps']['Show me where I am'] = 'Me montrer où je suis';
 
-// ../maps_preferences.php:56 
-$lang['maps']['Maps Settings'] = 'Préférences des Cartes';
-
-// ../templates/default/common_html.tpl:6 ../templates/default/common_html.tpl:9 
-$lang['maps']['Member'] = 'Adhérent';
-
-// ../maps.php:80 ../_routes.php:118 ../_routes.php:212 ../mymap.php:89 ../adh_map.php:95 ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3 ../templates/default/public_menu.tpl:5 
+// ../_routes.php:118 ../_routes.php:212 ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3 ../templates/default/public_menu.tpl:5 
 $lang['maps']['Maps'] = 'Cartes';
 
 // ../templates/default/menu.tpl:4 
@@ -48,14 +42,11 @@ $lang['maps']['Remove member coordinates'] = 'Supprimer les coordonnées de l\'a
 // ../templates/default/mymap.tpl:6 
 $lang['maps']['Choose %member location'] = 'Choisissez la localisation de %member';
 
-// ../_routes.php:307 ../ajax_ilivehere.php:79 ../ajax_ilivehere.php:104 
+// ../_routes.php:307 
 $lang['maps']['Coordinates has not been stored :('] = 'Les coordonnées n\'ont pas été enregistrées :(';
 
 // ../templates/default/common_scripts.tpl:163 
 $lang['maps']['Imagery ©'] = '© Imagerie';
-
-// ../templates/default/common_scripts.tpl:137 
-$lang['maps']['Show legend'] = 'Afficher la légende';
 
 // ../templates/default/common_scripts.tpl:118 
 $lang['maps']['Display map in full screen'] = 'Afficher la carte en plein écran';
@@ -68,9 +59,6 @@ $lang['maps']['Search a town...'] = 'Chercher une ville...';
 
 // ../templates/default/mymap.tpl:65 
 $lang['maps']['Are you sure you want to remove coordinates from the database?'] = 'Êtes-vous certain de vouloir supprimer les cordonnées de la base ?';
-
-// ../templates/default/common_html.tpl:1 ../templates/default/common_html.tpl:2 
-$lang['maps']['Legend'] = 'Légende';
 
 // ../_routes.php:255 
 $lang['maps']['Superadmin cannot be localized.'] = 'Le superdamin ne peut être géolocalisé.';
@@ -87,8 +75,8 @@ $lang['maps']['Map data ©'] = '© Données cartographiques';
 // ../templates/default/common_html.tpl:22 ../templates/default/common_html.tpl:25 
 $lang['maps']['Search result'] = 'Résultat de recherche';
 
-// ../templates/default/mymap.tpl:70 ../templates/default/mymap.tpl:100 
-$lang['maps']['Remove'] = 'Supprimer';
+// ../templates/default/mymap.tpl:65 
+$lang['maps']['Remove my coordinates'] = 'Supprimer mes coordonnées';
 
 // ../templates/default/mymap.tpl:87 
 $lang['maps']['An error occured removing coordinates :('] = 'Une erreur est survenue à l\'enregistrement des coordonnées :\'(';
@@ -102,23 +90,17 @@ $lang['maps']['Geolocalize %membername'] = 'Géolocaliser %membername';
 // ../templates/default/mymap.tpl:47 
 $lang['maps']['You clicked at %p'] = 'Vous avez cliqué à %p';
 
-// ../_routes.php:305 ../ajax_ilivehere.php:102 
+// ../_routes.php:305 
 $lang['maps']['New coordinates has been stored!'] = 'Les nouvelles coordonnées ont été enregistrées !';
 
 // ../templates/default/common_html.tpl:14 ../templates/default/common_html.tpl:17 
 $lang['maps']['Member (company)'] = 'Adhérent (personne morale)';
 
-// ../maps.php:86 ../_routes.php:136 ../_routes.php:225 ../mymap.php:97 ../adh_map.php:109 
+// ../_routes.php:136 ../_routes.php:225 
 $lang['maps']['Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?'] = 'Les coordonnées n\'ont pas été chargées. Peut-être les tables du plugin n\'existent-elles pas dans la base de données ?';
-
-// ../templates/default/mymap.tpl:65 
-$lang['maps']['Remove my coordinates'] = 'Supprimer mes coordonnées';
 
 // ../templates/default/common_scripts.tpl:163 
 $lang['maps']['OpenStreetMap contributors'] = 'Contributeurs OpenStreetMap';
-
-// ../templates/default/mymap.tpl:91 
-$lang['maps']['Cancel'] = 'Annuler';
 
 // ../templates/default/maps.tpl:21 
 $lang['maps']['aka'] = 'aka';

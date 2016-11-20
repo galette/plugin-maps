@@ -18,7 +18,7 @@ msgstr ""
 msgid "Imagery ©"
 msgstr ""
 
-#: ../_routes.php:121 ../adh_map.php:98
+#: ../_routes.php:121
 msgid "%member geographic position"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Coordinates has not been removed :("
 msgstr ""
 
-#: ../_routes.php:305 ../ajax_ilivehere.php:102
+#: ../_routes.php:305
 msgid "New coordinates has been stored!"
 msgstr ""
 
@@ -62,10 +62,9 @@ msgstr ""
 msgid "Map data ©"
 msgstr ""
 
-#: ../maps.php:80 ../_routes.php:118
-#: ../_routes.php:212 ../mymap.php:89
-#: ../adh_map.php:95 ../templates/default/menu.tpl:2
-#: ../templates/default/public_menu.tpl:3 ../templates/default/public_menu.tpl:5
+#: ../_routes.php:118 ../_routes.php:212
+#: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3
+#: ../templates/default/public_menu.tpl:5
 msgid "Maps"
 msgstr ""
 
@@ -90,10 +89,6 @@ msgstr ""
 msgid "My localization"
 msgstr ""
 
-#: ../maps_preferences.php:56
-msgid "Maps Settings"
-msgstr ""
-
 #: ../_routes.php:255
 msgid "Superadmin cannot be localized."
 msgstr ""
@@ -106,22 +101,16 @@ msgstr ""
 msgid "Search your town..."
 msgstr ""
 
-#: ../templates/default/common_html.tpl:6 ../templates/default/common_html.tpl:9
-msgid "Member"
-msgstr ""
-
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
 #: ../templates/default/mymap.tpl:118
 msgid "Member lives here!"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:137
-msgid "Show legend"
+#: ../templates/default/common_scripts.tpl:131
+msgid "Sorry, that town could not be found."
 msgstr ""
 
-#: ../maps.php:86 ../_routes.php:136
-#: ../_routes.php:225 ../mymap.php:97
-#: ../adh_map.php:109
+#: ../_routes.php:136 ../_routes.php:225
 msgid "Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?"
 msgstr ""
 
@@ -135,22 +124,6 @@ msgstr ""
 
 #: ../_routes.php:291
 msgid "Coordinates has been removed!"
-msgstr ""
-
-#: ../templates/default/mymap.tpl:91
-msgid "Cancel"
-msgstr ""
-
-#: ../templates/default/mymap.tpl:70 ../templates/default/mymap.tpl:100
-msgid "Remove"
-msgstr ""
-
-#: ../templates/default/common_html.tpl:1 ../templates/default/common_html.tpl:2
-msgid "Legend"
-msgstr ""
-
-#: ../templates/default/common_scripts.tpl:131
-msgid "Sorry, that town could not be found."
 msgstr ""
 
 #: ../templates/default/common_scripts.tpl:163
@@ -169,8 +142,7 @@ msgstr ""
 msgid "aka"
 msgstr ""
 
-#: ../_routes.php:307 ../ajax_ilivehere.php:79
-#: ../ajax_ilivehere.php:104
+#: ../_routes.php:307
 msgid "Coordinates has not been stored :("
 msgstr ""
 
