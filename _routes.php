@@ -115,10 +115,10 @@ $this->get(
         );
 
         $params = [
-            'page_title'        => _T("Maps") . ' - ' . str_replace(
+            'page_title'        => _T('Maps', 'maps') . ' - ' . str_replace(
                 '%member',
                 $member->sfullname,
-                _T("%member geographic position")
+                _T('%member geographic position', 'maps')
             ),
             'member'            => $member,
             'require_dialog'    => true,
@@ -133,7 +133,7 @@ $this->get(
         if ($mcoords === false) {
             $this->flash->addMessage(
                 'error_detected',
-                _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?', 'maps')
             );
         } elseif (count($mcoords) > 0) {
             $params['town'] = $mcoords;
@@ -209,7 +209,7 @@ $this->get(
 
         $params = [
             'require_dialog'    => true,
-            'page_title'        => _T("Maps"),
+            'page_title'        => _T('Maps', 'maps'),
             'module_id'         => $module_id
         ];
 
@@ -222,7 +222,7 @@ $this->get(
         } else {
             $this->flash->addMessage(
                 'error_detected',
-                _T("Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?")
+                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?', 'maps')
             );
         }
 
@@ -252,7 +252,7 @@ $this->post(
                 'SuperAdmin does note live anywhere!',
                 Analog::INFO
             );
-            $error = _T("Superadmin cannot be localized.");
+            $error = _T('Superadmin cannot be localized.', 'maps');
         } elseif ($id === null) {
             $member = new Adherent($this->zdb, $login->login);
             $id = $member->id;
@@ -278,7 +278,7 @@ $this->post(
                     ' but do not manage any groups he belongs to.',
                     Analog::WARNING
                 );
-                $error = _T("Coordinates has not been removed :(");
+                $error = _T('Coordinates has not been removed :(', 'maps');
             }
         }
 
@@ -288,9 +288,9 @@ $this->post(
             if (isset($post['remove'])) {
                 $res = $coords->removeCoords($id);
                 if ($res > 0) {
-                    $message = _T("Coordinates has been removed!");
+                    $message = _T('Coordinates has been removed!', 'maps');
                 } else {
-                    $error = _T("Coordinates has not been removed :(");
+                    $error = _T('Coordinates has not been removed :(', 'maps');
                 }
             } elseif (isset($post['latitude'])
                 && isset($post['longitude'])
@@ -302,12 +302,12 @@ $this->post(
                 );
 
                 if ($res === true) {
-                    $message = _T("New coordinates has been stored!");
+                    $message = _T('New coordinates has been stored!', 'maps');
                 } else {
-                    $error = _T("Coordinates has not been stored :(");
+                    $error = _T('Coordinates has not been stored :(', 'maps');
                 }
             } else {
-                $error = _T("Something went wrong :(");
+                $error = _T('Something went wrong :(', 'maps');
             }
         }
 

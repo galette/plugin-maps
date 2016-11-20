@@ -4,26 +4,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2014-01-11 09:56+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2016-11-20 12:46+0100\n"
+"Last-Translator: Johan Cwiklinski <johan@x-tnd.be>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#: ../templates/default/mymap.tpl:5
+#: ../templates/default/mymap.tpl:7
 msgid "In the database, town is set to: '%town'"
 msgstr "Dans la base, la ville définie est « %town »"
 
-#: ../templates/default/common_scripts.tpl:14
-#: ../templates/default/common_scripts.tpl:17
-msgid "Member (company)"
-msgstr "Adhérent (personne morale)"
+#: ../_routes.php:310
+msgid "Something went wrong :("
+msgstr "Quelque chose n'a pas fonctionné :("
 
-#: ../templates/default/mymap.tpl:5
+#: ../templates/default/mymap.tpl:7
 msgid "Select your town."
 msgstr "Sélectionnez votre ville."
 
@@ -32,71 +32,77 @@ msgstr "Sélectionnez votre ville."
 msgid "Geolocalize member"
 msgstr "Géolocaliser l'adhérent"
 
-#: ../templates/default/common_scripts.tpl:180
+#: ../templates/default/common_scripts.tpl:163
 msgid "Imagery ©"
 msgstr "© Imagerie"
 
-#: ../adh_map.php:95
+#: ../_routes.php:121 ../adh_map.php:98
 msgid "%member geographic position"
 msgstr "Position géographique de %member"
 
-#: ../maps_preferences.php:56
-msgid "Maps Settings"
-msgstr "Préférences des Cartes"
+#: ../_routes.php:281 ../_routes.php:293
+msgid "Coordinates has not been removed :("
+msgstr "Les coordonnées n'ont pas été supprimées :("
 
-#: ../ajax_ilivehere.php:84
+#: ../_routes.php:305 ../ajax_ilivehere.php:102
 msgid "New coordinates has been stored!"
 msgstr "Les nouvelles coordonnées ont été enregistrées !"
 
-#: ../templates/default/mymap.tpl:39
+#: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
 msgstr "Vous avez cliqué à %p"
 
-#: ../templates/default/common_scripts.tpl:135
+#: ../templates/default/common_scripts.tpl:118
 msgid "Display map in full screen"
 msgstr "Afficher la carte en plein écran"
 
-#: ../templates/default/common_scripts.tpl:115
+#: ../templates/default/common_scripts.tpl:97
 msgid "An error occured during 'I live here' process :("
 msgstr "Une erreur est survenue pendant le processus « J'y habite » :("
 
-#: ../templates/default/mymap.tpl:4
+#: ../templates/default/common_html.tpl:14
+#: ../templates/default/common_html.tpl:17
+msgid "Member (company)"
+msgstr "Adhérent (personne morale)"
+
+#: ../templates/default/mymap.tpl:6
 msgid "Choose %member location"
 msgstr "Choisissez la localisation de %member"
 
-#: ../templates/default/mymap.tpl:78 ../templates/default/mymap.tpl:82
+#: ../templates/default/mymap.tpl:87
 msgid "An error occured removing coordinates :("
 msgstr "Une erreur est survenue à l'enregistrement des coordonnées :'("
 
-#: ../templates/default/mymap.tpl:56
+#: ../templates/default/mymap.tpl:65
 msgid "Remove member coordinates"
 msgstr "Supprimer les coordonnées de l'adhérent"
 
-#: ../templates/default/common_scripts.tpl:180
+#: ../templates/default/common_scripts.tpl:163
 msgid "Map data ©"
 msgstr "© Données cartographiques"
 
-#: ../maps.php:80 ../mymap.php:86 ../adh_map.php:92
-#: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:2
-#: ../templates/default/public_menu.tpl:4
+#: ../maps.php:80 ../_routes.php:118 ../_routes.php:212 ../mymap.php:89
+#: ../adh_map.php:95 ../templates/default/menu.tpl:2
+#: ../templates/default/public_menu.tpl:3
+#: ../templates/default/public_menu.tpl:5
 msgid "Maps"
 msgstr "Cartes"
 
-#: ../templates/default/common_scripts.tpl:171
+#: ../templates/default/common_scripts.tpl:154
 msgid "Show me where I am"
 msgstr "Me montrer où je suis"
 
-#: ../templates/default/common_scripts.tpl:22
-#: ../templates/default/common_scripts.tpl:25
+#: ../templates/default/common_html.tpl:22
+#: ../templates/default/common_html.tpl:25
 msgid "Search result"
 msgstr "Résultat de recherche"
 
-#: ../templates/default/mymap.tpl:4
+#: ../templates/default/mymap.tpl:6
 msgid "Choose your location"
 msgstr "Choisissez votre localisation"
 
-#: ../templates/default/mymap.tpl:39 ../templates/default/mymap.tpl:95
-#: ../templates/default/mymap.tpl:114
+#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
+#: ../templates/default/mymap.tpl:118
 msgid "I live here!"
 msgstr "J'y habite !"
 
@@ -104,29 +110,38 @@ msgstr "J'y habite !"
 msgid "My localization"
 msgstr "Ma localisation"
 
-#: ../templates/default/common_scripts.tpl:173
+#: ../maps_preferences.php:56
+msgid "Maps Settings"
+msgstr "Préférences des Cartes"
+
+#: ../_routes.php:255
+msgid "Superadmin cannot be localized."
+msgstr "Le superdamin ne peut être géolocalisé."
+
+#: ../templates/default/common_scripts.tpl:156
 msgid "You seem located outside the boundaries of the map"
 msgstr "Vous semblez être localisé en dehors de limites de la carte"
 
-#: ../templates/default/common_scripts.tpl:144
+#: ../templates/default/common_scripts.tpl:127
 msgid "Search your town..."
 msgstr "Chercher votre ville..."
 
-#: ../templates/default/common_scripts.tpl:6
-#: ../templates/default/common_scripts.tpl:9
+#: ../templates/default/common_html.tpl:6
+#: ../templates/default/common_html.tpl:9
 msgid "Member"
 msgstr "Adhérent"
 
-#: ../templates/default/mymap.tpl:39 ../templates/default/mymap.tpl:95
-#: ../templates/default/mymap.tpl:114
+#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
+#: ../templates/default/mymap.tpl:118
 msgid "Member lives here!"
 msgstr "L'adhérent y habite !"
 
-#: ../templates/default/common_scripts.tpl:154
+#: ../templates/default/common_scripts.tpl:137
 msgid "Show legend"
 msgstr "Afficher la légende"
 
-#: ../maps.php:86 ../mymap.php:94 ../adh_map.php:106
+#: ../maps.php:86 ../_routes.php:136 ../_routes.php:225 ../mymap.php:97
+#: ../adh_map.php:109
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
@@ -134,40 +149,40 @@ msgstr ""
 "Les coordonnées n'ont pas été chargées. Peut-être les tables du plugin "
 "n'existent-elles pas dans la base de données ?"
 
-#: ../templates/default/mymap.tpl:56
+#: ../templates/default/mymap.tpl:65
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "Êtes-vous certain de vouloir supprimer les cordonnées de la base ?"
 
-#: ../templates/default/common_scripts.tpl:146
+#: ../templates/default/common_scripts.tpl:129
 msgid "Search a town..."
 msgstr "Chercher une ville..."
 
-#: ../templates/default/common_scripts.tpl:1
-#: ../templates/default/common_scripts.tpl:2
-msgid "Legend"
-msgstr "Légende"
+#: ../_routes.php:291
+msgid "Coordinates has been removed!"
+msgstr "Les coordonnées ont été supprimées !"
 
-#: ../templates/default/mymap.tpl:86
+#: ../templates/default/mymap.tpl:91
 msgid "Cancel"
 msgstr "Annuler"
 
-#: ../templates/default/mymap.tpl:61 ../templates/default/mymap.tpl:95
+#: ../templates/default/mymap.tpl:70 ../templates/default/mymap.tpl:100
 msgid "Remove"
 msgstr "Supprimer"
 
-#: ../templates/default/common_scripts.tpl:148
+#: ../templates/default/common_html.tpl:1
+#: ../templates/default/common_html.tpl:2
+msgid "Legend"
+msgstr "Légende"
+
+#: ../templates/default/common_scripts.tpl:131
 msgid "Sorry, that town could not be found."
 msgstr "Désolé, cette ville n'a pas été trouvée."
 
-#: ../templates/default/common_scripts.tpl:180
+#: ../templates/default/common_scripts.tpl:163
 msgid "OpenStreetMap contributors"
 msgstr "Contributeurs OpenStreetMap"
 
-#: ../templates/default/mymap.tpl:73
-msgid "Coordinates has been removed"
-msgstr "Les coordonnées ont été supprimées"
-
-#: ../templates/default/mymap.tpl:56
+#: ../templates/default/mymap.tpl:65
 msgid "Remove my coordinates"
 msgstr "Supprimer mes coordonnées"
 
@@ -175,11 +190,11 @@ msgstr "Supprimer mes coordonnées"
 msgid "Geolocalize %membername"
 msgstr "Géolocaliser %membername"
 
-#: ../templates/default/maps.tpl:15
+#: ../templates/default/maps.tpl:21
 msgid "aka"
 msgstr "aka"
 
-#: ../ajax_ilivehere.php:86
+#: ../_routes.php:307 ../ajax_ilivehere.php:79 ../ajax_ilivehere.php:104
 msgid "Coordinates has not been stored :("
 msgstr "Les coordonnées n'ont pas été enregistrées :("
 

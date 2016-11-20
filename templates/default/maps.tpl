@@ -18,7 +18,7 @@
     {else}
         {assign var=icon value='galetteIcon'}
     {/if}
-        _marker = L.marker([{$l.lat}, {$l.lng}], {ldelim}icon: {$icon}{rdelim}).bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>');
+        _marker = L.marker([{$l.lat}, {$l.lng}], {ldelim}icon: {$icon}{rdelim}).bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" domain="maps" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>');
         _markers.push(_marker);
 {/foreach}
         var _group = L.featureGroup(_markers).addTo(map);

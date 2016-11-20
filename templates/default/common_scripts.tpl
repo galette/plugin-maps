@@ -94,7 +94,7 @@
                     }
                 },
                 error: function(){
-                    alert("{_T string="An error occured during 'I live here' process :(" escape="js"}")
+                    alert("{_T string="An error occured during 'I live here' process :(" domain="maps" escape="js"}")
                 }
             });
             return false;
@@ -115,7 +115,7 @@
             'map', {
                 fullscreenControl: true,
                 fullscreenControlOptions: {
-                    title: "{_T string="Display map in full screen"}",
+                    title: "{_T string="Display map in full screen" domain="maps"}",
                     forceSeparateButton:true
                 }
             }
@@ -124,11 +124,11 @@
         new L.Control.GeoSearch({
             provider: new L.GeoSearch.Provider.OpenStreetMap(),
 {if $cur_route eq 'maps_localize_member' and !isset($town)}
-            searchLabel: '{_T string="Search your town..." escape="js"}',
+            searchLabel: '{_T string="Search your town..." domain="maps" escape="js"}',
 {else}
-            searchLabel: '{_T string="Search a town..." escape="js"}',
+            searchLabel: '{_T string="Search a town..." domain="maps" escape="js"}',
 {/if}
-            notFoundMessage: '{_T string="Sorry, that town could not be found." escape="js"}',
+            notFoundMessage: '{_T string="Sorry, that town could not be found." domain="maps" escape="js"}',
             zoomLevel: 13
         }).addTo(map);
 
@@ -151,16 +151,16 @@
 {if $cur_route eq 'maps_localize_member'}
         L.control.locate({
             strings: {
-                title: '{_T string="Show me where I am" escape="js"}',
+                title: '{_T string="Show me where I am" domain="maps" escape="js"}',
                 popup: 'SELECTPOPUP',
-                outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map" escape="js"}'
+                outsideMapBoundsMsg: '{_T string="You seem located outside the boundaries of the map" domain="maps" escape="js"}'
             }
         }).addTo(map);
 {/if}
 
         L.tileLayer('http://{ldelim}s{rdelim}.basemaps.cartocdn.com/light_all/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
-            attribution: '{_T string="Map data ©" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" escape="js"}</a>, {_T string="Imagery ©" escape="js"} <a href="https://cartodb.com/attributions">CartoDB</a>'
+            attribution: '{_T string="Map data ©" domain="maps" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" domain="maps" escape="js"}</a>, {_T string="Imagery ©" domain="maps" escape="js"} <a href="https://cartodb.com/attributions">CartoDB</a>'
         }).addTo(map);
 
         try {
