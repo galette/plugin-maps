@@ -51,7 +51,7 @@ $this->get(
 )->setName('maps');
 
 $this->get(
-    '/localize-member/{id:\d+}',
+    __('/localize-member', 'maps_routes') . '/{id:\d+}',
     function ($request, $response, $args) use ($module, $module_id) {
         $id = $args['id'];
         $member = new Adherent($this->zdb, (int)$id);
@@ -155,7 +155,7 @@ $this->get(
 
 //member self localization
 $this->get(
-    '/mymap',
+    __('/mymap', 'maps_routes'),
     function ($request, $response) {
         $deps = array(
             'picture'   => false,
@@ -171,7 +171,7 @@ $this->get(
 
 //global map page
 $this->get(
-    '/map',
+    __('/map', 'maps_routes'),
     function ($request, $response) use ($module, $module_id) {
         $login = $this->login;
         if (!$this->preferences->showPublicPages($login)) {
@@ -237,7 +237,7 @@ $this->get(
 )->setName('maps_map');
 
 $this->post(
-    '/-i-live-here[/{id:\d+}]',
+    __('/i-live-here', 'maps_routes') . '[/{id:\d+}]',
     function ($request, $response, $args) {
         $id = null;
         if (isset($args['id'])) {
