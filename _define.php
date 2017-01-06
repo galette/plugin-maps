@@ -42,7 +42,7 @@ $this->register(
     '1.3dev',           //Version
     '0.9',              //Galette compatible version
     'maps',             //routing name and translation domain
-    '2016-09-18',       //Release date
+    '2017-01-06',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',
