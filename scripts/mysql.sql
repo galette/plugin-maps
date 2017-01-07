@@ -5,5 +5,5 @@ CREATE TABLE galette_maps_coordinates (
     latitude real NOT NULL,
     longitude real NOT NULL,
     PRIMARY KEY (id_adh),
-    FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh)
+    FOREIGN KEY (id_adh) REFERENCES galette_adherents (id_adh) ON DELETE CASCADE ON UPDATE CASCADE
 );
