@@ -44,13 +44,6 @@ use GaletteMaps\Coordinates;
 require_once $module['root'] . '/_config.inc.php';
 
 $this->get(
-    '/',
-    function () {
-        echo 'Coucou de Maps !';
-    }
-)->setName('maps');
-
-$this->get(
     __('/localize-member', 'maps_routes') . '/{id:\d+}',
     function ($request, $response, $args) use ($module, $module_id) {
         $id = $args['id'];
