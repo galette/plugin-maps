@@ -1,13 +1,13 @@
 {if $GALETTE_MODE eq 'DEV'}
-    {assign var=mainleaflet value="leaflet-0.7.1/leaflet-src.js" }
+    {assign var=mainleaflet value="leaflet-1.2.0/leaflet-src.js" }
 {else}
-    {assign var=mainleaflet value="leaflet-0.7.1/leaflet.js" }
+    {assign var=mainleaflet value="leaflet-1.2.0/leaflet.js" }
 {/if}
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.control.geosearch.js"]}"></script>
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-geosearch/js/l.geosearch.provider.openstreetmap.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-control-osm-geocoder/Control.OSMGeocoder.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "node_modules/leaflet-geosearch/dist/bundle.min.js"]}"></script>
 {if $cur_route eq 'maps_localize_member' or $cur_route eq 'maps_mymap'}
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.min.js"]}"></script>
 {/if}
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-legendcontrol/L.Control.Legend.js"]}"></script>
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-fullscreencontrol/Control.FullScreen.js"]}"></script>
@@ -59,14 +59,14 @@
      * Galette specific marker icon
      */
     var galetteIcon = L.icon({
-        iconUrl: '{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette.png"]}',
+        iconUrl: '{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-1.2.0/images/marker-galette.png"]}',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
         shadowSize: [41, 41]
     });
     var galetteProIcon = L.icon({
-        iconUrl: '{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-0.7.1/images/marker-galette-pro.png"]}',
+        iconUrl: '{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-1.2.0/images/marker-galette-pro.png"]}',
         iconSize: [25, 41],
         iconAnchor: [12, 41],
         popupAnchor: [1, -34],
@@ -121,16 +121,32 @@
             }
         ).setView([_lat, _lon], {if isset($town)}12{else}6{/if});
 
-        new L.Control.GeoSearch({
-            provider: new L.GeoSearch.Provider.OpenStreetMap(),
+        var osmGeocoder = new L.Control.OSMGeocoder({
+            collapsed: false,
 {if $cur_route eq 'maps_localize_member' and !isset($town)}
-            searchLabel: '{_T string="Search your town..." domain="maps" escape="js"}',
+            placeholder: '{_T string="Search your town..." domain="maps" escape="js"}',
 {else}
-            searchLabel: '{_T string="Search a town..." domain="maps" escape="js"}',
+            placeholder: '{_T string="Search a town..." domain="maps" escape="js"}',
 {/if}
-            notFoundMessage: '{_T string="Sorry, that town could not be found." domain="maps" escape="js"}',
-            zoomLevel: 13
-        }).addTo(map);
+            text: '{_T string="Search" domain="maps" escape="js"}',
+            callback: function (results) {
+                if (results.length == 0) {
+                    var _div = $('<div title="{_T string="No result found" domain="maps" escape="js"}">{_T string="Sorry, that town could not be found." domain="maps" escape="js"}</div>');
+                    _div.dialog();
+                    return;
+                }
+
+                // get coordinates for result
+                var coords = L.latLng(results[0].lat,results[0].lon);
+
+                // create a marker for result
+                var marker = L.marker(coords);
+
+                // add result object to map and zoom to
+                this._map.addLayer(marker).setView(coords,9);
+            }
+        });
+        map.addControl(osmGeocoder);
 
         L.control.legend({
             strings: {
