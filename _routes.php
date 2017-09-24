@@ -77,7 +77,7 @@ $this->get(
         $towns = false;
         if (count($mcoords) === 0) {
             if ($member->town != '') {
-                $t = new NominatimTowns();
+                $t = new NominatimTowns($this->preferences);
                 $towns = $t->search(
                     $member->town,
                     $member->country
