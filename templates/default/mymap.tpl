@@ -3,7 +3,7 @@
 <section>
     <div id="map"></div>
 {if isset($towns) and $towns|@count > 0}
-    <aside id="possible_towns" title="{if isset($mymap)}{_T string="Choose your location" domain="maps"}{_T string="Choose %member location" domain="maps" pattern="/%member/" replace=$member->sname}{/if}">
+    <aside id="possible_towns" title="{if isset($mymap)}{_T string="Choose your location" domain="maps"}{else}{_T string="Choose %member location" domain="maps" pattern="/%member/" replace=$member->sname}{/if}">
         <p>{_T string="Select your town." domain="maps"}<br/>{_T string="In the database, town is set to: '%town'" domain="maps" pattern="/%town/" replace=$member->town}</p>
         <ul>
     {foreach $towns as $t}
@@ -60,7 +60,6 @@
         var _lon = {$town['longitude']};
 
         var _bind_removecoords = function(){
-            console.log('called');
             $('#removecoords').click(function(){
                 var _d = $('<div title="{if isset($mymap)}{_T string="Remove my coordinates" domain="maps" escape="js"}{else}{_T string="Remove member coordinates" domain="maps" escape="js"}{/if}">{_T string="Are you sure you want to remove coordinates from the database?" domain="maps" escape="js"}</div>');
                 _d.dialog({
