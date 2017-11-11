@@ -85,23 +85,6 @@ $this->get(
             }
         }
 
-        $smarty = $this->view->getSmarty();
-        //set util paths
-        $plugin_dir = basename(dirname($_SERVER['SCRIPT_NAME']));
-        $smarty->assign(
-            'galette_url',
-            'http://' . $_SERVER['HTTP_HOST'] .
-            preg_replace(
-                "/\/plugins\/" . $plugin_dir . '/',
-                "/",
-                dirname($_SERVER['SCRIPT_NAME'])
-            )
-        );
-        $smarty->assign(
-            'plugin_url',
-            'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
-        );
-
         $params = [
             'page_title'        => _T('Maps', 'maps') . ' - ' . str_replace(
                 '%member',
@@ -171,22 +154,6 @@ $this->get(
 
         $coords = new Coordinates();
         $list = $coords->listCoords();
-
-        //set util paths
-        /*$plugin_dir = basename(dirname($_SERVER['SCRIPT_NAME']));
-        $tpl->assign(
-            'galette_url',
-            'http://' . $_SERVER['HTTP_HOST'] .
-            preg_replace(
-                "/\/plugins\/" . $plugin_dir . '/',
-                "/",
-                dirname($_SERVER['SCRIPT_NAME'])
-            )
-        );
-        $tpl->assign(
-            'plugin_url',
-            'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/'
-        );*/
 
         $params = [
             'require_dialog'    => true,
