@@ -36,5 +36,3 @@
  */
 
 define('MAPS_PREFIX', 'maps_');
-define('MAPS_SMARTY_PREFIX', 'plugins_maps');
-

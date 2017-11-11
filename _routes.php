@@ -86,11 +86,6 @@ $this->get(
         }
 
         $smarty = $this->view->getSmarty();
-        $smarty->addTemplateDir(
-            $module['root'] . '/templates/' . $this->preferences->pref_theme,
-            $module['route']
-        );
-        $smarty->compile_id = MAPS_SMARTY_PREFIX;
         //set util paths
         $plugin_dir = basename(dirname($_SERVER['SCRIPT_NAME']));
         $smarty->assign(
@@ -176,13 +171,6 @@ $this->get(
 
         $coords = new Coordinates();
         $list = $coords->listCoords();
-
-        $smarty = $this->view->getSmarty();
-        $smarty->addTemplateDir(
-            $module['root'] . '/templates/' . $this->preferences->pref_theme,
-            $module['route']
-        );
-        $smarty->compile_id = MAPS_SMARTY_PREFIX;
 
         //set util paths
         /*$plugin_dir = basename(dirname($_SERVER['SCRIPT_NAME']));
