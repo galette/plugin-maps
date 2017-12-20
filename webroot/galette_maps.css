@@ -1,0 +1,58 @@
+#map { height: 300px; }
+
+#possible_towns li {
+    cursor: pointer;
+}
+
+#possible_towns li:hover {
+    background-color: #DDDDFF;
+}
+
+#removecoords {
+    color: #999;
+    font-size: .85em;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ui-dialog {
+    /* Dialog should be on top of search box dans © box */
+    z-index: 1005;
+}
+
+.leaflet-control-legend a {
+    background-image: url(images/legend.png);
+    background-position: -2px -2px;
+}
+
+#map .legend {
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    text-align: left;
+}
+
+#pmaps {
+    background-image:url(images/maps.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png");
+}
+#pmaps.ui-state-hover {
+    background-image:url(images/maps.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png");
+}
+
+#btn_plugins_maps {
+    padding-top:30px!important;
+    padding-left: 0!important;
+    display: block;
+    background-position: 50% 5px, 50% 50%!important;
+    background-repeat: no-repeat, repeat!important;
+}
+
+#btn_plugins_maps {
+    background-image:url(images/locate_member.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png");
+}
+#btn_plugins_maps.ui-state-hover {
+    background-image: url(images/locate_member.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png");
+}

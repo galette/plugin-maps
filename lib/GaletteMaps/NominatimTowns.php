@@ -37,9 +37,10 @@
 
 namespace GaletteMaps;
 
-use Analog\Analog as Analog;
+use Analog\Analog;
 use Zend\Db\Sql\Predicate\PredicateSet;
 use Zend\Db\Sql\Predicate\Expression;
+use Galette\Core\Preferences;
 
 /**
  * Towns GPS coordinates via nominatim
@@ -56,12 +57,23 @@ use Zend\Db\Sql\Predicate\Expression;
 
 class NominatimTowns
 {
+    private $preferences;
 
-    private $_query_options = array(
+    private $query_options = array(
         'format'            => 'xml',
         'addressdetails'    => '1'
     );
-    private $_uri = 'http://nominatim.openstreetmap.org/search';
+    private $uri = 'http://nominatim.openstreetmap.org/search';
+
+    /**
+     * Constructor
+     *
+     * @param Preferences $preferences Preferences instance
+     */
+    public function __construct(Preferences $preferences)
+    {
+        $this->preferences = $preferences;
+    }
 
     /**
      * Search a town by its name
@@ -73,30 +85,31 @@ class NominatimTowns
      */
     public function search($town, $country = null)
     {
-        if ( !$town || trim($town) === '' ) {
+        if (!$town || trim($town) === '') {
             throw new \RuntimeException(
                 "Town has not been specified!"
             );
         }
 
-        $options = $this->_query_options;
+        $options = $this->query_options;
         $options['city'] = $town;
-        if ( $country !== null ) {
+        if ($country !== null) {
             $options['country'] = $country;
         }
 
         $url_options = array();
-        foreach ( $options as $key=>$value ) {
+        foreach ($options as $key => $value) {
             $url_options[] = $key . '=' . urlencode($value);
         }
 
-        $url = $this->_uri . '?' . implode('&', $url_options);
+        $url = $this->uri . '?' . implode('&', $url_options);
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, 'GaletteMaps/' . $this->preferences->pref_nom);
 
         $response = curl_exec($ch);
-        if ( $response === false ) {
+        if ($response === false) {
             throw new \RuntimeException(
                 "Error on nominatim request:\n\tURI:" . $url .
                 "\n\tOptions:\n" . print_r($options, true)
@@ -105,7 +118,7 @@ class NominatimTowns
 
         //get request infos
         $infos = curl_getinfo($ch);
-        if ( $infos['http_code'] !== 200 ) {
+        if ($infos['http_code'] !== 200) {
             $trace = debug_backtrace();
             $caller = $trace[1];
             //At this point, core has been created, but is failing
@@ -120,11 +133,11 @@ class NominatimTowns
         $towns = $xml->xpath('//place');
 
         $results = array();
-        foreach ( $towns as $town ) {
-            if ( $town->city or $town->town ) {
+        foreach ($towns as $town) {
+            if ($town->city || $town->town || $town->village) {
                 $unique = true;
-                foreach ( $results as $elt ) {
-                    if ( $elt['latitude'] == (string)$town['lat']
+                foreach ($results as $elt) {
+                    if ($elt['latitude'] == (string)$town['lat']
                         && $elt['longitude'] == (string)$town['lon']
                     ) {
                         $unique = false;
@@ -135,12 +148,14 @@ class NominatimTowns
                     }
                 }
 
-                if ( $unique === true ) {
+                if ($unique === true) {
                     $full_name = null;
-                    if ( $town->city ) {
+                    if ($town->city) {
                         $full_name = (string)$town->city;
-                    } elseif ( $town->town ) {
+                    } elseif ($town->town) {
                         $full_name = (string)$town->town;
+                    } elseif ($town->village) {
+                        $full_name = (string)$town->village;
                     } else {
                         $full_name = (string)$town['display_name'];
                     }

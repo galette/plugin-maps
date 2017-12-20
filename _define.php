@@ -39,8 +39,13 @@ $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '1.2.3',            //Version
-    '0.8',              //Galette compatible version
-    '2017-01-06',       //Release date
-    null                //Permissions needed - not yet implemented
+    '1.3.0',            //Version
+    '0.9',              //Galette compatible version
+    'maps',             //routing name and translation domain
+    '2017-12-21',       //Release date
+    [   //Permissions needed
+        'maps_localize_member'  => 'member',
+        'maps_mymap'            => 'member',
+        'maps_ilivehere'        => 'member'
+    ]
 );

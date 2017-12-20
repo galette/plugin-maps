@@ -1,0 +1,148 @@
+#: ../templates/default/mymap.tpl:7
+msgid "In the database, town is set to: '%town'"
+msgstr ""
+
+#: ../_routes.php:310
+msgid "Something went wrong :("
+msgstr ""
+
+#: ../templates/default/mymap.tpl:7
+msgid "Select your town."
+msgstr ""
+
+#: ../templates/default/adh_actions.tpl:1 ../templates/default/adh_fiche_action.tpl:2
+msgid "Geolocalize member"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:163
+msgid "Imagery ©"
+msgstr ""
+
+#: ../_routes.php:121
+msgid "%member geographic position"
+msgstr ""
+
+#: ../_routes.php:281 ../_routes.php:293
+msgid "Coordinates has not been removed :("
+msgstr ""
+
+#: ../_routes.php:305
+msgid "New coordinates has been stored!"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:47
+msgid "You clicked at %p"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:118
+msgid "Display map in full screen"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:97
+msgid "An error occured during 'I live here' process :("
+msgstr ""
+
+#: ../templates/default/common_html.tpl:14 ../templates/default/common_html.tpl:17
+msgid "Member (company)"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:6
+msgid "Choose %member location"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:87
+msgid "An error occured removing coordinates :("
+msgstr ""
+
+#: ../templates/default/mymap.tpl:65
+msgid "Remove member coordinates"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:163
+msgid "Map data ©"
+msgstr ""
+
+#: ../_routes.php:118 ../_routes.php:212
+#: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3
+#: ../templates/default/public_menu.tpl:5
+msgid "Maps"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:154
+msgid "Show me where I am"
+msgstr ""
+
+#: ../templates/default/common_html.tpl:22 ../templates/default/common_html.tpl:25
+msgid "Search result"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:6
+msgid "Choose your location"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
+#: ../templates/default/mymap.tpl:118
+msgid "I live here!"
+msgstr ""
+
+#: ../templates/default/menu.tpl:4
+msgid "My localization"
+msgstr ""
+
+#: ../_routes.php:255
+msgid "Superadmin cannot be localized."
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:156
+msgid "You seem located outside the boundaries of the map"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:127
+msgid "Search your town..."
+msgstr ""
+
+#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
+#: ../templates/default/mymap.tpl:118
+msgid "Member lives here!"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:131
+msgid "Sorry, that town could not be found."
+msgstr ""
+
+#: ../_routes.php:136 ../_routes.php:225
+msgid "Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:65
+msgid "Are you sure you want to remove coordinates from the database?"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:129
+msgid "Search a town..."
+msgstr ""
+
+#: ../_routes.php:291
+msgid "Coordinates has been removed!"
+msgstr ""
+
+#: ../templates/default/common_scripts.tpl:163
+msgid "OpenStreetMap contributors"
+msgstr ""
+
+#: ../templates/default/mymap.tpl:65
+msgid "Remove my coordinates"
+msgstr ""
+
+#: ../templates/default/adh_actions.tpl:1
+msgid "Geolocalize %membername"
+msgstr ""
+
+#: ../templates/default/maps.tpl:21
+msgid "aka"
+msgstr ""
+
+#: ../_routes.php:307
+msgid "Coordinates has not been stored :("
+msgstr ""
+

@@ -1,7 +1,13 @@
+{extends file="page.tpl"}
+{block name="content"}
 <section>
     <div id="map"></div>
 </section>
-{include file='common_scripts.tpl'}
+{include file='file:[maps]common_html.tpl'}
+{/block}
+
+{block name="javascripts"}
+{include file='file:[maps]common_scripts.tpl'}
 <script type="text/javascript">
     var _mapsBinded = function(map)
     {
@@ -12,7 +18,7 @@
     {else}
         {assign var=icon value='galetteIcon'}
     {/if}
-        _marker = L.marker([{$l.lat}, {$l.lng}], {ldelim}icon: {$icon}{rdelim}).bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>');
+        _marker = L.marker([{$l.lat}, {$l.lng}], {ldelim}icon: {$icon}{rdelim}).bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" domain="maps" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>');
         _markers.push(_marker);
 {/foreach}
         var _group = L.featureGroup(_markers).addTo(map);
@@ -24,4 +30,4 @@
         );
     }
 </script>
-
+{/block}
