@@ -63,3 +63,10 @@
 #desktop #maps:hover {
     background-image: url(images/dashboard.png), url(../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png);
 }
+
+.fa.fa-map-marker {
+    height: 26px;
+    width: 15px;
+    background: url(images/map-marker.png) 50% 50% no-repeat;
+    display: inline-block;
+}
