@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-11-20 12:44+0100\n"
+"PO-Revision-Date: 2017-12-22 08:31+0100\n"
 "Last-Translator: Johan Cwiklinski <johan@x-tnd.be>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -13,13 +13,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.12\n"
 
 #: ../templates/default/mymap.tpl:7
 msgid "In the database, town is set to: '%town'"
 msgstr "In the database, town is set to: '%town'"
 
-#: ../_routes.php:310
+#: ../_routes.php:258
 msgid "Something went wrong :("
 msgstr "Something went wrong :("
 
@@ -32,21 +32,21 @@ msgstr "Select your town."
 msgid "Geolocalize member"
 msgstr "Geolocalize member"
 
-#: ../templates/default/common_scripts.tpl:163
+#: ../templates/default/common_scripts.tpl:179
 msgid "Imagery ©"
 msgstr "Imagery ©"
 
-#: ../_routes.php:121
+#: ../_routes.php:92
 msgid "%member geographic position"
 msgstr "%member geographic position"
 
-#: ../_routes.php:281 ../_routes.php:293
+#: ../_routes.php:229 ../_routes.php:241
 msgid "Coordinates has not been removed :("
 msgstr "Coordinates has not been removed :("
 
-#: ../_routes.php:305
-msgid "New coordinates has been stored!"
-msgstr "New coordinates has been stored!"
+#: ../templates/default/common_scripts.tpl:134
+msgid "No result found"
+msgstr "No result found"
 
 #: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
@@ -69,25 +69,25 @@ msgstr "Member (company)"
 msgid "Choose %member location"
 msgstr "Choose %member location"
 
-#: ../templates/default/mymap.tpl:87
+#: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
 msgstr "An error occured removing coordinates :("
 
-#: ../templates/default/mymap.tpl:65
+#: ../templates/default/mymap.tpl:64
 msgid "Remove member coordinates"
 msgstr "Remove member coordinates"
 
-#: ../templates/default/common_scripts.tpl:163
+#: ../templates/default/common_scripts.tpl:179
 msgid "Map data ©"
 msgstr "Map data ©"
 
-#: ../_routes.php:118 ../_routes.php:212 ../templates/default/menu.tpl:2
+#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:5
 msgid "Maps"
 msgstr "Maps"
 
-#: ../templates/default/common_scripts.tpl:154
+#: ../templates/default/common_scripts.tpl:170
 msgid "Show me where I am"
 msgstr "Show me where I am"
 
@@ -100,20 +100,20 @@ msgstr "Search result"
 msgid "Choose your location"
 msgstr "Choose your location"
 
-#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
-#: ../templates/default/mymap.tpl:118
+#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
+#: ../templates/default/mymap.tpl:117
 msgid "I live here!"
 msgstr "I live here!"
 
-#: ../templates/default/menu.tpl:4
+#: ../templates/default/menu.tpl:4 ../templates/default/dashboard_member.tpl:1
 msgid "My localization"
 msgstr "My localization"
 
-#: ../_routes.php:255
+#: ../_routes.php:203
 msgid "Superadmin cannot be localized."
 msgstr "Superadmin cannot be localized."
 
-#: ../templates/default/common_scripts.tpl:156
+#: ../templates/default/common_scripts.tpl:172
 msgid "You seem located outside the boundaries of the map"
 msgstr "You seem located outside the boundaries of the map"
 
@@ -121,16 +121,16 @@ msgstr "You seem located outside the boundaries of the map"
 msgid "Search your town..."
 msgstr "Search your town..."
 
-#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:100
-#: ../templates/default/mymap.tpl:118
+#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
+#: ../templates/default/mymap.tpl:117
 msgid "Member lives here!"
 msgstr "Member lives here!"
 
-#: ../templates/default/common_scripts.tpl:131
-msgid "Sorry, that town could not be found."
-msgstr "Sorry, that town could not be found."
+#: ../_routes.php:253
+msgid "New coordinates has been stored!"
+msgstr "New coordinates has been stored!"
 
-#: ../_routes.php:136 ../_routes.php:225
+#: ../_routes.php:107 ../_routes.php:173
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
@@ -138,7 +138,7 @@ msgstr ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 
-#: ../templates/default/mymap.tpl:65
+#: ../templates/default/mymap.tpl:64
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "Are you sure you want to remove coordinates from the database?"
 
@@ -146,15 +146,23 @@ msgstr "Are you sure you want to remove coordinates from the database?"
 msgid "Search a town..."
 msgstr "Search a town..."
 
-#: ../_routes.php:291
+#: ../_routes.php:239
 msgid "Coordinates has been removed!"
 msgstr "Coordinates has been removed!"
 
-#: ../templates/default/common_scripts.tpl:163
+#: ../templates/default/common_scripts.tpl:134
+msgid "Sorry, that town could not be found."
+msgstr "Sorry, that town could not be found."
+
+#: ../templates/default/common_scripts.tpl:131
+msgid "Search"
+msgstr "Search"
+
+#: ../templates/default/common_scripts.tpl:179
 msgid "OpenStreetMap contributors"
 msgstr "OpenStreetMap contributors"
 
-#: ../templates/default/mymap.tpl:65
+#: ../templates/default/mymap.tpl:64
 msgid "Remove my coordinates"
 msgstr "Remove my coordinates"
 
@@ -166,7 +174,7 @@ msgstr "Geolocalize %membername"
 msgid "aka"
 msgstr "aka"
 
-#: ../_routes.php:307
+#: ../_routes.php:255
 msgid "Coordinates has not been stored :("
 msgstr "Coordinates has not been stored :("
 

@@ -12,18 +12,18 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 1.8.7.1\n"
 
-#: ../_routes.php:240
+#: ../_routes.php:188
 msgid "/i-live-here"
 msgstr "/i-live-here"
 
-#: ../_routes.php:54
+#: ../_routes.php:47
 msgid "/localize-member"
 msgstr "/localize-member"
 
-#: ../_routes.php:174
+#: ../_routes.php:145
 msgid "/map"
 msgstr "/map"
 
-#: ../_routes.php:158
+#: ../_routes.php:129
 msgid "/mymap"
 msgstr "/mymap"
