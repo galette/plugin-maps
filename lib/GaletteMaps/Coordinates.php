@@ -79,13 +79,13 @@ class Coordinates
             $select->where(self::PK . ' = ' . $id);
             $results = $zdb->execute($select);
 
-            if ( $results->count() > 0 ) {
+            if ($results->count() > 0) {
                 return $results->current();
             } else {
                 return array();
             }
         } catch (\Exception $e) {
-            if ( $e->getCode() == '42S02' ) {
+            if ($e->getCode() == '42S02') {
                 Analog::log(
                     'Maps coordinates table does not exists',
                     Analog::WARNING
@@ -124,7 +124,7 @@ class Coordinates
                 new Expression('true')
             );
 
-            if ( !$login->isAdmin()
+            if (!$login->isAdmin()
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
@@ -158,7 +158,7 @@ class Coordinates
                     )
                 );
 
-                if ( $login->isLogged() && !$login->isSuperAdmin() ) {
+                if ($login->isLogged() && !$login->isSuperAdmin()) {
                     $select->where(
                         new PredicateSet(
                             array(
@@ -177,7 +177,7 @@ class Coordinates
             $results = $zdb->execute($select);
 
             $res = array();
-            foreach ( $results as $r ) {
+            foreach ($results as $r) {
                 $a = new Adherent($zdb, $r);
                 $m = array(
                     'id_adh'    => $a->id,
@@ -186,15 +186,15 @@ class Coordinates
                     'name'      => $a->sname,
                     'nickname'  => $a->nickname
                 );
-                if ( $a->isCompany() ) {
+                if ($a->isCompany()) {
                     $m['company'] = $a->company_name;
                 }
                 $res[] = $m;
             }
 
             return $res;
-        } catch ( \Exception $e) {
-            if ( $e->getCode() == '42S02' ) {
+        } catch (\Exception $e) {
+            if ($e->getCode() == '42S02') {
                 Analog::log(
                     'Maps coordinates table does not exists',
                     Analog::WARNING
@@ -226,7 +226,7 @@ class Coordinates
         try {
             $res = null;
             $coords = $this->getCoords($id);
-            if ( count($coords) === 0 ) {
+            if (count($coords) === 0) {
                 //cordinates does not exists yet
                 $insert = $zdb->insert($this->getTableName());
                 $insert->values(
@@ -251,7 +251,7 @@ class Coordinates
                 $results = $zdb->execute($update);
             }
             return ($results->count() > 0);
-        } catch ( \Exception $e ) {
+        } catch (\Exception $e) {
             Analog::log(
                 'Unable to set coordinatates for member ' .
                 $id_adh . ' | ' . $e->getMessage(),
@@ -277,15 +277,14 @@ class Coordinates
             $delete->where(self::PK . '=' . $id);
             $del = $zdb->execute($delete);
             return ($del->count() > 0);
-        } catch ( \Exception $e ) {
+        } catch (\Exception $e) {
             Analog::log(
-                'Unable to set coordinatates for member ' .
+                'Unable to set coordinates for member ' .
                 $id . ' | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
         }
-
     }
 
     /**
@@ -298,4 +297,3 @@ class Coordinates
         return MAPS_PREFIX  . self::TABLE;
     }
 }
-

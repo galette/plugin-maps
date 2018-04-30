@@ -1,16 +1,16 @@
-#: ../_routes.php:240
+#: ../_routes.php:188
 msgid "/i-live-here"
 msgstr ""
 
-#: ../_routes.php:54
+#: ../_routes.php:47
 msgid "/localize-member"
 msgstr ""
 
-#: ../_routes.php:174
+#: ../_routes.php:145
 msgid "/map"
 msgstr ""
 
-#: ../_routes.php:158
+#: ../_routes.php:129
 msgid "/mymap"
 msgstr ""
 
