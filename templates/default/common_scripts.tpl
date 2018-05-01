@@ -5,7 +5,6 @@
 {/if}
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-control-osm-geocoder/Control.OSMGeocoder.js"]}"></script>
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "node_modules/leaflet-geosearch/dist/bundle.min.js"]}"></script>
 {if $cur_route eq 'maps_localize_member' or $cur_route eq 'maps_mymap'}
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.min.js"]}"></script>
 {/if}
