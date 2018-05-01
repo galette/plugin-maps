@@ -44,11 +44,11 @@
                 var _clng = _popup._latlng.lng.toString();
                 var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
 
-                _popup.setContent('<p>' + '{_T string="You clicked at %p" domain="maps" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a id="' + _id + '" href="#">{if isset($mymap)}{_T string="I live here!" domain="maps" escape="js"}{else}{_T string="Member lives here!" domain="maps" escape="js"}{/if}</a></p>');
+                _popup.setContent('<p>' + '{_T string="You clicked at %p" domain="maps" escape="js"}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a class="ilivehere" id="' + _id + '" href="#">{if isset($mymap)}{_T string="I live here!" domain="maps" escape="js"}{else}{_T string="Member lives here!" domain="maps" escape="js"}{/if}</a></p>');
             }
 
-            var _links = $(_container).find('a');
-            _a = $(_links[1]);
+            var _links = $(_container).find('a.ilivehere');
+            _a = $(_links[0]);
             _a.data('latlng', e.popup._latlng);
             _iLiveHere(_a.attr('id'));
         });
@@ -114,7 +114,7 @@
             map.setView([parseFloat(_slat), parseFloat(_slon)], 13);
             var _id = 'coords_' + _slat.replace('.', '_') + _slon.replace('.', '_');
             L.marker([_slat, _slon]).addTo(map)
-                .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a id="' + _id + '" href="#">{if isset($mymap)}{_T string="I live here!" domain="maps" escape="js"}{else}{_T string="Member lives here!" domain="maps" escape="js"}{/if}</a></p>').openPopup();
+                .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a class="ilivehere" id="' + _id + '" href="#">{if isset($mymap)}{_T string="I live here!" domain="maps" escape="js"}{else}{_T string="Member lives here!" domain="maps" escape="js"}{/if}</a></p>').openPopup();
         });
 {/if}
     }
