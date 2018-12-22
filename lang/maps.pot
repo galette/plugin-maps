@@ -10,11 +10,7 @@ msgstr ""
 msgid "Select your town."
 msgstr ""
 
-#: ../templates/default/adh_actions.tpl:1 ../templates/default/adh_fiche_action.tpl:2
-msgid "Geolocalize member"
-msgstr ""
-
-#: ../templates/default/common_scripts.tpl:179
+#: ../templates/default/common_scripts.tpl:178
 msgid "Imagery ©"
 msgstr ""
 
@@ -26,7 +22,7 @@ msgstr ""
 msgid "Coordinates has not been removed :("
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:134
+#: ../templates/default/common_scripts.tpl:133
 msgid "No result found"
 msgstr ""
 
@@ -34,11 +30,11 @@ msgstr ""
 msgid "You clicked at %p"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:118
+#: ../templates/default/common_scripts.tpl:117
 msgid "Display map in full screen"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:97
+#: ../templates/default/common_scripts.tpl:96
 msgid "An error occured during 'I live here' process :("
 msgstr ""
 
@@ -50,6 +46,10 @@ msgstr ""
 msgid "Choose %member location"
 msgstr ""
 
+#: ../templates/default/adh_fiche_action.tpl:9
+msgid "Geolocalize"
+msgstr ""
+
 #: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
 msgstr ""
@@ -58,17 +58,17 @@ msgstr ""
 msgid "Remove member coordinates"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:179
+#: ../templates/default/common_scripts.tpl:178
 msgid "Map data ©"
 msgstr ""
 
 #: ../_routes.php:89 ../_routes.php:160
-#: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3
-#: ../templates/default/public_menu.tpl:5
+#: ../templates/default/public_menu.tpl:3 ../templates/default/public_menu.tpl:7
+#: ../templates/default/menu.tpl:2
 msgid "Maps"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:170
+#: ../templates/default/common_scripts.tpl:169
 msgid "Show me where I am"
 msgstr ""
 
@@ -93,11 +93,11 @@ msgstr ""
 msgid "Superadmin cannot be localized."
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:172
+#: ../templates/default/common_scripts.tpl:171
 msgid "You seem located outside the boundaries of the map"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:127
+#: ../templates/default/common_scripts.tpl:126
 msgid "Search your town..."
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:129
+#: ../templates/default/common_scripts.tpl:128
 msgid "Search a town..."
 msgstr ""
 
@@ -126,15 +126,15 @@ msgstr ""
 msgid "Coordinates has been removed!"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:134
+#: ../templates/default/common_scripts.tpl:133
 msgid "Sorry, that town could not be found."
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:131
+#: ../templates/default/common_scripts.tpl:130
 msgid "Search"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:179
+#: ../templates/default/common_scripts.tpl:178
 msgid "OpenStreetMap contributors"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Remove my coordinates"
 msgstr ""
 
-#: ../templates/default/adh_actions.tpl:1
+#: ../templates/default/adh_fiche_action.tpl:5 ../templates/default/adh_actions.tpl:3
 msgid "Geolocalize %membername"
 msgstr ""
 
