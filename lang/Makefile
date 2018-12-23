@@ -1,6 +1,6 @@
 INSTALLDIR = .
 LANGUAGES = en_US fr_FR.utf8
-DOMAINS = maps maps_routes
+DOMAINS = maps
 MKLANG = ../../../lang/make_lang_l12n.py
 PHP_SOURCES = $(shell find ../ -maxdepth 1 -name \*.php) \
               $(shell find ../lib/GaletteMaps/ -name \*.php) \

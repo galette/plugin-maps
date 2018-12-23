@@ -44,7 +44,7 @@ use GaletteMaps\Coordinates;
 require_once $module['root'] . '/_config.inc.php';
 
 $this->get(
-    __('/localize-member', 'maps_routes') . '/{id:\d+}',
+    '/localize-member/{id:\d+}',
     function ($request, $response, $args) use ($module, $module_id) {
         $id = $args['id'];
         $member = new Adherent($this->zdb, (int)$id);
@@ -126,7 +126,7 @@ $this->get(
 
 //member self localization
 $this->get(
-    __('/mymap', 'maps_routes'),
+    '/mymap',
     function ($request, $response) {
         $deps = array(
             'picture'   => false,
@@ -142,7 +142,7 @@ $this->get(
 
 //global map page
 $this->get(
-    __('/map', 'maps_routes'),
+    '/map',
     function ($request, $response) use ($module, $module_id) {
         $login = $this->login;
         if (!$this->preferences->showPublicPages($login)) {
@@ -185,7 +185,7 @@ $this->get(
 )->setName('maps_map');
 
 $this->post(
-    __('/i-live-here', 'maps_routes') . '[/{id:\d+}]',
+    '/i-live-here[/{id:\d+}]',
     function ($request, $response, $args) {
         $id = null;
         if (isset($args['id'])) {
