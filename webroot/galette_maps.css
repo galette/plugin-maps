@@ -35,28 +35,6 @@
     text-align: left;
 }
 
-#pmaps {
-    background-image:url(images/maps.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png");
-}
-#pmaps.ui-state-hover {
-    background-image:url(images/maps.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png");
-}
-
-#btn_plugins_maps {
-    padding-top:30px!important;
-    padding-left: 0!important;
-    display: block;
-    background-position: 50% 5px, 50% 50%!important;
-    background-repeat: no-repeat, repeat!important;
-}
-
-#btn_plugins_maps {
-    background-image:url(images/locate_member.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png");
-}
-#btn_plugins_maps.ui-state-hover {
-    background-image: url(images/locate_member.png), url("../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png");
-}
-
 #desktop #maps {
     background-image: url(images/dashboard.png), url(../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png);
 }

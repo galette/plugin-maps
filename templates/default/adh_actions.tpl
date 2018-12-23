@@ -1,1 +1,4 @@
-            <a href="{path_for name="maps_localize_member" data=["id" => $member->id]}"><img src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "images/maps.png"]}" alt="{_T string="Geolocalize member" domain="maps"}" width="18" height="13" title="{_T string="Geolocalize %membername" domain="maps" pattern="/%membername/" replace=$member->sname}"/></a>
+            <a href="{path_for name="maps_localize_member" data=["id" => $member->id]}" class="tooltip">
+                <i class="fas fa-map-pin"></i>
+                <span class="sr-only">{_T string="Geolocalize %membername" domain="maps" pattern="/%membername/" replace=$member->sname}</span>
+            </a>

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2017-12-22 08:31+0100\n"
+"PO-Revision-Date: 2018-12-22 20:56+0100\n"
 "Last-Translator: Johan Cwiklinski <johan@x-tnd.be>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: fr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 2.2\n"
 
 #: ../templates/default/mymap.tpl:7
 msgid "In the database, town is set to: '%town'"
@@ -27,12 +27,7 @@ msgstr "Something went wrong :("
 msgid "Select your town."
 msgstr "Select your town."
 
-#: ../templates/default/adh_actions.tpl:1
-#: ../templates/default/adh_fiche_action.tpl:2
-msgid "Geolocalize member"
-msgstr "Geolocalize member"
-
-#: ../templates/default/common_scripts.tpl:179
+#: ../templates/default/common_scripts.tpl:178
 msgid "Imagery ©"
 msgstr "Imagery ©"
 
@@ -44,7 +39,7 @@ msgstr "%member geographic position"
 msgid "Coordinates has not been removed :("
 msgstr "Coordinates has not been removed :("
 
-#: ../templates/default/common_scripts.tpl:134
+#: ../templates/default/common_scripts.tpl:133
 msgid "No result found"
 msgstr "No result found"
 
@@ -52,11 +47,11 @@ msgstr "No result found"
 msgid "You clicked at %p"
 msgstr "You clicked at %p"
 
-#: ../templates/default/common_scripts.tpl:118
+#: ../templates/default/common_scripts.tpl:117
 msgid "Display map in full screen"
 msgstr "Display map in full screen"
 
-#: ../templates/default/common_scripts.tpl:97
+#: ../templates/default/common_scripts.tpl:96
 msgid "An error occured during 'I live here' process :("
 msgstr "An error occured during 'I live here' process :("
 
@@ -69,6 +64,10 @@ msgstr "Member (company)"
 msgid "Choose %member location"
 msgstr "Choose %member location"
 
+#: ../templates/default/adh_fiche_action.tpl:9
+msgid "Geolocalize"
+msgstr "Geolocalize"
+
 #: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
 msgstr "An error occured removing coordinates :("
@@ -77,17 +76,16 @@ msgstr "An error occured removing coordinates :("
 msgid "Remove member coordinates"
 msgstr "Remove member coordinates"
 
-#: ../templates/default/common_scripts.tpl:179
+#: ../templates/default/common_scripts.tpl:178
 msgid "Map data ©"
 msgstr "Map data ©"
 
-#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
-#: ../templates/default/public_menu.tpl:3
-#: ../templates/default/public_menu.tpl:5
+#: ../_routes.php:89 ../_routes.php:160 ../templates/default/public_menu.tpl:3
+#: ../templates/default/public_menu.tpl:7 ../templates/default/menu.tpl:2
 msgid "Maps"
 msgstr "Maps"
 
-#: ../templates/default/common_scripts.tpl:170
+#: ../templates/default/common_scripts.tpl:169
 msgid "Show me where I am"
 msgstr "Show me where I am"
 
@@ -113,11 +111,11 @@ msgstr "My localization"
 msgid "Superadmin cannot be localized."
 msgstr "Superadmin cannot be localized."
 
-#: ../templates/default/common_scripts.tpl:172
+#: ../templates/default/common_scripts.tpl:171
 msgid "You seem located outside the boundaries of the map"
 msgstr "You seem located outside the boundaries of the map"
 
-#: ../templates/default/common_scripts.tpl:127
+#: ../templates/default/common_scripts.tpl:126
 msgid "Search your town..."
 msgstr "Search your town..."
 
@@ -142,7 +140,7 @@ msgstr ""
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "Are you sure you want to remove coordinates from the database?"
 
-#: ../templates/default/common_scripts.tpl:129
+#: ../templates/default/common_scripts.tpl:128
 msgid "Search a town..."
 msgstr "Search a town..."
 
@@ -150,15 +148,15 @@ msgstr "Search a town..."
 msgid "Coordinates has been removed!"
 msgstr "Coordinates has been removed!"
 
-#: ../templates/default/common_scripts.tpl:134
+#: ../templates/default/common_scripts.tpl:133
 msgid "Sorry, that town could not be found."
 msgstr "Sorry, that town could not be found."
 
-#: ../templates/default/common_scripts.tpl:131
+#: ../templates/default/common_scripts.tpl:130
 msgid "Search"
 msgstr "Search"
 
-#: ../templates/default/common_scripts.tpl:179
+#: ../templates/default/common_scripts.tpl:178
 msgid "OpenStreetMap contributors"
 msgstr "OpenStreetMap contributors"
 
@@ -166,7 +164,8 @@ msgstr "OpenStreetMap contributors"
 msgid "Remove my coordinates"
 msgstr "Remove my coordinates"
 
-#: ../templates/default/adh_actions.tpl:1
+#: ../templates/default/adh_fiche_action.tpl:5
+#: ../templates/default/adh_actions.tpl:3
 msgid "Geolocalize %membername"
 msgstr "Geolocalize %membername"
 
