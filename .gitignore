@@ -1,2 +1,4 @@
 data/
 *.exvim*
+node_modules/
+webroot/js/

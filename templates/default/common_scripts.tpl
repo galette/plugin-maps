@@ -1,15 +1,6 @@
-{if $GALETTE_MODE eq 'DEV'}
-    {assign var=mainleaflet value="leaflet-1.2.0/leaflet-src.js" }
-{else}
-    {assign var=mainleaflet value="leaflet-1.2.0/leaflet.js" }
-{/if}
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => $mainleaflet]}"></script>
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-control-osm-geocoder/Control.OSMGeocoder.js"]}"></script>
-{if $cur_route eq 'maps_localize_member' or $cur_route eq 'maps_mymap'}
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-locatecontrol/L.Control.Locate.min.js"]}"></script>
-{/if}
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "js/maps.bundle.js"]}"></script>
 <script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-legendcontrol/L.Control.Legend.js"]}"></script>
-<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-fullscreencontrol/Control.FullScreen.js"]}"></script>
+<script type="text/javascript" src="{path_for name="plugin_res" data=["plugin" => $module_id, "path" => "leaflet-control-osm-geocoder/Control.OSMGeocoder.js"]}"></script>
 <script type="text/javascript">
 
     /**
