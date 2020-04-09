@@ -40,10 +40,10 @@ namespace GaletteMaps;
 use Analog\Analog;
 use Galette\Entity\Adherent;
 use Galette\Repository\Members;
-use Zend\Db\Sql\Expression;
-use Zend\Db\Sql\Predicate\PredicateSet;
-use Zend\Db\Sql\Predicate\Operator;
-use Zend\Db\Sql\Predicate\Expression as PredicateExpression;
+use Laminas\Db\Sql\Expression;
+use Laminas\Db\Sql\Predicate\PredicateSet;
+use Laminas\Db\Sql\Predicate\Operator;
+use Laminas\Db\Sql\Predicate\Expression as PredicateExpression;
 
 /**
  * Members GPS coordinates

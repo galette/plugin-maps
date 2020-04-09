@@ -38,8 +38,8 @@
 namespace GaletteMaps;
 
 use Analog\Analog;
-use Zend\Db\Sql\Predicate\PredicateSet;
-use Zend\Db\Sql\Predicate\Expression;
+use Laminas\Db\Sql\Predicate\PredicateSet;
+use Laminas\Db\Sql\Predicate\Expression;
 use Galette\Core\Preferences;
 
 /**
