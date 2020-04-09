@@ -175,7 +175,7 @@
 
         L.tileLayer('http://{ldelim}s{rdelim}.basemaps.cartocdn.com/light_all/{ldelim}z{rdelim}/{ldelim}x{rdelim}/{ldelim}y{rdelim}.png', {
             maxZoom: 18,
-            attribution: '{_T string="Map data ©" domain="maps" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" domain="maps" escape="js"}</a>, {_T string="Imagery ©" domain="maps" escape="js"} <a href="https://cartodb.com/attributions">CartoDB</a>'
+            attribution: '{_T string="Map data (c)" domain="maps" escape="js"} <a href="http://openstreetmap.org">{_T string="OpenStreetMap contributors" domain="maps" escape="js"}</a>, {_T string="Imagery (c)" domain="maps" escape="js"} <a href="https://cartodb.com/attributions">CartoDB</a>'
         }).addTo(map);
 
         try {
