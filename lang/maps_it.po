@@ -1,174 +1,179 @@
+# MIN UZ <varulv93@outlook.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-06-25 20:42+0000\n"
+"Last-Translator: MIN UZ <varulv93@outlook.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 3.0.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.2-dev\n"
 
 #: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
-msgstr ""
+msgstr "Mappe"
 
 #: ../_routes.php:92
 msgid "%member geographic position"
-msgstr ""
+msgstr "%posizione geografica utente"
 
 #: ../_routes.php:107 ../_routes.php:173
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 msgstr ""
+"Le coordinate non sono state caricate. Forse le tabelle dei plugin non "
+"esistono nel database?"
 
 #: ../_routes.php:203
 msgid "Superadmin cannot be localized."
-msgstr ""
+msgstr "Il Super-amministratore non può essere localizzato."
 
 #: ../_routes.php:229 ../_routes.php:241
 msgid "Coordinates has not been removed :("
-msgstr ""
+msgstr "Le coordinate non sono state rimosse :("
 
 #: ../_routes.php:239
 msgid "Coordinates has been removed!"
-msgstr ""
+msgstr "Le coordinate sono state rimosse!"
 
 #: ../_routes.php:253
 msgid "New coordinates has been stored!"
-msgstr ""
+msgstr "Nuove coordinate sono state memorizzate!"
 
 #: ../_routes.php:255
 msgid "Coordinates has not been stored :("
-msgstr ""
+msgstr "Le coordinate non sono state memorizzate :("
 
 #: ../_routes.php:258
 msgid "Something went wrong :("
-msgstr ""
+msgstr "Qualcosa è andato storto :("
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
 msgid "My localization"
-msgstr ""
+msgstr "La mia localizzazione"
 
 #: ../templates/default/adh_actions.tpl:3
 #: ../templates/default/adh_fiche_action.tpl:5
 msgid "Geolocalize %membername"
-msgstr ""
+msgstr "Geolocalizza %nomeutente"
 
 #: ../templates/default/adh_fiche_action.tpl:9
 msgid "Geolocalize"
-msgstr ""
+msgstr "Geolocalizza"
 
 #: ../templates/default/common_html.tpl:14
 #: ../templates/default/common_html.tpl:17
 msgid "Member (company)"
-msgstr ""
+msgstr "Utente (Azienda)"
 
 #: ../templates/default/common_html.tpl:22
 #: ../templates/default/common_html.tpl:25
 msgid "Search result"
-msgstr ""
+msgstr "Risultato di ricerca"
 
 #: ../templates/default/common_scripts.tpl:96
 msgid "An error occured during 'I live here' process :("
-msgstr ""
+msgstr "Si è verificato un errore durante il processo \"Io vivo qui\" :("
 
 #: ../templates/default/common_scripts.tpl:117
 msgid "Display map in full screen"
-msgstr ""
+msgstr "Visualizza la mappa a schermo intero"
 
 #: ../templates/default/common_scripts.tpl:126
 msgid "Search your town..."
-msgstr ""
+msgstr "Cerca la tua città ..."
 
 #: ../templates/default/common_scripts.tpl:128
 msgid "Search a town..."
-msgstr ""
+msgstr "Cerca una città ..."
 
 #: ../templates/default/common_scripts.tpl:130
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: ../templates/default/common_scripts.tpl:133
 msgid "No result found"
-msgstr ""
+msgstr "Nessun risultato trovato"
 
 #: ../templates/default/common_scripts.tpl:133
 msgid "Sorry, that town could not be found."
-msgstr ""
+msgstr "Spiacente, quella città non è stata trovata."
 
 #: ../templates/default/common_scripts.tpl:169
 msgid "Show me where I am"
-msgstr ""
+msgstr "Mostrami dove mi trovo"
 
 #: ../templates/default/common_scripts.tpl:171
 msgid "You seem located outside the boundaries of the map"
-msgstr ""
+msgstr "Sembra che ti trovi al di fuori dei confini della mappa"
 
 #: ../templates/default/common_scripts.tpl:178
 msgid "Map data (c)"
-msgstr ""
+msgstr "Dati mappa (c)"
 
 #: ../templates/default/common_scripts.tpl:178
 msgid "OpenStreetMap contributors"
-msgstr ""
+msgstr "Collaboratori di OpenStreetMap"
 
 #: ../templates/default/common_scripts.tpl:178
 msgid "Imagery (c)"
-msgstr ""
+msgstr "Immagini (c)"
 
 #: ../templates/default/mymap.tpl:6
 msgid "Choose your location"
-msgstr ""
+msgstr "Scegli la tua posizione"
 
 #: ../templates/default/mymap.tpl:6
 msgid "Choose %member location"
-msgstr ""
+msgstr "Scegli %posizione utente"
 
 #: ../templates/default/mymap.tpl:7
 msgid "Select your town."
-msgstr ""
+msgstr "Seleziona la tua città."
 
 #: ../templates/default/mymap.tpl:7
 msgid "In the database, town is set to: '%town'"
-msgstr ""
+msgstr "Nel database, la città è impostata su: '% città'"
 
 #: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
-msgstr ""
+msgstr "Hai fatto clic su %p"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "I live here!"
-msgstr ""
+msgstr "Tu vivi qui!"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "Member lives here!"
-msgstr ""
+msgstr "L'utente vive qui!"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove my coordinates"
-msgstr ""
+msgstr "Rimuovi le mie coordinate"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove member coordinates"
-msgstr ""
+msgstr "Rimuovi le coordinate dell'utente"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Are you sure you want to remove coordinates from the database?"
-msgstr ""
+msgstr "Sei sicuro di voler rimuovere le coordinate dal database?"
 
 #: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
-msgstr ""
+msgstr "Si è verificato un errore durante la rimozione delle coordinate :("
 
 #: ../templates/default/maps.tpl:21
 msgid "aka"
-msgstr ""
+msgstr "Alias"
