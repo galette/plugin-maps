@@ -1,14 +1,15 @@
 # MIN UZ <varulv93@outlook.com>, 2020.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-06-25 20:42+0000\n"
-"Last-Translator: MIN UZ <varulv93@outlook.com>\n"
+"PO-Revision-Date: 2020-06-26 09:14+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/it/>\n"
-"Language: it\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,8 +23,9 @@ msgid "Maps"
 msgstr "Mappe"
 
 #: ../_routes.php:92
+#, fuzzy
 msgid "%member geographic position"
-msgstr "%posizione geografica utente"
+msgstr "Posizione geografica %member"
 
 #: ../_routes.php:107 ../_routes.php:173
 msgid ""
@@ -133,8 +135,9 @@ msgid "Choose your location"
 msgstr "Scegli la tua posizione"
 
 #: ../templates/default/mymap.tpl:6
+#, fuzzy
 msgid "Choose %member location"
-msgstr "Scegli %posizione utente"
+msgstr "Scegli %member posizione"
 
 #: ../templates/default/mymap.tpl:7
 msgid "Select your town."
@@ -142,7 +145,7 @@ msgstr "Seleziona la tua città."
 
 #: ../templates/default/mymap.tpl:7
 msgid "In the database, town is set to: '%town'"
-msgstr "Nel database, la città è impostata su: '% città'"
+msgstr "Nel database, la città è impostata su: '%town'"
 
 #: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
