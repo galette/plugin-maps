@@ -1,11 +1,12 @@
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-06-26 19:37+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2020-06-28 07:54+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/es/>\n"
 "Language: es\n"
@@ -26,12 +27,13 @@ msgid "%member geographic position"
 msgstr "Posición geográfica de %member"
 
 #: ../_routes.php:107 ../_routes.php:173
+#, fuzzy
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 msgstr ""
-"No se ha cargado Coordenadas. Quizá las tablas del complemento no existen en "
-"la base de datos."
+"No se ha cargado Coordenadas. ¿Quizá las tablas del complemento no existen "
+"en la base de datos?"
 
 #: ../_routes.php:203
 msgid "Superadmin cannot be localized."
