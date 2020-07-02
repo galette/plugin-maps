@@ -3,12 +3,42 @@ const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './maps.js',
+  entry: {
+    'maps.bundle.js': './maps.js',
+    'maps.bundle.css': [
+      path.resolve(__dirname, 'node_modules/leaflet/dist/leaflet.css'),
+      path.resolve(__dirname, 'node_modules/leaflet-control-geocoder/dist/Control.Geocoder.css'),
+      path.resolve(__dirname, 'node_modules/leaflet.fullscreen/Control.FullScreen.css')
+    ]
+  },
   mode: 'none',
   output: {
-    filename: "maps.bundle.js",
+    filename: '[name]',
     path: path.join(__dirname, 'webroot', 'js')
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, 'node_modules/leaflet/dist/leaflet.css'),
+        to: path.resolve(__dirname, 'webroot/js/leaflet.css')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet/dist/images/'),
+        to: path.resolve(__dirname, 'webroot/js/images')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet-control-geocoder/dist/Control.Geocoder.css'),
+        to: path.resolve(__dirname, 'webroot/js/Control.Geocoder.css')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet-control-geocoder/images/'),
+        to: path.resolve(__dirname, 'webroot/js/images')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet.fullscreen/Control.FullScreen.css'),
+        to: path.resolve(__dirname, 'webroot/js/Control.FullScreen.css')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet.fullscreen/icon-fullscreen.png'),
+        to: path.resolve(__dirname, 'webroot/js/icon-fullscreen.png')
+      }
+    ])
+  ],
   externals: {
     // shows how we can rely on browser globals instead of bundling these dependencies,
     // in case we want to access jQuery from a CDN or if we want an easy way to
@@ -16,8 +46,26 @@ module.exports = {
     jquery: 'jQuery',
     L: 'L',
   },
-  devtool: 'sourcemap',
   resolve: {
-    extensions: [ '.js' ],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options:{
+              name:'[name].[ext]',
+              outputPath:'assets/images/'
+            }
+          },
+        ],
+      },
+    ],
   }
 }
