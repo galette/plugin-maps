@@ -2,11 +2,6 @@
 
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
-use Analog\Analog;
-use Galette\Entity\Adherent;
-use GaletteMaps\NominatimTowns;
-use GaletteMaps\Coordinates;
-
 /**
  * Maps routes
  *
@@ -40,6 +35,11 @@ use GaletteMaps\Coordinates;
  * @since     0.9dev 2015-10-28
  */
 
+use Analog\Analog;
+use Galette\Entity\Adherent;
+use GaletteMaps\NominatimTowns;
+use GaletteMaps\Coordinates;
+
 //Constants and classes from plugin
 require_once $module['root'] . '/_config.inc.php';
 
@@ -49,7 +49,8 @@ $this->get(
         $id = $args['id'];
         $member = new Adherent($this->zdb, (int)$id);
 
-        if ($this->login->id != $id
+        if (
+            $this->login->id != $id
             && !$this->login->isAdmin()
             && !$this->login->isStaff()
             && $this->login->isGroupManager()
@@ -204,7 +205,8 @@ $this->post(
         } elseif ($id === null) {
             $member = new Adherent($this->zdb, $login->login);
             $id = $member->id;
-        } elseif (!$login->isSuperAdmin()
+        } elseif (
+            !$login->isSuperAdmin()
             && !$login->isAdmin()
             && !$login->isStaff()
             && $login->isGroupManager()
@@ -240,7 +242,8 @@ $this->post(
                 } else {
                     $error = _T('Coordinates has not been removed :(', 'maps');
                 }
-            } elseif (isset($post['latitude'])
+            } elseif (
+                isset($post['latitude'])
                 && isset($post['longitude'])
             ) {
                 $res = $coords->setCoords(

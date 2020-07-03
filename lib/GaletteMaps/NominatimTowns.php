@@ -137,7 +137,8 @@ class NominatimTowns
             if ($town->city || $town->town || $town->village) {
                 $unique = true;
                 foreach ($results as $elt) {
-                    if ($elt['latitude'] == (string)$town['lat']
+                    if (
+                        $elt['latitude'] == (string)$town['lat']
                         && $elt['longitude'] == (string)$town['lon']
                     ) {
                         $unique = false;

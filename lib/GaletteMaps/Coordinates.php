@@ -124,7 +124,8 @@ class Coordinates
                 new Expression('true')
             );
 
-            if (!$login->isAdmin()
+            if (
+                !$login->isAdmin()
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
