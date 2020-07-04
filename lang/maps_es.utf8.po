@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-06-28 07:54+0000\n"
+"PO-Revision-Date: 2020-07-04 13:23+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/es/>\n"
@@ -44,12 +44,14 @@ msgid "Coordinates has not been removed :("
 msgstr "No se ha eliminado Coordenadas :("
 
 #: ../_routes.php:239
+#, fuzzy
 msgid "Coordinates has been removed!"
-msgstr "Se ha eliminado Coordenadas."
+msgstr "¡Se ha eliminado Coordenadas!"
 
 #: ../_routes.php:253
+#, fuzzy
 msgid "New coordinates has been stored!"
-msgstr "Se han almacenado las coordenadas nuevas."
+msgstr "¡Se han almacenado las coordenadas nuevas!"
 
 #: ../_routes.php:255
 msgid "Coordinates has not been stored :("
