@@ -100,7 +100,7 @@ def get_latest_version():
         tag = tagref.tag
         if valid_version(tag.tag):
             #last minor version is always the last one :)
-            if tag.tag > last:
+            if last == None or tag.tag > last:
                 last = tag.tag
 
     return last
@@ -144,16 +144,16 @@ def get_rel_name(buildver):
 
     if commit and extra:
         now = datetime.now()
-        archive_name = 'galette-plugin-events-%s-%s-%s-%s' % (
+        archive_name = 'galette-plugin-maps-%s-%s-%s-%s' % (
             buildver,
             extra,
             now.strftime('%Y%m%d'),
             commit
         )
     elif nightly:
-        archive_name = 'galette-plugin-events-dev'
+        archive_name = 'galette-plugin-maps-dev'
     else:
-        archive_name = 'galette-plugin-events-%s' % buildver
+        archive_name = 'galette-plugin-maps-%s' % buildver
 
     return archive_name
 
@@ -444,7 +444,7 @@ def main():
     """
     global verbose, tagrefs, force, extra, assume_yes, nightly, sign, ssh_key
 
-    parser = argparse.ArgumentParser(description='Release Galette Events Plugin')
+    parser = argparse.ArgumentParser(description='Release Galette Maps Plugin')
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
         '-v',
@@ -555,7 +555,7 @@ def main():
             build = True
         else:
             build = ask_user_confirm(
-                'Do you want to build Galette Events Plugin version %s? [Yes/no] ' % buildver
+                'Do you want to build Galette Maps Plugin version %s? [Yes/no] ' % buildver
             )
 
     if build:
