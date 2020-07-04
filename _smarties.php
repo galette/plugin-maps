@@ -40,4 +40,3 @@ $_tpl_assignments = array(
     'maps_dir'      => '__plugin_dir__',
     'pluginc_dir'   => '__plugin_include_dir__/'
 );
-

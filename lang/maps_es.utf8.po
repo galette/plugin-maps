@@ -1,68 +1,94 @@
-#: ../_routes.php:89 ../_routes.php:160
-#: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3
+# Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
+"POT-Creation-Date: 2020-06-18 15:57+0200\n"
+"PO-Revision-Date: 2020-06-28 07:54+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/es/>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.2-dev\n"
+
+#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
+#: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
 #: ../_routes.php:92
 msgid "%member geographic position"
-msgstr ""
+msgstr "Posición geográfica de %member"
 
 #: ../_routes.php:107 ../_routes.php:173
-msgid "Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?"
+#, fuzzy
+msgid ""
+"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
+"datatabase?"
 msgstr ""
+"No se ha cargado Coordenadas. ¿Quizá las tablas del complemento no existen "
+"en la base de datos?"
 
 #: ../_routes.php:203
 msgid "Superadmin cannot be localized."
-msgstr ""
+msgstr "No se puede localizar Superadmin."
 
 #: ../_routes.php:229 ../_routes.php:241
 msgid "Coordinates has not been removed :("
-msgstr ""
+msgstr "No se ha eliminado Coordenadas :("
 
 #: ../_routes.php:239
 msgid "Coordinates has been removed!"
-msgstr ""
+msgstr "Se ha eliminado Coordenadas."
 
 #: ../_routes.php:253
 msgid "New coordinates has been stored!"
-msgstr ""
+msgstr "Se han almacenado las coordenadas nuevas."
 
 #: ../_routes.php:255
 msgid "Coordinates has not been stored :("
-msgstr ""
+msgstr "No se han almacenado las coordenadas :("
 
 #: ../_routes.php:258
 msgid "Something went wrong :("
-msgstr ""
+msgstr "Se ha producido un problema :("
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
 msgid "My localization"
-msgstr ""
+msgstr "Mi localización"
 
-#: ../templates/default/adh_actions.tpl:3 ../templates/default/adh_fiche_action.tpl:5
+#: ../templates/default/adh_actions.tpl:3
+#: ../templates/default/adh_fiche_action.tpl:5
 msgid "Geolocalize %membername"
-msgstr ""
+msgstr "Geolocalizar %membername"
 
 #: ../templates/default/adh_fiche_action.tpl:9
 msgid "Geolocalize"
-msgstr ""
+msgstr "Geolocalizar"
 
-#: ../templates/default/common_html.tpl:14 ../templates/default/common_html.tpl:17
+#: ../templates/default/common_html.tpl:14
+#: ../templates/default/common_html.tpl:17
 msgid "Member (company)"
-msgstr ""
+msgstr "Miembro (empresa)"
 
-#: ../templates/default/common_html.tpl:22 ../templates/default/common_html.tpl:25
+#: ../templates/default/common_html.tpl:22
+#: ../templates/default/common_html.tpl:25
 msgid "Search result"
-msgstr ""
+msgstr "Resultado de la búsqueda"
 
 #: ../templates/default/common_scripts.tpl:96
 msgid "An error occured during 'I live here' process :("
-msgstr ""
+msgstr "Se produjo un error durante el proceso de «Vivo aquí» :("
 
 #: ../templates/default/common_scripts.tpl:117
 msgid "Display map in full screen"
-msgstr ""
+msgstr "Mostrar mapa en pantalla completa"
 
 #: ../templates/default/common_scripts.tpl:126
 msgid "Search your town..."
@@ -74,11 +100,11 @@ msgstr ""
 
 #: ../templates/default/common_scripts.tpl:130
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 #: ../templates/default/common_scripts.tpl:133
 msgid "No result found"
-msgstr ""
+msgstr "No se encontró ningún resultado"
 
 #: ../templates/default/common_scripts.tpl:133
 msgid "Sorry, that town could not be found."
@@ -86,7 +112,7 @@ msgstr ""
 
 #: ../templates/default/common_scripts.tpl:169
 msgid "Show me where I am"
-msgstr ""
+msgstr "Mostrarme dónde estoy"
 
 #: ../templates/default/common_scripts.tpl:171
 msgid "You seem located outside the boundaries of the map"
@@ -94,15 +120,15 @@ msgstr ""
 
 #: ../templates/default/common_scripts.tpl:178
 msgid "Map data (c)"
-msgstr ""
+msgstr "Datos cartográficos ©"
 
 #: ../templates/default/common_scripts.tpl:178
 msgid "OpenStreetMap contributors"
-msgstr ""
+msgstr "contribuidores de OpenStreetMap"
 
 #: ../templates/default/common_scripts.tpl:178
 msgid "Imagery (c)"
-msgstr ""
+msgstr "Imágenes ©"
 
 #: ../templates/default/mymap.tpl:6
 msgid "Choose your location"
@@ -127,30 +153,29 @@ msgstr ""
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "I live here!"
-msgstr ""
+msgstr "¡Vivo aquí!"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "Member lives here!"
-msgstr ""
+msgstr "¡El miembro vive aquí!"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove my coordinates"
-msgstr ""
+msgstr "Eliminar mis coordenadas"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove member coordinates"
-msgstr ""
+msgstr "Eliminar coordenadas de miembro"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Are you sure you want to remove coordinates from the database?"
-msgstr ""
+msgstr "¿Confirma que quiere eliminar las coordenadas de esta base de datos?"
 
 #: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
-msgstr ""
+msgstr "Se produjo un error al eliminar las coordenadas :("
 
 #: ../templates/default/maps.tpl:21
 msgid "aka"
-msgstr ""
-
+msgstr "también conocido como"

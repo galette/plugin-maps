@@ -2,11 +2,6 @@
 
 /* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
 
-use Analog\Analog;
-use Galette\Entity\Adherent;
-use GaletteMaps\NominatimTowns;
-use GaletteMaps\Coordinates;
-
 /**
  * Maps routes
  *
@@ -40,16 +35,22 @@ use GaletteMaps\Coordinates;
  * @since     0.9dev 2015-10-28
  */
 
+use Analog\Analog;
+use Galette\Entity\Adherent;
+use GaletteMaps\NominatimTowns;
+use GaletteMaps\Coordinates;
+
 //Constants and classes from plugin
 require_once $module['root'] . '/_config.inc.php';
 
 $this->get(
-    __('/localize-member', 'maps_routes') . '/{id:\d+}',
+    '/localize-member/{id:\d+}',
     function ($request, $response, $args) use ($module, $module_id) {
         $id = $args['id'];
         $member = new Adherent($this->zdb, (int)$id);
 
-        if ($this->login->id != $id
+        if (
+            $this->login->id != $id
             && !$this->login->isAdmin()
             && !$this->login->isStaff()
             && $this->login->isGroupManager()
@@ -126,7 +127,7 @@ $this->get(
 
 //member self localization
 $this->get(
-    __('/mymap', 'maps_routes'),
+    '/mymap',
     function ($request, $response) {
         $deps = array(
             'picture'   => false,
@@ -142,7 +143,7 @@ $this->get(
 
 //global map page
 $this->get(
-    __('/map', 'maps_routes'),
+    '/map',
     function ($request, $response) use ($module, $module_id) {
         $login = $this->login;
         if (!$this->preferences->showPublicPages($login)) {
@@ -185,7 +186,7 @@ $this->get(
 )->setName('maps_map');
 
 $this->post(
-    __('/i-live-here', 'maps_routes') . '[/{id:\d+}]',
+    '/i-live-here[/{id:\d+}]',
     function ($request, $response, $args) {
         $id = null;
         if (isset($args['id'])) {
@@ -204,7 +205,8 @@ $this->post(
         } elseif ($id === null) {
             $member = new Adherent($this->zdb, $login->login);
             $id = $member->id;
-        } elseif (!$login->isSuperAdmin()
+        } elseif (
+            !$login->isSuperAdmin()
             && !$login->isAdmin()
             && !$login->isStaff()
             && $login->isGroupManager()
@@ -240,7 +242,8 @@ $this->post(
                 } else {
                     $error = _T('Coordinates has not been removed :(', 'maps');
                 }
-            } elseif (isset($post['latitude'])
+            } elseif (
+                isset($post['latitude'])
                 && isset($post['longitude'])
             ) {
                 $res = $coords->setCoords(

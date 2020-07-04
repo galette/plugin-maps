@@ -1,3 +1,18 @@
+# Weblate <noreply@weblate.org>, 2020.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-29 16:04+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: oc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 3.0.0\n"
+
 #: ../_routes.php:89 ../_routes.php:160
 #: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
@@ -153,4 +168,3 @@ msgstr ""
 #: ../templates/default/maps.tpl:21
 msgid "aka"
 msgstr ""
-

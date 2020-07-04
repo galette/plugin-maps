@@ -38,8 +38,8 @@
 namespace GaletteMaps;
 
 use Analog\Analog;
-use Zend\Db\Sql\Predicate\PredicateSet;
-use Zend\Db\Sql\Predicate\Expression;
+use Laminas\Db\Sql\Predicate\PredicateSet;
+use Laminas\Db\Sql\Predicate\Expression;
 use Galette\Core\Preferences;
 
 /**
@@ -137,7 +137,8 @@ class NominatimTowns
             if ($town->city || $town->town || $town->village) {
                 $unique = true;
                 foreach ($results as $elt) {
-                    if ($elt['latitude'] == (string)$town['lat']
+                    if (
+                        $elt['latitude'] == (string)$town['lat']
                         && $elt['longitude'] == (string)$town['lon']
                     ) {
                         $unique = false;

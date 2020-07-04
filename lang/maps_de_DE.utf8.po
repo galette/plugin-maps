@@ -1,5 +1,19 @@
-#: ../_routes.php:89 ../_routes.php:160
-#: ../templates/default/menu.tpl:2 ../templates/default/public_menu.tpl:3
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-18 15:57+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 3.0.0\n"
+
+#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
+#: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
 msgstr ""
@@ -9,7 +23,9 @@ msgid "%member geographic position"
 msgstr ""
 
 #: ../_routes.php:107 ../_routes.php:173
-msgid "Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?"
+msgid ""
+"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
+"datatabase?"
 msgstr ""
 
 #: ../_routes.php:203
@@ -40,7 +56,8 @@ msgstr ""
 msgid "My localization"
 msgstr ""
 
-#: ../templates/default/adh_actions.tpl:3 ../templates/default/adh_fiche_action.tpl:5
+#: ../templates/default/adh_actions.tpl:3
+#: ../templates/default/adh_fiche_action.tpl:5
 msgid "Geolocalize %membername"
 msgstr ""
 
@@ -48,11 +65,13 @@ msgstr ""
 msgid "Geolocalize"
 msgstr ""
 
-#: ../templates/default/common_html.tpl:14 ../templates/default/common_html.tpl:17
+#: ../templates/default/common_html.tpl:14
+#: ../templates/default/common_html.tpl:17
 msgid "Member (company)"
 msgstr ""
 
-#: ../templates/default/common_html.tpl:22 ../templates/default/common_html.tpl:25
+#: ../templates/default/common_html.tpl:22
+#: ../templates/default/common_html.tpl:25
 msgid "Search result"
 msgstr ""
 
@@ -153,4 +172,3 @@ msgstr ""
 #: ../templates/default/maps.tpl:21
 msgid "aka"
 msgstr ""
-

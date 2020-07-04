@@ -1,4 +1,0 @@
-A Galette map plugin to geolocalize members.
-
-Map display uses Leaflet project (http://leafletjs.com/) while
-search is provided by Nominatim (http://nominatim.openstreetmap.org/) API.
