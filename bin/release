@@ -327,7 +327,7 @@ def add_libs(rel_name, galette_archive):
     os.remove(os.path.join(npm_dir, 'webpack.config.js'))
     os.remove(os.path.join(npm_dir, 'package.json'))
     os.remove(os.path.join(npm_dir, 'package-lock.json'))
-    os.remove(os.path.join(npm_dir, 'calendar.js'))
+    os.remove(os.path.join(npm_dir, 'maps.js'))
 
     composer_dir = os.path.join(src_dir, rel_name)
     has_composer = os.path.exists(
