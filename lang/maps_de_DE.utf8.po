@@ -1,16 +1,19 @@
+# Jannis Scheibe <jannis@tadris.de>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: de\n"
+"PO-Revision-Date: 2020-09-19 22:40+0000\n"
+"Last-Translator: Jannis Scheibe <jannis@tadris.de>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/de/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 3.0.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
@@ -77,7 +80,7 @@ msgstr ""
 #: ../templates/default/common_html.tpl:22
 #: ../templates/default/common_html.tpl:25
 msgid "Search result"
-msgstr ""
+msgstr "Suchergebnis"
 
 #: ../templates/default/common_scripts.tpl:87
 msgid "An error occured during 'I live here' process :("
@@ -101,7 +104,7 @@ msgstr ""
 
 #: ../templates/default/common_scripts.tpl:124
 msgid "No result found"
-msgstr ""
+msgstr "Kein Ergebnis gefunden"
 
 #: ../templates/default/common_scripts.tpl:124
 msgid "Sorry, that town could not be found."
@@ -121,7 +124,7 @@ msgstr ""
 
 #: ../templates/default/common_scripts.tpl:169
 msgid "OpenStreetMap contributors"
-msgstr ""
+msgstr "OpenStreetMap-Mitwirkende"
 
 #: ../templates/default/common_scripts.tpl:169
 msgid "Imagery (c)"
