@@ -60,8 +60,8 @@ use Laminas\Db\Sql\Predicate\Expression as PredicateExpression;
 
 class Coordinates
 {
-    const TABLE = 'coordinates';
-    const PK = 'id_adh';
+    public const TABLE = 'coordinates';
+    public const PK = 'id_adh';
 
     /**
      * Retrieve member coordinates
