@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-09-19 22:40+0000\n"
+"PO-Revision-Date: 2020-10-06 22:26+0000\n"
 "Last-Translator: Jannis Scheibe <jannis@tadris.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/de/>\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../_routes.php:242 ../_routes.php:254
 msgid "Coordinates has not been removed :("
-msgstr ""
+msgstr "Koordinaten wurden nicht entfernt :("
 
 #: ../_routes.php:252
 msgid "Coordinates has been removed!"
