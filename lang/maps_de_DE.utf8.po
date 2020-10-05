@@ -1,11 +1,12 @@
 # Jannis Scheibe <jannis@tadris.de>, 2020.
+# Peter Waldert <peter@waldert.at>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
 "PO-Revision-Date: 2020-10-06 22:26+0000\n"
-"Last-Translator: Jannis Scheibe <jannis@tadris.de>\n"
+"Last-Translator: Peter Waldert <peter@waldert.at>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/de/>\n"
 "Language: de_DE\n"
@@ -17,27 +18,29 @@ msgstr ""
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
-msgstr ""
+msgstr "Die Javascript-Bibliotheken wurden noch nicht kompiliert!"
 
 #: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
-msgstr ""
+msgstr "Karten"
 
 #: ../_routes.php:104
 msgid "%member geographic position"
-msgstr ""
+msgstr "%member geographische Position"
 
 #: ../_routes.php:119 ../_routes.php:185
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 msgstr ""
+"Die Koordinaten konnten nicht geladen werden, vielleicht existieren die "
+"Plugin-Tabellen in der Datenbank noch nicht?"
 
 #: ../_routes.php:215
 msgid "Superadmin cannot be localized."
-msgstr ""
+msgstr "Der Superadmin kann nicht gefunden werden."
 
 #: ../_routes.php:242 ../_routes.php:254
 msgid "Coordinates has not been removed :("
