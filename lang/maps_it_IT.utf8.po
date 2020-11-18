@@ -1,20 +1,21 @@
 # MIN UZ <varulv93@outlook.com>, 2020.
 # Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+# x <hardwired1.0@protonmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-06-26 09:14+0000\n"
-"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/galette/maps-"
-"plugin/it/>\n"
+"PO-Revision-Date: 2020-11-19 14:28+0000\n"
+"Last-Translator: x <hardwired1.0@protonmail.com>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/it/>\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.4-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
@@ -27,9 +28,8 @@ msgid "Maps"
 msgstr "Mappe"
 
 #: ../_routes.php:104
-#, fuzzy
 msgid "%member geographic position"
-msgstr "Posizione geografica %member"
+msgstr "Posizione geografica del %member"
 
 #: ../_routes.php:119 ../_routes.php:185
 msgid ""
@@ -139,9 +139,8 @@ msgid "Choose your location"
 msgstr "Scegli la tua posizione"
 
 #: ../templates/default/mymap.tpl:6
-#, fuzzy
 msgid "Choose %member location"
-msgstr "Scegli %member posizione"
+msgstr "Scegli posizione del %member"
 
 #: ../templates/default/mymap.tpl:7
 msgid "Select your town."
