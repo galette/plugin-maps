@@ -154,7 +154,7 @@
         }
         _legend.addTo(map);
 
-{if $cur_route eq 'maps_localize_member'}
+{if $cur_route eq 'maps_localize_member' || $cur_route eq 'maps_mymap'}
         L.control.locate({
             strings: {
                 title: '{_T string="Show me where I am" domain="maps" escape="js"}',
