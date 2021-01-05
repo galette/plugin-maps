@@ -1,4 +1,4 @@
-# Jannis Scheibe <jannis@tadris.de>, 2020.
+# Jannis Scheibe <jannis@tadris.de>, 2020, 2021.
 # Peter Waldert <peter@waldert.at>, 2020.
 # Manuel Zeschko <moebyus@pm.me>, 2021.
 msgid ""
@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
 "PO-Revision-Date: 2021-01-06 16:29+0000\n"
-"Last-Translator: Manuel Zeschko <moebyus@pm.me>\n"
+"Last-Translator: Jannis Scheibe <jannis@tadris.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/de/>\n"
 "Language: de_DE\n"
@@ -49,11 +49,11 @@ msgstr "Koordinaten wurden nicht entfernt :("
 
 #: ../_routes.php:252
 msgid "Coordinates has been removed!"
-msgstr ""
+msgstr "Koordinaten wurden entfernt!"
 
 #: ../_routes.php:267
 msgid "New coordinates has been stored!"
-msgstr ""
+msgstr "Neue Koordinaten wurden gespeichert!"
 
 #: ../_routes.php:269
 msgid "Coordinates has not been stored :("
@@ -61,7 +61,7 @@ msgstr "Koordinaten wurden nicht gespeichert :("
 
 #: ../_routes.php:272
 msgid "Something went wrong :("
-msgstr ""
+msgstr "Etwas ist schief gelaufen :("
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
 #, fuzzy
@@ -101,11 +101,11 @@ msgstr "Suche deine Stadt..."
 
 #: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
-msgstr ""
+msgstr "Suche eine Stadt..."
 
 #: ../templates/default/common_scripts.tpl:121
 msgid "Search"
-msgstr ""
+msgstr "Suchen"
 
 #: ../templates/default/common_scripts.tpl:124
 msgid "No result found"
@@ -117,7 +117,7 @@ msgstr "Entschuldigung, diese Stadt konnte nicht gefunden werden."
 
 #: ../templates/default/common_scripts.tpl:160
 msgid "Show me where I am"
-msgstr ""
+msgstr "Zeig mir, wo ich bin"
 
 #: ../templates/default/common_scripts.tpl:162
 msgid "You seem located outside the boundaries of the map"
@@ -162,7 +162,7 @@ msgstr "Sie haben auf %p geklickt"
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "I live here!"
-msgstr ""
+msgstr "Ich wohne hier!"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
