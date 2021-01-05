@@ -1,20 +1,21 @@
 # Jannis Scheibe <jannis@tadris.de>, 2020.
 # Peter Waldert <peter@waldert.at>, 2020.
+# Manuel Zeschko <moebyus@pm.me>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-10-06 22:26+0000\n"
-"Last-Translator: Peter Waldert <peter@waldert.at>\n"
-"Language-Team: German <https://hosted.weblate.org/projects/galette/maps-"
-"plugin/de/>\n"
+"PO-Revision-Date: 2021-01-06 16:29+0000\n"
+"Last-Translator: Manuel Zeschko <moebyus@pm.me>\n"
+"Language-Team: German <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
@@ -56,15 +57,16 @@ msgstr ""
 
 #: ../_routes.php:269
 msgid "Coordinates has not been stored :("
-msgstr ""
+msgstr "Koordinaten wurden nicht gespeichert :("
 
 #: ../_routes.php:272
 msgid "Something went wrong :("
 msgstr ""
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
+#, fuzzy
 msgid "My localization"
-msgstr ""
+msgstr "Meine Lokalisierung"
 
 #: ../templates/default/adh_actions.tpl:3
 #: ../templates/default/adh_fiche_action.tpl:5
@@ -78,7 +80,7 @@ msgstr ""
 #: ../templates/default/common_html.tpl:14
 #: ../templates/default/common_html.tpl:17
 msgid "Member (company)"
-msgstr ""
+msgstr "Mitglied (Unternehmen)"
 
 #: ../templates/default/common_html.tpl:22
 #: ../templates/default/common_html.tpl:25
@@ -87,15 +89,15 @@ msgstr "Suchergebnis"
 
 #: ../templates/default/common_scripts.tpl:87
 msgid "An error occured during 'I live here' process :("
-msgstr ""
+msgstr "Beim \"Ich lebe hier\" Prozess ist ein Fehler aufgetreten :("
 
 #: ../templates/default/common_scripts.tpl:108
 msgid "Display map in full screen"
-msgstr ""
+msgstr "Karte im Vollbildmodus anzeigen"
 
 #: ../templates/default/common_scripts.tpl:117
 msgid "Search your town..."
-msgstr ""
+msgstr "Suche deine Stadt..."
 
 #: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
@@ -111,7 +113,7 @@ msgstr "Kein Ergebnis gefunden"
 
 #: ../templates/default/common_scripts.tpl:124
 msgid "Sorry, that town could not be found."
-msgstr ""
+msgstr "Entschuldigung, diese Stadt konnte nicht gefunden werden."
 
 #: ../templates/default/common_scripts.tpl:160
 msgid "Show me where I am"
@@ -119,39 +121,43 @@ msgstr ""
 
 #: ../templates/default/common_scripts.tpl:162
 msgid "You seem located outside the boundaries of the map"
-msgstr ""
+msgstr "Sie scheinen sich außerhalb der Kartengrenzen zu befinden"
 
 #: ../templates/default/common_scripts.tpl:169
+#, fuzzy
 msgid "Map data (c)"
-msgstr ""
+msgstr "Kartendaten (c)"
 
 #: ../templates/default/common_scripts.tpl:169
 msgid "OpenStreetMap contributors"
 msgstr "OpenStreetMap-Mitwirkende"
 
 #: ../templates/default/common_scripts.tpl:169
+#, fuzzy
 msgid "Imagery (c)"
-msgstr ""
+msgstr "Bilder (c)"
 
 #: ../templates/default/mymap.tpl:6
 msgid "Choose your location"
-msgstr ""
+msgstr "Wähle deinen Standort"
 
 #: ../templates/default/mymap.tpl:6
+#, fuzzy
 msgid "Choose %member location"
-msgstr ""
+msgstr "Wählen Sie %member standort"
 
 #: ../templates/default/mymap.tpl:7
 msgid "Select your town."
-msgstr ""
+msgstr "Wählen Sie Ihre Stadt aus."
 
 #: ../templates/default/mymap.tpl:7
+#, fuzzy
 msgid "In the database, town is set to: '%town'"
-msgstr ""
+msgstr "In der Datenbank ist Stadt auf: '%town' eingestellt."
 
 #: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
-msgstr ""
+msgstr "Sie haben auf %p geklickt"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
@@ -161,23 +167,24 @@ msgstr ""
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "Member lives here!"
-msgstr ""
+msgstr "Mitglied wohnt hier!"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove my coordinates"
-msgstr ""
+msgstr "Entferne meine Koordinaten"
 
 #: ../templates/default/mymap.tpl:64
+#, fuzzy
 msgid "Remove member coordinates"
-msgstr ""
+msgstr "Entferne Mitglieds Koordinaten"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Are you sure you want to remove coordinates from the database?"
-msgstr ""
+msgstr "Möchten Sie die Koordinaten wirklich aus der Datenbank entfernen?"
 
 #: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
-msgstr ""
+msgstr "Beim Entfernen der Koordinaten ist ein Fehler aufgetreten :("
 
 #: ../templates/default/maps.tpl:21
 msgid "aka"
