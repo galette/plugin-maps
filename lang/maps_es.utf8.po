@@ -1,24 +1,25 @@
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
 # Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+# badlop <badlop@process-one.net>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-07-04 13:23+0000\n"
-"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/galette/maps-"
-"plugin/es/>\n"
+"PO-Revision-Date: 2021-01-13 19:32+0000\n"
+"Last-Translator: badlop <badlop@process-one.net>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
-msgstr ""
+msgstr "No se han construido las librerías Javascript!"
 
 #: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
@@ -31,13 +32,12 @@ msgid "%member geographic position"
 msgstr "Posición geográfica de %member"
 
 #: ../_routes.php:119 ../_routes.php:185
-#, fuzzy
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 msgstr ""
-"No se ha cargado Coordenadas. ¿Quizá las tablas del complemento no existen "
-"en la base de datos?"
+"No se han cargado las coordenadas. ¿Quizá las tablas del complemento no "
+"existen en la base de datos?"
 
 #: ../_routes.php:215
 msgid "Superadmin cannot be localized."
@@ -48,14 +48,12 @@ msgid "Coordinates has not been removed :("
 msgstr "No se ha eliminado Coordenadas :("
 
 #: ../_routes.php:252
-#, fuzzy
 msgid "Coordinates has been removed!"
-msgstr "¡Se ha eliminado Coordenadas!"
+msgstr "¡Se han eliminado las coordenadas!"
 
 #: ../_routes.php:267
-#, fuzzy
 msgid "New coordinates has been stored!"
-msgstr "¡Se han almacenado las coordenadas nuevas!"
+msgstr "¡Se han almacenado las nuevas coordenadas!"
 
 #: ../_routes.php:269
 msgid "Coordinates has not been stored :("
@@ -98,11 +96,11 @@ msgstr "Mostrar mapa en pantalla completa"
 
 #: ../templates/default/common_scripts.tpl:117
 msgid "Search your town..."
-msgstr ""
+msgstr "Buscar tu población..."
 
 #: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
-msgstr ""
+msgstr "Buscar una población..."
 
 #: ../templates/default/common_scripts.tpl:121
 msgid "Search"
@@ -114,7 +112,7 @@ msgstr "No se encontró ningún resultado"
 
 #: ../templates/default/common_scripts.tpl:124
 msgid "Sorry, that town could not be found."
-msgstr ""
+msgstr "Lo siento, no se ha podido encontrar esa población."
 
 #: ../templates/default/common_scripts.tpl:160
 msgid "Show me where I am"
@@ -122,7 +120,7 @@ msgstr "Mostrarme dónde estoy"
 
 #: ../templates/default/common_scripts.tpl:162
 msgid "You seem located outside the boundaries of the map"
-msgstr ""
+msgstr "Parece que tu localización está fuera de los límites del mapa"
 
 #: ../templates/default/common_scripts.tpl:169
 msgid "Map data (c)"
@@ -138,23 +136,23 @@ msgstr "Imágenes ©"
 
 #: ../templates/default/mymap.tpl:6
 msgid "Choose your location"
-msgstr ""
+msgstr "Escoge tu ubicación"
 
 #: ../templates/default/mymap.tpl:6
 msgid "Choose %member location"
-msgstr ""
+msgstr "Escoge la ubicación de %member"
 
 #: ../templates/default/mymap.tpl:7
 msgid "Select your town."
-msgstr ""
+msgstr "Escoge tu población."
 
 #: ../templates/default/mymap.tpl:7
 msgid "In the database, town is set to: '%town'"
-msgstr ""
+msgstr "En la base de datos, la población está indicada como: '%town'"
 
 #: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
-msgstr ""
+msgstr "Has pulsado en %p"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
