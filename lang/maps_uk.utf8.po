@@ -1,95 +1,100 @@
+# Tymofij Lytvynenko <till.svit@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-03-04 17:50+0000\n"
+"Last-Translator: Tymofij Lytvynenko <till.svit@gmail.com>\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 3.0.0\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.5.1-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
-msgstr ""
+msgstr "Бібліотеки Javascript не створено!"
 
 #: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
-msgstr ""
+msgstr "Мапи"
 
 #: ../_routes.php:104
 msgid "%member geographic position"
-msgstr ""
+msgstr "Географічне положення %member"
 
 #: ../_routes.php:119 ../_routes.php:185
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 msgstr ""
+"Координати не завантажено. Можливо, таблиць додатків не існує в базі даних?"
 
 #: ../_routes.php:215
 msgid "Superadmin cannot be localized."
-msgstr ""
+msgstr "Суперадмін не може бути локалізований."
 
 #: ../_routes.php:242 ../_routes.php:254
 msgid "Coordinates has not been removed :("
-msgstr ""
+msgstr "Координати не видалено :("
 
 #: ../_routes.php:252
 msgid "Coordinates has been removed!"
-msgstr ""
+msgstr "Координати видалено!"
 
 #: ../_routes.php:267
 msgid "New coordinates has been stored!"
-msgstr ""
+msgstr "Збережено нові координати!"
 
 #: ../_routes.php:269
 msgid "Coordinates has not been stored :("
-msgstr ""
+msgstr "Координати не зберігаються :("
 
 #: ../_routes.php:272
 msgid "Something went wrong :("
-msgstr ""
+msgstr "Щось пішло не так :("
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
 msgid "My localization"
-msgstr ""
+msgstr "Моя локалізація"
 
 #: ../templates/default/adh_actions.tpl:3
 #: ../templates/default/adh_fiche_action.tpl:5
 msgid "Geolocalize %membername"
-msgstr ""
+msgstr "Геолокалізувати %membername"
 
 #: ../templates/default/adh_fiche_action.tpl:9
 msgid "Geolocalize"
-msgstr ""
+msgstr "Геолокалізувати"
 
 #: ../templates/default/common_html.tpl:14
 #: ../templates/default/common_html.tpl:17
 msgid "Member (company)"
-msgstr ""
+msgstr "Член (компанія)"
 
 #: ../templates/default/common_html.tpl:22
 #: ../templates/default/common_html.tpl:25
 msgid "Search result"
-msgstr ""
+msgstr "Підсумки пошуку"
 
 #: ../templates/default/common_scripts.tpl:87
 msgid "An error occured during 'I live here' process :("
-msgstr ""
+msgstr "Помилка під час процесу \"Я живу тут\" :("
 
 #: ../templates/default/common_scripts.tpl:108
 msgid "Display map in full screen"
-msgstr ""
+msgstr "Відкрити мапу на весь екран"
 
 #: ../templates/default/common_scripts.tpl:117
 msgid "Search your town..."
-msgstr ""
+msgstr "Пошук вашого міста..."
 
 #: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
