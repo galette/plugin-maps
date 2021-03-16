@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2021-03-13 13:03+0000\n"
+"PO-Revision-Date: 2021-03-17 08:18+0000\n"
 "Last-Translator: Alessandro Mandelli <mandelli.alessandro@ngi.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/it/>\n"
@@ -158,7 +158,7 @@ msgstr "Hai fatto clic su %p"
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "I live here!"
-msgstr "Tu vivi qui!"
+msgstr "Io vivo qui!"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
