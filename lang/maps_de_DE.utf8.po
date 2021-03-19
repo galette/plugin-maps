@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2021-01-24 18:32+0000\n"
-"Last-Translator: Tobias Mohr <tobias_mohr_1991@gmx.de>\n"
+"PO-Revision-Date: 2021-03-20 21:18+0000\n"
+"Last-Translator: Manuel Zeschko <moebyus@pm.me>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/de/>\n"
 "Language: de_DE\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
@@ -66,17 +66,15 @@ msgid "Something went wrong :("
 msgstr "Etwas ist schief gelaufen :("
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
-#, fuzzy
 msgid "My localization"
 msgstr "Meine Lokalisierung"
 
 #: ../templates/default/adh_actions.tpl:3
 #: ../templates/default/adh_fiche_action.tpl:5
 msgid "Geolocalize %membername"
-msgstr ""
+msgstr "Geolokalisiere %membername"
 
 #: ../templates/default/adh_fiche_action.tpl:9
-#, fuzzy
 msgid "Geolocalize"
 msgstr "Geolokalisieren"
 
@@ -127,7 +125,6 @@ msgid "You seem located outside the boundaries of the map"
 msgstr "Sie scheinen sich außerhalb der Kartengrenzen zu befinden"
 
 #: ../templates/default/common_scripts.tpl:169
-#, fuzzy
 msgid "Map data (c)"
 msgstr "Kartendaten (c)"
 
@@ -136,7 +133,6 @@ msgid "OpenStreetMap contributors"
 msgstr "OpenStreetMap-Mitwirkende"
 
 #: ../templates/default/common_scripts.tpl:169
-#, fuzzy
 msgid "Imagery (c)"
 msgstr "Bilder (c)"
 
@@ -153,9 +149,8 @@ msgid "Select your town."
 msgstr "Wählen Sie Ihre Stadt aus."
 
 #: ../templates/default/mymap.tpl:7
-#, fuzzy
 msgid "In the database, town is set to: '%town'"
-msgstr "In der Datenbank ist Stadt auf: '%town' eingestellt."
+msgstr "In der Datenbank ist Stadt auf: '%town' eingestellt"
 
 #: ../templates/default/mymap.tpl:47
 msgid "You clicked at %p"
@@ -176,7 +171,6 @@ msgid "Remove my coordinates"
 msgstr "Entferne meine Koordinaten"
 
 #: ../templates/default/mymap.tpl:64
-#, fuzzy
 msgid "Remove member coordinates"
 msgstr "Entferne Mitglieds Koordinaten"
 
@@ -190,4 +184,4 @@ msgstr "Beim Entfernen der Koordinaten ist ein Fehler aufgetreten :("
 
 #: ../templates/default/maps.tpl:21
 msgid "aka"
-msgstr ""
+msgstr "aka"
