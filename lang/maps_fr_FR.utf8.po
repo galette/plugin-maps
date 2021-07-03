@@ -1,31 +1,38 @@
 # Header entry was created by Lokalize.
 #
 # , 2014.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2020-04-09 10:53+0200\n"
-"Last-Translator: Johan Cwiklinski <johan@x-tnd.be>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: fr\n"
+"PO-Revision-Date: 2020-07-08 15:11+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
+"Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
+"plugin/fr/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.2-dev\n"
 
-#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
+#: ../_routes.php:51
+msgid "Javascript libraries has not been built!"
+msgstr "Les bibliothèques Javascript n'ont pas été construites !"
+
+#: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
 msgstr "Cartes"
 
-#: ../_routes.php:92
+#: ../_routes.php:104
 msgid "%member geographic position"
 msgstr "Position géographique de %member"
 
-#: ../_routes.php:107 ../_routes.php:173
+#: ../_routes.php:119 ../_routes.php:185
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
@@ -33,27 +40,27 @@ msgstr ""
 "Les coordonnées n'ont pas été chargées. Peut-être les tables du plugin "
 "n'existent-elles pas dans la base de données ?"
 
-#: ../_routes.php:203
+#: ../_routes.php:215
 msgid "Superadmin cannot be localized."
 msgstr "Le superdamin ne peut être géolocalisé."
 
-#: ../_routes.php:229 ../_routes.php:241
+#: ../_routes.php:242 ../_routes.php:254
 msgid "Coordinates has not been removed :("
 msgstr "Les coordonnées n'ont pas été supprimées :("
 
-#: ../_routes.php:239
+#: ../_routes.php:252
 msgid "Coordinates has been removed!"
 msgstr "Les coordonnées ont été supprimées !"
 
-#: ../_routes.php:253
+#: ../_routes.php:267
 msgid "New coordinates has been stored!"
 msgstr "Les nouvelles coordonnées ont été enregistrées !"
 
-#: ../_routes.php:255
+#: ../_routes.php:269
 msgid "Coordinates has not been stored :("
 msgstr "Les coordonnées n'ont pas été enregistrées :("
 
-#: ../_routes.php:258
+#: ../_routes.php:272
 msgid "Something went wrong :("
 msgstr "Quelque chose n'a pas fonctionné :("
 
@@ -80,51 +87,51 @@ msgstr "Adhérent (personne morale)"
 msgid "Search result"
 msgstr "Résultat de recherche"
 
-#: ../templates/default/common_scripts.tpl:96
+#: ../templates/default/common_scripts.tpl:87
 msgid "An error occured during 'I live here' process :("
 msgstr "Une erreur est survenue pendant le processus « J'y habite » :("
 
-#: ../templates/default/common_scripts.tpl:117
+#: ../templates/default/common_scripts.tpl:108
 msgid "Display map in full screen"
 msgstr "Afficher la carte en plein écran"
 
-#: ../templates/default/common_scripts.tpl:126
+#: ../templates/default/common_scripts.tpl:117
 msgid "Search your town..."
 msgstr "Chercher votre ville..."
 
-#: ../templates/default/common_scripts.tpl:128
+#: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
 msgstr "Chercher une ville..."
 
-#: ../templates/default/common_scripts.tpl:130
+#: ../templates/default/common_scripts.tpl:121
 msgid "Search"
 msgstr "Chercher"
 
-#: ../templates/default/common_scripts.tpl:133
+#: ../templates/default/common_scripts.tpl:124
 msgid "No result found"
 msgstr "Aucun résultat trouvé"
 
-#: ../templates/default/common_scripts.tpl:133
+#: ../templates/default/common_scripts.tpl:124
 msgid "Sorry, that town could not be found."
 msgstr "Désolé, cette ville n'a pas été trouvée."
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../templates/default/common_scripts.tpl:160
 msgid "Show me where I am"
 msgstr "Me montrer où je suis"
 
-#: ../templates/default/common_scripts.tpl:171
+#: ../templates/default/common_scripts.tpl:162
 msgid "You seem located outside the boundaries of the map"
 msgstr "Vous semblez être localisé en dehors de limites de la carte"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "Map data (c)"
 msgstr "© Données cartographiques"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "OpenStreetMap contributors"
 msgstr "Contributeurs OpenStreetMap"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "Imagery (c)"
 msgstr "© Imagerie"
 

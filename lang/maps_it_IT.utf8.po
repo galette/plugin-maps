@@ -1,12 +1,14 @@
 # MIN UZ <varulv93@outlook.com>, 2020.
 # Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+# x <hardwired1.0@protonmail.com>, 2020.
+# Alessandro Mandelli <mandelli.alessandro@ngi.it>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: 2020-06-26 09:14+0000\n"
-"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
+"PO-Revision-Date: 2021-03-17 08:18+0000\n"
+"Last-Translator: Alessandro Mandelli <mandelli.alessandro@ngi.it>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/it/>\n"
 "Language: it_IT\n"
@@ -14,20 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.2-dev\n"
+"X-Generator: Weblate 4.5.2-dev\n"
 
-#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
+#: ../_routes.php:51
+msgid "Javascript libraries has not been built!"
+msgstr "Le librerie Javascript non sono state compilate!"
+
+#: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
 msgstr "Mappe"
 
-#: ../_routes.php:92
-#, fuzzy
+#: ../_routes.php:104
 msgid "%member geographic position"
-msgstr "Posizione geografica %member"
+msgstr "Posizione geografica del %member"
 
-#: ../_routes.php:107 ../_routes.php:173
+#: ../_routes.php:119 ../_routes.php:185
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
@@ -35,27 +40,27 @@ msgstr ""
 "Le coordinate non sono state caricate. Forse le tabelle dei plugin non "
 "esistono nel database?"
 
-#: ../_routes.php:203
+#: ../_routes.php:215
 msgid "Superadmin cannot be localized."
 msgstr "Il Super-amministratore non può essere localizzato."
 
-#: ../_routes.php:229 ../_routes.php:241
+#: ../_routes.php:242 ../_routes.php:254
 msgid "Coordinates has not been removed :("
 msgstr "Le coordinate non sono state rimosse :("
 
-#: ../_routes.php:239
+#: ../_routes.php:252
 msgid "Coordinates has been removed!"
 msgstr "Le coordinate sono state rimosse!"
 
-#: ../_routes.php:253
+#: ../_routes.php:267
 msgid "New coordinates has been stored!"
 msgstr "Nuove coordinate sono state memorizzate!"
 
-#: ../_routes.php:255
+#: ../_routes.php:269
 msgid "Coordinates has not been stored :("
 msgstr "Le coordinate non sono state memorizzate :("
 
-#: ../_routes.php:258
+#: ../_routes.php:272
 msgid "Something went wrong :("
 msgstr "Qualcosa è andato storto :("
 
@@ -82,51 +87,51 @@ msgstr "Utente (Azienda)"
 msgid "Search result"
 msgstr "Risultato di ricerca"
 
-#: ../templates/default/common_scripts.tpl:96
+#: ../templates/default/common_scripts.tpl:87
 msgid "An error occured during 'I live here' process :("
 msgstr "Si è verificato un errore durante il processo \"Io vivo qui\" :("
 
-#: ../templates/default/common_scripts.tpl:117
+#: ../templates/default/common_scripts.tpl:108
 msgid "Display map in full screen"
 msgstr "Visualizza la mappa a schermo intero"
 
-#: ../templates/default/common_scripts.tpl:126
+#: ../templates/default/common_scripts.tpl:117
 msgid "Search your town..."
 msgstr "Cerca la tua città ..."
 
-#: ../templates/default/common_scripts.tpl:128
+#: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
 msgstr "Cerca una città ..."
 
-#: ../templates/default/common_scripts.tpl:130
+#: ../templates/default/common_scripts.tpl:121
 msgid "Search"
 msgstr "Cerca"
 
-#: ../templates/default/common_scripts.tpl:133
+#: ../templates/default/common_scripts.tpl:124
 msgid "No result found"
 msgstr "Nessun risultato trovato"
 
-#: ../templates/default/common_scripts.tpl:133
+#: ../templates/default/common_scripts.tpl:124
 msgid "Sorry, that town could not be found."
 msgstr "Spiacente, quella città non è stata trovata."
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../templates/default/common_scripts.tpl:160
 msgid "Show me where I am"
 msgstr "Mostrami dove mi trovo"
 
-#: ../templates/default/common_scripts.tpl:171
+#: ../templates/default/common_scripts.tpl:162
 msgid "You seem located outside the boundaries of the map"
 msgstr "Sembra che ti trovi al di fuori dei confini della mappa"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "Map data (c)"
 msgstr "Dati mappa (c)"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "OpenStreetMap contributors"
 msgstr "Collaboratori di OpenStreetMap"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "Imagery (c)"
 msgstr "Immagini (c)"
 
@@ -135,9 +140,8 @@ msgid "Choose your location"
 msgstr "Scegli la tua posizione"
 
 #: ../templates/default/mymap.tpl:6
-#, fuzzy
 msgid "Choose %member location"
-msgstr "Scegli %member posizione"
+msgstr "Scegli posizione del %member"
 
 #: ../templates/default/mymap.tpl:7
 msgid "Select your town."
@@ -154,7 +158,7 @@ msgstr "Hai fatto clic su %p"
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "I live here!"
-msgstr "Tu vivi qui!"
+msgstr "Io vivo qui!"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117

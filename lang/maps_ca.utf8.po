@@ -1,56 +1,63 @@
+# Anna Sánchez <assivill@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2020-06-18 15:57+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2020-12-30 13:29+0000\n"
+"Last-Translator: Anna Sánchez <assivill@gmail.com>\n"
+"Language-Team: Catalan <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 3.0.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4.1-dev\n"
 
-#: ../_routes.php:89 ../_routes.php:160 ../templates/default/menu.tpl:2
+#: ../_routes.php:51
+msgid "Javascript libraries has not been built!"
+msgstr ""
+
+#: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
 #: ../templates/default/public_menu.tpl:3
 #: ../templates/default/public_menu.tpl:7
 msgid "Maps"
-msgstr ""
+msgstr "Mapes"
 
-#: ../_routes.php:92
+#: ../_routes.php:104
 msgid "%member geographic position"
 msgstr ""
 
-#: ../_routes.php:107 ../_routes.php:173
+#: ../_routes.php:119 ../_routes.php:185
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
 msgstr ""
 
-#: ../_routes.php:203
+#: ../_routes.php:215
 msgid "Superadmin cannot be localized."
 msgstr ""
 
-#: ../_routes.php:229 ../_routes.php:241
+#: ../_routes.php:242 ../_routes.php:254
 msgid "Coordinates has not been removed :("
 msgstr ""
 
-#: ../_routes.php:239
+#: ../_routes.php:252
 msgid "Coordinates has been removed!"
 msgstr ""
 
-#: ../_routes.php:253
+#: ../_routes.php:267
 msgid "New coordinates has been stored!"
 msgstr ""
 
-#: ../_routes.php:255
+#: ../_routes.php:269
 msgid "Coordinates has not been stored :("
 msgstr ""
 
-#: ../_routes.php:258
+#: ../_routes.php:272
 msgid "Something went wrong :("
-msgstr ""
+msgstr "Alguna cosa ha anat malament :("
 
 #: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
 msgid "My localization"
@@ -75,51 +82,51 @@ msgstr ""
 msgid "Search result"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:96
+#: ../templates/default/common_scripts.tpl:87
 msgid "An error occured during 'I live here' process :("
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:117
+#: ../templates/default/common_scripts.tpl:108
 msgid "Display map in full screen"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:126
+#: ../templates/default/common_scripts.tpl:117
 msgid "Search your town..."
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:128
+#: ../templates/default/common_scripts.tpl:119
 msgid "Search a town..."
-msgstr ""
+msgstr "Buscar una localitat…"
 
-#: ../templates/default/common_scripts.tpl:130
+#: ../templates/default/common_scripts.tpl:121
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
-#: ../templates/default/common_scripts.tpl:133
+#: ../templates/default/common_scripts.tpl:124
 msgid "No result found"
-msgstr ""
+msgstr "No s'ha trobat cap resultat"
 
-#: ../templates/default/common_scripts.tpl:133
+#: ../templates/default/common_scripts.tpl:124
 msgid "Sorry, that town could not be found."
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../templates/default/common_scripts.tpl:160
 msgid "Show me where I am"
 msgstr ""
 
-#: ../templates/default/common_scripts.tpl:171
+#: ../templates/default/common_scripts.tpl:162
 msgid "You seem located outside the boundaries of the map"
-msgstr ""
+msgstr "Sembla que estàs fora dels límits del mapa"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "Map data (c)"
-msgstr ""
+msgstr "Informació del mapa (c)"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "OpenStreetMap contributors"
-msgstr ""
+msgstr "Contribuents d'OpenStreetMap"
 
-#: ../templates/default/common_scripts.tpl:178
+#: ../templates/default/common_scripts.tpl:169
 msgid "Imagery (c)"
 msgstr ""
 
@@ -146,7 +153,7 @@ msgstr ""
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
 msgid "I live here!"
-msgstr ""
+msgstr "Visc aquí!"
 
 #: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
 #: ../templates/default/mymap.tpl:117
@@ -155,7 +162,7 @@ msgstr ""
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove my coordinates"
-msgstr ""
+msgstr "Esborra les meves coordenades"
 
 #: ../templates/default/mymap.tpl:64
 msgid "Remove member coordinates"
@@ -163,7 +170,7 @@ msgstr ""
 
 #: ../templates/default/mymap.tpl:64
 msgid "Are you sure you want to remove coordinates from the database?"
-msgstr ""
+msgstr "Segur que vols esborrar aquestes coordenades de la base de dades?"
 
 #: ../templates/default/mymap.tpl:86
 msgid "An error occured removing coordinates :("
