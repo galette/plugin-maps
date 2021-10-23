@@ -36,6 +36,12 @@ module.exports = {
       }, {
         from: path.resolve(__dirname, 'node_modules/leaflet.fullscreen/icon-fullscreen.png'),
         to: path.resolve(__dirname, 'webroot/js/icon-fullscreen.png')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet.markercluster/dist/MarkerCluster.css'),
+        to: path.resolve(__dirname, 'webroot/js/MarkerCluster.css')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css'),
+        to: path.resolve(__dirname, 'webroot/js/MarkerCluster.Default.css')
       }
     ])
   ],

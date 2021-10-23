@@ -25,6 +25,7 @@
     "leaflet-control-geocoder": "^1.13.0",
     "leaflet.fullscreen": "^1.6.0",
     "leaflet.locatecontrol": "^0.68.0",
+    "leaflet.markercluster": "^1.5.1",
     "style-loader": "^1.2.1"
   },
   "devDependencies": {

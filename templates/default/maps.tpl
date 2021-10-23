@@ -18,11 +18,19 @@
     {else}
         {assign var=icon value='galetteIcon'}
     {/if}
-        _marker = L.marker([{$l.lat}, {$l.lng}], {ldelim}icon: {$icon}{rdelim}).bindPopup('<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" domain="maps" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>');
-        _markers.push(_marker);
+        _member = [{$l.lat}, {$l.lng}, {$icon}, '<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" domain="maps" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>'];
+        _markers.push(_member);
 {/foreach}
-        var _group = L.featureGroup(_markers).addTo(map);
-        map.fitBounds(
+        var _group = L.markerClusterGroup();
+        for (var i = 0; i < _markers.length; i++) {
+            var _a = _markers[i];
+            var _title = _a[3];
+            var _icon = _a[2];
+            var _marker = L.marker(new L.LatLng(_a[0], _a[1]), { icon: _icon });
+            _marker.bindPopup(_title);
+            _group.addLayer(_marker);
+        }
+        map.addLayer(_group).fitBounds(
             _group.getBounds(), {
                 padding: [50, 50],
                 maxZoom: 12

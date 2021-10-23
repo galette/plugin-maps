@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2014 The Galette Team
+ * Copyright © 2012-2021 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2014 The Galette Team
+ * @copyright 2012-2021 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -39,10 +39,10 @@ $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '1.6.0',            //Version
+    '1.6.1',            //Version
     '0.9.5',            //Galette compatible version
     'maps',             //routing name and translation domain
-    '2021-07-03',       //Release date
+    '2021-10-23',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',
