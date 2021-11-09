@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2014 The Galette Team
+ * Copyright © 2012-2021 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2014 The Galette Team
+ * @copyright 2012-2021 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
  * @link      http://galette.tuxfamily.org
@@ -52,7 +52,7 @@ use Laminas\Db\Sql\Predicate\Expression as PredicateExpression;
  * @name      Coordinates
  * @package   GaletteMaps
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2014 The Galette Team
+ * @copyright 2012-2021 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     Available since 0.7.4dev - 2012-10-04
@@ -76,7 +76,7 @@ class Coordinates
 
         try {
             $select = $zdb->select($this->getTableName());
-            $select->where(self::PK . ' = ' . $id);
+            $select->where([self::PK => $id]);
             $results = $zdb->execute($select);
 
             if ($results->count() > 0) {
@@ -247,7 +247,7 @@ class Coordinates
                         'longitude' => $longitude
                     )
                 )->where(
-                    self::PK . '=' . $id
+                    [self::PK => $id]
                 );
                 $results = $zdb->execute($update);
             }
@@ -275,7 +275,7 @@ class Coordinates
 
         try {
             $delete = $zdb->delete($this->getTableName());
-            $delete->where(self::PK . '=' . $id);
+            $delete->where([self::PK => $id]);
             $del = $zdb->execute($delete);
             return ($del->count() > 0);
         } catch (\Exception $e) {
