@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: translations@galette.eu\n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-21 19:00+0100\n"
 "PO-Revision-Date: 2020-07-08 15:11+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
@@ -22,17 +22,13 @@ msgstr ""
 msgid "Javascript libraries has not been built!"
 msgstr "Les bibliothèques Javascript n'ont pas été construites !"
 
-#: ../_routes.php:101 ../_routes.php:172 ../templates/default/menu.tpl:2
-#: ../templates/default/public_menu.tpl:3
-#: ../templates/default/public_menu.tpl:7
+#: ../lib/GaletteMaps/Controllers/MapsController.php:92
+#: ../lib/GaletteMaps/Controllers/MapsController.php:178
 msgid "Maps"
 msgstr "Cartes"
 
-#: ../_routes.php:104
-msgid "%member geographic position"
-msgstr "Position géographique de %member"
-
-#: ../_routes.php:119 ../_routes.php:185
+#: ../lib/GaletteMaps/Controllers/MapsController.php:105
+#: ../lib/GaletteMaps/Controllers/MapsController.php:196
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "datatabase?"
@@ -40,27 +36,32 @@ msgstr ""
 "Les coordonnées n'ont pas été chargées. Peut-être les tables du plugin "
 "n'existent-elles pas dans la base de données ?"
 
-#: ../_routes.php:215
+#: ../lib/GaletteMaps/Controllers/MapsController.php:181
+msgid "%member geographic position"
+msgstr "Position géographique de %member"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:234
 msgid "Superadmin cannot be localized."
 msgstr "Le superdamin ne peut être géolocalisé."
 
-#: ../_routes.php:242 ../_routes.php:254
+#: ../lib/GaletteMaps/Controllers/MapsController.php:261
+#: ../lib/GaletteMaps/Controllers/MapsController.php:273
 msgid "Coordinates has not been removed :("
 msgstr "Les coordonnées n'ont pas été supprimées :("
 
-#: ../_routes.php:252
+#: ../lib/GaletteMaps/Controllers/MapsController.php:271
 msgid "Coordinates has been removed!"
 msgstr "Les coordonnées ont été supprimées !"
 
-#: ../_routes.php:267
+#: ../lib/GaletteMaps/Controllers/MapsController.php:286
 msgid "New coordinates has been stored!"
 msgstr "Les nouvelles coordonnées ont été enregistrées !"
 
-#: ../_routes.php:269
+#: ../lib/GaletteMaps/Controllers/MapsController.php:288
 msgid "Coordinates has not been stored :("
 msgstr "Les coordonnées n'ont pas été enregistrées :("
 
-#: ../_routes.php:272
+#: ../lib/GaletteMaps/Controllers/MapsController.php:291
 msgid "Something went wrong :("
 msgstr "Quelque chose n'a pas fonctionné :("
 
