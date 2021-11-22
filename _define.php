@@ -40,7 +40,7 @@ $this->register(
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
     '1.6.1',            //Version
-    '0.9.5',            //Galette compatible version
+    '0.9.56',            //Galette compatible version
     'maps',             //routing name and translation domain
     '2021-10-23',       //Release date
     [   //Permissions needed
