@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2019-2020 The Galette Team
+ * Copyright © 2020-2022 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2020 The Galette Team
+ * @copyright 2020-2022 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     2020-12-07
@@ -52,7 +52,7 @@ use Analog\Analog;
  * @name      MapsController
  * @package   Galette
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2020 The Galette Team
+ * @copyright 2020-2022 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     2020-12-07
@@ -109,7 +109,7 @@ class MapsController extends AbstractPluginController
         // display page
         $this->view->render(
             $response,
-            'file:[' . $this->getModuleRoute() . ']maps.tpl',
+            $this->getTemplate('maps'),
             $params
         );
         return $response;
@@ -206,7 +206,7 @@ class MapsController extends AbstractPluginController
         // display page
         $this->view->render(
             $response,
-            'file:[' . $this->getModuleRoute() . ']mymap.tpl',
+            $this->getTemplate('mymap'),
             $params
         );
         return $response;

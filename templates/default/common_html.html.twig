@@ -1,0 +1,29 @@
+<div id="legende" title="{{ _T("Legend") }}">
+    <h1>{{ _T("Legend") }}</h1>
+    <table>
+        <tr>
+            <th>
+                <img src="{{ path_for("plugin_res", {"plugin": module_id, "path": "leaflet-1.2.0/images/marker-galette.png"}) }}" alt="{{ _T("Member") }}"/>
+            </th>
+            <td>
+                {{ _T("Member") }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <img src="{{ path_for("plugin_res", {"plugin": module_id, "path": "leaflet-1.2.0/images/marker-galette-pro.png"}) }}" alt="{{ _T("Member (company)", "maps" )}}"/>
+            </th>
+            <td>
+                {{ _T("Member (company)", "maps" ) }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <img src="{{ path_for("plugin_res", {"plugin": module_id, "path": "leaflet-1.2.0/images/marker-icon.png"}) }}" alt="{{ _T("Search result", "maps") }}"/>
+            </th>
+            <td>
+                {{ _T("Search result", "maps") }}
+            </td>
+        </tr>
+    </table>
+</div>

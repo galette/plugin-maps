@@ -1,26 +1,27 @@
-{extends file="page.tpl"}
-{block name="content"}
+{% extends 'page.html.twig' %}
+
+{% block content %}
 <section>
     <div id="map"></div>
 </section>
-{include file='file:[maps]common_html.tpl'}
-{/block}
+    {% include '@PluginGaletteMaps/common_html.html.twig'%}
+{% endblock %}
 
-{block name="javascripts"}
-{include file='file:[maps]common_scripts.tpl'}
+{% block javascripts %}
+    {% include '@PluginGaletteMaps/common_scripts.html.twig' %}
 <script type="text/javascript">
     var _mapsBinded = function(map)
     {
         var _markers = [];
-{foreach $list as $l}
-    {if isset($l.company) and $l.company neq ''}
-        {assign var=icon value='galetteProIcon'}
-    {else}
-        {assign var=icon value='galetteIcon'}
-    {/if}
-        _member = [{$l.lat}, {$l.lng}, {$icon}, '<p><strong>{$l.name|escape}</strong>{if $l.nickname neq ''} {_T string="aka" domain="maps" escape="js"} <em>{$l.nickname|escape}</em>{/if}{if isset($l.company)}<br/>{$l.company|escape}{/if}</p>'];
+{% for l in list %}
+    {% if l.company is defined and l.company != '' %}
+        {% set icon = 'galetteProIcon' %}
+    {% else %}
+        {% set icon = 'galetteIcon' %}
+    {% endif %}
+        _member = [{{ l.lat }}, {{ l.lng }}, {{ icon }}, '<p><strong>{{ l.name|e("js") }}</strong>{% if l.nickname != '' %} {{_T("aka", "maps")|e("js")}} <em>{{ l.nickname|e("js") }}</em>{% endif %}{% if l.company is defined %}<br/>{{ l.company|e("js") }}{% endif %}</p>'];
         _markers.push(_member);
-{/foreach}
+{% endfor %}
         var _group = L.markerClusterGroup();
         for (var i = 0; i < _markers.length; i++) {
             var _a = _markers[i];
@@ -38,4 +39,4 @@
         );
     }
 </script>
-{/block}
+{% endblock %}

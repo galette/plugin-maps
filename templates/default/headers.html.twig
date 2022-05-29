@@ -1,0 +1,13 @@
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "galette_maps.css"}) }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "js/maps.bundle.css"}) }}"/>
+{% if cur_route starts with 'maps_' %}
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "js/leaflet.css"}) }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "leaflet-control-osm-geocoder/Control.OSMGeocoder.css"}) }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "js/Control.FullScreen.css"}) }}"/>
+{% endif %}
+{% if cur_route == 'maps_localize_member' or cur_route == 'maps_mymap' %}
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "leaflet-locatecontrol/L.Control.Locate.min.css"}) }}"/>
+{% else %}
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "js/MarkerCluster.css"}) }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ path_for("plugin_res", {"plugin": module_id, "path": "js/MarkerCluster.Default.css"}) }}"/>
+{% endif %}
