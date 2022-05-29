@@ -68,8 +68,6 @@ class PluginGaletteMaps extends GalettePlugin
 
         if ($login->isLogged() && !$login->isSuperAdmin()) {
             $menus['myaccount'] = [
-                /*'title' => _T("Maps", "maps"),
-                'icon' => 'map',*/
                 'items' => [
                     [
                         'label' => _T('My localization', 'maps'),
