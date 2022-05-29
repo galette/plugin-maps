@@ -102,7 +102,7 @@ class MapsController extends AbstractPluginController
         } else {
             $this->flash->addMessage(
                 'error_detected',
-                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?', 'maps')
+                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the database?', 'maps')
             );
         }
 
@@ -154,7 +154,7 @@ class MapsController extends AbstractPluginController
             if ($is_managed !== true) {
                 //requested member is not part of managed groups, fall back to logged
                 //in member
-                //FIXME: silent fallback is maube not the best to do
+                //FIXME: silent fallback is maybe not the best to do
                 $member->load($this->login->id);
                 $id = $this->login->id;
             }
@@ -193,7 +193,7 @@ class MapsController extends AbstractPluginController
         if ($mcoords === false) {
             $this->flash->addMessage(
                 'error_detected',
-                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?', 'maps')
+                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the database?', 'maps')
             );
         } elseif (count($mcoords) > 0) {
             $params['town'] = $mcoords;
