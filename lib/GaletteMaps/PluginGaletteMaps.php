@@ -37,6 +37,7 @@
 
 namespace GaletteMaps;
 
+use Galette\Entity\Adherent;
 use Galette\Core\GalettePlugin;
 
 /**
@@ -128,5 +129,44 @@ class PluginGaletteMaps extends GalettePlugin
                 'icon' => 'map'
             ]
         ];
+    }
+
+    /**
+     * Get actions contents
+     *
+     * @return array|array[]
+     */
+    public static function getListActionsContents(Adherent $member): array
+    {
+        return [
+            [
+                'label' => _T("Geolocalize", "maps"),
+                'title' => str_replace(
+                    '%membername',
+                    $member->sname,
+                    _T("Geolocalize %membername","maps")
+                ),
+                'route' => [
+                    'name' => 'maps_localize_member',
+                    'args' => ['id' => $member->id]
+                ],
+                'icon' => 'map grey'
+            ],
+        ];
+    }
+
+    /**
+     * Get detailed actions contents
+     *
+     * @return array|array[]
+     */
+    public static function getDetailedActionsContents(Adherent $member): array
+    {
+        return static::getListActionsContents($member);
+    }
+
+    public static function getBatchActionsContents(): array
+    {
+        return [];
     }
 }
