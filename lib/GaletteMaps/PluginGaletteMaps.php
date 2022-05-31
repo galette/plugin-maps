@@ -163,6 +163,11 @@ class PluginGaletteMaps extends GalettePlugin
         return static::getListActionsContents($member);
     }
 
+    /**
+     * Get batch actions contents
+     *
+     * @return array|array[]
+     */
     public static function getBatchActionsContents(): array
     {
         return [];
