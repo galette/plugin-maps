@@ -124,7 +124,7 @@ class PluginGaletteMaps extends GalettePlugin
                     'name' => 'maps_localize_member',
                     'args' => ["id" => $login->id]
                 ],
-                'icon' => 'map'
+                'icon' => 'map marked alternate'
             ]
         ];
     }
@@ -150,7 +150,7 @@ class PluginGaletteMaps extends GalettePlugin
                     'name' => 'maps_localize_member',
                     'args' => ['id' => $member->id]
                 ],
-                'icon' => 'map grey'
+                'icon' => 'map marker alternate grey'
             ],
         ];
     }
