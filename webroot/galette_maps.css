@@ -1,4 +1,8 @@
-#map { height: 300px; }
+.map-container { height: 85vh; }
+
+#map {
+    min-height: 100%;
+}
 
 #possible_towns li {
     cursor: pointer;
