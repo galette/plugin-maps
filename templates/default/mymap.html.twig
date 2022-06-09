@@ -1,7 +1,7 @@
 {% extends 'page.html.twig' %}
 
 {% block content %}
-<section>
+<section class="map-container">
     <div id="map"></div>
 {% if towns is defined and towns|length > 0 %}
     <aside id="possible_towns" title="{if isset($mymap)}{{ _T("Choose your location", "maps") }}{else}{_T string="Choose %member location" domain="maps" pattern="/%member/" replace=$member->sname}{/if}">
