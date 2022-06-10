@@ -77,11 +77,12 @@
                 },
                 {% include "elements/js/loader.js.twig" %},
                 success: function(res){
-                    alert(res.message);
-                    if (res.res == true) {
-                        //not very pretty... but that works for the moment :)
-                        window.location.reload();
-                    }
+                    $('body').modal('alert',{
+                        content: res.message,
+                        handler: function() {
+                            window.location.reload();
+                        }
+                     });
                 },
                 error: function(){
                     alert("{{ _T("An error occured during 'I live here' process :(", "maps")|e("js") }}")

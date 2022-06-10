@@ -5,24 +5,7 @@
 }
 
 #possible_towns li {
-    cursor: pointer;
-}
-
-#possible_towns li:hover {
-    background-color: #DDDDFF;
-}
-
-#removecoords {
-    color: #999;
-    font-size: .85em;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-}
-
-.ui-dialog {
-    /* Dialog should be on top of search box dans © box */
-    z-index: 1005;
+    margin-bottom: .5em;
 }
 
 .leaflet-control-legend a {
@@ -37,18 +20,4 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 6px;
     text-align: left;
-}
-
-#desktop #maps {
-    background-image: url(images/dashboard.png), url(../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png);
-}
-#desktop #maps:hover {
-    background-image: url(images/dashboard.png), url(../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png);
-}
-
-.fa.fa-map-marker {
-    height: 26px;
-    width: 15px;
-    background: url(images/map-marker.png) 50% 50% no-repeat;
-    display: inline-block;
 }
