@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet.fullscreen';
 import 'leaflet.locatecontrol';
 import 'leaflet.markercluster';
+import 'leaflet-gesture-handling';
 
 
 $(function() {

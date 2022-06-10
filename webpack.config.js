@@ -42,6 +42,9 @@ module.exports = {
       }, {
         from: path.resolve(__dirname, 'node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css'),
         to: path.resolve(__dirname, 'webroot/js/MarkerCluster.Default.css')
+      }, {
+        from: path.resolve(__dirname, 'node_modules/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css'),
+        to: path.resolve(__dirname, 'webroot/js/leaflet-gesture-handling.min.css')
       }
     ])
   ],

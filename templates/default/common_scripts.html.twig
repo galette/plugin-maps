@@ -4,48 +4,6 @@
 <script type="text/javascript">
 
     /**
-     * Returns element height, including margins
-     */
-    function _eltRealSize(_elt) {
-        var _s = 0;
-        _s += _elt.outerHeight();
-        _s += parseFloat(_elt.css('margin-top').replace('px', ''));
-        _s += parseFloat(_elt.css('margin-bottom').replace('px', ''));
-        _s += parseFloat(_elt.css('padding-top').replace('px', ''));
-        _s += parseFloat(_elt.css('padding-bottom').replace('px', ''));
-        return _s;
-    }
-
-    /**
-     * Rewrite maps height
-     */
-    function _hresize() {
-        var wheight = $(window).height();
-        var _oSize = 0;
-
-        //récuperation de la taille des autres lignes
-        $('#map').parents('section').siblings(':not(script)').each(function(){
-            var _this = $(this);
-            if ( !_this.hasClass('ui-dialog') ) {
-                _oSize += _eltRealSize($(this));
-            }
-        });
-        if ( $('#content').length > 0 ) {
-            _oSize += _eltRealSize($('footer'));
-            _oSize += parseFloat($('#content').css('padding-top').replace('px', ''));
-            _oSize += parseFloat($('#content').css('padding-bottom').replace('px', ''));
-        }
-
-        //calcul et application de la nouvelle taille
-        var newHeight = Math.floor(wheight - _oSize);
-        var minHeight = 300;
-        if ( newHeight < minHeight ) {
-            newHeight = minHeight;
-        }
-        $("#map").css("height", newHeight + "px");
-    }
-
-    /**
      * Galette specific marker icon
      */
     var galetteIcon = L.icon({
@@ -98,8 +56,6 @@
         _legendhtml.find('h1').remove()
         $('#legende').remove();
 
-        _hresize();
-
         var _lat = {% if town is defined %}{{ town['latitude'] }}{% else %}46.830133640447386{% endif %};
         var _lon = {% if town is defined %}{{ town['longitude'] }}{% else %}2.4609375{% endif %};
         var map = L.map(
@@ -108,7 +64,8 @@
                 fullscreenControlOptions: {
                     title: "{{ _T("Display map in full screen", "maps" )|e("js") }}",
                     forceSeparateButton:true
-                }
+                },
+                gestureHandling: true
             }
         ).setView([_lat, _lon], {% if town is defined %}12{% else %}6{% endif %});
 

@@ -23,6 +23,7 @@
     "file-loader": "^6.0.0",
     "leaflet": "^1.6.0",
     "leaflet-control-geocoder": "^1.13.0",
+    "leaflet-gesture-handling": "^1.2.2",
     "leaflet.fullscreen": "^1.6.0",
     "leaflet.locatecontrol": "^0.68.0",
     "leaflet.markercluster": "^1.5.1",
