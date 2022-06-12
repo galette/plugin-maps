@@ -1,4 +1,9 @@
 data/
+dist/
 *.exvim*
 node_modules/
-webroot/js/
+webroot/*.min.css
+webroot/*.min.js
+webroot/images/*
+!webroot/images/marker-galette.png
+!webroot/images/marker-galette-pro.png
