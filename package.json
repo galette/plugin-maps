@@ -4,8 +4,8 @@
   "description": "A [Galette](https://galette.eu) plugin to display maps",
   "main": "index.js",
   "scripts": {
-    "build": "gulp",
-    "clean": "gulp clean"
+    "build": "./node_modules/.bin/gulp",
+    "clean": "./node_modules/.bin/gulp clean"
   },
   "repository": {
     "type": "git",

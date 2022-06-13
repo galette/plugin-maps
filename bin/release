@@ -317,8 +317,8 @@ def add_libs(rel_name, galette_archive):
     p1 = subprocess.Popen(npm_cmd, shell=True, cwd=npm_dir)
     p1.wait()
 
-    wp_cmd = 'gulp'
-    p1 = subprocess.Popen(wp_cmd, shell=True, cwd=npm_dir)
+    build_cmd = 'npm run build'
+    p1 = subprocess.Popen(build_cmd, shell=True, cwd=npm_dir)
     p1.wait()
 
     shutil.rmtree(os.path.join(npm_dir, 'node_modules'))
