@@ -69,7 +69,7 @@
             } else if ( _container.find('.leaflet-popup-content').html() == 'SELECTPOPUP' ) {
                 var _clat = _popup._latlng.lat.toString();
                 var _clng = _popup._latlng.lng.toString();
-                var _id = 'coords_' + _clat.replace('.', '_') + _clng.replace('.', '_');
+                var _id = 'coords';
 
                 _popup.setContent('<p>' + '{{ _T("You clicked at %p", "maps")|e("js") }}'.replace('%p', '<em>' + _clat + '/' + _clng + '</em>') + '</p><p><a class="ilivehere ui button" id="' + _id + '" href="#">{% if mymap is defined %}{{ _T("I live here!", "maps")|e("js") }}{% else %}{{ _T("Member lives here!", "maps")|e("js") }}{% endif %}</a></p>');
             }
@@ -94,7 +94,7 @@
                     content: '{{ _T("Are you sure you want to remove coordinates from the database?", "maps")|e("js") }}',
                     actions: [{
                         text    : '{{ _T("Remove")|e('js') }}',
-                        class   : 'red',
+                        class   : 'red confirm_remove',
                         icon    : 'trash alt',
                         click   : function() {
                             $.ajax({
@@ -103,14 +103,28 @@
                                 data: {
                                     remove: true
                                 },
-                                {% include "elements/js/loader.js.twig" %},
+                                {% include "elements/js/loader.js.twig" with {
+                                        selector: '.confirm_remove',
+                                        loader: 'button'
+                                } %},
                                 success: function(res){
-                                    $('body').modal('alert',{
-                                        content: res.message,
-                                        handler: function() {
-                                            window.location.reload();
-                                        }
-                                     });
+                                    setTimeout(function() {
+                                        $('body').modal({
+                                            class: 'tiny',
+                                            content: res.message,
+                                            actions: [{
+                                                text    : '{{ _T("Close")|e('js') }}',
+                                                click   : function() {
+                                                    window.location.reload();
+                                                }
+                                            }],
+                                            className: {
+                                                'title': 'center aligned header',
+                                                'content': 'center aligned content',
+                                                'actions': 'center aligned actions'
+                                            },
+                                        }).modal('show');
+                                    }, "500")
                                 },
                                 error: function() {
                                     window.alert("{{ _T("An error occured removing coordinates :(", "maps")|e('js') }}");
@@ -120,6 +134,11 @@
                     }, {
                         text    : '{{ _T("Close")|e('js') }}'
                     }],
+                    className: {
+                        'title': 'center aligned header',
+                        'content': 'center aligned content',
+                        'actions': 'center aligned actions'
+                    },
                 }).modal('show');
             });
         };
@@ -129,10 +148,6 @@
 {% else %}
         {# Town is not known. Show possibilities #}
         var _towns = $('#possible_towns');
-        /*_towns.dialog({
-            width: '400px',
-            position: ['right', 'middle']
-        });*/
 
         _towns.modal('show');
 
@@ -143,7 +158,7 @@
             var _slon = _elt.find('.lon')[0].innerHTML;
 
             map.setView([parseFloat(_slat), parseFloat(_slon)], 13);
-            var _id = 'coords_' + _slat.replace('.', '_') + _slon.replace('.', '_');
+            var _id = 'coords';
             _towns.modal('hide');
             L.marker([_slat, _slon]).addTo(map)
                 .bindPopup('<p><strong>' + _name  + '</strong><br/><em>' + _slat + '/' + _slon + '</em></p><p><a class="ilivehere ui button" id="' + _id + '" href="#">{% if mymap is defined %}{{ _T("I live here!", "maps")|e("js") }}{% else %}{{ _T("Member lives here!", "maps")|e("js") }}{% endif %}</a></p>').openPopup();
