@@ -242,7 +242,7 @@ class MapsController extends AbstractPluginController
             && $this->login->isGroupManager()
         ) {
             $member = new Adherent($this->zdb, $id);
-            //check if current logged in user can manage loaded member
+            //check if current logged-in user can manage loaded member
             $groups = $member->groups;
             $can_manage = false;
             foreach ($groups as $group) {

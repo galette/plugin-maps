@@ -46,7 +46,7 @@ require_once $module['root'] . '/_config.inc.php';
 $this->add(function ($request, $response, $next) {
     //check if JS has been generated
     if (!file_exists(__DIR__ . '/webroot/maps-main.bundle.min.js')) {
-        $this->flash->addMessageNow(
+        $this->get('flash')->addMessageNow(
             'error_detected',
             _T('Javascript libraries has not been built!', 'maps')
         );
