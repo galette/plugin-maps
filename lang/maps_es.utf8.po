@@ -2,13 +2,14 @@
 # Johan Cwiklinski <trasher@x-tnd.be>, 2020.
 # badlop <badlop@process-one.net>, 2021.
 # Cow <javier.fserrador@gmail.com>, 2022.
+# Javier <javier.fserrador@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2021-11-21 19:00+0100\n"
-"PO-Revision-Date: 2022-05-17 18:16+0000\n"
-"Last-Translator: Cow <javier.fserrador@gmail.com>\n"
+"PO-Revision-Date: 2022-06-28 10:16+0000\n"
+"Last-Translator: Javier <javier.fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/galette/"
 "maps-plugin/es/>\n"
 "Language: es\n"
@@ -16,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.13-dev\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
-msgstr "Las bibliotecas Javascript no se han compilado."
+msgstr "Las bibliotecas Javascript no se han compiladas."
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:92
 #: ../lib/GaletteMaps/Controllers/MapsController.php:178
