@@ -1,17 +1,17 @@
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
-# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020, 2022.
 # badlop <badlop@process-one.net>, 2021.
 # Cow <javier.fserrador@gmail.com>, 2022.
 # Javier <javier.fserrador@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2022-07-04 09:06+0200\n"
-"PO-Revision-Date: 2022-06-28 10:16+0000\n"
-"Last-Translator: Javier <javier.fserrador@gmail.com>\n"
-"Language-Team: Spanish <https://hosted.weblate.org/projects/galette/maps-"
-"plugin/es/>\n"
+"PO-Revision-Date: 2022-07-04 07:19+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,10 +47,6 @@ msgstr "Geolocalizar %membername"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:105
 #: ../lib/GaletteMaps/Controllers/MapsController.php:196
-#, fuzzy
-#| msgid ""
-#| "Coordinates has not been loaded. Maybe plugin tables does not exists in "
-#| "the datatabase?"
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
