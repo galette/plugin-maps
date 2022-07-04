@@ -1,22 +1,22 @@
 # MIN UZ <varulv93@outlook.com>, 2020.
-# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020, 2022.
 # x <hardwired1.0@protonmail.com>, 2020.
 # Alessandro Mandelli <mandelli.alessandro@ngi.it>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2022-07-04 09:06+0200\n"
-"PO-Revision-Date: 2021-03-17 08:18+0000\n"
-"Last-Translator: Alessandro Mandelli <mandelli.alessandro@ngi.it>\n"
-"Language-Team: Italian <https://hosted.weblate.org/projects/galette/maps-"
-"plugin/it/>\n"
+"PO-Revision-Date: 2022-07-04 07:19+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
+"Language-Team: Italian <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/it/>\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
 #: ../_routes.php:51
 msgid "Javascript libraries has not been built!"
@@ -46,10 +46,6 @@ msgstr "Geolocalizza %nomeutente"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:105
 #: ../lib/GaletteMaps/Controllers/MapsController.php:196
-#, fuzzy
-#| msgid ""
-#| "Coordinates has not been loaded. Maybe plugin tables does not exists in "
-#| "the datatabase?"
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
