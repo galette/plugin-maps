@@ -7,3 +7,4 @@ webroot/*.min.js
 webroot/images/*
 !webroot/images/marker-galette.png
 !webroot/images/marker-galette-pro.png
+tempcache/
