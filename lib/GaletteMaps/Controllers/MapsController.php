@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2020-2022 The Galette Team
+ * Copyright © 2020-2023 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2020-2022 The Galette Team
+ * @copyright 2020-2023 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     2020-12-07
@@ -36,13 +36,13 @@
 
 namespace GaletteMaps\Controllers;
 
+use DI\Attribute\Inject;
 use Galette\Controllers\AbstractPluginController;
 use Galette\Entity\Adherent;
 use GaletteMaps\NominatimTowns;
 use GaletteMaps\Coordinates;
-use Psr\Container\ContainerInterface;
-use Slim\Http\Request;
-use Slim\Http\Response;
+use Slim\Psr7\Request;
+use Slim\Psr7\Response;
 use Analog\Analog;
 
 /**
@@ -52,7 +52,7 @@ use Analog\Analog;
  * @name      MapsController
  * @package   Galette
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2020-2022 The Galette Team
+ * @copyright 2020-2023 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     2020-12-07
@@ -61,9 +61,9 @@ use Analog\Analog;
 class MapsController extends AbstractPluginController
 {
     /**
-     * @Inject("Plugin Galette Maps")
      * @var integer
      */
+    #[Inject("Plugin Galette Maps")]
     protected $module_info;
 
     /**
@@ -81,7 +81,7 @@ class MapsController extends AbstractPluginController
             //public pages are not actives
             return $response
                 ->withStatus(301)
-                ->withHeader('Location', $this->router->pathFor('slash'));
+                ->withHeader('Location', $this->router->urlFor('slash'));
         }
 
         $coords = new Coordinates();

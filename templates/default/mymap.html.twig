@@ -98,7 +98,7 @@
                         icon    : 'trash alt',
                         click   : function() {
                             $.ajax({
-                                url: '{% if mymap is defined %}{{ path_for("maps_ilivehere") }}{% else %}{{ path_for("maps_ilivehere", {"id": member.id}) }}{% endif %}',
+                                url: '{% if mymap is defined %}{{ url_for("maps_ilivehere") }}{% else %}{{ url_for("maps_ilivehere", {"id": member.id}) }}{% endif %}',
                                 type: 'POST',
                                 data: {
                                     remove: true
