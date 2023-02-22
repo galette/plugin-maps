@@ -61,7 +61,7 @@ use Analog\Analog;
 class MapsController extends AbstractPluginController
 {
     /**
-     * @var integer
+     * @var array
      */
     #[Inject("Plugin Galette Maps")]
     protected $module_info;
@@ -81,7 +81,7 @@ class MapsController extends AbstractPluginController
             //public pages are not actives
             return $response
                 ->withStatus(301)
-                ->withHeader('Location', $this->router->urlFor('slash'));
+                ->withHeader('Location', $this->routeparser->urlFor('slash'));
         }
 
         $coords = new Coordinates();
@@ -156,7 +156,6 @@ class MapsController extends AbstractPluginController
                 //in member
                 //FIXME: silent fallback is maybe not the best to do
                 $member->load($this->login->id);
-                $id = $this->login->id;
             }
         }
 
@@ -164,7 +163,7 @@ class MapsController extends AbstractPluginController
         $mcoords = $coords->getCoords($member->id);
 
         $towns = false;
-        if ($mcoords === false || count($mcoords) === 0) {
+        if (count($mcoords) === 0) {
             if ($member->town != '') {
                 $t = new NominatimTowns($this->preferences);
                 $towns = $t->search(
@@ -188,13 +187,6 @@ class MapsController extends AbstractPluginController
 
         if ($towns !== false) {
             $params['towns'] = $towns;
-        }
-
-        if ($mcoords === false) {
-            $this->flash->addMessage(
-                'error_detected',
-                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the database?', 'maps')
-            );
         } elseif (count($mcoords) > 0) {
             $params['town'] = $mcoords;
         }

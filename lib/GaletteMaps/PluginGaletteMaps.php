@@ -37,6 +37,7 @@
 
 namespace GaletteMaps;
 
+use Galette\Core\Login;
 use Galette\Entity\Adherent;
 use Galette\Core\GalettePlugin;
 
