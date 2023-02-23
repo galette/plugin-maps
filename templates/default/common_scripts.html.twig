@@ -31,7 +31,7 @@
             var _a = $(this);
             var _latlng = _a.data('latlng');
             $.ajax({
-                url: '{% if mymap is not defined %}{{ url_for("maps_ilivehere") }}{% else %}{{ url_for("maps_ilivehere", {"id": member.id}) }}{% endif %}',
+                url: '{% if mymap is defined %}{{ url_for("maps_ilivehere") }}{% else %}{{ url_for("maps_ilivehere", {"id": member.id}) }}{% endif %}',
                 type: 'POST',
                 data: {
                     latitude: _latlng.lat,
