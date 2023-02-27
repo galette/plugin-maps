@@ -125,7 +125,7 @@ class PluginGaletteMaps extends GalettePlugin
                     'name' => 'maps_localize_member',
                     'args' => ["id" => $login->id]
                 ],
-                'icon' => 'map marked alternate'
+                'icon' => 'map'
             ]
         ];
     }
