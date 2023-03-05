@@ -1,6 +1,5 @@
 {% if cur_route starts with 'maps_' %}
     <script type="text/javascript" src="{{ url_for("plugin_res", {"plugin": module_id, "path": "maps-main.bundle.min.js"}) }}"></script>
-    <script type="text/javascript" src="{{ url_for("plugin_res", {"plugin": module_id, "path": "maps-legend.bundle.min.js"}) }}"></script>
 {% endif %}
 {% if cur_route == 'maps_localize_member' or cur_route == 'maps_mymap' %}
     <script type="text/javascript" src="{{ url_for("plugin_res", {"plugin": module_id, "path": "maps-locate.bundle.min.js"}) }}"></script>
