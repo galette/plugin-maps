@@ -327,7 +327,6 @@ def add_libs(rel_name, galette_archive):
     os.remove(os.path.join(npm_dir, '.gitignore'))
     os.remove(os.path.join(npm_dir, '.scrutinizer.yml'))
     os.remove(os.path.join(npm_dir, '.composer-require-checker.config.json'))
-    os.remove(os.path.join(npm_dir, 'composer.json.checker'))
     os.remove(os.path.join(npm_dir, 'gulpfile.js'))
     os.remove(os.path.join(npm_dir, 'package.json'))
     os.remove(os.path.join(npm_dir, 'package-lock.json'))
