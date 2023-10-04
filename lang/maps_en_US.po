@@ -1,14 +1,14 @@
 # English translations for PACKAGE package.
-# Copyright (C) 2022 THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2023 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# Automatically generated, 2022.
+# Automatically generated, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-04 09:06+0200\n"
-"PO-Revision-Date: 2022-07-04 09:06+0200\n"
+"POT-Creation-Date: 2023-10-04 08:27+0200\n"
+"PO-Revision-Date: 2023-10-04 08:27+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en_US\n"
@@ -17,34 +17,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../_routes.php:51
+#: ../_routes.php:47
 msgid "Javascript libraries has not been built!"
 msgstr "Javascript libraries has not been built!"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:73
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:74
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:121
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:75
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:122
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:123
 msgid "My localization"
 msgstr "My localization"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:96
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:97
 #: ../lib/GaletteMaps/Controllers/MapsController.php:92
-#: ../lib/GaletteMaps/Controllers/MapsController.php:178
+#: ../lib/GaletteMaps/Controllers/MapsController.php:177
 msgid "Maps"
 msgstr "Maps"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:143
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:144
 msgid "Geolocalize"
 msgstr "Geolocalize"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:147
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:148
 msgid "Geolocalize %membername"
 msgstr "Geolocalize %membername"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:105
-#: ../lib/GaletteMaps/Controllers/MapsController.php:196
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
@@ -52,32 +51,32 @@ msgstr ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:181
+#: ../lib/GaletteMaps/Controllers/MapsController.php:180
 msgid "%member geographic position"
 msgstr "%member geographic position"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:234
+#: ../lib/GaletteMaps/Controllers/MapsController.php:226
 msgid "Superadmin cannot be localized."
 msgstr "Superadmin cannot be localized."
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:261
-#: ../lib/GaletteMaps/Controllers/MapsController.php:273
+#: ../lib/GaletteMaps/Controllers/MapsController.php:253
+#: ../lib/GaletteMaps/Controllers/MapsController.php:265
 msgid "Coordinates has not been removed :("
 msgstr "Coordinates has not been removed :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:271
+#: ../lib/GaletteMaps/Controllers/MapsController.php:263
 msgid "Coordinates has been removed!"
 msgstr "Coordinates has been removed!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:286
+#: ../lib/GaletteMaps/Controllers/MapsController.php:278
 msgid "New coordinates has been stored!"
 msgstr "New coordinates has been stored!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:288
+#: ../lib/GaletteMaps/Controllers/MapsController.php:280
 msgid "Coordinates has not been stored :("
 msgstr "Coordinates has not been stored :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:291
+#: ../lib/GaletteMaps/Controllers/MapsController.php:283
 msgid "Something went wrong :("
 msgstr "Something went wrong :("
 
@@ -93,47 +92,47 @@ msgstr "Search result"
 msgid "aka"
 msgstr "aka"
 
-#: ../tempcache/common_scripts.html.twig:133
+#: ../tempcache/common_scripts.html.twig:129
 msgid "An error occured during 'I live here' process :("
 msgstr "An error occured during 'I live here' process :("
 
-#: ../tempcache/common_scripts.html.twig:167
+#: ../tempcache/common_scripts.html.twig:163
 msgid "Display map in full screen"
 msgstr "Display map in full screen"
 
-#: ../tempcache/common_scripts.html.twig:189
+#: ../tempcache/common_scripts.html.twig:185
 msgid "Search your town..."
 msgstr "Search your town..."
 
-#: ../tempcache/common_scripts.html.twig:195
+#: ../tempcache/common_scripts.html.twig:191
 msgid "Search a town..."
 msgstr "Search a town..."
 
-#: ../tempcache/common_scripts.html.twig:201
+#: ../tempcache/common_scripts.html.twig:197
 msgid "Sorry, that town could not be found."
 msgstr "Sorry, that town could not be found."
 
-#: ../tempcache/common_scripts.html.twig:205
+#: ../tempcache/common_scripts.html.twig:201
 msgid "Search"
 msgstr "Search"
 
-#: ../tempcache/common_scripts.html.twig:229
+#: ../tempcache/common_scripts.html.twig:225
 msgid "Show me where I am"
 msgstr "Show me where I am"
 
-#: ../tempcache/common_scripts.html.twig:234
+#: ../tempcache/common_scripts.html.twig:230
 msgid "You seem located outside the boundaries of the map"
 msgstr "You seem located outside the boundaries of the map"
 
-#: ../tempcache/common_scripts.html.twig:246
+#: ../tempcache/common_scripts.html.twig:242
 msgid "Map data (c)"
 msgstr "Map data (c)"
 
-#: ../tempcache/common_scripts.html.twig:248
+#: ../tempcache/common_scripts.html.twig:244
 msgid "OpenStreetMap contributors"
 msgstr "OpenStreetMap contributors"
 
-#: ../tempcache/common_scripts.html.twig:250
+#: ../tempcache/common_scripts.html.twig:246
 msgid "Imagery (c)"
 msgstr "Imagery (c)"
 
