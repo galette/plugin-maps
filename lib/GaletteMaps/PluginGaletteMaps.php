@@ -72,7 +72,6 @@ class PluginGaletteMaps extends GalettePlugin
                 'items' => [
                     [
                         'label' => _T('My localization', 'maps'),
-                        'title' => _T('My localization', 'maps'),
                         'route' => [
                             'name' => 'maps_mymap', //or maps_localize_member
                         ]
@@ -94,7 +93,6 @@ class PluginGaletteMaps extends GalettePlugin
         return [
             [
                 'label' => _T("Maps", "maps"),
-                'title' => _T("Maps", "maps"),
                 'route' => [
                     'name' => 'maps_map'
                 ],
@@ -120,7 +118,6 @@ class PluginGaletteMaps extends GalettePlugin
         return [
             [
                 'label' => _T("My localization", "maps"),
-                'title' => _T("My localization", "maps"),
                 'route' => [
                     'name' => 'maps_localize_member',
                     'args' => ["id" => $login->id]
