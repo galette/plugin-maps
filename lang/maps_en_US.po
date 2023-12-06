@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 08:27+0200\n"
-"PO-Revision-Date: 2023-10-04 08:27+0200\n"
+"POT-Creation-Date: 2023-12-06 08:18+0100\n"
+"PO-Revision-Date: 2023-12-06 08:18+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en_US\n"
@@ -22,24 +22,21 @@ msgid "Javascript libraries has not been built!"
 msgstr "Javascript libraries has not been built!"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:74
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:75
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:122
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:123
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:120
 msgid "My localization"
 msgstr "My localization"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:96
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:97
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
 #: ../lib/GaletteMaps/Controllers/MapsController.php:92
 #: ../lib/GaletteMaps/Controllers/MapsController.php:177
 msgid "Maps"
 msgstr "Maps"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:144
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:141
 msgid "Geolocalize"
 msgstr "Geolocalize"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:148
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:145
 msgid "Geolocalize %membername"
 msgstr "Geolocalize %membername"
 
@@ -88,7 +85,7 @@ msgstr "Member (company)"
 msgid "Search result"
 msgstr "Search result"
 
-#: ../tempcache/maps.html.twig:103
+#: ../tempcache/maps.html.twig:102
 msgid "aka"
 msgstr "aka"
 
