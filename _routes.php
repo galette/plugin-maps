@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2015-2020 The Galette Team
+ * Copyright © 2015-2023 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,50 +28,57 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2015-2020 The Galette Team
+ * @copyright 2015-2023 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     0.9dev 2015-10-28
  */
 
 use GaletteMaps\Controllers\MapsController;
-use Analog\Analog;
-use Galette\Entity\Adherent;
-use GaletteMaps\NominatimTowns;
-use GaletteMaps\Coordinates;
 
 //Constants and classes from plugin
 require_once $module['root'] . '/_config.inc.php';
 
-$this->add(function ($request, $response, $next) {
+$check_js_middleware = function (\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Server\RequestHandlerInterface $handler) use ($container) {
     //check if JS has been generated
-    if (!file_exists(__DIR__ . '/webroot/js/maps.bundle.js')) {
-        $this->flash->addMessageNow(
+    if (!file_exists(__DIR__ . '/webroot/maps-main.bundle.min.js')) {
+        $container->get('flash')->addMessageNow(
             'error_detected',
             _T('Javascript libraries has not been built!', 'maps')
         );
     }
-    return $next($request, $response);
-});
+    return $handler->handle($request);
+};
 
-$this->get(
+/*$app->addMiddleware(function (\Psr\Http\Message\ServerRequestInterface $request, \Psr\Http\Server\RequestHandlerInterface $handler) use ($container) {
+    //check if JS has been generated
+    if (!file_exists(__DIR__ . '/webroot/maps-main.bundle.min.js')) {
+        $container->get('flash')->addMessageNow(
+            'error_detected',
+            _T('Javascript libraries has not been built!', 'maps')
+        );
+    }
+    return $handler->handle($request);
+});*/
+
+$app->get(
     '/localize-member/{id:\d+}',
     [MapsController::class, 'localizeMember']
-)->setName('maps_localize_member')->add($authenticate);
+)->setName('maps_localize_member')->add($authenticate)->add($check_js_middleware);
 
 //member self localization
-$this->get(
+$app->get(
     '/localize-me',
     [MapsController::class, 'localizeMember']
-)->setName('maps_mymap')->add($authenticate);
+)->setName('maps_mymap')->add($authenticate)->add($check_js_middleware);
 
 //global map page
-$this->get(
+$app->get(
     '/map',
     [MapsController::class, 'map']
-)->setName('maps_map');
+)->setName('maps_map')->add($check_js_middleware);
 
-$this->post(
+$app->post(
     '/i-live-here[/{id:\d+}]',
     [MapsController::class, 'ILiveHere']
-)->setName('maps_ilivehere')->add($authenticate);
+)->setName('maps_ilivehere')->add($authenticate)->add($check_js_middleware);

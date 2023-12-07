@@ -1,184 +1,182 @@
 # Tymofij Lytvynenko <till.svit@gmail.com>, 2021.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-21 19:00+0100\n"
-"PO-Revision-Date: 2021-04-28 06:06+0000\n"
-"Last-Translator: Tymofij Lytvynenko <till.svit@gmail.com>\n"
+"POT-Creation-Date: 2023-12-06 08:18+0100\n"
+"PO-Revision-Date: 2022-07-04 07:19+0000\n"
+"Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/uk/>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
-#: ../_routes.php:51
+#: ../_routes.php:47
 msgid "Javascript libraries has not been built!"
 msgstr "Бібліотеки Javascript не створено!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:92
-#: ../lib/GaletteMaps/Controllers/MapsController.php:178
-msgid "Maps"
-msgstr "Maps"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:105
-#: ../lib/GaletteMaps/Controllers/MapsController.php:196
-msgid ""
-"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
-"datatabase?"
-msgstr ""
-"Координати не завантажено. Можливо, таблиць додатків не існує в базі даних?"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:181
-msgid "%member geographic position"
-msgstr "Географічне положення %member"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:234
-msgid "Superadmin cannot be localized."
-msgstr "Суперадмін не може бути локалізований."
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:261
-#: ../lib/GaletteMaps/Controllers/MapsController.php:273
-msgid "Coordinates has not been removed :("
-msgstr "Координати не видалено :("
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:271
-msgid "Coordinates has been removed!"
-msgstr "Координати видалено!"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:286
-msgid "New coordinates has been stored!"
-msgstr "Збережено нові координати!"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:288
-msgid "Coordinates has not been stored :("
-msgstr "Координати не зберігаються :("
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:291
-msgid "Something went wrong :("
-msgstr "Щось пішло не так :("
-
-#: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:74
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:120
 msgid "My localization"
 msgstr "Моя локалізація"
 
-#: ../templates/default/adh_actions.tpl:3
-#: ../templates/default/adh_fiche_action.tpl:5
-msgid "Geolocalize %membername"
-msgstr "Геолокалізувати %membername"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
+#: ../lib/GaletteMaps/Controllers/MapsController.php:92
+#: ../lib/GaletteMaps/Controllers/MapsController.php:177
+msgid "Maps"
+msgstr "Maps"
 
-#: ../templates/default/adh_fiche_action.tpl:9
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:141
 msgid "Geolocalize"
 msgstr "Геолокалізувати"
 
-#: ../templates/default/common_html.tpl:14
-#: ../templates/default/common_html.tpl:17
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:145
+msgid "Geolocalize %membername"
+msgstr "Геолокалізувати %membername"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:105
+msgid ""
+"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
+"database?"
+msgstr ""
+"Координати не завантажено. Можливо, таблиць додатків не існує в базі даних?"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:180
+msgid "%member geographic position"
+msgstr "Географічне положення %member"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:226
+msgid "Superadmin cannot be localized."
+msgstr "Суперадмін не може бути локалізований."
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:253
+#: ../lib/GaletteMaps/Controllers/MapsController.php:265
+msgid "Coordinates has not been removed :("
+msgstr "Координати не видалено :("
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:263
+msgid "Coordinates has been removed!"
+msgstr "Координати видалено!"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:278
+msgid "New coordinates has been stored!"
+msgstr "Збережено нові координати!"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:280
+msgid "Coordinates has not been stored :("
+msgstr "Координати не зберігаються :("
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:283
+msgid "Something went wrong :("
+msgstr "Щось пішло не так :("
+
+#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
 msgid "Member (company)"
 msgstr "Член (компанія)"
 
-#: ../templates/default/common_html.tpl:22
-#: ../templates/default/common_html.tpl:25
+#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
 msgid "Search result"
 msgstr "Підсумки пошуку"
 
-#: ../templates/default/common_scripts.tpl:87
+#: ../tempcache/maps.html.twig:102
+msgid "aka"
+msgstr "він же"
+
+#: ../tempcache/common_scripts.html.twig:129
 msgid "An error occured during 'I live here' process :("
 msgstr "Помилка під час процесу \"Я живу тут\" :("
 
-#: ../templates/default/common_scripts.tpl:108
+#: ../tempcache/common_scripts.html.twig:163
 msgid "Display map in full screen"
 msgstr "Відкрити мапу на весь екран"
 
-#: ../templates/default/common_scripts.tpl:117
+#: ../tempcache/common_scripts.html.twig:185
 msgid "Search your town..."
 msgstr "Пошук вашого міста..."
 
-#: ../templates/default/common_scripts.tpl:119
+#: ../tempcache/common_scripts.html.twig:191
 msgid "Search a town..."
 msgstr "Пошук міста..."
 
-#: ../templates/default/common_scripts.tpl:121
-msgid "Search"
-msgstr "Пошук"
-
-#: ../templates/default/common_scripts.tpl:124
-msgid "No result found"
-msgstr "Нічого не знайдено"
-
-#: ../templates/default/common_scripts.tpl:124
+#: ../tempcache/common_scripts.html.twig:197
 msgid "Sorry, that town could not be found."
 msgstr "На жаль, цього міста не вдалося знайти."
 
-#: ../templates/default/common_scripts.tpl:160
+#: ../tempcache/common_scripts.html.twig:201
+msgid "Search"
+msgstr "Пошук"
+
+#: ../tempcache/common_scripts.html.twig:225
 msgid "Show me where I am"
 msgstr "Показати де я"
 
-#: ../templates/default/common_scripts.tpl:162
+#: ../tempcache/common_scripts.html.twig:230
 msgid "You seem located outside the boundaries of the map"
 msgstr "Здається, ви знаходитесь поза межами мапи"
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../tempcache/common_scripts.html.twig:242
 msgid "Map data (c)"
 msgstr "Дані мапи (c)"
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../tempcache/common_scripts.html.twig:244
 msgid "OpenStreetMap contributors"
 msgstr "Землеписці OpenStreetMap"
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../tempcache/common_scripts.html.twig:246
 msgid "Imagery (c)"
 msgstr "Зображення (c)"
 
-#: ../templates/default/mymap.tpl:6
+#: ../tempcache/mymap.html.twig:64
 msgid "Choose your location"
 msgstr "Виберіть своє місцеперебування"
 
-#: ../templates/default/mymap.tpl:6
+#: ../tempcache/mymap.html.twig:70
 msgid "Choose %member location"
 msgstr "Оберіть розташування %member"
 
-#: ../templates/default/mymap.tpl:7
+#: ../tempcache/mymap.html.twig:80
 msgid "Select your town."
 msgstr "Виберіть своє місто."
 
-#: ../templates/default/mymap.tpl:7
+#: ../tempcache/mymap.html.twig:84
 msgid "In the database, town is set to: '%town'"
 msgstr "У базі даних установлено місто: '%town'"
 
-#: ../templates/default/mymap.tpl:47
+#: ../tempcache/mymap.html.twig:174
 msgid "You clicked at %p"
 msgstr "Ви натиснули на %p"
 
-#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
-#: ../templates/default/mymap.tpl:117
+#: ../tempcache/mymap.html.twig:177 ../tempcache/mymap.html.twig:298
+#: ../tempcache/mymap.html.twig:327
 msgid "I live here!"
 msgstr "Я живу тут!"
 
-#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
-#: ../templates/default/mymap.tpl:117
+#: ../tempcache/mymap.html.twig:179 ../tempcache/mymap.html.twig:300
+#: ../tempcache/mymap.html.twig:329
 msgid "Member lives here!"
 msgstr "Член живе тут!"
 
-#: ../templates/default/mymap.tpl:64
+#: ../tempcache/mymap.html.twig:211
 msgid "Remove my coordinates"
 msgstr "Видалити мої координати"
 
-#: ../templates/default/mymap.tpl:64
+#: ../tempcache/mymap.html.twig:213
 msgid "Remove member coordinates"
 msgstr "Видалити координати члена"
 
-#: ../templates/default/mymap.tpl:64
+#: ../tempcache/mymap.html.twig:219
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "Ви впевнені, що хочете видалити координати з бази даних?"
 
-#: ../templates/default/mymap.tpl:86
+#: ../tempcache/mymap.html.twig:272
 msgid "An error occured removing coordinates :("
 msgstr "Під час видалення координат сталася помилка :("
 
-#: ../templates/default/maps.tpl:21
-msgid "aka"
-msgstr "він же"
+#~ msgid "No result found"
+#~ msgstr "Нічого не знайдено"

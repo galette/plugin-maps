@@ -1,13 +1,16 @@
 # Adolfo Jayme Barrientos <fitojb@ubuntu.com>, 2020.
-# Johan Cwiklinski <trasher@x-tnd.be>, 2020.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020, 2022.
 # badlop <badlop@process-one.net>, 2021.
+# Cow <javier.fserrador@gmail.com>, 2022.
+# Javier <javier.fserrador@gmail.com>, 2022.
+# ventura vicenta memba moule <vevi.memba@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-21 19:00+0100\n"
-"PO-Revision-Date: 2021-01-13 19:32+0000\n"
-"Last-Translator: badlop <badlop@process-one.net>\n"
+"POT-Creation-Date: 2023-12-06 08:18+0100\n"
+"PO-Revision-Date: 2023-10-09 14:02+0000\n"
+"Last-Translator: ventura vicenta memba moule <vevi.memba@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/es/>\n"
 "Language: es\n"
@@ -15,172 +18,169 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
-#: ../_routes.php:51
+#: ../_routes.php:47
 msgid "Javascript libraries has not been built!"
-msgstr "No se han construido las librerías Javascript!"
+msgstr "¡Las bibliotecas JavaScript no se han compilado!"
 
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:74
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:120
+msgid "My localization"
+msgstr "Mi localización"
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
 #: ../lib/GaletteMaps/Controllers/MapsController.php:92
-#: ../lib/GaletteMaps/Controllers/MapsController.php:178
+#: ../lib/GaletteMaps/Controllers/MapsController.php:177
 msgid "Maps"
 msgstr "Mapas"
 
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:141
+msgid "Geolocalize"
+msgstr "Geolocalizar"
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:145
+msgid "Geolocalize %membername"
+msgstr "Geolocalizar %membername"
+
 #: ../lib/GaletteMaps/Controllers/MapsController.php:105
-#: ../lib/GaletteMaps/Controllers/MapsController.php:196
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
-"datatabase?"
+"database?"
 msgstr ""
 "No se han cargado las coordenadas. ¿Quizá las tablas del complemento no "
 "existen en la base de datos?"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:181
+#: ../lib/GaletteMaps/Controllers/MapsController.php:180
 msgid "%member geographic position"
 msgstr "Posición geográfica de %member"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:234
+#: ../lib/GaletteMaps/Controllers/MapsController.php:226
 msgid "Superadmin cannot be localized."
 msgstr "No se puede localizar Superadmin."
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:261
-#: ../lib/GaletteMaps/Controllers/MapsController.php:273
+#: ../lib/GaletteMaps/Controllers/MapsController.php:253
+#: ../lib/GaletteMaps/Controllers/MapsController.php:265
 msgid "Coordinates has not been removed :("
 msgstr "No se ha eliminado Coordenadas :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:271
+#: ../lib/GaletteMaps/Controllers/MapsController.php:263
 msgid "Coordinates has been removed!"
 msgstr "¡Se han eliminado las coordenadas!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:286
+#: ../lib/GaletteMaps/Controllers/MapsController.php:278
 msgid "New coordinates has been stored!"
 msgstr "¡Se han almacenado las nuevas coordenadas!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:288
+#: ../lib/GaletteMaps/Controllers/MapsController.php:280
 msgid "Coordinates has not been stored :("
 msgstr "No se han almacenado las coordenadas :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:291
+#: ../lib/GaletteMaps/Controllers/MapsController.php:283
 msgid "Something went wrong :("
 msgstr "Se ha producido un problema :("
 
-#: ../templates/default/dashboard_member.tpl:1 ../templates/default/menu.tpl:4
-msgid "My localization"
-msgstr "Mi localización"
-
-#: ../templates/default/adh_actions.tpl:3
-#: ../templates/default/adh_fiche_action.tpl:5
-msgid "Geolocalize %membername"
-msgstr "Geolocalizar %membername"
-
-#: ../templates/default/adh_fiche_action.tpl:9
-msgid "Geolocalize"
-msgstr "Geolocalizar"
-
-#: ../templates/default/common_html.tpl:14
-#: ../templates/default/common_html.tpl:17
+#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
 msgid "Member (company)"
 msgstr "Miembro (empresa)"
 
-#: ../templates/default/common_html.tpl:22
-#: ../templates/default/common_html.tpl:25
+#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
 msgid "Search result"
 msgstr "Resultado de la búsqueda"
 
-#: ../templates/default/common_scripts.tpl:87
+#: ../tempcache/maps.html.twig:102
+msgid "aka"
+msgstr "también conocido como"
+
+#: ../tempcache/common_scripts.html.twig:129
 msgid "An error occured during 'I live here' process :("
 msgstr "Se produjo un error durante el proceso de «Vivo aquí» :("
 
-#: ../templates/default/common_scripts.tpl:108
+#: ../tempcache/common_scripts.html.twig:163
 msgid "Display map in full screen"
 msgstr "Mostrar mapa en pantalla completa"
 
-#: ../templates/default/common_scripts.tpl:117
+#: ../tempcache/common_scripts.html.twig:185
 msgid "Search your town..."
 msgstr "Buscar tu población..."
 
-#: ../templates/default/common_scripts.tpl:119
+#: ../tempcache/common_scripts.html.twig:191
 msgid "Search a town..."
 msgstr "Buscar una población..."
 
-#: ../templates/default/common_scripts.tpl:121
-msgid "Search"
-msgstr "Buscar"
-
-#: ../templates/default/common_scripts.tpl:124
-msgid "No result found"
-msgstr "No se encontró ningún resultado"
-
-#: ../templates/default/common_scripts.tpl:124
+#: ../tempcache/common_scripts.html.twig:197
 msgid "Sorry, that town could not be found."
 msgstr "Lo siento, no se ha podido encontrar esa población."
 
-#: ../templates/default/common_scripts.tpl:160
+#: ../tempcache/common_scripts.html.twig:201
+msgid "Search"
+msgstr "Buscar"
+
+#: ../tempcache/common_scripts.html.twig:225
 msgid "Show me where I am"
 msgstr "Mostrarme dónde estoy"
 
-#: ../templates/default/common_scripts.tpl:162
+#: ../tempcache/common_scripts.html.twig:230
 msgid "You seem located outside the boundaries of the map"
 msgstr "Parece que tu localización está fuera de los límites del mapa"
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../tempcache/common_scripts.html.twig:242
 msgid "Map data (c)"
 msgstr "Datos cartográficos ©"
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../tempcache/common_scripts.html.twig:244
 msgid "OpenStreetMap contributors"
 msgstr "contribuidores de OpenStreetMap"
 
-#: ../templates/default/common_scripts.tpl:169
+#: ../tempcache/common_scripts.html.twig:246
 msgid "Imagery (c)"
 msgstr "Imágenes ©"
 
-#: ../templates/default/mymap.tpl:6
+#: ../tempcache/mymap.html.twig:64
 msgid "Choose your location"
 msgstr "Escoge tu ubicación"
 
-#: ../templates/default/mymap.tpl:6
+#: ../tempcache/mymap.html.twig:70
 msgid "Choose %member location"
 msgstr "Escoge la ubicación de %member"
 
-#: ../templates/default/mymap.tpl:7
+#: ../tempcache/mymap.html.twig:80
 msgid "Select your town."
 msgstr "Escoge tu población."
 
-#: ../templates/default/mymap.tpl:7
+#: ../tempcache/mymap.html.twig:84
 msgid "In the database, town is set to: '%town'"
 msgstr "En la base de datos, la población está indicada como: '%town'"
 
-#: ../templates/default/mymap.tpl:47
+#: ../tempcache/mymap.html.twig:174
 msgid "You clicked at %p"
 msgstr "Has pulsado en %p"
 
-#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
-#: ../templates/default/mymap.tpl:117
+#: ../tempcache/mymap.html.twig:177 ../tempcache/mymap.html.twig:298
+#: ../tempcache/mymap.html.twig:327
 msgid "I live here!"
 msgstr "¡Vivo aquí!"
 
-#: ../templates/default/mymap.tpl:47 ../templates/default/mymap.tpl:99
-#: ../templates/default/mymap.tpl:117
+#: ../tempcache/mymap.html.twig:179 ../tempcache/mymap.html.twig:300
+#: ../tempcache/mymap.html.twig:329
 msgid "Member lives here!"
 msgstr "¡El miembro vive aquí!"
 
-#: ../templates/default/mymap.tpl:64
+#: ../tempcache/mymap.html.twig:211
 msgid "Remove my coordinates"
 msgstr "Eliminar mis coordenadas"
 
-#: ../templates/default/mymap.tpl:64
+#: ../tempcache/mymap.html.twig:213
 msgid "Remove member coordinates"
 msgstr "Eliminar coordenadas de miembro"
 
-#: ../templates/default/mymap.tpl:64
+#: ../tempcache/mymap.html.twig:219
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "¿Confirma que quiere eliminar las coordenadas de esta base de datos?"
 
-#: ../templates/default/mymap.tpl:86
+#: ../tempcache/mymap.html.twig:272
 msgid "An error occured removing coordinates :("
 msgstr "Se produjo un error al eliminar las coordenadas :("
 
-#: ../templates/default/maps.tpl:21
-msgid "aka"
-msgstr "también conocido como"
+#~ msgid "No result found"
+#~ msgstr "No se encontró ningún resultado"

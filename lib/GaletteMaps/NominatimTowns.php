@@ -119,8 +119,6 @@ class NominatimTowns
         //get request infos
         $infos = curl_getinfo($ch);
         if ($infos['http_code'] !== 200) {
-            $trace = debug_backtrace();
-            $caller = $trace[1];
             //At this point, core has been created, but is failing
             //to load in solr.
             throw new \RuntimeException(

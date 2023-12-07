@@ -7,7 +7,7 @@
  *
  * PHP version 5
  *
- * Copyright © 2019-2020 The Galette Team
+ * Copyright © 2020-2023 The Galette Team
  *
  * This file is part of Galette (http://galette.tuxfamily.org).
  *
@@ -28,7 +28,7 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2020 The Galette Team
+ * @copyright 2020-2023 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     2020-12-07
@@ -36,13 +36,13 @@
 
 namespace GaletteMaps\Controllers;
 
+use DI\Attribute\Inject;
 use Galette\Controllers\AbstractPluginController;
 use Galette\Entity\Adherent;
 use GaletteMaps\NominatimTowns;
 use GaletteMaps\Coordinates;
-use Psr\Container\ContainerInterface;
-use Slim\Http\Request;
-use Slim\Http\Response;
+use Slim\Psr7\Request;
+use Slim\Psr7\Response;
 use Analog\Analog;
 
 /**
@@ -52,7 +52,7 @@ use Analog\Analog;
  * @name      MapsController
  * @package   Galette
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2020 The Galette Team
+ * @copyright 2020-2023 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @link      http://galette.tuxfamily.org
  * @since     2020-12-07
@@ -61,9 +61,9 @@ use Analog\Analog;
 class MapsController extends AbstractPluginController
 {
     /**
-     * @Inject("Plugin Galette Maps")
-     * @var integer
+     * @var array
      */
+    #[Inject("Plugin Galette Maps")]
     protected $module_info;
 
     /**
@@ -81,7 +81,7 @@ class MapsController extends AbstractPluginController
             //public pages are not actives
             return $response
                 ->withStatus(301)
-                ->withHeader('Location', $this->router->pathFor('slash'));
+                ->withHeader('Location', $this->routeparser->urlFor('slash'));
         }
 
         $coords = new Coordinates();
@@ -102,14 +102,14 @@ class MapsController extends AbstractPluginController
         } else {
             $this->flash->addMessage(
                 'error_detected',
-                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?', 'maps')
+                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the database?', 'maps')
             );
         }
 
         // display page
         $this->view->render(
             $response,
-            'file:[' . $this->getModuleRoute() . ']maps.tpl',
+            $this->getTemplate('maps'),
             $params
         );
         return $response;
@@ -154,9 +154,8 @@ class MapsController extends AbstractPluginController
             if ($is_managed !== true) {
                 //requested member is not part of managed groups, fall back to logged
                 //in member
-                //FIXME: silent fallback is maube not the best to do
+                //FIXME: silent fallback is maybe not the best to do
                 $member->load($this->login->id);
-                $id = $this->login->id;
             }
         }
 
@@ -164,7 +163,7 @@ class MapsController extends AbstractPluginController
         $mcoords = $coords->getCoords($member->id);
 
         $towns = false;
-        if ($mcoords === false || count($mcoords) === 0) {
+        if (count($mcoords) === 0) {
             if ($member->town != '') {
                 $t = new NominatimTowns($this->preferences);
                 $towns = $t->search(
@@ -188,13 +187,6 @@ class MapsController extends AbstractPluginController
 
         if ($towns !== false) {
             $params['towns'] = $towns;
-        }
-
-        if ($mcoords === false) {
-            $this->flash->addMessage(
-                'error_detected',
-                _T('Coordinates has not been loaded. Maybe plugin tables does not exists in the datatabase?', 'maps')
-            );
         } elseif (count($mcoords) > 0) {
             $params['town'] = $mcoords;
         }
@@ -206,7 +198,7 @@ class MapsController extends AbstractPluginController
         // display page
         $this->view->render(
             $response,
-            'file:[' . $this->getModuleRoute() . ']mymap.tpl',
+            $this->getTemplate('mymap'),
             $params
         );
         return $response;
@@ -242,7 +234,7 @@ class MapsController extends AbstractPluginController
             && $this->login->isGroupManager()
         ) {
             $member = new Adherent($this->zdb, $id);
-            //check if current logged in user can manage loaded member
+            //check if current logged-in user can manage loaded member
             $groups = $member->groups;
             $can_manage = false;
             foreach ($groups as $group) {

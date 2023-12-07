@@ -1,24 +1,11 @@
-#map { height: 300px; }
+.map-container { height: 85vh; }
+
+#map {
+    min-height: 100%;
+}
 
 #possible_towns li {
-    cursor: pointer;
-}
-
-#possible_towns li:hover {
-    background-color: #DDDDFF;
-}
-
-#removecoords {
-    color: #999;
-    font-size: .85em;
-    display: block;
-    text-align: center;
-    cursor: pointer;
-}
-
-.ui-dialog {
-    /* Dialog should be on top of search box dans © box */
-    z-index: 1005;
+    margin-bottom: .5em;
 }
 
 .leaflet-control-legend a {
@@ -26,7 +13,7 @@
     background-position: -2px -2px;
 }
 
-#map .legend {
+#map #legend {
     padding: 6px 8px;
     background: white;
     background: rgba(255,255,255,0.8);
@@ -35,16 +22,17 @@
     text-align: left;
 }
 
-#desktop #maps {
-    background-image: url(images/dashboard.png), url(../../../../themes/default/jquery-ui/images/ui-bg_glass_75_e6e6e6_1x400.png);
-}
-#desktop #maps:hover {
-    background-image: url(images/dashboard.png), url(../../../../themes/default/jquery-ui/images/ui-bg_glass_75_ffb619_1x400.png);
+.legend-container .legend-toggle {
+    width: auto;
+    height: auto;
+    padding: 0;
+    background: transparent;
 }
 
-.fa.fa-map-marker {
-    height: 26px;
-    width: 15px;
-    background: url(images/map-marker.png) 50% 50% no-repeat;
-    display: inline-block;
+.legend-collapsed .legend-toggle {
+    text-align: right;
+    background: white;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.2);
+    padding: 3px 8px 3px 3px;
 }

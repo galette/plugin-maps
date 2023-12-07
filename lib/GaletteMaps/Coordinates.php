@@ -90,7 +90,6 @@ class Coordinates
                     'Maps coordinates table does not exists',
                     Analog::WARNING
                 );
-                return false;
             } else {
                 Analog::log(
                     'Unable to retrieve members coordinates for "' .
@@ -98,7 +97,7 @@ class Coordinates
                     Analog::WARNING
                 );
             }
-            return false;
+            throw $e;
         }
     }
 
@@ -207,7 +206,7 @@ class Coordinates
                     Analog::WARNING
                 );
             }
-            return false;
+            throw $e;
         }
     }
 
@@ -225,7 +224,6 @@ class Coordinates
         global $zdb;
 
         try {
-            $res = null;
             $coords = $this->getCoords($id);
             if (count($coords) === 0) {
                 //cordinates does not exists yet
@@ -254,8 +252,7 @@ class Coordinates
             return ($results->count() > 0);
         } catch (\Exception $e) {
             Analog::log(
-                'Unable to set coordinatates for member ' .
-                $id_adh . ' | ' . $e->getMessage(),
+                'Unable to set coordinates | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;

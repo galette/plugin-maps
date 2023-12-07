@@ -1,0 +1,7 @@
+{% if cur_route starts with 'maps_' %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for("plugin_res", {"plugin": module_id, "path": "maps-main.bundle.min.css"}) }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for("plugin_res", {"plugin": module_id, "path": "galette_maps.css"}) }}"/>
+{% endif %}
+{% if cur_route == 'maps_localize_member' or cur_route == 'maps_mymap' %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for("plugin_res", {"plugin": module_id, "path": "maps-locate.bundle.min.css"}) }}"/>
+{% endif %}

@@ -7,9 +7,9 @@
  *
  * PHP version 5
  *
- * Copyright © 2012-2021 The Galette Team
+ * Copyright © 2012-2023 The Galette Team
  *
- * This file is part of Galette (http://galette.tuxfamily.org).
+ * This file is part of Galette (https://galette.eu).
  *
  * Galette is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,21 +28,20 @@
  * @package   GaletteMaps
  *
  * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2021 The Galette Team
+ * @copyright 2012-2023 The Galette Team
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
  * @version   SVN: $Id$
- * @link      http://galette.tuxfamily.org
- * @since     Available since 0.7.4dev - 2012-10-02
+ * @link      https://galette.eu
  */
 
 $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '1.7.0',            //Version
-    '0.9.6',            //Galette compatible version
+    '2.0.0',            //Version
+    '1.0.0',            //Galette compatible version
     'maps',             //routing name and translation domain
-    '2021-11-29',       //Release date
+    '2023-12-07',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',
