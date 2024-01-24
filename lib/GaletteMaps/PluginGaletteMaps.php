@@ -59,7 +59,7 @@ class PluginGaletteMaps extends GalettePlugin
     /**
      * Extra menus entries
      *
-     * @return array|array[]
+     * @return array<string|int, string|array<string,mixed>>
      */
     public static function getMenusContents(): array
     {
@@ -86,7 +86,7 @@ class PluginGaletteMaps extends GalettePlugin
     /**
      * Extra public menus entries
      *
-     * @return array|array[]
+     * @return array<int, string|array<string,mixed>>
      */
     public static function getPublicMenusItemsList(): array
     {
@@ -104,7 +104,7 @@ class PluginGaletteMaps extends GalettePlugin
     /**
      * Get dashboards contents
      *
-     * @return array|array[]
+     * @return array<int, string|array<string,mixed>>
      */
     public static function getDashboardsContents(): array
     {
@@ -156,9 +156,9 @@ class PluginGaletteMaps extends GalettePlugin
     /**
      * Get detailed actions contents
      *
-     * @param Adherent $member Memebr instance
+     * @param Adherent $member Member instance
      *
-     * @return array|array[]
+     * @return array<int, string|array<string,mixed>>
      */
     public static function getDetailedActionsContents(Adherent $member): array
     {
@@ -168,7 +168,7 @@ class PluginGaletteMaps extends GalettePlugin
     /**
      * Get batch actions contents
      *
-     * @return array|array[]
+     * @return array<int, string|array<string,mixed>>
      */
     public static function getBatchActionsContents(): array
     {

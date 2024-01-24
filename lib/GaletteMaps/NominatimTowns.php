@@ -57,13 +57,14 @@ use Galette\Core\Preferences;
 
 class NominatimTowns
 {
-    private $preferences;
+    private Preferences $preferences;
 
-    private $query_options = array(
+    /** @var array<string, string>  */
+    private array $query_options = array(
         'format'            => 'xml',
         'addressdetails'    => '1'
     );
-    private $uri = 'http://nominatim.openstreetmap.org/search';
+    private string $uri = 'http://nominatim.openstreetmap.org/search';
 
     /**
      * Constructor
@@ -78,12 +79,12 @@ class NominatimTowns
     /**
      * Search a town by its name
      *
-     * @param string $town    Town name
-     * @param string $country Country name (optionnal)
+     * @param string  $town    Town name
+     * @param ?string $country Country name (optional)
      *
-     * @return array
+     * @return array<int, array<string, string>>
      */
-    public function search($town, $country = null)
+    public function search(string $town, string $country = null): array
     {
         if (!$town || trim($town) === '') {
             throw new \RuntimeException(

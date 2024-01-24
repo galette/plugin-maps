@@ -61,10 +61,10 @@ use Analog\Analog;
 class MapsController extends AbstractPluginController
 {
     /**
-     * @var array
+     * @var array<string, mixed>
      */
     #[Inject("Plugin Galette Maps")]
-    protected $module_info;
+    protected array $module_info;
 
     /**
      * Main route
@@ -120,7 +120,7 @@ class MapsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     * @param integer  $id       Member ID
+     * @param ?integer $id       Member ID
      *
      * @return Response
      */
@@ -209,7 +209,7 @@ class MapsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     * @param integer  $id       Member ID
+     * @param ?integer $id       Member ID
      *
      * @return Response
      */

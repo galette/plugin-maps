@@ -38,12 +38,12 @@
 namespace GaletteMaps;
 
 use Analog\Analog;
+use ArrayObject;
+use Galette\Core\Db;
 use Galette\Entity\Adherent;
-use Galette\Repository\Members;
 use Laminas\Db\Sql\Expression;
 use Laminas\Db\Sql\Predicate\PredicateSet;
 use Laminas\Db\Sql\Predicate\Operator;
-use Laminas\Db\Sql\Predicate\Expression as PredicateExpression;
 
 /**
  * Members GPS coordinates
@@ -68,10 +68,11 @@ class Coordinates
      *
      * @param int $id Member id
      *
-     * @return array
+     * @return array<string>|ArrayObject<string, int|string>
      */
-    public function getCoords($id)
+    public function getCoords(int $id): array|ArrayObject
     {
+        /** @var Db $zdb */
         global $zdb;
 
         try {
@@ -102,12 +103,12 @@ class Coordinates
     }
 
     /**
-     * Returns list of all know coordinates, filtered on publically
+     * Returns list of all know coordinates, filtered on publicly
      * visible profile for non admins and non staff
      *
-     * @return array
+     * @return array<int, array<string,mixed>>
      */
-    public function listCoords()
+    public function listCoords(): array
     {
         global $zdb, $login;
 
@@ -219,14 +220,14 @@ class Coordinates
      *
      * @return boolean
      */
-    public function setCoords($id, $latitude, $longitude)
+    public function setCoords(int $id, float $latitude, float $longitude): bool
     {
         global $zdb;
 
         try {
             $coords = $this->getCoords($id);
             if (count($coords) === 0) {
-                //cordinates does not exists yet
+                //coordinates does not exist yet
                 $insert = $zdb->insert($this->getTableName());
                 $insert->values(
                     array(
@@ -266,7 +267,7 @@ class Coordinates
      *
      * @return boolean
      */
-    public function removeCoords($id)
+    public function removeCoords(int $id): bool
     {
         global $zdb;
 
@@ -290,7 +291,7 @@ class Coordinates
      *
      * @return string
      */
-    protected function getTableName()
+    protected function getTableName(): string
     {
         return MAPS_PREFIX  . self::TABLE;
     }
