@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 08:18+0100\n"
+"POT-Creation-Date: 2024-02-08 22:15+0100\n"
 "PO-Revision-Date: 2022-07-04 07:08+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
@@ -18,30 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 4.13.1-dev\n"
 
-#: ../_routes.php:47
+#: ../_routes.php:32
 msgid "Javascript libraries has not been built!"
 msgstr "Les bibliothèques Javascript n'ont pas été construites !"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:74
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:120
-msgid "My localization"
-msgstr "Ma localisation"
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
-#: ../lib/GaletteMaps/Controllers/MapsController.php:92
-#: ../lib/GaletteMaps/Controllers/MapsController.php:177
+#: ../lib/GaletteMaps/Controllers/MapsController.php:70
+#: ../lib/GaletteMaps/Controllers/MapsController.php:155
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:72
 msgid "Maps"
 msgstr "Cartes"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:141
-msgid "Geolocalize"
-msgstr "Géolocaliser"
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:145
-msgid "Geolocalize %membername"
-msgstr "Géolocaliser %membername"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:105
+#: ../lib/GaletteMaps/Controllers/MapsController.php:83
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
@@ -49,42 +36,47 @@ msgstr ""
 "Les coordonnées n'ont pas été chargées. Peut-être les tables du plugin "
 "n'existent-elles pas dans la base de données ?"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:180
+#: ../lib/GaletteMaps/Controllers/MapsController.php:158
 msgid "%member geographic position"
 msgstr "Position géographique de %member"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:226
+#: ../lib/GaletteMaps/Controllers/MapsController.php:204
 msgid "Superadmin cannot be localized."
 msgstr "Le superdamin ne peut être géolocalisé."
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:253
-#: ../lib/GaletteMaps/Controllers/MapsController.php:265
+#: ../lib/GaletteMaps/Controllers/MapsController.php:231
+#: ../lib/GaletteMaps/Controllers/MapsController.php:243
 msgid "Coordinates has not been removed :("
 msgstr "Les coordonnées n'ont pas été supprimées :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:263
+#: ../lib/GaletteMaps/Controllers/MapsController.php:241
 msgid "Coordinates has been removed!"
 msgstr "Les coordonnées ont été supprimées !"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:278
+#: ../lib/GaletteMaps/Controllers/MapsController.php:256
 msgid "New coordinates has been stored!"
 msgstr "Les nouvelles coordonnées ont été enregistrées !"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:280
+#: ../lib/GaletteMaps/Controllers/MapsController.php:258
 msgid "Coordinates has not been stored :("
 msgstr "Les coordonnées n'ont pas été enregistrées :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:283
+#: ../lib/GaletteMaps/Controllers/MapsController.php:261
 msgid "Something went wrong :("
 msgstr "Quelque chose n'a pas fonctionné :("
 
-#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
-msgid "Member (company)"
-msgstr "Adhérent (personne morale)"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:51
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:97
+msgid "My localization"
+msgstr "Ma localisation"
 
-#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
-msgid "Search result"
-msgstr "Résultat de recherche"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:118
+msgid "Geolocalize"
+msgstr "Géolocaliser"
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:122
+msgid "Geolocalize %membername"
+msgstr "Géolocaliser %membername"
 
 #: ../tempcache/maps.html.twig:102
 msgid "aka"
@@ -179,6 +171,14 @@ msgstr "Êtes-vous certain de vouloir supprimer les cordonnées de la base ?"
 #: ../tempcache/mymap.html.twig:272
 msgid "An error occured removing coordinates :("
 msgstr "Une erreur est survenue à l'enregistrement des coordonnées :'("
+
+#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
+msgid "Member (company)"
+msgstr "Adhérent (personne morale)"
+
+#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
+msgid "Search result"
+msgstr "Résultat de recherche"
 
 #~ msgid "No result found"
 #~ msgstr "Aucun résultat trouvé"
