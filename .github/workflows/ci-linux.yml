@@ -11,16 +11,15 @@ on:
   pull_request:
 
 jobs:
-  ubuntu-latest:
+  lint:
     runs-on: ubuntu-latest
+    name: "Lint on PHP ${{ matrix.php-versions }}"
 
     strategy:
       matrix:
-        php-versions: [ '8.1', '8.2', '8.3' ]
+        php-versions: [ '8.1', '8.3' ]
         coverage: [none]
       fail-fast: false
-
-    name: PHP ${{ matrix.php-versions }} on ubuntu-latest
 
     steps:
       - name: PHP
@@ -31,7 +30,7 @@ jobs:
           coverage: ${{ matrix.coverage }}
 
       - name: Checkout Galette core
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: galette/galette
           path: galette-core
@@ -39,7 +38,7 @@ jobs:
           ref: develop
 
       - name: Checkout plugin
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: galette-core/galette/plugins/plugin-maps
 
@@ -49,7 +48,7 @@ jobs:
           echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
 
       - name: Cache dependencies
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
@@ -64,6 +63,11 @@ jobs:
         run: |
           cd galette-core/galette/plugins/plugin-maps
           ../../vendor/bin/phpcs lib/ ./*.php
+
+      - name: Twig CS
+        run: |
+          cd galette-core/galette/plugins/plugin-maps
+          ../../vendor/bin/twigcs templates/default --severity error --display blocking
 
       - name: Check missing symbols
         run: |
@@ -83,7 +87,7 @@ jobs:
           ../../vendor/bin/docheader --docheader=../../../.docheader check lib ./*.php
 
       - name: Install Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
 
       - name: Build JS
         run: |

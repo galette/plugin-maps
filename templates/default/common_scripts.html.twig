@@ -93,7 +93,7 @@
             'map', {
                 fullscreenControl: true,
                 fullscreenControlOptions: {
-                    title: "{{ _T("Display map in full screen", "maps" )|e("js") }}",
+                    title: "{{ _T("Display map in full screen", "maps")|e("js") }}",
                     forceSeparateButton:true
                 },
                 gestureHandling: true
@@ -107,8 +107,8 @@
 {% else %}
             placeholder: '{{ _T("Search a town...", "maps")|e("js") }}',
 {% endif %}
-            errorMessage: '{{ _T("Sorry, that town could not be found.", "maps")|e("js")}}',
-            iconLabel: '{{ _T("Search", "maps")|e("js")}}',
+            errorMessage: '{{ _T("Sorry, that town could not be found.", "maps")|e("js") }}',
+            iconLabel: '{{ _T("Search", "maps")|e("js") }}',
         };
         L.Control.geocoder(_geocoder).addTo(map);
 
@@ -125,14 +125,14 @@
             strings: {
                 title: '{{ _T("Show me where I am", "maps")|e("js") }}',
                 popup: 'SELECTPOPUP',
-                outsideMapBoundsMsg: '{{ _T("You seem located outside the boundaries of the map", "maps")|e("js")}}'
+                outsideMapBoundsMsg: '{{ _T("You seem located outside the boundaries of the map", "maps")|e("js") }}'
             }
         }).addTo(map);
 {% endif %}
 
         L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
             maxZoom: 18,
-            attribution: '{{ _T("Map data (c)", "maps")|e("js")}} <a href="http://openstreetmap.org">{{ _T("OpenStreetMap contributors", "maps")|e("js")}}</a>, {{ _T("Imagery (c)", "maps")|e("js")}} <a href="https://cartodb.com/attributions">CartoDB</a>'
+            attribution: '{{ _T("Map data (c)", "maps")|e("js") }} <a href="http://openstreetmap.org">{{ _T("OpenStreetMap contributors", "maps")|e("js") }}</a>, {{ _T("Imagery (c)", "maps")|e("js") }} <a href="https://cartodb.com/attributions">CartoDB</a>'
         }).addTo(map);
 
         try {
