@@ -24,7 +24,7 @@
 <section class="map-container">
     <div id="map"></div>
 </section>
-    {% include '@PluginGaletteMaps/common_html.html.twig'%}
+    {% include '@PluginGaletteMaps/common_html.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}
@@ -39,7 +39,7 @@
     {% else %}
         {% set icon = 'galetteIcon' %}
     {% endif %}
-        _member = [{{ l.lat }}, {{ l.lng }}, {{ icon }}, '<p><strong>{{ l.name|e("js") }}</strong>{% if l.nickname != '' %} {{_T("aka", "maps")|e("js")}} <em>{{ l.nickname|e("js") }}</em>{% endif %}{% if l.company is defined %}<br/>{{ l.company|e("js") }}{% endif %}</p>'];
+        _member = [{{ l.lat }}, {{ l.lng }}, {{ icon }}, '<p><strong>{{ l.name|e("js") }}</strong>{% if l.nickname != '' %} {{ _T("aka", "maps")|e("js") }} <em>{{ l.nickname|e("js") }}</em>{% endif %}{% if l.company is defined %}<br/>{{ l.company|e("js") }}{% endif %}</p>'];
         _markers.push(_member);
 {% endfor %}
         var _group = L.markerClusterGroup();
