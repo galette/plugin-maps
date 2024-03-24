@@ -33,6 +33,7 @@
     "GALETTE_CONFIG_PATH",
     "GALETTE_DATA_PATH",
     "GALETTE_DB_VERSION",
+    "GALETTE_DOCUMENTS_PATH",
     "GALETTE_DOWNLOADS_URI",
     "GALETTE_EXPORTS_PATH",
     "GALETTE_FILES_PATH",
@@ -100,6 +101,7 @@
     "DI\\Container",
     "DI\\ContainerBuilder",
     "DI\\Bridge\\Slim\\App",
+    "DI\\Attribute\\Inject",
 
     "// Not detected, do not know why.",
     "Psr\\Http\\Server\\RequestHandlerInterface"
