@@ -1,0 +1,176 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Languages add-on <noreply-addon-languages@weblate.org>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-02-08 22:15+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../_routes.php:32
+msgid "Javascript libraries has not been built!"
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:70
+#: ../lib/GaletteMaps/Controllers/MapsController.php:155
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:72
+msgid "Maps"
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:83
+msgid ""
+"Coordinates has not been loaded. Maybe plugin tables does not exists in the "
+"database?"
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:158
+msgid "%member geographic position"
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:204
+msgid "Superadmin cannot be localized."
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:231
+#: ../lib/GaletteMaps/Controllers/MapsController.php:243
+msgid "Coordinates has not been removed :("
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:241
+msgid "Coordinates has been removed!"
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:256
+msgid "New coordinates has been stored!"
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:258
+msgid "Coordinates has not been stored :("
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:261
+msgid "Something went wrong :("
+msgstr ""
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:51
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:97
+msgid "My localization"
+msgstr ""
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:118
+msgid "Geolocalize"
+msgstr ""
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:122
+msgid "Geolocalize %membername"
+msgstr ""
+
+#: ../tempcache/maps.html.twig:102
+msgid "aka"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:129
+msgid "An error occured during 'I live here' process :("
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:163
+msgid "Display map in full screen"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:185
+msgid "Search your town..."
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:191
+msgid "Search a town..."
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:197
+msgid "Sorry, that town could not be found."
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:201
+msgid "Search"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:225
+msgid "Show me where I am"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:230
+msgid "You seem located outside the boundaries of the map"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:242
+msgid "Map data (c)"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:244
+msgid "OpenStreetMap contributors"
+msgstr ""
+
+#: ../tempcache/common_scripts.html.twig:246
+msgid "Imagery (c)"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:64
+msgid "Choose your location"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:70
+msgid "Choose %member location"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:80
+msgid "Select your town."
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:84
+msgid "In the database, town is set to: '%town'"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:174
+msgid "You clicked at %p"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:177 ../tempcache/mymap.html.twig:298
+#: ../tempcache/mymap.html.twig:327
+msgid "I live here!"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:179 ../tempcache/mymap.html.twig:300
+#: ../tempcache/mymap.html.twig:329
+msgid "Member lives here!"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:211
+msgid "Remove my coordinates"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:213
+msgid "Remove member coordinates"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:219
+msgid "Are you sure you want to remove coordinates from the database?"
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:272
+msgid "An error occured removing coordinates :("
+msgstr ""
+
+#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
+msgid "Member (company)"
+msgstr ""
+
+#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
+msgid "Search result"
+msgstr ""
