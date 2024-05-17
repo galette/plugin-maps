@@ -108,7 +108,7 @@ class Coordinates
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
-                //limit query to public up to date profiles
+                //limit query to public up-to-date profiles
                 $select->where(
                     array(
                         new PredicateSet(
