@@ -250,8 +250,8 @@ class MapsController extends AbstractPluginController
             ) {
                 $res = $coords->setCoords(
                     $id,
-                    $post['latitude'],
-                    $post['longitude']
+                    (float)$post['latitude'],
+                    (float)$post['longitude']
                 );
 
                 if ($res === true) {
