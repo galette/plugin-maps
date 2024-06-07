@@ -1,15 +1,9 @@
 <?php
 
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-
 /**
- * Towns GPS coordinates via nominatim
+ * Copyright © 2003-2024 The Galette Team
  *
- * PHP version 5
- *
- * Copyright © 2014 The Galette Team
- *
- * This file is part of Galette (http://galette.tuxfamily.org).
+ * This file is part of Galette (https://galette.eu).
  *
  * Galette is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,17 +17,9 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with Galette. If not, see <http://www.gnu.org/licenses/>.
- *
- * @category  Plugins
- * @package   GaletteMaps
- *
- * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2014 The Galette Team
- * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
- * @version   SVN: $Id$
- * @link      http://galette.tuxfamily.org
- * @since     Available since 0.8dev - 2014-09-14
  */
+
+declare(strict_types=1);
 
 namespace GaletteMaps;
 
@@ -45,25 +31,19 @@ use Galette\Core\Preferences;
 /**
  * Towns GPS coordinates via nominatim
  *
- * @category  Plugins
- * @name      NominatimTowns
- * @package   GaletteMaps
- * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2014 The Galette Team
- * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
- * @link      http://galette.tuxfamily.org
- * @since     Available since 0.7.4dev - 2012-10-03
+ * @author Johan Cwiklinski <johan@x-tnd.be>
  */
 
 class NominatimTowns
 {
-    private $preferences;
+    private Preferences $preferences;
 
-    private $query_options = array(
+    /** @var array<string, string>  */
+    private array $query_options = array(
         'format'            => 'xml',
         'addressdetails'    => '1'
     );
-    private $uri = 'http://nominatim.openstreetmap.org/search';
+    private string $uri = 'http://nominatim.openstreetmap.org/search';
 
     /**
      * Constructor
@@ -78,12 +58,12 @@ class NominatimTowns
     /**
      * Search a town by its name
      *
-     * @param string $town    Town name
-     * @param string $country Country name (optionnal)
+     * @param string  $town    Town name
+     * @param ?string $country Country name (optional)
      *
-     * @return array
+     * @return array<int, array<string, string>>
      */
-    public function search($town, $country = null)
+    public function search(string $town, string $country = null): array
     {
         if (!$town || trim($town) === '') {
             throw new \RuntimeException(

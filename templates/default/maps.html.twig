@@ -1,10 +1,30 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
 {% extends not login.isLogged() ? "public_page.html.twig" : "page.html.twig" %}
 
 {% block content %}
 <section class="map-container">
     <div id="map"></div>
 </section>
-    {% include '@PluginGaletteMaps/common_html.html.twig'%}
+    {% include '@PluginGaletteMaps/common_html.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}
@@ -19,7 +39,7 @@
     {% else %}
         {% set icon = 'galetteIcon' %}
     {% endif %}
-        _member = [{{ l.lat }}, {{ l.lng }}, {{ icon }}, '<p><strong>{{ l.name|e("js") }}</strong>{% if l.nickname != '' %} {{_T("aka", "maps")|e("js")}} <em>{{ l.nickname|e("js") }}</em>{% endif %}{% if l.company is defined %}<br/>{{ l.company|e("js") }}{% endif %}</p>'];
+        _member = [{{ l.lat }}, {{ l.lng }}, {{ icon }}, '<p><strong>{{ l.name|e("js") }}</strong>{% if l.nickname != '' %} {{ _T("aka", "maps")|e("js") }} <em>{{ l.nickname|e("js") }}</em>{% endif %}{% if l.company is defined %}<br/>{{ l.company|e("js") }}{% endif %}</p>'];
         _markers.push(_member);
 {% endfor %}
         var _group = L.markerClusterGroup();

@@ -1,15 +1,9 @@
 <?php
 
-/* vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4: */
-
 /**
- * Members GPS coordinates
+ * Copyright © 2003-2024 The Galette Team
  *
- * PHP version 5
- *
- * Copyright © 2012-2021 The Galette Team
- *
- * This file is part of Galette (http://galette.tuxfamily.org).
+ * This file is part of Galette (https://galette.eu).
  *
  * Galette is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,39 +17,24 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with Galette. If not, see <http://www.gnu.org/licenses/>.
- *
- * @category  Plugins
- * @package   GaletteMaps
- *
- * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2021 The Galette Team
- * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
- * @version   SVN: $Id$
- * @link      http://galette.tuxfamily.org
- * @since     Available since 0.7.4dev - 2012-10-04
  */
+
+declare(strict_types=1);
 
 namespace GaletteMaps;
 
 use Analog\Analog;
+use ArrayObject;
+use Galette\Core\Db;
 use Galette\Entity\Adherent;
-use Galette\Repository\Members;
 use Laminas\Db\Sql\Expression;
 use Laminas\Db\Sql\Predicate\PredicateSet;
 use Laminas\Db\Sql\Predicate\Operator;
-use Laminas\Db\Sql\Predicate\Expression as PredicateExpression;
 
 /**
  * Members GPS coordinates
  *
- * @category  Plugins
- * @name      Coordinates
- * @package   GaletteMaps
- * @author    Johan Cwiklinski <johan@x-tnd.be>
- * @copyright 2012-2021 The Galette Team
- * @license   http://www.gnu.org/licenses/gpl-3.0.html GPL License 3.0 or (at your option) any later version
- * @link      http://galette.tuxfamily.org
- * @since     Available since 0.7.4dev - 2012-10-04
+ * @author Johan Cwiklinski <johan@x-tnd.be>
  */
 
 class Coordinates
@@ -68,10 +47,11 @@ class Coordinates
      *
      * @param int $id Member id
      *
-     * @return array
+     * @return array<string>|ArrayObject<string, int|string>
      */
-    public function getCoords($id)
+    public function getCoords(int $id): array|ArrayObject
     {
+        /** @var Db $zdb */
         global $zdb;
 
         try {
@@ -102,12 +82,12 @@ class Coordinates
     }
 
     /**
-     * Returns list of all know coordinates, filtered on publically
+     * Returns list of all know coordinates, filtered on publicly
      * visible profile for non admins and non staff
      *
-     * @return array
+     * @return array<int, array<string,mixed>>
      */
-    public function listCoords()
+    public function listCoords(): array
     {
         global $zdb, $login;
 
@@ -128,7 +108,7 @@ class Coordinates
                 && !$login->isStaff()
                 && !$login->isSuperAdmin()
             ) {
-                //limit query to public up to date profiles
+                //limit query to public up-to-date profiles
                 $select->where(
                     array(
                         new PredicateSet(
@@ -219,14 +199,14 @@ class Coordinates
      *
      * @return boolean
      */
-    public function setCoords($id, $latitude, $longitude)
+    public function setCoords(int $id, float $latitude, float $longitude): bool
     {
         global $zdb;
 
         try {
             $coords = $this->getCoords($id);
             if (count($coords) === 0) {
-                //cordinates does not exists yet
+                //coordinates does not exist yet
                 $insert = $zdb->insert($this->getTableName());
                 $insert->values(
                     array(
@@ -266,7 +246,7 @@ class Coordinates
      *
      * @return boolean
      */
-    public function removeCoords($id)
+    public function removeCoords(int $id): bool
     {
         global $zdb;
 
@@ -290,7 +270,7 @@ class Coordinates
      *
      * @return string
      */
-    protected function getTableName()
+    protected function getTableName(): string
     {
         return MAPS_PREFIX  . self::TABLE;
     }

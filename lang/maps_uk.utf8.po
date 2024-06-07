@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 08:18+0100\n"
+"POT-Creation-Date: 2024-02-08 22:15+0100\n"
 "PO-Revision-Date: 2022-07-04 07:19+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/galette/maps-"
@@ -17,72 +17,64 @@ msgstr ""
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 4.13.1-dev\n"
 
-#: ../_routes.php:47
+#: ../_routes.php:32
 msgid "Javascript libraries has not been built!"
 msgstr "Бібліотеки Javascript не створено!"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:74
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:120
-msgid "My localization"
-msgstr "Моя локалізація"
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
-#: ../lib/GaletteMaps/Controllers/MapsController.php:92
-#: ../lib/GaletteMaps/Controllers/MapsController.php:177
+#: ../lib/GaletteMaps/Controllers/MapsController.php:70
+#: ../lib/GaletteMaps/Controllers/MapsController.php:155
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:72
 msgid "Maps"
 msgstr "Maps"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:141
-msgid "Geolocalize"
-msgstr "Геолокалізувати"
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:145
-msgid "Geolocalize %membername"
-msgstr "Геолокалізувати %membername"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:105
+#: ../lib/GaletteMaps/Controllers/MapsController.php:83
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
 msgstr ""
 "Координати не завантажено. Можливо, таблиць додатків не існує в базі даних?"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:180
+#: ../lib/GaletteMaps/Controllers/MapsController.php:158
 msgid "%member geographic position"
 msgstr "Географічне положення %member"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:226
+#: ../lib/GaletteMaps/Controllers/MapsController.php:204
 msgid "Superadmin cannot be localized."
 msgstr "Суперадмін не може бути локалізований."
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:253
-#: ../lib/GaletteMaps/Controllers/MapsController.php:265
+#: ../lib/GaletteMaps/Controllers/MapsController.php:231
+#: ../lib/GaletteMaps/Controllers/MapsController.php:243
 msgid "Coordinates has not been removed :("
 msgstr "Координати не видалено :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:263
+#: ../lib/GaletteMaps/Controllers/MapsController.php:241
 msgid "Coordinates has been removed!"
 msgstr "Координати видалено!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:278
+#: ../lib/GaletteMaps/Controllers/MapsController.php:256
 msgid "New coordinates has been stored!"
 msgstr "Збережено нові координати!"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:280
+#: ../lib/GaletteMaps/Controllers/MapsController.php:258
 msgid "Coordinates has not been stored :("
 msgstr "Координати не зберігаються :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:283
+#: ../lib/GaletteMaps/Controllers/MapsController.php:261
 msgid "Something went wrong :("
 msgstr "Щось пішло не так :("
 
-#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
-msgid "Member (company)"
-msgstr "Член (компанія)"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:51
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:97
+msgid "My localization"
+msgstr "Моя локалізація"
 
-#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
-msgid "Search result"
-msgstr "Підсумки пошуку"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:118
+msgid "Geolocalize"
+msgstr "Геолокалізувати"
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:122
+msgid "Geolocalize %membername"
+msgstr "Геолокалізувати %membername"
 
 #: ../tempcache/maps.html.twig:102
 msgid "aka"
@@ -177,6 +169,14 @@ msgstr "Ви впевнені, що хочете видалити координ
 #: ../tempcache/mymap.html.twig:272
 msgid "An error occured removing coordinates :("
 msgstr "Під час видалення координат сталася помилка :("
+
+#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
+msgid "Member (company)"
+msgstr "Член (компанія)"
+
+#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
+msgid "Search result"
+msgstr "Підсумки пошуку"
 
 #~ msgid "No result found"
 #~ msgstr "Нічого не знайдено"

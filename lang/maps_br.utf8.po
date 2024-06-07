@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-06 08:18+0100\n"
+"POT-Creation-Date: 2024-02-08 22:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -12,70 +12,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Translate Toolkit 3.0.0\n"
 
-#: ../_routes.php:47
+#: ../_routes.php:32
 msgid "Javascript libraries has not been built!"
 msgstr ""
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:74
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:120
-msgid "My localization"
-msgstr ""
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:95
-#: ../lib/GaletteMaps/Controllers/MapsController.php:92
-#: ../lib/GaletteMaps/Controllers/MapsController.php:177
+#: ../lib/GaletteMaps/Controllers/MapsController.php:70
+#: ../lib/GaletteMaps/Controllers/MapsController.php:155
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:72
 msgid "Maps"
 msgstr ""
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:141
-msgid "Geolocalize"
-msgstr ""
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:145
-msgid "Geolocalize %membername"
-msgstr ""
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:105
+#: ../lib/GaletteMaps/Controllers/MapsController.php:83
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:180
+#: ../lib/GaletteMaps/Controllers/MapsController.php:158
 msgid "%member geographic position"
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:226
+#: ../lib/GaletteMaps/Controllers/MapsController.php:204
 msgid "Superadmin cannot be localized."
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:253
-#: ../lib/GaletteMaps/Controllers/MapsController.php:265
+#: ../lib/GaletteMaps/Controllers/MapsController.php:231
+#: ../lib/GaletteMaps/Controllers/MapsController.php:243
 msgid "Coordinates has not been removed :("
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:263
+#: ../lib/GaletteMaps/Controllers/MapsController.php:241
 msgid "Coordinates has been removed!"
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:278
+#: ../lib/GaletteMaps/Controllers/MapsController.php:256
 msgid "New coordinates has been stored!"
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:280
+#: ../lib/GaletteMaps/Controllers/MapsController.php:258
 msgid "Coordinates has not been stored :("
 msgstr ""
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:283
+#: ../lib/GaletteMaps/Controllers/MapsController.php:261
 msgid "Something went wrong :("
 msgstr ""
 
-#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
-msgid "Member (company)"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:51
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:97
+msgid "My localization"
 msgstr ""
 
-#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
-msgid "Search result"
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:118
+msgid "Geolocalize"
+msgstr ""
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:122
+msgid "Geolocalize %membername"
 msgstr ""
 
 #: ../tempcache/maps.html.twig:102
@@ -170,4 +162,12 @@ msgstr ""
 
 #: ../tempcache/mymap.html.twig:272
 msgid "An error occured removing coordinates :("
+msgstr ""
+
+#: ../tempcache/common_html.html.twig:61 ../tempcache/common_html.html.twig:67
+msgid "Member (company)"
+msgstr ""
+
+#: ../tempcache/common_html.html.twig:77 ../tempcache/common_html.html.twig:83
+msgid "Search result"
 msgstr ""

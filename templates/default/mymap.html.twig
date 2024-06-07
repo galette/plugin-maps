@@ -1,3 +1,23 @@
+{#
+/**
+ * Copyright © 2003-2024 The Galette Team
+ *
+ * This file is part of Galette (https://galette.eu).
+ *
+ * Galette is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Galette is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with Galette. If not, see <http://www.gnu.org/licenses/>.
+ */
+#}
 {% extends 'page.html.twig' %}
 
 {% block content %}
@@ -40,11 +60,11 @@
     </div>
 {% endif %}
 </section>
-{% include '@PluginGaletteMaps/common_html.html.twig'%}
+{% include '@PluginGaletteMaps/common_html.html.twig' %}
 {% endblock %}
 
 {% block javascripts %}
-{% include '@PluginGaletteMaps/common_scripts.html.twig'%}
+{% include '@PluginGaletteMaps/common_scripts.html.twig' %}
 {% if cur_route != 'maps_map' %}
 <script type="text/javascript">
     var _mapsBinded = function(map)
@@ -144,7 +164,7 @@
         };
 
         L.marker([_lat, _lon], {icon: galetteIcon}).addTo(map)
-            .bindPopup('<strong>{{ member.sfullname|escape}}</strong><br/>{% if mymap is defined %}{{ _T("I live here!", "maps")|e("js") }}{% else %}{{ _T("Member lives here!", "maps")|e("js") }}{% endif %}<br/><span id="removecoords" class="ui button">{{ _T("Remove")|e("js")}}</span>').openPopup();
+            .bindPopup('<strong>{{ member.sfullname|escape }}</strong><br/>{% if mymap is defined %}{{ _T("I live here!", "maps")|e("js") }}{% else %}{{ _T("Member lives here!", "maps")|e("js") }}{% endif %}<br/><span id="removecoords" class="ui button">{{ _T("Remove")|e("js") }}</span>').openPopup();
 {% else %}
         {# Town is not known. Show possibilities #}
         var _towns = $('#possible_towns');
