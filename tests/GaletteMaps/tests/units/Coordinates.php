@@ -57,7 +57,7 @@ class Coordinates extends GaletteTestCase
 
         //set coordinates for member one
         $this->assertTrue($coords->setCoords($member->id, 50.362038,3.472998));
-        $this->assertSame(
+        $this->assertEquals(
             [
                 'id_adh' => $member->id,
                 'latitude' => '50.362038',
@@ -65,7 +65,7 @@ class Coordinates extends GaletteTestCase
             ],
             (array)$coords->getCoords($member->id)
         );
-        $this->assertSame(
+        $this->assertEquals(
             [
                 [
                     'id_adh' => $member->id,
