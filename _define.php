@@ -25,10 +25,10 @@ $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '2.1.0',            //Version
+    '2.1.1',            //Version
     '1.1.4',            //Galette compatible version
     'maps',             //routing name and translation domain
-    '2024-06-08',       //Release date
+    '2024-10-20',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',
