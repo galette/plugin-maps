@@ -81,18 +81,14 @@ class PluginGaletteMaps extends GalettePlugin
     }
 
     /**
-     * Get dashboards contents
+     * Get current logged-in user dashboards contents
      *
      * @return array<int, string|array<string,mixed>>
      */
-    public static function getDashboardsContents(): array
+    public static function getMyDashboardsContents(): array
     {
         /** @var Login $login */
         global $login;
-
-        if ($login->isSuperAdmin()) {
-            return [];
-        }
 
         return [
             [
@@ -104,6 +100,16 @@ class PluginGaletteMaps extends GalettePlugin
                 'icon' => 'map'
             ]
         ];
+    }
+
+    /**
+     * Get dashboards contents
+     *
+     * @return array<int, string|array<string,mixed>>
+     */
+    public static function getDashboardsContents(): array
+    {
+        return [];
     }
 
     /**
