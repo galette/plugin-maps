@@ -90,6 +90,10 @@ class PluginGaletteMaps extends GalettePlugin
         /** @var Login $login */
         global $login;
 
+        if ($login->isSuperAdmin()) {
+            return [];
+        }
+
         return [
             [
                 'label' => _T("My localization", "maps"),
