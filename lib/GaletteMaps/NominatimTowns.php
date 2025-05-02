@@ -24,8 +24,6 @@ declare(strict_types=1);
 namespace GaletteMaps;
 
 use Analog\Analog;
-use Laminas\Db\Sql\Predicate\PredicateSet;
-use Laminas\Db\Sql\Predicate\Expression;
 use Galette\Core\Preferences;
 
 /**
@@ -39,10 +37,10 @@ class NominatimTowns
     private Preferences $preferences;
 
     /** @var array<string, string>  */
-    private array $query_options = array(
+    private array $query_options = [
         'format'            => 'xml',
         'addressdetails'    => '1'
-    );
+    ];
     private string $uri = 'http://nominatim.openstreetmap.org/search';
 
     /**
@@ -77,7 +75,7 @@ class NominatimTowns
             $options['country'] = $country;
         }
 
-        $url_options = array();
+        $url_options = [];
         foreach ($options as $key => $value) {
             $url_options[] = $key . '=' . urlencode($value);
         }
@@ -110,7 +108,7 @@ class NominatimTowns
         $xml = new \SimpleXMLElement($response);
         $towns = $xml->xpath('//place');
 
-        $results = array();
+        $results = [];
         foreach ($towns as $town) {
             if ($town->city || $town->town || $town->village) {
                 $unique = true;
@@ -139,11 +137,11 @@ class NominatimTowns
                         $full_name = (string)$town['display_name'];
                     }
 
-                    $results[] = array(
+                    $results[] = [
                         'full_name' => $full_name,
                         'latitude'  => (string)$town['lat'],
                         'longitude' => (string)$town['lon']
-                    );
+                    ];
                 }
             } else {
                 Analog::log(

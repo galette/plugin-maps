@@ -62,7 +62,7 @@ class Coordinates
             if ($results->count() > 0) {
                 return $results->current();
             } else {
-                return array();
+                return [];
             }
         } catch (\Exception $e) {
             if ($e->getCode() == '42S02') {
@@ -73,7 +73,7 @@ class Coordinates
             } else {
                 Analog::log(
                     'Unable to retrieve members coordinates for "' .
-                    $id  . '". | ' . $e->getMessage(),
+                    $id . '". | ' . $e->getMessage(),
                     Analog::WARNING
                 );
             }
@@ -94,9 +94,9 @@ class Coordinates
         try {
             $select = $zdb->select($this->getTableName(), 'c');
             $select->join(
-                array(
+                [
                     'a' => PREFIX_DB . Adherent::TABLE
-                ),
+                ],
                 'a.' . self::PK . '=' . 'c.' . self::PK
             )->where->equalTo(
                 'activite_adh',
@@ -110,9 +110,9 @@ class Coordinates
             ) {
                 //limit query to public up-to-date profiles
                 $select->where(
-                    array(
+                    [
                         new PredicateSet(
-                            array(
+                            [
                                 new Operator(
                                     'date_echeance',
                                     '>=',
@@ -123,31 +123,31 @@ class Coordinates
                                     '=',
                                     new Expression('true')
                                 )
-                            ),
+                            ],
                             PredicateSet::OP_OR
                         ),
                         new PredicateSet(
-                            array(
+                            [
                                 new Operator(
                                     'bool_display_info',
                                     '=',
                                     new Expression('true')
                                 )
-                            )
+                            ]
                         )
-                    )
+                    ]
                 );
 
                 if ($login->isLogged() && !$login->isSuperAdmin()) {
                     $select->where(
                         new PredicateSet(
-                            array(
+                            [
                                 new Operator(
                                     'a.' . Adherent::PK,
                                     '=',
                                     $login->id
                                 )
-                            )
+                            ]
                         ),
                         PredicateSet::OP_OR
                     );
@@ -156,16 +156,16 @@ class Coordinates
 
             $results = $zdb->execute($select);
 
-            $res = array();
+            $res = [];
             foreach ($results as $r) {
                 $a = new Adherent($zdb, $r);
-                $m = array(
+                $m = [
                     'id_adh'    => $a->id,
                     'lat'       => $r->latitude,
                     'lng'       => $r->longitude,
                     'name'      => $a->sname,
                     'nickname'  => $a->nickname
-                );
+                ];
                 if ($a->isCompany()) {
                     $m['company'] = $a->company_name;
                 }
@@ -209,21 +209,21 @@ class Coordinates
                 //coordinates does not exist yet
                 $insert = $zdb->insert($this->getTableName());
                 $insert->values(
-                    array(
+                    [
                         self::PK    => $id,
                         'latitude'  => $latitude,
                         'longitude' => $longitude
-                    )
+                    ]
                 );
                 $results = $zdb->execute($insert);
             } else {
                 //coordinates already exists, just update
                 $update = $zdb->update($this->getTableName());
                 $update->set(
-                    array(
+                    [
                         'latitude'  => $latitude,
                         'longitude' => $longitude
-                    )
+                    ]
                 )->where(
                     [self::PK => $id]
                 );
@@ -272,6 +272,6 @@ class Coordinates
      */
     protected function getTableName(): string
     {
-        return MAPS_PREFIX  . self::TABLE;
+        return MAPS_PREFIX . self::TABLE;
     }
 }

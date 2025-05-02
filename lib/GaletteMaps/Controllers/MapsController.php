@@ -97,11 +97,11 @@ class MapsController extends AbstractPluginController
         if ($id === null) {
             $id = (int)$this->login->id;
         }
-        $deps = array(
+        $deps = [
             'picture'   => false,
             'groups'    => false,
             'dues'      => false
-        );
+        ];
         $member = new Adherent($this->zdb, $id, $deps);
 
         if (
