@@ -2,38 +2,45 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Languages add-on <noreply-addon-languages@weblate.org>, 2024.
+# Nelson JESUS <jesus.nels@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-02-08 22:15+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-09-15 15:52+0000\n"
+"Last-Translator: Nelson JESUS <jesus.nels@gmail.com>\n"
+"Language-Team: Portuguese <https://hosted.weblate.org/projects/galette/"
+"maps-plugin/pt/>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.14-dev\n"
 
 #: ../_routes.php:32
 msgid "Javascript libraries has not been built!"
-msgstr ""
+msgstr "As bibliotecas Javascript não foram compiladas!"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:70
 #: ../lib/GaletteMaps/Controllers/MapsController.php:155
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:72
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:83
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
 msgstr ""
+"As coordenadas não foram carregadas. Talvez as tabelas do plugin não existam "
+"na base de dados ?"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:158
+#, fuzzy
 msgid "%member geographic position"
-msgstr ""
+msgstr "%posição geográfica do membro"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:204
 msgid "Superadmin cannot be localized."
@@ -99,7 +106,7 @@ msgstr ""
 
 #: ../tempcache/common_scripts.html.twig:201
 msgid "Search"
-msgstr ""
+msgstr "Pesquisar"
 
 #: ../tempcache/common_scripts.html.twig:225
 msgid "Show me where I am"
