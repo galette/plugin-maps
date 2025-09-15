@@ -89,8 +89,8 @@ class NominatimTowns
         $response = curl_exec($ch);
         if ($response === false) {
             throw new \RuntimeException(
-                "Error on nominatim request:\n\tURI:" . $url .
-                "\n\tOptions:\n" . print_r($options, true)
+                "Error on nominatim request:\n\tURI:" . $url
+                . "\n\tOptions:\n" . print_r($options, true)
             );
         }
 
@@ -100,8 +100,8 @@ class NominatimTowns
             //At this point, core has been created, but is failing
             //to load in solr.
             throw new \RuntimeException(
-                "Error on nominatim:\n\tURI: " . $url .
-                "\n\Options: " . print_r($options, true)
+                "Error on nominatim:\n\tURI: " . $url
+                . "\n\Options: " . print_r($options, true)
             );
         }
 
@@ -145,8 +145,8 @@ class NominatimTowns
                 }
             } else {
                 Analog::log(
-                    'Nominatim result "' . $town['display_name'] .
-                    '" is not a town',
+                    'Nominatim result "' . $town['display_name']
+                    . '" is not a town',
                     Analog::INFO
                 );
             }

@@ -72,8 +72,8 @@ class Coordinates
                 );
             } else {
                 Analog::log(
-                    'Unable to retrieve members coordinates for "' .
-                    $id . '". | ' . $e->getMessage(),
+                    'Unable to retrieve members coordinates for "'
+                    . $id . '". | ' . $e->getMessage(),
                     Analog::WARNING
                 );
             }
@@ -181,8 +181,8 @@ class Coordinates
                 );
             } else {
                 Analog::log(
-                    'Unable to retrieve members coordinates list "' .
-                    '". | ' . $e->getMessage(),
+                    'Unable to retrieve members coordinates list "'
+                    . '". | ' . $e->getMessage(),
                     Analog::WARNING
                 );
             }
@@ -257,8 +257,8 @@ class Coordinates
             return ($del->count() > 0);
         } catch (\Exception $e) {
             Analog::log(
-                'Unable to set coordinates for member ' .
-                $id . ' | ' . $e->getMessage(),
+                'Unable to set coordinates for member '
+                . $id . ' | ' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;

@@ -213,9 +213,9 @@ class MapsController extends AbstractPluginController
             }
             if ($can_manage !== true) {
                 Analog::log(
-                    'Logged in member ' . $this->login->login .
-                    ' has tried to load member #' . $id .
-                    ' but do not manage any groups he belongs to.',
+                    'Logged in member ' . $this->login->login
+                    . ' has tried to load member #' . $id
+                    . ' but do not manage any groups he belongs to.',
                     Analog::WARNING
                 );
                 $error = _T('Coordinates has not been removed :(', 'maps');
