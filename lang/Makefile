@@ -1,4 +1,4 @@
-INSTALLDIR = .
+INSTALLDIR = $(shell pwd)
 LANGUAGES = `find ./ -name "maps_*.po" -print | sed 's|^\./maps_\(.*\).po|\1|'`
 DOMAINS = maps
 PHP_SOURCES = $(shell find ../ -maxdepth 1 -name \*.php) \
@@ -8,7 +8,7 @@ PHP_SOURCES = $(shell find ../ -maxdepth 1 -name \*.php) \
 all : extract mo
 
 twig :
-	../bin/twig-cache
+	cd ../../../../ && bin/console galette:twig-cache $(shell basename $(abspath $(CURDIR)/..)) && cd ${INSTALLDIR}
 
 po :
 	@echo "Generating PO files:"

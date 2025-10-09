@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -56,7 +56,7 @@ class Coordinates extends GaletteTestCase
         $this->assertSame([], $coords->listCoords());
 
         //set coordinates for member one
-        $this->assertTrue($coords->setCoords($member->id, 50.362038,3.472998));
+        $this->assertTrue($coords->setCoords($member->id, 50.362038, 3.472998));
         $this->assertEquals(
             [
                 'id_adh' => $member->id,
@@ -79,7 +79,7 @@ class Coordinates extends GaletteTestCase
         );
 
         //update coordinates for member one
-        $this->assertTrue($coords->setCoords($member->id, 51.362038,3.572998));
+        $this->assertTrue($coords->setCoords($member->id, 51.362038, 3.572998));
 
         //remove coordinates for member one
         $this->assertTrue($coords->removeCoords($member->id));

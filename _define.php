@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -25,10 +25,10 @@ $this->register(
     'Galette Maps',     //Name
     'Maps features',    //Short description
     'Johan Cwiklinski', //Author
-    '2.1.2',            //Version
-    '1.1.4',            //Galette compatible version
+    '2.2.0',            //Version
+    '1.2.0',            //Galette compatible version
     'maps',             //routing name and translation domain
-    '2024-10-20',       //Release date
+    '2025-10-09',       //Release date
     [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',

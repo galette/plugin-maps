@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -56,14 +56,6 @@ class MapsController extends AbstractPluginController
      */
     public function map(Request $request, Response $response): Response
     {
-        $login = $this->login;
-        if (!$this->preferences->showPublicPages($login)) {
-            //public pages are not actives
-            return $response
-                ->withStatus(301)
-                ->withHeader('Location', $this->routeparser->urlFor('slash'));
-        }
-
         $coords = new Coordinates();
         $list = $coords->listCoords();
 
@@ -72,10 +64,6 @@ class MapsController extends AbstractPluginController
             'page_title'        => _T('Maps', 'maps'),
             'module_id'         => $this->getModuleId()
         ];
-
-        if (!$login->isLogged()) {
-            $params['is_public'] = true;
-        }
 
         if ($list !== false) {
             $params['list'] = $list;
@@ -104,16 +92,16 @@ class MapsController extends AbstractPluginController
      *
      * @return Response
      */
-    public function localizeMember(Request $request, Response $response, int $id = null): Response
+    public function localizeMember(Request $request, Response $response, ?int $id = null): Response
     {
         if ($id === null) {
             $id = (int)$this->login->id;
         }
-        $deps = array(
+        $deps = [
             'picture'   => false,
             'groups'    => false,
             'dues'      => false
-        );
+        ];
         $member = new Adherent($this->zdb, $id, $deps);
 
         if (
@@ -193,7 +181,7 @@ class MapsController extends AbstractPluginController
      *
      * @return Response
      */
-    public function ILiveHere(Request $request, Response $response, int $id = null): Response
+    public function ILiveHere(Request $request, Response $response, ?int $id = null): Response
     {
         $error = null;
         $message = null;
@@ -225,9 +213,9 @@ class MapsController extends AbstractPluginController
             }
             if ($can_manage !== true) {
                 Analog::log(
-                    'Logged in member ' . $this->login->login .
-                    ' has tried to load member #' . $id .
-                    ' but do not manage any groups he belongs to.',
+                    'Logged in member ' . $this->login->login
+                    . ' has tried to load member #' . $id
+                    . ' but do not manage any groups he belongs to.',
                     Analog::WARNING
                 );
                 $error = _T('Coordinates has not been removed :(', 'maps');

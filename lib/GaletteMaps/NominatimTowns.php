@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -24,8 +24,6 @@ declare(strict_types=1);
 namespace GaletteMaps;
 
 use Analog\Analog;
-use Laminas\Db\Sql\Predicate\PredicateSet;
-use Laminas\Db\Sql\Predicate\Expression;
 use Galette\Core\Preferences;
 
 /**
@@ -39,10 +37,10 @@ class NominatimTowns
     private Preferences $preferences;
 
     /** @var array<string, string>  */
-    private array $query_options = array(
+    private array $query_options = [
         'format'            => 'xml',
         'addressdetails'    => '1'
-    );
+    ];
     private string $uri = 'http://nominatim.openstreetmap.org/search';
 
     /**
@@ -63,7 +61,7 @@ class NominatimTowns
      *
      * @return array<int, array<string, string>>
      */
-    public function search(string $town, string $country = null): array
+    public function search(string $town, ?string $country = null): array
     {
         if (!$town || trim($town) === '') {
             throw new \RuntimeException(
@@ -77,7 +75,7 @@ class NominatimTowns
             $options['country'] = $country;
         }
 
-        $url_options = array();
+        $url_options = [];
         foreach ($options as $key => $value) {
             $url_options[] = $key . '=' . urlencode($value);
         }
@@ -91,8 +89,8 @@ class NominatimTowns
         $response = curl_exec($ch);
         if ($response === false) {
             throw new \RuntimeException(
-                "Error on nominatim request:\n\tURI:" . $url .
-                "\n\tOptions:\n" . print_r($options, true)
+                "Error on nominatim request:\n\tURI:" . $url
+                . "\n\tOptions:\n" . print_r($options, true)
             );
         }
 
@@ -102,15 +100,15 @@ class NominatimTowns
             //At this point, core has been created, but is failing
             //to load in solr.
             throw new \RuntimeException(
-                "Error on nominatim:\n\tURI: " . $url .
-                "\n\Options: " . print_r($options, true)
+                "Error on nominatim:\n\tURI: " . $url
+                . "\n\Options: " . print_r($options, true)
             );
         }
 
         $xml = new \SimpleXMLElement($response);
         $towns = $xml->xpath('//place');
 
-        $results = array();
+        $results = [];
         foreach ($towns as $town) {
             if ($town->city || $town->town || $town->village) {
                 $unique = true;
@@ -139,16 +137,16 @@ class NominatimTowns
                         $full_name = (string)$town['display_name'];
                     }
 
-                    $results[] = array(
+                    $results[] = [
                         'full_name' => $full_name,
                         'latitude'  => (string)$town['lat'],
                         'longitude' => (string)$town['lon']
-                    );
+                    ];
                 }
             } else {
                 Analog::log(
-                    'Nominatim result "' . $town['display_name'] .
-                    '" is not a town',
+                    'Nominatim result "' . $town['display_name']
+                    . '" is not a town',
                     Analog::INFO
                 );
             }
