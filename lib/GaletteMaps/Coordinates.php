@@ -197,7 +197,7 @@ class Coordinates
      * @param float $latitude  Latitude
      * @param float $longitude Longitude
      *
-     * @return boolean
+     * @return bool
      */
     public function setCoords(int $id, float $latitude, float $longitude): bool
     {
@@ -244,7 +244,7 @@ class Coordinates
      *
      * @param int $id Member id
      *
-     * @return boolean
+     * @return bool
      */
     public function removeCoords(int $id): bool
     {

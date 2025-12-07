@@ -88,7 +88,7 @@ class MapsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     * @param ?integer $id       Member ID
+     * @param ?int     $id       Member ID
      *
      * @return Response
      */
@@ -177,7 +177,7 @@ class MapsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     * @param ?integer $id       Member ID
+     * @param ?int     $id       Member ID
      *
      * @return Response
      */
