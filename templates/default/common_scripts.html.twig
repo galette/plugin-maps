@@ -91,14 +91,16 @@
         var _lon = {% if town is defined %}{{ town['longitude'] }}{% else %}2.4609375{% endif %};
         var map = L.map(
             'map', {
-                fullscreenControl: true,
-                fullscreenControlOptions: {
-                    title: "{{ _T("Display map in full screen", "maps")|e("js") }}",
-                    forceSeparateButton:true
-                },
                 gestureHandling: true
             }
         ).setView([_lat, _lon], {% if town is defined %}12{% else %}6{% endif %});
+
+        new L.Control.FullScreen({
+            position: 'topleft',
+            title: "{{ _T("Display map in full screen", "maps")|e("js") }}",
+            titleCancel:"{{ _T("Exit full screen", "maps")|e("js") }}",
+            forceSeparateButton: true
+        }).addTo(map);
 
         var _geocoder = {
             collapsed: false,
