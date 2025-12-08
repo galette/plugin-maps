@@ -4,7 +4,7 @@ const { series, parallel } = require('gulp');
 const del = require('del');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
-const merge = require('merge-stream');
+const merge = require('ordered-read-streams');
 const replace = require('gulp-replace');
 const cleancss = require('gulp-clean-css');
 
@@ -14,7 +14,7 @@ const plugin = {
 
 const main_styles = [
   './node_modules/leaflet/dist/leaflet.css',
-  './node_modules/leaflet.fullscreen/Control.FullScreen.css',
+  './node_modules/leaflet.fullscreen/dist/Control.FullScreen.css',
   './node_modules/leaflet-gesture-handling/dist/leaflet-gesture-handling.css',
   './node_modules/leaflet.markercluster/dist/MarkerCluster.css',
   './node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css',
@@ -24,7 +24,7 @@ const main_styles = [
 
 const main_scripts = [
   './node_modules/leaflet/dist/leaflet.js',
-  './node_modules/leaflet.fullscreen/Control.FullScreen.js',
+  './node_modules/leaflet.fullscreen/dist/Control.FullScreen.umd.js',
   './node_modules/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js',
   './node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
   './node_modules/leaflet-control-geocoder/dist/Control.Geocoder.js',
@@ -66,7 +66,7 @@ function styles() {
     .pipe(concat('maps-main.bundle.min.css'))
     .pipe(gulp.dest(plugin.public));
 
-  locate = gulp.src([
+    locate = gulp.src([
       './node_modules/leaflet.locatecontrol/dist/L.Control.Locate.min.css'
     ])
     .pipe(replace('../location-arrow-solid.svg', './images/location-arrow-solid.svg'))
@@ -84,7 +84,7 @@ function scripts() {
     .pipe(uglify())
     .pipe(gulp.dest(plugin.public));
 
-  locate = gulp.src([
+    locate = gulp.src([
       './node_modules/leaflet.locatecontrol/dist/L.Control.Locate.min.js'
     ])
     .pipe(concat('maps-locate.bundle.min.js'))
@@ -96,7 +96,7 @@ function scripts() {
 
 function assets() {
   main = main_assets.map(function (asset) {
-    return gulp.src(asset.src)
+    return gulp.src(asset.src, {encoding: false})
       .pipe(gulp.dest(plugin.public + asset.dest));
     }
   );
