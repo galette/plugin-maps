@@ -51,8 +51,6 @@ class MapsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     *
-     * @return Response
      */
     public function map(Request $request, Response $response): Response
     {
@@ -89,8 +87,6 @@ class MapsController extends AbstractPluginController
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
      * @param ?int     $id       Member ID
-     *
-     * @return Response
      */
     public function localizeMember(Request $request, Response $response, ?int $id = null): Response
     {
@@ -178,8 +174,6 @@ class MapsController extends AbstractPluginController
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
      * @param ?int     $id       Member ID
-     *
-     * @return Response
      */
     public function ILiveHere(Request $request, Response $response, ?int $id = null): Response
     {

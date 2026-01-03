@@ -19,6 +19,8 @@
  * along with Galette. If not, see <http://www.gnu.org/licenses/>.
  */
 
+declare(strict_types=1);
+
 namespace GaletteMaps\tests\units;
 
 use Galette\Tests\GaletteTestCase;
@@ -34,8 +36,6 @@ class Coordinates extends GaletteTestCase
 
     /**
      * Cleanup after each test method
-     *
-     * @return void
      */
     public function tearDown(): void
     {
@@ -44,6 +44,9 @@ class Coordinates extends GaletteTestCase
         parent::tearDown();
     }
 
+    /**
+     * Test coordinates
+     */
     public function testCoordinates(): void
     {
         $member = $this->getMemberOne();

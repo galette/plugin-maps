@@ -19,6 +19,8 @@
  * along with Galette. If not, see <http://www.gnu.org/licenses/>.
  */
 
+declare(strict_types=1);
+
 /**
  * Bootstrap tests file for Galette Auto plugin
  *
@@ -26,7 +28,7 @@
  */
 
 define('GALETTE_PLUGINS_PATH', __DIR__ . '/../../');
-$basepath = '../../../galette/';
+$basepath = '../../../galette/'; // phpcs:ignore SlevomatCodingStandard.Variables.UnusedVariable.UnusedVariable -- used from Core testBootstrap
 
 include_once '../../../tests/TestsBootstrap.php';
 require_once __DIR__ . '/../_config.inc.php';

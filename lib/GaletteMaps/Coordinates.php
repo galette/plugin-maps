@@ -196,8 +196,6 @@ class Coordinates
      * @param int   $id        Member id
      * @param float $latitude  Latitude
      * @param float $longitude Longitude
-     *
-     * @return bool
      */
     public function setCoords(int $id, float $latitude, float $longitude): bool
     {
@@ -243,8 +241,6 @@ class Coordinates
      * Remove member coordinates
      *
      * @param int $id Member id
-     *
-     * @return bool
      */
     public function removeCoords(int $id): bool
     {
@@ -267,8 +263,6 @@ class Coordinates
 
     /**
      * Get table's name
-     *
-     * @return string
      */
     protected function getTableName(): string
     {
