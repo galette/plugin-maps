@@ -21,7 +21,7 @@
 
 namespace GaletteMaps\tests\units;
 
-use Galette\GaletteTestCase;
+use Galette\Tests\GaletteTestCase;
 
 /**
  * Color tests
