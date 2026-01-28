@@ -1,11 +1,12 @@
 # Anna Sánchez <assivill@gmail.com>, 2020.
+# Laura Quintana Marín <2001lauraquintana@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2025-12-07 10:22+0100\n"
-"PO-Revision-Date: 2020-12-30 13:29+0000\n"
-"Last-Translator: Anna Sánchez <assivill@gmail.com>\n"
+"PO-Revision-Date: 2026-01-28 11:22+0000\n"
+"Last-Translator: Laura Quintana Marín <2001lauraquintana@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/ca/>\n"
 "Language: ca\n"
@@ -13,16 +14,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4.1-dev\n"
+"X-Generator: Weblate 5.16-dev\n"
 
 #: ../_routes.php:34
 msgid "Javascript libraries has not been built!"
-msgstr ""
+msgstr "Les biblioteques de JavaScript no s'han construït!"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:53
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:99
 msgid "My localization"
-msgstr ""
+msgstr "La meva localització"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:74
 #: ../lib/GaletteMaps/Controllers/MapsController.php:64
