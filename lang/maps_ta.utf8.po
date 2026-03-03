@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Languages add-on <noreply-addon-languages@weblate.org>, 2024.
 # தமிழ்நேரம் <anishprabu.t@gmail.com>, 2024.
+# தமிழ்நேரம் <tamilneram247@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2025-12-07 10:22+0100\n"
-"PO-Revision-Date: 2024-12-28 06:40+0000\n"
-"Last-Translator: தமிழ்நேரம் <anishprabu.t@gmail.com>\n"
+"PO-Revision-Date: 2026-03-05 00:09+0000\n"
+"Last-Translator: தமிழ்நேரம் <tamilneram247@gmail.com>\n"
 "Language-Team: Tamil <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/ta/>\n"
 "Language: ta\n"
@@ -17,11 +18,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../_routes.php:34
 msgid "Javascript libraries has not been built!"
-msgstr ""
+msgstr "சாவாகைஉரை நூலகங்கள் கட்டப்படவில்லை!"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:53
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:99
@@ -98,10 +99,8 @@ msgid "Display map in full screen"
 msgstr "வரைபடத்தை முழுத் திரையில் காண்பி"
 
 #: ../tempcache/common_scripts.html.twig:183
-#, fuzzy
-#| msgid "Display map in full screen"
 msgid "Exit full screen"
-msgstr "வரைபடத்தை முழுத் திரையில் காண்பி"
+msgstr "முழுத் திரை வெளியேறு"
 
 #: ../tempcache/common_scripts.html.twig:195
 msgid "Search your town..."
