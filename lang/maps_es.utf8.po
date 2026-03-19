@@ -4,13 +4,14 @@
 # Cow <javier.fserrador@gmail.com>, 2022.
 # Javier <javier.fserrador@gmail.com>, 2022.
 # ventura vicenta memba moule <vevi.memba@gmail.com>, 2023.
+# Francisco Serrador <fserrador@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2025-12-07 10:22+0100\n"
-"PO-Revision-Date: 2023-10-09 14:02+0000\n"
-"Last-Translator: ventura vicenta memba moule <vevi.memba@gmail.com>\n"
+"PO-Revision-Date: 2026-03-20 11:10+0000\n"
+"Last-Translator: Francisco Serrador <fserrador@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/es/>\n"
 "Language: es\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../_routes.php:34
 msgid "Javascript libraries has not been built!"
@@ -101,10 +102,8 @@ msgid "Display map in full screen"
 msgstr "Mostrar mapa en pantalla completa"
 
 #: ../tempcache/common_scripts.html.twig:183
-#, fuzzy
-#| msgid "Display map in full screen"
 msgid "Exit full screen"
-msgstr "Mostrar mapa en pantalla completa"
+msgstr "Salida a pantalla completa"
 
 #: ../tempcache/common_scripts.html.twig:195
 msgid "Search your town..."
