@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Languages add-on <noreply-addon-languages@weblate.org>, 2024.
 # Nelson JESUS <jesus.nels@gmail.com>, 2025.
+# Edson Wolf <edsonwolf@vivaldi.net>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2025-12-07 10:22+0100\n"
-"PO-Revision-Date: 2025-09-15 15:52+0000\n"
-"Last-Translator: Nelson JESUS <jesus.nels@gmail.com>\n"
+"PO-Revision-Date: 2026-03-30 16:09+0000\n"
+"Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/pt/>\n"
 "Language: pt\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../_routes.php:34
 msgid "Javascript libraries has not been built!"
@@ -26,7 +27,7 @@ msgstr "As bibliotecas Javascript não foram compiladas!"
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:53
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:99
 msgid "My localization"
-msgstr ""
+msgstr "Minha localização"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:74
 #: ../lib/GaletteMaps/Controllers/MapsController.php:64
@@ -36,7 +37,7 @@ msgstr "Mapas"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:130
 msgid "Geolocalize"
-msgstr ""
+msgstr "Geolocalizar"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:134
 msgid "Geolocalize %membername"
@@ -74,7 +75,7 @@ msgstr ""
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:248
 msgid "Coordinates has not been stored :("
-msgstr ""
+msgstr "Não foi possível armazenar as coordenadas :("
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:251
 msgid "Something went wrong :("
