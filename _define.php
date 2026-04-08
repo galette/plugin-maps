@@ -21,15 +21,16 @@
 
 declare(strict_types=1);
 
+/** @var \Galette\Core\Plugins $this */
 $this->register(
-    'Galette Maps',     //Name
-    'Maps features',    //Short description
-    'Johan Cwiklinski', //Author
-    '2.2.1',            //Version
-    '1.2.0',            //Galette compatible version
-    'maps',             //routing name and translation domain
-    '2025-12-08',       //Release date
-    [   //Permissions needed
+    name: 'Galette Maps',     //Name
+    desc: 'Maps features',    //Short description
+    author: 'Johan Cwiklinski', //Author
+    version: '2.2.1',            //Version
+    compver:  '1.2.0',            //Galette compatible version
+    route: 'maps',             //routing name and translation domain
+    date: '2025-12-08',       //Release date
+    acls: [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',
         'maps_ilivehere'        => 'member'
