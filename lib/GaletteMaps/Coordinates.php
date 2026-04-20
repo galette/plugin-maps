@@ -39,8 +39,8 @@ use Laminas\Db\Sql\Predicate\Operator;
 
 class Coordinates
 {
-    public const TABLE = 'coordinates';
-    public const PK = 'id_adh';
+    public const string TABLE = 'coordinates';
+    public const string PK = 'id_adh';
 
     /**
      * Retrieve member coordinates
