@@ -23,7 +23,13 @@ declare(strict_types=1);
 
 namespace GaletteMaps;
 
+use DI\Attribute\Inject;
+use Galette\Core\Db;
 use Galette\Core\Login;
+use Galette\Core\Plugins\InstallableInterface;
+use Galette\Core\Plugins\MenuProviderInterface;
+use Galette\Core\Plugins\DashboardProviderInterface;
+use Galette\Core\Plugins\MemberActionProviderInterface;
 use Galette\Entity\Adherent;
 use Galette\Core\GalettePlugin;
 
@@ -33,14 +39,17 @@ use Galette\Core\GalettePlugin;
  * @author Johan Cwiklinski <johan@x-tnd.be>
  */
 
-class PluginGaletteMaps extends GalettePlugin
+class PluginGaletteMaps extends GalettePlugin implements InstallableInterface, MenuProviderInterface, DashboardProviderInterface, MemberActionProviderInterface
 {
+    #[Inject]
+    private readonly Db $zdb; //@phpstan-ignore-line injected from DI
+
     /**
      * Extra menus entries
      *
      * @return array<string|int, string|array<string,mixed>>
      */
-    public static function getMenusContents(): array
+    public function getMenus(): array
     {
         /** @var Login $login */
         global $login;
@@ -67,7 +76,7 @@ class PluginGaletteMaps extends GalettePlugin
      *
      * @return array<int, string|array<string,mixed>>
      */
-    public static function getPublicMenusItemsList(): array
+    public function getPublicMenus(): array
     {
         return [
             [
@@ -85,7 +94,7 @@ class PluginGaletteMaps extends GalettePlugin
      *
      * @return array<int, string|array<string,mixed>>
      */
-    public static function getMyDashboardsContents(): array
+    public function getMyDashboards(): array
     {
         /** @var Login $login */
         global $login;
@@ -111,7 +120,7 @@ class PluginGaletteMaps extends GalettePlugin
      *
      * @return array<int, string|array<string,mixed>>
      */
-    public static function getDashboardsContents(): array
+    public function getDashboards(): array
     {
         return [];
     }
@@ -121,9 +130,9 @@ class PluginGaletteMaps extends GalettePlugin
      *
      * @param Adherent $member Member instance
      *
-     * @return array|array[]
+     * @return array<int, string|array<string,mixed>>
      */
-    public static function getListActionsContents(Adherent $member): array
+    public function getListActions(Adherent $member): array
     {
         return [
             [
@@ -149,9 +158,9 @@ class PluginGaletteMaps extends GalettePlugin
      *
      * @return array<int, string|array<string,mixed>>
      */
-    public static function getDetailedActionsContents(Adherent $member): array
+    public function getDetailedActions(Adherent $member): array
     {
-        return static::getListActionsContents($member);
+        return $this->getListActions($member);
     }
 
     /**
@@ -159,8 +168,16 @@ class PluginGaletteMaps extends GalettePlugin
      *
      * @return array<int, string|array<string,mixed>>
      */
-    public static function getBatchActionsContents(): array
+    public function getBatchActions(): array
     {
         return [];
+    }
+
+    /**
+     * Is the plugin fully installed (including database, extra configuration, etc.)?
+     */
+    public function isInstalled(): bool
+    {
+        return $this->zdb->tableExists(MAPS_PREFIX . Coordinates::TABLE);
     }
 }
