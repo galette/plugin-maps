@@ -21,6 +21,7 @@
 
 declare(strict_types=1);
 
+use Galette\Middleware\Authenticate;
 use GaletteMaps\Controllers\MapsController;
 
 //Constants and classes from plugin
@@ -51,13 +52,13 @@ $check_js_middleware = function (\Psr\Http\Message\ServerRequestInterface $reque
 $app->get(
     '/localize-member/{id:\d+}',
     [MapsController::class, 'localizeMember']
-)->setName('maps_localize_member')->add($authenticate)->add($check_js_middleware);
+)->setName('maps_localize_member')->add(Authenticate::class)->add($check_js_middleware);
 
 //member self localization
 $app->get(
     '/localize-me',
     [MapsController::class, 'localizeMember']
-)->setName('maps_mymap')->add($authenticate)->add($check_js_middleware);
+)->setName('maps_mymap')->add(Authenticate::class)->add($check_js_middleware);
 
 //global map page
 $app->get(
@@ -68,4 +69,4 @@ $app->get(
 $app->post(
     '/i-live-here[/{id:\d+}]',
     [MapsController::class, 'ILiveHere']
-)->setName('maps_ilivehere')->add($authenticate)->add($check_js_middleware);
+)->setName('maps_ilivehere')->add(Authenticate::class)->add($check_js_middleware);
