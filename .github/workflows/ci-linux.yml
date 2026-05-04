@@ -109,8 +109,12 @@ jobs:
 
       - name: Headers checks
         run: |
-          cd galette-core/galette/plugins/plugin-maps
-          ../../vendor/bin/docheader --docheader=../../../.docheader check lib ./*.php
+          cd galette-core
+          ./bin/console galette:headers:check \
+            --project-name="Galette Maps plugin" \
+            --start-year="2012" \
+            --directory="galette/plugins/plugin-maps"
+
 
       - name: Install Node
         uses: actions/setup-node@v6
