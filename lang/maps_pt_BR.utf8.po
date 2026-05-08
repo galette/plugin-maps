@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2025-12-07 10:22+0100\n"
-"PO-Revision-Date: 2026-04-29 16:09+0000\n"
+"PO-Revision-Date: 2026-05-09 18:11+0000\n"
 "Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "galette/maps-plugin/pt_BR/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: ../_routes.php:34
 msgid "Javascript libraries has not been built!"
@@ -31,7 +31,7 @@ msgstr ""
 #: ../lib/GaletteMaps/Controllers/MapsController.php:64
 #: ../lib/GaletteMaps/Controllers/MapsController.php:145
 msgid "Maps"
-msgstr ""
+msgstr "Mapas"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:130
 msgid "Geolocalize"
