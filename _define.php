@@ -14,12 +14,13 @@ $this->register(
     desc: 'Maps features',    //Short description
     author: 'Johan Cwiklinski', //Author
     version: '2.2.1',            //Version
-    compver:  '1.2.0',            //Galette compatible version
+    compver:  '1.3.0',            //Galette compatible version
     route: 'maps',             //routing name and translation domain
     date: '2025-12-08',       //Release date
     acls: [   //Permissions needed
         'maps_localize_member'  => 'member',
         'maps_mymap'            => 'member',
         'maps_ilivehere'        => 'member'
-    ]
+    ],
+    dbver: 1.00
 );
