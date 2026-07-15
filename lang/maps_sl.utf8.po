@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2025-12-07 10:22+0100\n"
-"PO-Revision-Date: 2026-07-15 07:31+0000\n"
+"PO-Revision-Date: 2026-07-16 06:22+0000\n"
 "Last-Translator: Jože Felicijan <joze@felicijan.com>\n"
 "Language-Team: Slovenian <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/sl/>\n"
@@ -117,11 +117,11 @@ msgstr "Žal tega mesta ni bilo mogoče najti."
 
 #: ../tempcache/common_scripts.html.twig:211
 msgid "Search"
-msgstr ""
+msgstr "Iskanje"
 
 #: ../tempcache/common_scripts.html.twig:235
 msgid "Show me where I am"
-msgstr ""
+msgstr "Pokaži mi, kje sem"
 
 #: ../tempcache/common_scripts.html.twig:240
 msgid "You seem located outside the boundaries of the map"
