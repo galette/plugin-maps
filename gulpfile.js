@@ -37,6 +37,19 @@ const main_scripts = [
   './node_modules/leaflet-legend/leaflet-legend.js'
 ];
 
+const gl_styles = [
+  './node_modules/maplibre-gl/dist/maplibre-gl.css'
+];
+
+// maplibre-gl is pinned to 5.x on purpose: 6.x dropped the UMD build and ships
+// ES modules only, which cannot be concatenated into a classic script. The 5.x
+// dist is already minified and uses syntax uglify-js cannot parse, so this
+// bundle is concatenated as is, never piped through uglify.
+const gl_scripts = [
+  './node_modules/maplibre-gl/dist/maplibre-gl.js',
+  './node_modules/@maplibre/maplibre-gl-leaflet/leaflet-maplibre-gl.js'
+];
+
 const main_assets = [
   {
     'src': './node_modules/leaflet/dist/images/*',
@@ -81,7 +94,12 @@ function styles() {
     .pipe(concat('maps-locate.bundle.min.css'))
     .pipe(gulp.dest(plugin.public));
 
-  return merge(main, locate);
+    gl = gulp.src(gl_styles)
+    .pipe(cleancss())
+    .pipe(concat('maps-gl.bundle.min.css'))
+    .pipe(gulp.dest(plugin.public));
+
+  return merge(main, locate, gl);
 };
 
 function scripts() {
@@ -97,7 +115,11 @@ function scripts() {
     .pipe(uglify())
     .pipe(gulp.dest(plugin.public));
 
-  return merge(main, locate);
+    gl = gulp.src(gl_scripts)
+    .pipe(concat('maps-gl.bundle.min.js'))
+    .pipe(gulp.dest(plugin.public));
+
+  return merge(main, locate, gl);
 };
 
 function assets() {
