@@ -53,6 +53,16 @@ $app->get(
     [MapsController::class, 'map']
 )->setName('maps_map')->add($check_js_middleware)->add(\Galette\Middleware\PublicPages::class);
 
+$app->get(
+    '/preferences',
+    [MapsController::class, 'preferences']
+)->setName('maps_preferences')->add(Authenticate::class);
+
+$app->post(
+    '/preferences',
+    [MapsController::class, 'storePreferences']
+)->setName('maps_store_preferences')->add(Authenticate::class);
+
 $app->post(
     '/i-live-here[/{id:\d+}]',
     [MapsController::class, 'ILiveHere']

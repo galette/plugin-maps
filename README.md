@@ -8,6 +8,7 @@ A [Galette](https://galette.eu) plugin to geolocalize members.
 
 Map display uses [Leaflet project](https://leafletjs.com/) while search is provided by [Nominatim](https://nominatim.openstreetmap.org/) API.
 Background tiles are the [OpenFreeMap](https://openfreemap.org/) vector tiles, rendered with [MapLibre GL](https://maplibre.org/): no API key, no registration, and the whole thing can be self-hosted.
+That is only the default: an administrator picks another provider, or enters their own address, from Configuration.
 
 * website: https://galette.eu - https://doc.galette.eu/en/master/plugins/maps.html
 * bugs and features: https://bugs.galette.eu/projects/galette-plugin-maps
@@ -27,6 +28,7 @@ Un plugin [Galette](https://galette.eu) pour gérer paiments de cotisation et de
 
 Les cartes sont affichées par le biais du [projet Leaflet](https://leafletjs.com/) tandis que la recherche est assurée par l'API [Nominatim](https://nominatim.openstreetmap.org/).
 Le fond de carte provient des tuiles vectorielles [OpenFreeMap](https://openfreemap.org/), rendues par [MapLibre GL](https://maplibre.org/) : sans clé d'API, sans inscription, et auto-hébergeable.
+Ce n'est que le défaut : un administrateur choisit un autre fournisseur, ou saisit sa propre adresse, depuis la Configuration.
 
 * site web : https://galette.eu - https://doc.galette.eu/fr/master/plugins/maps.html
 * bogues et fonctionnalités : https://bugs.galette.eu/projects/galette-plugin-maps

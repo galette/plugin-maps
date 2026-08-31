@@ -17,6 +17,7 @@ use Galette\Core\Plugins\InstallableInterface;
 use Galette\Core\Plugins\MenuProviderInterface;
 use Galette\Core\Plugins\DashboardProviderInterface;
 use Galette\Core\Plugins\MemberActionProviderInterface;
+use Galette\Core\Plugins\PreferencesProviderInterface;
 use Galette\Entity\Adherent;
 use Galette\Core\GalettePlugin;
 
@@ -26,10 +27,20 @@ use Galette\Core\GalettePlugin;
  * @author Johan Cwiklinski <johan@x-tnd.be>
  */
 
-class PluginGaletteMaps extends GalettePlugin implements InstallableInterface, MenuProviderInterface, DashboardProviderInterface, MemberActionProviderInterface
+class PluginGaletteMaps extends GalettePlugin implements InstallableInterface, MenuProviderInterface, DashboardProviderInterface, MemberActionProviderInterface, PreferencesProviderInterface
 {
     #[Inject]
     private readonly Db $zdb; //@phpstan-ignore-line injected from DI
+
+    /**
+     * Get the preferences the plugin declares
+     *
+     * @return array<string, array<string, mixed>>
+     */
+    public function getPreferences(): array
+    {
+        return TileProviders::getSchema();
+    }
 
     /**
      * Extra menus entries
@@ -41,6 +52,19 @@ class PluginGaletteMaps extends GalettePlugin implements InstallableInterface, M
         /** @var Login $login */
         global $login;
         $menus = [];
+
+        if ($login->isAdmin()) {
+            $menus['configuration'] = [
+                'items' => [
+                    [
+                        'label' => _T('Maps settings', 'maps'),
+                        'route' => [
+                            'name' => 'maps_preferences',
+                        ]
+                    ],
+                ]
+            ];
+        }
 
         if ($login->isLogged() && !$login->isSuperAdmin()) {
             $menus['myaccount'] = [

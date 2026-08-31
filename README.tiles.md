@@ -143,3 +143,10 @@ That is possible, but it now means opening an account on
 <https://carto.com/basemaps> and adding the key to the URL. The exact form of
 the URL with a key is given by their interface — we do not reproduce it here, it
 is specific to each account.
+
+## Newer versions
+
+From the next release the background map is a setting: Configuration holds every
+provider listed above as a ready-made choice, plus your own address, attribution
+and maximum zoom. Editing a template by hand, as described here, is only needed
+on the releases that came before it.

@@ -1,0 +1,83 @@
+{#
+ # This file is part of Galette Maps plugin (https://galette.eu).
+ # SPDX-FileCopyrightText: Copyright © 2012-2026 The Galette Team
+ # SPDX-License-Identifier: GPL-3.0-or-later
+ #}
+
+{% extends 'page.html.twig' %}
+
+{% block content %}
+    <form id="maps_settings" action="{{ url_for("maps_store_preferences") }}" method="post" class="ui form">
+        <div class="ui segment">
+            <p>{{ _T("Background maps come from an outside provider. Should it change its terms, pick another one here rather than waiting for a new release.", "maps") }}</p>
+
+            {% include "components/forms/select.html.twig" with {
+                id: 'pref_maps_tiles_provider',
+                value: provider,
+                values: providers,
+                label: _T("Background map", "maps"),
+                required: true
+            } %}
+        </div>
+
+        <div class="ui segment{% if provider != custom %} displaynone{% endif %}" id="maps_custom_tiles">
+            <h3 class="ui header">{{ _T("Own values", "maps") }}</h3>
+
+            {% include "components/forms/checkbox.html.twig" with {
+                id: 'pref_maps_tiles_vector',
+                value: '1',
+                checked: vector,
+                label: _T("Vector tiles", "maps"),
+                tip: _T("Tick for a MapLibre style, leave unticked for classic raster tiles.", "maps")
+            } %}
+
+            {# the example is kept out of the translatable string, as gettext advises #}
+            {% include "components/forms/text.html.twig" with {
+                id: 'pref_maps_tiles_url',
+                value: url,
+                label: _T("Address", "maps"),
+                tip: _T("Style address for vector tiles, tiles address for raster ones, such as:", "maps") ~ ' https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+            } %}
+
+            {% include "components/forms/text.html.twig" with {
+                id: 'pref_maps_tiles_attribution',
+                value: attribution,
+                label: _T("Attribution", "maps"),
+                tip: _T("Credit the provider requires, HTML allowed. Data licences make it mandatory. A vector style usually carries its own, and this can then be left empty.", "maps")
+            } %}
+
+            {% include "components/forms/number.html.twig" with {
+                id: 'pref_maps_tiles_maxzoom',
+                value: maxzoom,
+                label: _T("Maximum zoom", "maps"),
+                min: 0,
+                max: 22
+            } %}
+
+            {% include "components/forms/text.html.twig" with {
+                id: 'pref_maps_tiles_subdomains',
+                value: subdomains,
+                label: _T("Subdomains", "maps"),
+                tip: _T("Letters the {s} token in the address is replaced with, such as abc. Raster tiles only.", "maps")
+            } %}
+        </div>
+
+        <div class="ui basic center aligned segment">
+            <button type="submit" class="ui labeled icon primary button action">
+                <i class="save icon"></i>
+                {{ _T("Save") }}
+            </button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+<script type="text/javascript">
+    $(function(){
+        var _custom = $('#maps_custom_tiles');
+        $('#pref_maps_tiles_provider').on('change', function(){
+            _custom.toggleClass('displaynone', this.value !== '{{ custom|e("js") }}');
+        });
+    });
+</script>
+{% endblock %}

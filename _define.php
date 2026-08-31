@@ -18,9 +18,11 @@ $this->register(
     route: 'maps',             //routing name and translation domain
     date: '2025-12-08',       //Release date
     acls: [   //Permissions needed
-        'maps_localize_member'  => 'member',
-        'maps_mymap'            => 'member',
-        'maps_ilivehere'        => 'member'
+        'maps_localize_member'   => 'member',
+        'maps_mymap'             => 'member',
+        'maps_ilivehere'         => 'member',
+        'maps_preferences'       => 'admin',
+        'maps_store_preferences' => 'admin'
     ],
     dbver: 1.00
 );

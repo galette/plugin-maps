@@ -15,6 +15,7 @@ use Galette\Controllers\AbstractPluginController;
 use Galette\Entity\Adherent;
 use GaletteMaps\NominatimTowns;
 use GaletteMaps\Coordinates;
+use GaletteMaps\TileProviders;
 use Slim\Psr7\Request;
 use Slim\Psr7\Response;
 use Analog\Analog;
@@ -47,7 +48,8 @@ class MapsController extends AbstractPluginController
         $params = [
             'require_dialog'    => true,
             'page_title'        => _T('Maps', 'maps'),
-            'module_id'         => $this->getModuleId()
+            'module_id'         => $this->getModuleId(),
+            'tiles'             => TileProviders::resolve($this->preferences)
         ];
 
         if ($list !== false) {
@@ -133,7 +135,8 @@ class MapsController extends AbstractPluginController
             'member'            => $member,
             'require_dialog'    => true,
             'adh_map'           => true,
-            'module_id'         => $this->getModuleId()
+            'module_id'         => $this->getModuleId(),
+            'tiles'             => TileProviders::resolve($this->preferences)
         ];
 
         if ($towns !== false) {
@@ -153,6 +156,90 @@ class MapsController extends AbstractPluginController
             $params
         );
         return $response;
+    }
+
+    /**
+     * Tile provider settings
+     *
+     * @param Request  $request  PSR Request
+     * @param Response $response PSR Response
+     */
+    public function preferences(Request $request, Response $response): Response
+    {
+        $params = [
+            'page_title'    => _T('Maps settings', 'maps'),
+            'module_id'     => $this->getModuleId(),
+            'providers'     => TileProviders::getSelectValues(),
+            'custom'        => TileProviders::CUSTOM,
+            'tiles'         => TileProviders::resolve($this->preferences),
+            'provider'      => $this->preferences->getPluginValue(TileProviders::PREF_PROVIDER),
+            'vector'        => $this->preferences->getPluginValue(TileProviders::PREF_VECTOR),
+            'url'           => $this->preferences->getPluginValue(TileProviders::PREF_URL),
+            'attribution'   => $this->preferences->getPluginValue(TileProviders::PREF_ATTRIBUTION),
+            'maxzoom'       => $this->preferences->getPluginValue(TileProviders::PREF_MAXZOOM),
+            'subdomains'    => $this->preferences->getPluginValue(TileProviders::PREF_SUBDOMAINS),
+        ];
+
+        $this->view->render(
+            $response,
+            $this->getTemplate('maps_preferences'),
+            $params
+        );
+        return $response;
+    }
+
+    /**
+     * Store tile provider settings
+     *
+     * @param Request  $request  PSR Request
+     * @param Response $response PSR Response
+     */
+    public function storePreferences(Request $request, Response $response): Response
+    {
+        $post = $request->getParsedBody();
+        $provider = $post[TileProviders::PREF_PROVIDER] ?? TileProviders::DEFAULT;
+
+        $values = [TileProviders::PREF_PROVIDER => $provider];
+        if ($provider === TileProviders::CUSTOM) {
+            //own values are only meaningful along with the custom provider
+            $values += [
+                TileProviders::PREF_VECTOR => (int)isset($post[TileProviders::PREF_VECTOR]),
+                TileProviders::PREF_URL => trim((string)($post[TileProviders::PREF_URL] ?? '')),
+                TileProviders::PREF_ATTRIBUTION => trim((string)($post[TileProviders::PREF_ATTRIBUTION] ?? '')),
+                TileProviders::PREF_MAXZOOM => (int)($post[TileProviders::PREF_MAXZOOM] ?? 19),
+                TileProviders::PREF_SUBDOMAINS => trim((string)($post[TileProviders::PREF_SUBDOMAINS] ?? '')),
+            ];
+
+            if ($values[TileProviders::PREF_URL] === '') {
+                $this->flash->addMessage(
+                    'error_detected',
+                    _T('An address is required to use your own background map.', 'maps')
+                );
+                return $response
+                    ->withStatus(302)
+                    ->withHeader('Location', $this->routeparser->urlFor('maps_preferences'));
+            }
+        }
+
+        $stored = true;
+        foreach ($values as $name => $value) {
+            $stored = $this->preferences->setValue($name, $value, $this->login) && $stored;
+        }
+
+        if ($stored) {
+            $this->flash->addMessage(
+                'success_detected',
+                _T('Maps settings have been saved.', 'maps')
+            );
+        } else {
+            foreach ($this->preferences->getErrors() as $error) {
+                $this->flash->addMessage('error_detected', $error);
+            }
+        }
+
+        return $response
+            ->withStatus(302)
+            ->withHeader('Location', $this->routeparser->urlFor('maps_preferences'));
     }
 
     /**
