@@ -13,13 +13,13 @@ Background tiles are the [OpenFreeMap](https://openfreemap.org/) vector tiles, r
 * bugs and features: https://bugs.galette.eu/projects/galette-plugin-maps
 * mailing lists:
   * users: https://lists.mailman3.com/postorius/lists/galette-users.mailman3.com/
-  * developpers: https://lists.mailman3.com/postorius/lists/galette-devel.mailman3.com/
+  * developers: https://lists.mailman3.com/postorius/lists/galette-devel.mailman3.com/
 * documentation: https://doc.galette.eu/en/master/plugins/maps.html
 
 To use Galette Maps plugin, you'll need a reliable Galette version, and of course the plugin itself by either:
 
 * download latest stable version available from [Galette Maps plugin page](https://doc.galette.eu/en/master/plugins/maps.html)
-* use [Galette Maps plugin soure code from repository](https://doc.galette.eu/en/develop/development/git.html) (make sure you install third party dependencies), this solution requires some technical skills
+* use [Galette Maps plugin source code from repository](https://doc.galette.eu/en/develop/development/git.html) (make sure you install third party dependencies), this solution requires some technical skills
 
 ### Français
 
@@ -35,7 +35,7 @@ Le fond de carte provient des tuiles vectorielles [OpenFreeMap](https://openfree
   * développeurs : https://lists.mailman3.com/postorius/lists/galette-devel.mailman3.com/
 * documentation : https://doc.galette.eu/fr/master/plugins/maps.html
 
-Pour utiliser le plugin Maps pour Galette, vous aurez besoin d'une version adéquate de Galette, ainsi que du plugin lui même :
+Pour utiliser le plugin Maps pour Galette, vous aurez besoin d'une version adéquate de Galette, ainsi que du plugin lui-même :
 
-* télécharger la dernière version stable depuis la [page du  plugin Maps pour Galette](https://doc.galette.eu/en/master/plugins/maps.html)
-* utiliser [le code source du plugin Maps pour Galette depuis le dépôt](https://doc.galette.eu/en/develop/development/git.html) (assurez-vous d'installer les biliothèques tierces), cette solution requiert quelques compétences techniques
+* télécharger la dernière version stable depuis la [page du plugin Maps pour Galette](https://doc.galette.eu/en/master/plugins/maps.html)
+* utiliser [le code source du plugin Maps pour Galette depuis le dépôt](https://doc.galette.eu/en/develop/development/git.html) (assurez-vous d'installer les bibliothèques tierces), cette solution requiert quelques compétences techniques
