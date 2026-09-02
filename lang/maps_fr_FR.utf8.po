@@ -1,13 +1,13 @@
 # Header entry was created by Lokalize.
 #
 # , 2014.
-# Johan Cwiklinski <trasher@x-tnd.be>, 2020, 2022, 2025.
+# Johan Cwiklinski <trasher@x-tnd.be>, 2020, 2022, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2026-09-02 12:49+0200\n"
-"PO-Revision-Date: 2025-12-07 09:26+0000\n"
+"PO-Revision-Date: 2026-09-02 13:13+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/fr/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.15-dev\n"
+"X-Generator: Weblate 2026.9.dev0\n"
 
 #: ../_routes.php:22
 msgid "Javascript libraries has not been built!"
@@ -42,18 +42,16 @@ msgstr "Position géographique de %member"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:170
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:60
-#, fuzzy
-#| msgid "Maps Settings"
 msgid "Maps settings"
-msgstr "Préférences des Cartes"
+msgstr "Préférences de Maps"
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:216
 msgid "An address is required to use your own background map."
-msgstr ""
+msgstr "Une adresse est requise pour utiliser votre propre fond de carte."
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:232
 msgid "Maps settings have been saved."
-msgstr ""
+msgstr "Les préférences de Maps ont été enregistrées."
 
 #: ../lib/GaletteMaps/Controllers/MapsController.php:262
 msgid "Superadmin cannot be localized."
@@ -82,44 +80,36 @@ msgstr "Quelque chose n'a pas fonctionné :("
 
 #: ../lib/GaletteMaps/TileProviders.php:123
 msgid "OpenFreeMap, light grey"
-msgstr ""
+msgstr "OpenFreeMap, gris clair"
 
 #: ../lib/GaletteMaps/TileProviders.php:124
-#, fuzzy
-#| msgid "OpenStreetMap contributors"
 msgid "OpenFreeMap, colours"
-msgstr "Contributeurs OpenStreetMap"
+msgstr "OpenFreeMap, couleur"
 
 #: ../lib/GaletteMaps/TileProviders.php:125
-#, fuzzy
-#| msgid "OpenStreetMap contributors"
 msgid "OpenStreetMap"
-msgstr "Contributeurs OpenStreetMap"
+msgstr "OpenStreetMap"
 
 #: ../lib/GaletteMaps/TileProviders.php:126
-#, fuzzy
-#| msgid "OpenStreetMap contributors"
 msgid "OpenStreetMap France"
-msgstr "Contributeurs OpenStreetMap"
+msgstr "OpenStreetMap France"
 
 #: ../lib/GaletteMaps/TileProviders.php:127
 msgid "Humanitarian OSM Team"
-msgstr ""
+msgstr "Équipe humanitaire OSM"
 
 #: ../lib/GaletteMaps/TileProviders.php:128
-#, fuzzy
-#| msgid "OpenStreetMap contributors"
 msgid "OpenStreetMap Germany"
-msgstr "Contributeurs OpenStreetMap"
+msgstr "OpenStreetMap Allemagne"
 
 #: ../lib/GaletteMaps/TileProviders.php:129
 msgid "Esri, light grey"
-msgstr ""
+msgstr "Esri, gris clair"
 
 #: ../lib/GaletteMaps/TileProviders.php:130
 #: ../tempcache/maps_preferences.html.twig:85
 msgid "Own values"
-msgstr ""
+msgstr "Valeurs propres"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:73
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:119
@@ -179,50 +169,61 @@ msgid ""
 "Background maps come from an outside provider. Should it change its terms, "
 "pick another one here rather than waiting for a new release."
 msgstr ""
+"Les fonds de cartes proviennent d'un fournisseur extérieur. Si il change ses "
+"termes, choisissez en un autre ici plutôt que d'attendre une nouvelle "
+"version."
 
 #: ../tempcache/maps_preferences.html.twig:73
 msgid "Background map"
-msgstr ""
+msgstr "Fond de carte"
 
 #: ../tempcache/maps_preferences.html.twig:91
 msgid "Vector tiles"
-msgstr ""
+msgstr "Tuiles vectorisées"
 
 #: ../tempcache/maps_preferences.html.twig:91
 msgid "Tick for a MapLibre style, leave unticked for classic raster tiles."
 msgstr ""
+"Cochez pour un style MapLibre, laissez décoché pour des tuiles classiques."
 
 #: ../tempcache/maps_preferences.html.twig:98
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #: ../tempcache/maps_preferences.html.twig:98
 msgid "Style address for vector tiles, tiles address for raster ones, such as:"
 msgstr ""
+"Adresse du style pou rles tuiles vectorisées, addresse des tuiles pour les "
+"classiques, tel que :"
 
 #: ../tempcache/maps_preferences.html.twig:104
 msgid "Attribution"
-msgstr ""
+msgstr "Attribution"
 
 #: ../tempcache/maps_preferences.html.twig:104
 msgid ""
 "Credit the provider requires, HTML allowed. Data licences make it mandatory. "
 "A vector style usually carries its own, and this can then be left empty."
 msgstr ""
+"Crédit requis par le fournisseur, HTML autorisé. Les données de licence le "
+"rendent obligatoire. Un style vectoriel embarque souvent le sien, on peut le "
+"laisser vide dans ce cas."
 
 #: ../tempcache/maps_preferences.html.twig:110
 msgid "Maximum zoom"
-msgstr ""
+msgstr "Zoom maximal"
 
 #: ../tempcache/maps_preferences.html.twig:116
 msgid "Subdomains"
-msgstr ""
+msgstr "Sous-domaines"
 
 #: ../tempcache/maps_preferences.html.twig:116
 msgid ""
 "Letters the {s} token in the address is replaced with, such as abc. Raster "
 "tiles only."
 msgstr ""
+"Lettres par lesquelles le jeton {S} dans l'adresse est remplacé, telles que "
+"abc. Tuiles classiques uniquement."
 
 #: ../tempcache/mymap.html.twig:73
 msgid "Choose your location"
