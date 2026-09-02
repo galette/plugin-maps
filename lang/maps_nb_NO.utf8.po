@@ -83,7 +83,7 @@ msgid "aka"
 msgstr ""
 
 #: ../tempcache/common_scripts.html.twig:134
-msgid "An error occured during 'I live here' process :("
+msgid "An error occurred during 'I live here' process :("
 msgstr ""
 
 #: ../tempcache/common_scripts.html.twig:179
@@ -173,5 +173,5 @@ msgid "Are you sure you want to remove coordinates from the database?"
 msgstr ""
 
 #: ../tempcache/mymap.html.twig:284
-msgid "An error occured removing coordinates :("
+msgid "An error occurred removing coordinates :("
 msgstr ""

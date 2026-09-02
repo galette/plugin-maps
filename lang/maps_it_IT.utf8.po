@@ -92,7 +92,7 @@ msgid "aka"
 msgstr "Alias"
 
 #: ../tempcache/common_scripts.html.twig:134
-msgid "An error occured during 'I live here' process :("
+msgid "An error occurred during 'I live here' process :("
 msgstr "Si è verificato un errore durante il processo \"Io vivo qui\" :("
 
 #: ../tempcache/common_scripts.html.twig:179
@@ -182,7 +182,7 @@ msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "Sei sicuro di voler rimuovere le coordinate dal database?"
 
 #: ../tempcache/mymap.html.twig:284
-msgid "An error occured removing coordinates :("
+msgid "An error occurred removing coordinates :("
 msgstr "Si è verificato un errore durante la rimozione delle coordinate :("
 
 #~ msgid "No result found"
