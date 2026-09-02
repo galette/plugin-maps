@@ -9,19 +9,17 @@
 {% block content %}
     <form id="maps_settings" action="{{ url_for("maps_store_preferences") }}" method="post" class="ui form">
         <div class="ui segment">
-            <p>{{ _T("Background maps come from an outside provider. Should it change its terms, pick another one here rather than waiting for a new release.", "maps") }}</p>
-
             {% include "components/forms/select.html.twig" with {
                 id: 'pref_maps_tiles_provider',
                 value: provider,
                 values: providers,
-                label: _T("Background map", "maps"),
+                label: _T("Background map provider", "maps"),
                 required: true
             } %}
         </div>
 
         <div class="ui segment{% if provider != custom %} displaynone{% endif %}" id="maps_custom_tiles">
-            <h3 class="ui header">{{ _T("Own values", "maps") }}</h3>
+            <h3 class="ui header">{{ _T("Your own values", "maps") }}</h3>
 
             {% include "components/forms/checkbox.html.twig" with {
                 id: 'pref_maps_tiles_vector',
@@ -43,7 +41,7 @@
                 id: 'pref_maps_tiles_attribution',
                 value: attribution,
                 label: _T("Attribution", "maps"),
-                tip: _T("Credit the provider requires, HTML allowed. Data licences make it mandatory. A vector style usually carries its own, and this can then be left empty.", "maps")
+                tip: _T("Credit the provider requires, HTML allowed. Data licences make it mandatory.", "maps")
             } %}
 
             {% include "components/forms/number.html.twig" with {

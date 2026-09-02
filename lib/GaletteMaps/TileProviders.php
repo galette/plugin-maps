@@ -127,7 +127,7 @@ final class TileProviders
             'hot' => _T('Humanitarian OSM Team', 'maps'),
             'osmde' => _T('OpenStreetMap Germany', 'maps'),
             'esri-gray' => _T('Esri, light grey', 'maps'),
-            self::CUSTOM => _T('Own values', 'maps'),
+            self::CUSTOM => _T('Your own values', 'maps'),
             default => $id,
         };
     }

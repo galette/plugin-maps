@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-02 12:49+0200\n"
-"PO-Revision-Date: 2026-09-02 12:49+0200\n"
+"POT-Creation-Date: 2026-09-02 16:34+0200\n"
+"PO-Revision-Date: 2026-09-02 16:34+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en_US\n"
@@ -106,9 +106,9 @@ msgid "Esri, light grey"
 msgstr "Esri, light grey"
 
 #: ../lib/GaletteMaps/TileProviders.php:130
-#: ../tempcache/maps_preferences.html.twig:85
-msgid "Own values"
-msgstr "Own values"
+#: ../tempcache/maps_preferences.html.twig:80
+msgid "Your own values"
+msgstr "Your own values"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:73
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:119
@@ -163,56 +163,46 @@ msgstr "Show me where I am"
 msgid "You seem located outside the boundaries of the map"
 msgstr "You seem located outside the boundaries of the map"
 
-#: ../tempcache/maps_preferences.html.twig:66
-msgid ""
-"Background maps come from an outside provider. Should it change its terms, "
-"pick another one here rather than waiting for a new release."
-msgstr ""
-"Background maps come from an outside provider. Should it change its terms, "
-"pick another one here rather than waiting for a new release."
+#: ../tempcache/maps_preferences.html.twig:68
+msgid "Background map provider"
+msgstr "Background map provider"
 
-#: ../tempcache/maps_preferences.html.twig:73
-msgid "Background map"
-msgstr "Background map"
-
-#: ../tempcache/maps_preferences.html.twig:91
+#: ../tempcache/maps_preferences.html.twig:86
 msgid "Vector tiles"
 msgstr "Vector tiles"
 
-#: ../tempcache/maps_preferences.html.twig:91
+#: ../tempcache/maps_preferences.html.twig:86
 msgid "Tick for a MapLibre style, leave unticked for classic raster tiles."
 msgstr "Tick for a MapLibre style, leave unticked for classic raster tiles."
 
-#: ../tempcache/maps_preferences.html.twig:98
+#: ../tempcache/maps_preferences.html.twig:93
 msgid "Address"
 msgstr "Address"
 
-#: ../tempcache/maps_preferences.html.twig:98
+#: ../tempcache/maps_preferences.html.twig:93
 msgid "Style address for vector tiles, tiles address for raster ones, such as:"
 msgstr ""
 "Style address for vector tiles, tiles address for raster ones, such as:"
 
-#: ../tempcache/maps_preferences.html.twig:104
+#: ../tempcache/maps_preferences.html.twig:99
 msgid "Attribution"
 msgstr "Attribution"
 
-#: ../tempcache/maps_preferences.html.twig:104
+#: ../tempcache/maps_preferences.html.twig:99
 msgid ""
-"Credit the provider requires, HTML allowed. Data licences make it mandatory. "
-"A vector style usually carries its own, and this can then be left empty."
+"Credit the provider requires, HTML allowed. Data licences make it mandatory."
 msgstr ""
-"Credit the provider requires, HTML allowed. Data licences make it mandatory. "
-"A vector style usually carries its own, and this can then be left empty."
+"Credit the provider requires, HTML allowed. Data licences make it mandatory."
 
-#: ../tempcache/maps_preferences.html.twig:110
+#: ../tempcache/maps_preferences.html.twig:105
 msgid "Maximum zoom"
 msgstr "Maximum zoom"
 
-#: ../tempcache/maps_preferences.html.twig:116
+#: ../tempcache/maps_preferences.html.twig:111
 msgid "Subdomains"
 msgstr "Subdomains"
 
-#: ../tempcache/maps_preferences.html.twig:116
+#: ../tempcache/maps_preferences.html.twig:111
 msgid ""
 "Letters the {s} token in the address is replaced with, such as abc. Raster "
 "tiles only."
