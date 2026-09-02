@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-12-07 10:22+0100\n"
+"POT-Creation-Date: 2026-09-02 12:49+0200\n"
 "PO-Revision-Date: 2025-12-07 09:26+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
@@ -18,30 +18,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.15-dev\n"
 
-#: ../_routes.php:34
+#: ../_routes.php:22
 msgid "Javascript libraries has not been built!"
 msgstr "Les bibliothèques Javascript n'ont pas été construites !"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:53
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:99
-msgid "My localization"
-msgstr "Ma localisation"
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:74
-#: ../lib/GaletteMaps/Controllers/MapsController.php:64
-#: ../lib/GaletteMaps/Controllers/MapsController.php:145
+#: ../lib/GaletteMaps/Controllers/MapsController.php:50
+#: ../lib/GaletteMaps/Controllers/MapsController.php:130
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:94
 msgid "Maps"
 msgstr "Cartes"
 
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:130
-msgid "Geolocalize"
-msgstr "Géolocaliser"
-
-#: ../lib/GaletteMaps/PluginGaletteMaps.php:134
-msgid "Geolocalize %membername"
-msgstr "Géolocaliser %membername"
-
-#: ../lib/GaletteMaps/Controllers/MapsController.php:73
+#: ../lib/GaletteMaps/Controllers/MapsController.php:60
 msgid ""
 "Coordinates has not been loaded. Maybe plugin tables does not exists in the "
 "database?"
@@ -49,146 +36,256 @@ msgstr ""
 "Les coordonnées n'ont pas été chargées. Peut-être les tables du plugin "
 "n'existent-elles pas dans la base de données ?"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:148
+#: ../lib/GaletteMaps/Controllers/MapsController.php:133
 msgid "%member geographic position"
 msgstr "Position géographique de %member"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:194
+#: ../lib/GaletteMaps/Controllers/MapsController.php:170
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:60
+#, fuzzy
+#| msgid "Maps Settings"
+msgid "Maps settings"
+msgstr "Préférences des Cartes"
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:216
+msgid "An address is required to use your own background map."
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:232
+msgid "Maps settings have been saved."
+msgstr ""
+
+#: ../lib/GaletteMaps/Controllers/MapsController.php:262
 msgid "Superadmin cannot be localized."
 msgstr "Le superdamin ne peut être géolocalisé."
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:221
-#: ../lib/GaletteMaps/Controllers/MapsController.php:233
+#: ../lib/GaletteMaps/Controllers/MapsController.php:289
+#: ../lib/GaletteMaps/Controllers/MapsController.php:301
 msgid "Coordinates has not been removed :("
 msgstr "Les coordonnées n'ont pas été supprimées :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:231
+#: ../lib/GaletteMaps/Controllers/MapsController.php:299
 msgid "Coordinates has been removed!"
 msgstr "Les coordonnées ont été supprimées !"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:246
+#: ../lib/GaletteMaps/Controllers/MapsController.php:314
 msgid "New coordinates has been stored!"
 msgstr "Les nouvelles coordonnées ont été enregistrées !"
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:248
+#: ../lib/GaletteMaps/Controllers/MapsController.php:316
 msgid "Coordinates has not been stored :("
 msgstr "Les coordonnées n'ont pas été enregistrées :("
 
-#: ../lib/GaletteMaps/Controllers/MapsController.php:251
+#: ../lib/GaletteMaps/Controllers/MapsController.php:319
 msgid "Something went wrong :("
 msgstr "Quelque chose n'a pas fonctionné :("
 
-#: ../tempcache/common_html.html.twig:66 ../tempcache/common_html.html.twig:72
-msgid "Member (company)"
-msgstr "Adhérent (personne morale)"
+#: ../lib/GaletteMaps/TileProviders.php:123
+msgid "OpenFreeMap, light grey"
+msgstr ""
 
-#: ../tempcache/common_html.html.twig:82 ../tempcache/common_html.html.twig:88
-msgid "Search result"
-msgstr "Résultat de recherche"
+#: ../lib/GaletteMaps/TileProviders.php:124
+#, fuzzy
+#| msgid "OpenStreetMap contributors"
+msgid "OpenFreeMap, colours"
+msgstr "Contributeurs OpenStreetMap"
 
-#: ../tempcache/maps.html.twig:114
+#: ../lib/GaletteMaps/TileProviders.php:125
+#, fuzzy
+#| msgid "OpenStreetMap contributors"
+msgid "OpenStreetMap"
+msgstr "Contributeurs OpenStreetMap"
+
+#: ../lib/GaletteMaps/TileProviders.php:126
+#, fuzzy
+#| msgid "OpenStreetMap contributors"
+msgid "OpenStreetMap France"
+msgstr "Contributeurs OpenStreetMap"
+
+#: ../lib/GaletteMaps/TileProviders.php:127
+msgid "Humanitarian OSM Team"
+msgstr ""
+
+#: ../lib/GaletteMaps/TileProviders.php:128
+#, fuzzy
+#| msgid "OpenStreetMap contributors"
+msgid "OpenStreetMap Germany"
+msgstr "Contributeurs OpenStreetMap"
+
+#: ../lib/GaletteMaps/TileProviders.php:129
+msgid "Esri, light grey"
+msgstr ""
+
+#: ../lib/GaletteMaps/TileProviders.php:130
+#: ../tempcache/maps_preferences.html.twig:85
+msgid "Own values"
+msgstr ""
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:73
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:119
+msgid "My localization"
+msgstr "Ma localisation"
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:150
+msgid "Geolocalize"
+msgstr "Géolocaliser"
+
+#: ../lib/GaletteMaps/PluginGaletteMaps.php:154
+msgid "Geolocalize %membername"
+msgstr "Géolocaliser %membername"
+
+#: ../tempcache/maps.html.twig:115
 msgid "aka"
 msgstr "aka"
 
-#: ../tempcache/common_scripts.html.twig:134
+#: ../tempcache/common_scripts.html.twig:166
 msgid "An error occurred during 'I live here' process :("
 msgstr "Une erreur est survenue pendant le processus « J'y habite » :("
 
-#: ../tempcache/common_scripts.html.twig:179
+#: ../tempcache/common_scripts.html.twig:215
 msgid "Display map in full screen"
 msgstr "Afficher la carte en plein écran"
 
-#: ../tempcache/common_scripts.html.twig:183
+#: ../tempcache/common_scripts.html.twig:219
 msgid "Exit full screen"
 msgstr "Sortir du plein écran"
 
-#: ../tempcache/common_scripts.html.twig:195
+#: ../tempcache/common_scripts.html.twig:231
 msgid "Search your town..."
 msgstr "Chercher votre ville..."
 
-#: ../tempcache/common_scripts.html.twig:201
+#: ../tempcache/common_scripts.html.twig:237
 msgid "Search a town..."
 msgstr "Chercher une ville..."
 
-#: ../tempcache/common_scripts.html.twig:207
+#: ../tempcache/common_scripts.html.twig:243
 msgid "Sorry, that town could not be found."
 msgstr "Désolé, cette ville n'a pas été trouvée."
 
-#: ../tempcache/common_scripts.html.twig:211
+#: ../tempcache/common_scripts.html.twig:247
 msgid "Search"
 msgstr "Chercher"
 
-#: ../tempcache/common_scripts.html.twig:235
+#: ../tempcache/common_scripts.html.twig:271
 msgid "Show me where I am"
 msgstr "Me montrer où je suis"
 
-#: ../tempcache/common_scripts.html.twig:240
+#: ../tempcache/common_scripts.html.twig:276
 msgid "You seem located outside the boundaries of the map"
 msgstr "Vous semblez être localisé en dehors de limites de la carte"
 
-#: ../tempcache/common_scripts.html.twig:252
-msgid "Map data (c)"
-msgstr "© Données cartographiques"
+#: ../tempcache/maps_preferences.html.twig:66
+msgid ""
+"Background maps come from an outside provider. Should it change its terms, "
+"pick another one here rather than waiting for a new release."
+msgstr ""
 
-#: ../tempcache/common_scripts.html.twig:254
-msgid "OpenStreetMap contributors"
-msgstr "Contributeurs OpenStreetMap"
+#: ../tempcache/maps_preferences.html.twig:73
+msgid "Background map"
+msgstr ""
 
-#: ../tempcache/common_scripts.html.twig:256
-msgid "Imagery (c)"
-msgstr "© Imagerie"
+#: ../tempcache/maps_preferences.html.twig:91
+msgid "Vector tiles"
+msgstr ""
 
-#: ../tempcache/mymap.html.twig:72
+#: ../tempcache/maps_preferences.html.twig:91
+msgid "Tick for a MapLibre style, leave unticked for classic raster tiles."
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:98
+msgid "Address"
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:98
+msgid "Style address for vector tiles, tiles address for raster ones, such as:"
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:104
+msgid "Attribution"
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:104
+msgid ""
+"Credit the provider requires, HTML allowed. Data licences make it mandatory. "
+"A vector style usually carries its own, and this can then be left empty."
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:110
+msgid "Maximum zoom"
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:116
+msgid "Subdomains"
+msgstr ""
+
+#: ../tempcache/maps_preferences.html.twig:116
+msgid ""
+"Letters the {s} token in the address is replaced with, such as abc. Raster "
+"tiles only."
+msgstr ""
+
+#: ../tempcache/mymap.html.twig:73
 msgid "Choose your location"
 msgstr "Choisissez votre localisation"
 
-#: ../tempcache/mymap.html.twig:78
+#: ../tempcache/mymap.html.twig:79
 msgid "Choose %member location"
 msgstr "Choisissez la localisation de %member"
 
-#: ../tempcache/mymap.html.twig:88
+#: ../tempcache/mymap.html.twig:89
 msgid "Select your town."
 msgstr "Sélectionnez votre ville."
 
-#: ../tempcache/mymap.html.twig:92
+#: ../tempcache/mymap.html.twig:93
 msgid "In the database, town is set to: '%town'"
 msgstr "Dans la base, la ville définie est « %town »"
 
-#: ../tempcache/mymap.html.twig:186
+#: ../tempcache/mymap.html.twig:188
 msgid "You clicked at %p"
 msgstr "Vous avez cliqué à %p"
 
-#: ../tempcache/mymap.html.twig:189 ../tempcache/mymap.html.twig:310
-#: ../tempcache/mymap.html.twig:339
+#: ../tempcache/mymap.html.twig:191 ../tempcache/mymap.html.twig:312
+#: ../tempcache/mymap.html.twig:341
 msgid "I live here!"
 msgstr "J'y habite !"
 
-#: ../tempcache/mymap.html.twig:191 ../tempcache/mymap.html.twig:312
-#: ../tempcache/mymap.html.twig:341
+#: ../tempcache/mymap.html.twig:193 ../tempcache/mymap.html.twig:314
+#: ../tempcache/mymap.html.twig:343
 msgid "Member lives here!"
 msgstr "L'adhérent y habite !"
 
-#: ../tempcache/mymap.html.twig:223
+#: ../tempcache/mymap.html.twig:225
 msgid "Remove my coordinates"
 msgstr "Supprimer mes coordonnées"
 
-#: ../tempcache/mymap.html.twig:225
+#: ../tempcache/mymap.html.twig:227
 msgid "Remove member coordinates"
 msgstr "Supprimer les coordonnées de l'adhérent"
 
-#: ../tempcache/mymap.html.twig:231
+#: ../tempcache/mymap.html.twig:233
 msgid "Are you sure you want to remove coordinates from the database?"
 msgstr "Êtes-vous certain de vouloir supprimer les cordonnées de la base ?"
 
-#: ../tempcache/mymap.html.twig:284
+#: ../tempcache/mymap.html.twig:286
 msgid "An error occurred removing coordinates :("
 msgstr "Une erreur est survenue à l'enregistrement des coordonnées :'("
 
+#: ../tempcache/common_html.html.twig:68 ../tempcache/common_html.html.twig:74
+msgid "Member (company)"
+msgstr "Adhérent (personne morale)"
+
+#: ../tempcache/common_html.html.twig:84 ../tempcache/common_html.html.twig:90
+msgid "Search result"
+msgstr "Résultat de recherche"
+
+#~ msgid "Map data (c)"
+#~ msgstr "© Données cartographiques"
+
+#~ msgid "Imagery (c)"
+#~ msgstr "© Imagerie"
+
 #~ msgid "No result found"
 #~ msgstr "Aucun résultat trouvé"
-
-#~ msgid "Maps Settings"
-#~ msgstr "Préférences des Cartes"
 
 #~ msgid "Member"
 #~ msgstr "Adhérent"
