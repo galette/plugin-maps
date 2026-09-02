@@ -31,6 +31,6 @@
     "leaflet.fullscreen": "^5.3.3",
     "leaflet.locatecontrol": "^0.90.1",
     "leaflet.markercluster": "^1.5.3",
-    "maplibre-gl": "^5.24.0"
+    "maplibre-gl": "^6.6.0"
   }
 }
