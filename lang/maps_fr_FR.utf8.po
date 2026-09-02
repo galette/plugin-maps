@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: \n"
+"Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2026-09-02 16:34+0200\n"
-"PO-Revision-Date: 2026-09-02 13:13+0000\n"
+"PO-Revision-Date: 2026-09-02 14:45+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
 "plugin/fr/>\n"
@@ -108,10 +108,8 @@ msgstr "Esri, gris clair"
 
 #: ../lib/GaletteMaps/TileProviders.php:130
 #: ../tempcache/maps_preferences.html.twig:80
-#, fuzzy
-#| msgid "Own values"
 msgid "Your own values"
-msgstr "Valeurs propres"
+msgstr "Vos propres valeurs"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:73
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:119
@@ -167,10 +165,8 @@ msgid "You seem located outside the boundaries of the map"
 msgstr "Vous semblez être localisé en dehors de limites de la carte"
 
 #: ../tempcache/maps_preferences.html.twig:68
-#, fuzzy
-#| msgid "Background map"
 msgid "Background map provider"
-msgstr "Fond de carte"
+msgstr "Fournisseur de fonds de carte"
 
 #: ../tempcache/maps_preferences.html.twig:86
 msgid "Vector tiles"
@@ -196,17 +192,11 @@ msgid "Attribution"
 msgstr "Attribution"
 
 #: ../tempcache/maps_preferences.html.twig:99
-#, fuzzy
-#| msgid ""
-#| "Credit the provider requires, HTML allowed. Data licences make it "
-#| "mandatory. A vector style usually carries its own, and this can then be "
-#| "left empty."
 msgid ""
 "Credit the provider requires, HTML allowed. Data licences make it mandatory."
 msgstr ""
 "Crédit requis par le fournisseur, HTML autorisé. Les données de licence le "
-"rendent obligatoire. Un style vectoriel embarque souvent le sien, on peut le "
-"laisser vide dans ce cas."
+"rendent obligatoire."
 
 #: ../tempcache/maps_preferences.html.twig:105
 msgid "Maximum zoom"
