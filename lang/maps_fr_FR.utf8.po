@@ -5,8 +5,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"Report-Msgid-Bugs-To: translations@galette.eu\n"
-"POT-Creation-Date: 2026-09-02 12:49+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-02 16:34+0200\n"
 "PO-Revision-Date: 2026-09-02 13:13+0000\n"
 "Last-Translator: Johan Cwiklinski <trasher@x-tnd.be>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/galette/maps-"
@@ -107,8 +107,10 @@ msgid "Esri, light grey"
 msgstr "Esri, gris clair"
 
 #: ../lib/GaletteMaps/TileProviders.php:130
-#: ../tempcache/maps_preferences.html.twig:85
-msgid "Own values"
+#: ../tempcache/maps_preferences.html.twig:80
+#, fuzzy
+#| msgid "Own values"
+msgid "Your own values"
 msgstr "Valeurs propres"
 
 #: ../lib/GaletteMaps/PluginGaletteMaps.php:73
@@ -164,60 +166,57 @@ msgstr "Me montrer où je suis"
 msgid "You seem located outside the boundaries of the map"
 msgstr "Vous semblez être localisé en dehors de limites de la carte"
 
-#: ../tempcache/maps_preferences.html.twig:66
-msgid ""
-"Background maps come from an outside provider. Should it change its terms, "
-"pick another one here rather than waiting for a new release."
-msgstr ""
-"Les fonds de cartes proviennent d'un fournisseur extérieur. Si il change ses "
-"termes, choisissez en un autre ici plutôt que d'attendre une nouvelle "
-"version."
-
-#: ../tempcache/maps_preferences.html.twig:73
-msgid "Background map"
+#: ../tempcache/maps_preferences.html.twig:68
+#, fuzzy
+#| msgid "Background map"
+msgid "Background map provider"
 msgstr "Fond de carte"
 
-#: ../tempcache/maps_preferences.html.twig:91
+#: ../tempcache/maps_preferences.html.twig:86
 msgid "Vector tiles"
 msgstr "Tuiles vectorisées"
 
-#: ../tempcache/maps_preferences.html.twig:91
+#: ../tempcache/maps_preferences.html.twig:86
 msgid "Tick for a MapLibre style, leave unticked for classic raster tiles."
 msgstr ""
 "Cochez pour un style MapLibre, laissez décoché pour des tuiles classiques."
 
-#: ../tempcache/maps_preferences.html.twig:98
+#: ../tempcache/maps_preferences.html.twig:93
 msgid "Address"
 msgstr "Adresse"
 
-#: ../tempcache/maps_preferences.html.twig:98
+#: ../tempcache/maps_preferences.html.twig:93
 msgid "Style address for vector tiles, tiles address for raster ones, such as:"
 msgstr ""
 "Adresse du style pou rles tuiles vectorisées, addresse des tuiles pour les "
 "classiques, tel que :"
 
-#: ../tempcache/maps_preferences.html.twig:104
+#: ../tempcache/maps_preferences.html.twig:99
 msgid "Attribution"
 msgstr "Attribution"
 
-#: ../tempcache/maps_preferences.html.twig:104
+#: ../tempcache/maps_preferences.html.twig:99
+#, fuzzy
+#| msgid ""
+#| "Credit the provider requires, HTML allowed. Data licences make it "
+#| "mandatory. A vector style usually carries its own, and this can then be "
+#| "left empty."
 msgid ""
-"Credit the provider requires, HTML allowed. Data licences make it mandatory. "
-"A vector style usually carries its own, and this can then be left empty."
+"Credit the provider requires, HTML allowed. Data licences make it mandatory."
 msgstr ""
 "Crédit requis par le fournisseur, HTML autorisé. Les données de licence le "
 "rendent obligatoire. Un style vectoriel embarque souvent le sien, on peut le "
 "laisser vide dans ce cas."
 
-#: ../tempcache/maps_preferences.html.twig:110
+#: ../tempcache/maps_preferences.html.twig:105
 msgid "Maximum zoom"
 msgstr "Zoom maximal"
 
-#: ../tempcache/maps_preferences.html.twig:116
+#: ../tempcache/maps_preferences.html.twig:111
 msgid "Subdomains"
 msgstr "Sous-domaines"
 
-#: ../tempcache/maps_preferences.html.twig:116
+#: ../tempcache/maps_preferences.html.twig:111
 msgid ""
 "Letters the {s} token in the address is replaced with, such as abc. Raster "
 "tiles only."
@@ -278,6 +277,14 @@ msgstr "Adhérent (personne morale)"
 #: ../tempcache/common_html.html.twig:84 ../tempcache/common_html.html.twig:90
 msgid "Search result"
 msgstr "Résultat de recherche"
+
+#~ msgid ""
+#~ "Background maps come from an outside provider. Should it change its "
+#~ "terms, pick another one here rather than waiting for a new release."
+#~ msgstr ""
+#~ "Les fonds de cartes proviennent d'un fournisseur extérieur. Si il change "
+#~ "ses termes, choisissez en un autre ici plutôt que d'attendre une nouvelle "
+#~ "version."
 
 #~ msgid "Map data (c)"
 #~ msgstr "© Données cartographiques"
