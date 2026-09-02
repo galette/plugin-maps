@@ -1,6 +1,6 @@
 # Galette Maps plugin
 
-[![GitHub license](https://img.shields.io/github/license/galette/galette.svg)](https://github.com/galette/plugin-maps/blob/master/COPYING)
+[![GitHub license](https://img.shields.io/github/license/galette/plugin-maps)](https://github.com/galette/plugin-maps/blob/master/COPYING)
 
 ### English
 
@@ -10,10 +10,10 @@ Map display uses [Leaflet project](https://leafletjs.com/) while search is provi
 Background tiles are the [OpenFreeMap](https://openfreemap.org/) vector tiles, rendered with [MapLibre GL](https://maplibre.org/): no API key, no registration, and the whole thing can be self-hosted.
 
 * website: https://galette.eu - https://doc.galette.eu/en/master/plugins/maps.html
-* bugs and features: http://bugs.galette.eu/projects/galette-plugin-maps
+* bugs and features: https://bugs.galette.eu/projects/galette-plugin-maps
 * mailing lists:
-  * users: https://listengine.tuxfamily.org/lists.galette.eu/users/
-  * developpers: https://listengine.tuxfamily.org/lists.galette.eu/devel/
+  * users: https://lists.mailman3.com/postorius/lists/galette-users.mailman3.com/
+  * developpers: https://lists.mailman3.com/postorius/lists/galette-devel.mailman3.com/
 * documentation: https://doc.galette.eu/en/master/plugins/maps.html
 
 To use Galette Maps plugin, you'll need a reliable Galette version, and of course the plugin itself by either:
@@ -29,10 +29,10 @@ Les cartes sont affichées par le biais du [projet Leaflet](https://leafletjs.co
 Le fond de carte provient des tuiles vectorielles [OpenFreeMap](https://openfreemap.org/), rendues par [MapLibre GL](https://maplibre.org/) : sans clé d'API, sans inscription, et auto-hébergeable.
 
 * site web : https://galette.eu - https://doc.galette.eu/fr/master/plugins/maps.html
-* bogues et fonctionnalités : http://bugs.galette.eu/projects/galette-plugin-maps
+* bogues et fonctionnalités : https://bugs.galette.eu/projects/galette-plugin-maps
 * liste de diffusion :
-  * utilisateurs : https://listengine.tuxfamily.org/lists.galette.eu/users/
-  * développeurs : https://listengine.tuxfamily.org/lists.galette.eu/devel/
+  * utilisateurs : https://lists.mailman3.com/postorius/lists/galette-users.mailman3.com/
+  * développeurs : https://lists.mailman3.com/postorius/lists/galette-devel.mailman3.com/
 * documentation : https://doc.galette.eu/fr/master/plugins/maps.html
 
 Pour utiliser le plugin Maps pour Galette, vous aurez besoin d'une version adéquate de Galette, ainsi que du plugin lui même :
