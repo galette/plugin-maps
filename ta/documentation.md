@@ -1,26 +1,27 @@
 ---
-title: Documentation
+title: ஆவணமாக்கல்
 description: Member geolocation and public map
 ---
 
-This plugin provides:
+இந்த சொருகி வழங்குகிறது:
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* உறுப்பினர்களுக்கான புவியியல் ஆயங்களை சேமிப்பதற்கான நிகழக்கூடிய (அட்சரேகை
+  மற்றும் தீர்க்கரேகை),
+* பொது வரைபடம், பொதுவில் பார்க்கத் தேர்ந்தெடுக்கப்பட்ட புதுப்பித்த
+  உறுப்பினர்களைக் காண்பிக்கும்.
 
-## Installation
+## நிறுவல்
 
-First of all, download the plugin:
+முதலில், சொருகி பதிவிறக்கவும்:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+பதிவிறக்கம் செய்யப்பட்ட காப்பகத்தைக் கேலட் `செருகுநிரல்கள்` கோப்பகத்தில்
+பிரித்தெடுக்கவும். எடுத்துக்காட்டாக, லினக்சின் கீழ் (`{url}` மற்றும் `{version}`
+ஆகியவற்றை சரியான மதிப்புகளுடன் மாற்றுகிறது):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,13 +29,13 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## தரவுத்தள துவக்கம்
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
-interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
+வேலை செய்ய, இந்தச் சொருகி தரவுத்தளத்தில் பல அட்டவணைகள் தேவை. காண்க [கேலட்
+செருகுநிரல்கள் மேலாண்மை
+இடைமுகம்](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+மேலும் இது முடிந்தது; வரைப்படம் செருகுநிரல் நிறுவப்பட்டது :)
 
 ## Background map
 
@@ -82,43 +83,47 @@ server.
 * **Subdomains** lists the letters the `{s}` token of the address is replaced
   with, for instance `abc`. Raster tiles only.
 
-## Plugin usage
+## சொருகி பயன்பாடு
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+செருகுநிரல் நிறுவப்பட்டவுடன், ஒரு உறுப்பினர் உள்நுழைந்திருக்கும் போது, கேலட்
+பட்டியலில் ஒரு குழு `வரைபடம்' சேர்க்கப்படும், அதில் `எனது இருப்பிடம்` உள்ளீடு
+இருக்கும். இந்த பக்கம் உறுப்பினர் அதன் இருப்பிடத்தை சேமிக்க அனுமதிக்கிறது.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+ஒரு உறுப்பினரைக் காண்பிக்கும் போது `சியோலோகலைச்` பொத்தானும் சேர்க்கப்படும், இது
+உறுப்பினர் ஒருங்கிணைப்புகளை அமைக்க நிர்வாகிகளை அனுமதிக்கிறது.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+மேலும், 'வரைபடம்' உள்ளீடு பொதுப் பக்கங்களின் பட்டியலில் சேர்க்கப்பட்டுள்ளது, இது
+புதுப்பித்த நிலையில் உள்ள புவியியல்மயமாக்கப்பட்ட உறுப்பினர்களைக் காட்டுகிறது.
+நிர்வாகிகள் மற்றும் பணியாளர்கள் அனைத்து உறுப்பினர்களையும் பார்ப்பார்கள், அதே
+நேரத்தில் எளிய உறுப்பினர்கள் மற்றும் பார்வையாளர்கள் புதுப்பித்த பொது நபர்களை
+மட்டுமே பார்ப்பார்கள்.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+முதலில், உறுப்பினர்கள் தங்கள் இருப்பிட ஆயங்களை உள்ளிடுவார்கள். பல விருப்பங்கள்
+வழங்கப்படுகின்றன:
 
-* if town has been set in member information, a list of possible places will be
-  proposed (via [Nominatim online
-  service](https://nominatim.openstreetmap.org)),
-* additionally, a search zone (provided from
-  [OpenStreetMap](https://nominatim.openstreetmap.org/)),
-* and also a geolocalize button using browser capacities.
+* உறுப்பினர் தகவலில் நகரம் அமைக்கப்பட்டிருந்தால், சாத்தியமான இடங்களின் பட்டியல்
+  பரிந்துரைக்கப்படும் ([நாமினாடிம் நிகழ்நிலை
+  பணி](https://nominatim.openstreetmap.org))
+* கூடுதலாக, ஒரு தேடல் மண்டலம்
+  ([OpenStreetMap](https://nominatim.openstreetmap.org/) இலிருந்து
+  வழங்கப்படுகிறது),
+* மேலும் உலாவி திறன்களைப் பயன்படுத்தி புவியியல்மயமாக்கல் பொத்தான்.
 
-The search zone can be used when saving members location, and when displaying
-the maps.
+உறுப்பினர்களின் இருப்பிடத்தைச் சேமிக்கும் போதும், வரைபடங்களைக் காண்பிக்கும்
+போதும் தேடல் மண்டலத்தைப் பயன்படுத்தலாம்.
 
 ![The list of towns proposed for a member](images/towns_list.png)
 
-A member can define its location (with the precision he wants) on the map
-selecting one of the propositions:
+ஒரு உறுப்பினர் அதன் இருப்பிடத்தை (அவர் விரும்பும் துல்லியத்துடன்) வரைபடத்தில்
+முன்மொழிவுகளில் ஒன்றைத் தேர்ந்தெடுக்கலாம்:
 
 ![Selecting a location on the map](images/location_select.png)
 
-Using the geolocalization button will define its position from the browser:
+புவிசார்மயமாக்கல் பொத்தானைப் பயன்படுத்துவது உலாவியில் இருந்து அதன் நிலையை
+வரையறுக்கும்:
 
 ![The geolocalize button](images/geoloc.png)
 
-Then, member location is displayed on map, and can be removed:
+பின்னர், உறுப்பினர் இருப்பிடம் வரைபடத்தில் காட்டப்படும், மேலும் அகற்றலாம்:
 
 ![The selected location, displayed on the map](images/location_selected.png)
