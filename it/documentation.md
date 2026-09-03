@@ -1,26 +1,26 @@
 ---
-title: Documentation
+title: Documentazione
 description: Member geolocation and public map
 ---
 
-This plugin provides:
+Questo componente aggiuntivo fornisce:
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* possibilità di memorizzare coordinate geografiche per i membri (latitudine e
+  longitudine),
+* una mappa pubblica aggiornata che mostra i membri che hanno scelto di essere
+  pubblicamente visibili.
 
-## Installation
+## Installazione
 
-First of all, download the plugin:
+Prima di tutto, scaricare il plugin:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+Estrai l'archivio scaricato nella cartella `plugins` di Galette. Per esempio, su
+Linux (sostituendo `{url}` e `{version}` con i rispettivi valori):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,13 +28,13 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## Inizializzazione del database
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
-interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
+Per poter funzionare, questo componente aggiuntivo richiede diverse nuove
+tabelle nel database. Vedi [Interfaccia di gestione dei componenti aggiuntivi di
+Galette](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+E questo è finito; il plugin Maps è stato installato :)
 
 ## Background map
 
@@ -84,41 +84,45 @@ server.
 
 ## Plugin usage
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+A plugin installato, si aggiunge il gruppo `Maps` al menu di Galette
+ogniqualvolta che un membro si connette, contenente la voce `La mia posizione`.
+Questa pagina consente all'utente di memorizzare la sua posizione.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+Viene inoltre aggiunto un pulsante `Geolocalizza` durante la visualizzazione di
+un membro, che consente agli amministratori di impostare le coordinate dei
+membri.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+Inoltre, nell'elenco delle pagine pubbliche viene aggiunta una voce "Mappa" che
+mostra i membri geolocalizzati aggiornati. Gli amministratori e i membri dello
+staff vedranno tutti i membri, mentre i membri semplici e i visitatori vedranno
+solo quelli pubblici aggiornati.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+Prima di tutto, i membri entreranno nelle loro coordinate di posizione. Sono
+disponibili diverse opzioni:
 
-* if town has been set in member information, a list of possible places will be
-  proposed (via [Nominatim online
-  service](https://nominatim.openstreetmap.org)),
-* additionally, a search zone (provided from
+* se la città è stata inserita nelle informazioni dei membri, verrà proposto un
+  elenco dei posti possibili (tramite il [servizio online
+  Nominatim](https://nominatim.openstreetmap.org)),
+* inoltre, una zona di ricerca (fornita da
   [OpenStreetMap](https://nominatim.openstreetmap.org/)),
-* and also a geolocalize button using browser capacities.
+* e anche un pulsante geolocalizza utilizzando le capacità del browser.
 
-The search zone can be used when saving members location, and when displaying
-the maps.
+La zona di ricerca può essere utilizzata durante il salvataggio della posizione
+dei membri e durante la visualizzazione delle mappe.
 
 ![The list of towns proposed for a member](images/towns_list.png)
 
-A member can define its location (with the precision he wants) on the map
-selecting one of the propositions:
+Un membro può definire la sua posizione (con la precisione che vuole) sulla
+mappa selezionando una delle proposizioni:
 
 ![Selecting a location on the map](images/location_select.png)
 
-Using the geolocalization button will define its position from the browser:
+Utilizzando il pulsante di geolocalizzazione verrà definita la sua posizione dal
+browser:
 
 ![The geolocalize button](images/geoloc.png)
 
-Then, member location is displayed on map, and can be removed:
+Poi, la posizione del membro viene visualizzata sulla mappa e può essere
+rimossa:
 
 ![The selected location, displayed on the map](images/location_selected.png)
