@@ -38,8 +38,11 @@ E está concluído; o plugin de mapas está instalado :)
 
 ## Background map
 
-{% include alert.html type="note" content="The provider setting appeared in
-version 2.3.0." %}
+> Note
+> {: .admonition-title}
+>
+> The provider setting appeared in version 2.3.0.
+{: .admonition .admonition-note}
 
 The provider is a setting from `Maps settings`, in the `Configuration` menu.
 
@@ -61,9 +64,11 @@ Several providers are proposed:
 
 ### Your own values
 
-{% include alert.html type="warning" content="Check the usage policy of the
-provider you choose. Most of them are run by associations or by volunteers, and
-they set conditions on the traffic they accept." %}
+> Warning
+> {: .admonition-title}
+>
+> Check the usage policy of the provider you choose. Most of them are run by associations or by volunteers, and they set conditions on the traffic they accept.
+{: .admonition .admonition-warning}
 
 The last entry of the list, `Your own values`, replaces the proposed providers
 with an address of your own — a provider that is not listed, or your own tile

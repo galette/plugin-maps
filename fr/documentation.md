@@ -39,8 +39,11 @@ Et c'est terminé, le plugin Maps est installé :)
 
 ## Fond de carte
 
-{% include alert.html type="note" content="Le paramètre du fournisseur apparaît
-dans la version 2.3.0." %}
+> Note
+> {: .admonition-title}
+>
+> Le paramètre du fournisseur apparaît dans la version 2.3.0.
+{: .admonition .admonition-note}
 
 Le fournisseur est un paramètre depuis `Configuration Maps`, dans le menu
 `Configuration`.
@@ -65,10 +68,11 @@ Plusieurs fournisseurs sont proposés :
 
 ### Vos propres valeurs
 
-{% include alert.html type="warning" content="Vérifiez la politique
-d'utilisation du fournisseur que vous choisissez. La plupart d'entre eux sont
-gérés par des associations ou des bénévoles, et ils établissent des conditions
-sur le trafic qu'ils acceptent. » %}
+> Avertissement
+> {: .admonition-title}
+>
+> Vérifiez la politique d'utilisation du fournisseur que vous choisissez. La plupart d'entre eux sont gérés par des associations ou des bénévoles, et ils établissent des conditions sur le trafic qu'ils acceptent.
+{: .admonition .admonition-warning}
 
 La dernière entrée de la liste, « Vos propres valeurs », remplace les
 fournisseurs proposés par votre propre adresse — un fournisseur qui n'est pas
