@@ -15,8 +15,9 @@ adresse, depuis la configuration. La recherche est fournie via l'API
 [Nominatim](https://nominatim.openstreetmap.org/).
 
 * [documentation](documentation.html)
-* [bugs and features](https://bugs.galette.eu/projects/galette-plugin-maps)
-* [source code](https://github.com/galette-plugins/plugin-maps)
+* [bogues et
+  fonctionnalités](https://bugs.galette.eu/projects/galette-plugin-maps)
+* [code source](https://github.com/galette-plugins/plugin-maps)
 * mailing lists:
   [users](https://lists.mailman3.com/postorius/lists/galette-users.mailman3.com/),
   [developers](https://lists.mailman3.com/postorius/lists/galette-devel.mailman3.com/)
