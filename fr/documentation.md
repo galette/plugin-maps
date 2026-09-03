@@ -14,8 +14,8 @@ Ce plugin fournit :
 
 Tout d'abord, téléchargez le plugin :
 
-* [Get latest Maps
-  plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
+* [Obtenir le dernier plugin Maps
+  !](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
