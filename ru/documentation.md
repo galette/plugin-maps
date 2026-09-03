@@ -3,24 +3,23 @@ title: Documentation
 description: Member geolocation and public map
 ---
 
-This plugin provides:
+Этот плагин дает:
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* возможность сохранять координаты для членов (широта и долгота)
+* публичная карта показывает членов в реальном времени если они выбрали быть
+  публично видимыми
 
-## Installation
+## Установка
 
-First of all, download the plugin:
+Прежде всего, загрузите плагин:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+Распакуйте скачанный архив в папку Galette `plugins`. Например, под linux
+(заменив `{url}` и `{version}` на правильные значения):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,13 +27,13 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## Установка БД
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
+Для работы плагин требует несколько таблиц в БД. Смотри [Galette plugins
+management
 interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+Все готово; Плагин Карты установлен :)
 
 ## Background map
 
@@ -82,21 +81,20 @@ server.
 * **Subdomains** lists the letters the `{s}` token of the address is replaced
   with, for instance `abc`. Raster tiles only.
 
-## Plugin usage
+## Использование плагина
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+Когда плагин установлен, группа "Maps" добавляется в меню Galette когда член
+входит в систему, В ней присутствует поле "Мое расположение". Эта страница
+позволяет члену сохранять свою локацию.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+Кнопка "Геолокализация" также добавляется при отображении члена, что позволяет
+администрации устанавливать координаты членов.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+Также в список публичных страниц добавлена запись "Карта" которая показывает
+геолокализированых членов в реальном времени. Администрация и сотрудники будут
+видеть всех членов, а члены и посетители только публичных.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+Для начала все члены введут свои координаты. Дано несколько вариантов:
 
 * if town has been set in member information, a list of possible places will be
   proposed (via [Nominatim online
