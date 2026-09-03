@@ -116,12 +116,12 @@ options sont fournies :
 La zone de recherche peut être utilisée lorsque vous renseignez la localisation
 d'un adhérent, et aussi à l'affichage des cartes.
 
-![The list of towns proposed for a member](images/towns_list.png)
+![La liste des villes proposées pour un adhérent](images/towns_list.png)
 
 Un adhérent peut définir a propre localisation (avec la précision qu'il
 souhaite) sur la carte en sélectionnant une des propositions :
 
-![Selecting a location on the map](images/location_select.png)
+![Sélectionner un emplacement sur la carte](images/location_select.png)
 
 Utiliser le bouton géolocalisation déterminera sa position depuis son navigateur
 :
