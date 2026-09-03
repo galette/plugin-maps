@@ -7,11 +7,12 @@ Un plugin [Galette](https://galette.eu) pour géolocaliser les adhérents : il
 stocke les coordonnées géographiques de chaque adhérent, et affiche ceux qui ont
 accepté que leur profil soit publiquement visible sur une carte.
 
-Maps are rendered with [MapLibre GL](https://maplibre.org/) from
-[OpenFreeMap](https://openfreemap.org/) vector tiles by default — no API key, no
-registration, and the whole thing can be self-hosted. An administrator picks
-another provider, or enters their own address, from Configuration. Search is
-provided by the [Nominatim](https://nominatim.openstreetmap.org/) API.
+Le rende des cartes es assuré par [MapLibre GL](https://maplibre.org/) de
+[OpenFreeMap](https://openfreemap.org/) tuiles vectorielles par défaut — pas de
+clé API, pas d'enregistrement, et l'ensemble peut-être auto-hébergé. Un
+administrateur peut sélectionner un autre fournisseur, ou entrer leur propre
+adresse, depuis la configuration. La recherche est fournie via l'API
+[Nominatim](https://nominatim.openstreetmap.org/).
 
 * [documentation](documentation.html)
 * [bugs and features](https://bugs.galette.eu/projects/galette-plugin-maps)
