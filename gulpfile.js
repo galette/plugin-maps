@@ -13,6 +13,7 @@ const uglify = require('gulp-uglify');
 const merge = require('ordered-read-streams');
 const replace = require('gulp-replace');
 const cleancss = require('gulp-clean-css');
+const esbuild = require('esbuild');
 
 const plugin = {
   'public': './webroot'
@@ -41,14 +42,18 @@ const gl_styles = [
   './node_modules/maplibre-gl/dist/maplibre-gl.css'
 ];
 
-// maplibre-gl is pinned to 5.x on purpose: 6.x dropped the UMD build and ships
-// ES modules only, which cannot be concatenated into a classic script. The 5.x
-// dist is already minified and uses syntax uglify-js cannot parse, so this
-// bundle is concatenated as is, never piped through uglify.
-const gl_scripts = [
-  './node_modules/maplibre-gl/dist/maplibre-gl.js',
-  './node_modules/@maplibre/maplibre-gl-leaflet/leaflet-maplibre-gl.js'
-];
+// maplibre-gl ships ES modules only since 6.x, so its bundle cannot be built by
+// concatenation like the others: esbuild rolls it up, along with the Leaflet
+// binding, into a classic script still exposing the `maplibregl` global.
+const gl_entry = './build/maps-gl.js';
+// Leaflet comes from maps-main.bundle.min.js, so the bundle must reuse the one
+// on the page instead of embedding a second copy.
+const gl_aliases = {
+  'leaflet': './build/leaflet-global.js'
+};
+// maplibre-gl runs its tile parsing in a worker it fetches at runtime; it has to
+// be a file of its own, next to the bundle.
+const gl_worker = './node_modules/maplibre-gl/dist/maplibre-gl-worker.mjs';
 
 const main_assets = [
   {
@@ -115,11 +120,28 @@ function scripts() {
     .pipe(uglify())
     .pipe(gulp.dest(plugin.public));
 
-    gl = gulp.src(gl_scripts)
-    .pipe(concat('maps-gl.bundle.min.js'))
-    .pipe(gulp.dest(plugin.public));
+  return merge(main, locate);
+};
 
-  return merge(main, locate, gl);
+function gl_scripts() {
+  return Promise.all([
+    esbuild.build({
+      entryPoints: [gl_entry],
+      outfile: plugin.public + '/maps-gl.bundle.min.js',
+      bundle: true,
+      minify: true,
+      format: 'iife',
+      globalName: 'maplibregl',
+      alias: gl_aliases
+    }),
+    esbuild.build({
+      entryPoints: [gl_worker],
+      outfile: plugin.public + '/maps-gl.worker.min.js',
+      bundle: true,
+      minify: true,
+      format: 'esm'
+    })
+  ]);
 };
 
 function assets() {
@@ -136,7 +158,8 @@ exports.clean = clean;
 
 exports.styles = styles;
 exports.scripts = scripts;
+exports.gl_scripts = gl_scripts;
 exports.assets = assets;
 
-exports.build = series(styles, scripts, assets);
+exports.build = series(styles, scripts, gl_scripts, assets);
 exports.default = exports.build;
