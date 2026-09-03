@@ -12,15 +12,15 @@ Este complemento proporciona:
 
 ## Instalación
 
-Lo primero de todo, descarga el complemento:
+Antes que todo, descargue el complemento:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extrae el archivo descargado en la carpeta `plugin` de Galette . Por ejemplo, en
-linux (sustituyendo `{url}` y `{version}` con los valores correctos):
+Extraer el archivo descargado en el directorio de Galette `plugins`. Por
+ejemplo, bajo linux (reemplazar `{url}` y `{version}` con valores correctos):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,10 +28,10 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Inicialización de base de datos
+## Inicio de la base de datos
 
-Para que funcione, este complemento necesita varias tablas en la base de datos.
-Consulta [la interfaz de gestión de complementos de
+Para funcionar, este plugin requiere varias tablas en la base de datos. Ver
+[Interfaz de gestión de plugins
 Galette](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
 Y esto está terminado; el plugin de Mapas está instalado :)
