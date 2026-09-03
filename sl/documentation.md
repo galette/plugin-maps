@@ -1,26 +1,26 @@
 ---
-title: Documentation
+title: Dokumentacija
 description: Member geolocation and public map
 ---
 
-This plugin provides:
+Ta vtičnik ponuja:
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* možnost shranjevanja geografskih koordinat za člane (zemljepisna širina in
+  dolžina),
+* javni zemljevid, ki prikazuje posodobljene člane, ki so se odločili, da bodo
+  javno vidni.
 
-## Installation
+## Namestitev
 
-First of all, download the plugin:
+Najprej prenesite vtičnik:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+Razširite prenesen arhiv v imenik Galette `plugins`. Na primer v Linuxu
+(zamenjajte `{url}` in `{version}` s pravilnimi vrednostmi):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,13 +28,13 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## Inicializacija baze podatkov
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
-interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
+Za delovanje ta vtičnik potrebuje več tabel v bazi podatkov. Glejte [Vmesnik za
+upravljanje vtičnikov
+Galette](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+In to je končano; vtičnik Zemljevidi je nameščen :)
 
 ## Background map
 
@@ -84,41 +84,41 @@ server.
 
 ## Plugin usage
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+Ko je vtičnik nameščen, se v meni Galette ob prijavi člana doda skupina
+»Zemljevidi«, ki vsebuje vnos »Moja lokacija«. Ta stran članu omogoča
+shranjevanje lokacije.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+Pri prikazu člana je dodan tudi gumb »Geolokaliziraj«, ki skrbnikom omogoča
+nastavitev koordinat člana.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+Na seznamu javnih strani je dodan tudi vnos »Zemljevid«, ki prikazuje
+geolokalizirane člane, ki so posodobljeni. Administratorji in člani osebja bodo
+videli vse člane, medtem ko bodo preprosti člani in obiskovalci videli le
+posodobljene javne.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+Najprej bodo člani vnesli svoje koordinate lokacije. Na voljo je več možnosti:
 
 * if town has been set in member information, a list of possible places will be
   proposed (via [Nominatim online
   service](https://nominatim.openstreetmap.org)),
-* additionally, a search zone (provided from
+* dodatno iskalno območje (zagotovljeno iz
   [OpenStreetMap](https://nominatim.openstreetmap.org/)),
-* and also a geolocalize button using browser capacities.
+* in tudi gumb za geolokacijo z uporabo zmogljivosti brskalnika.
 
-The search zone can be used when saving members location, and when displaying
-the maps.
+Iskalno območje se lahko uporablja pri shranjevanju lokacije članov in pri
+prikazu zemljevidov.
 
 ![The list of towns proposed for a member](images/towns_list.png)
 
-A member can define its location (with the precision he wants) on the map
-selecting one of the propositions:
+Član lahko na zemljevidu določi svojo lokacijo (z želeno natančnostjo) z izbiro
+enega od predlogov:
 
 ![Selecting a location on the map](images/location_select.png)
 
-Using the geolocalization button will define its position from the browser:
+Z uporabo gumba za geolokalizacijo bo brskalnik določil njegov položaj:
 
 ![The geolocalize button](images/geoloc.png)
 
-Then, member location is displayed on map, and can be removed:
+Nato se lokacija člana prikaže na zemljevidu in jo je mogoče odstraniti:
 
 ![The selected location, displayed on the map](images/location_selected.png)
