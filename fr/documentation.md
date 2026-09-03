@@ -16,8 +16,8 @@ Tout d'abord, téléchargez le plugin :
 
 * [Obtenir le dernier plugin Maps
   !](https://github.com/galette-plugins/plugin-maps/releases/latest)
-* [Get Maps plugin nightly
-  build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
+* [Obtenir la nightly du plugin Maps
+  !](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
 Extrayez l'archive téléchargée dans le dossier `plugins` de Galette. Par
 exemple, sous linux (en remplaçant `{url}` et `{version}` par les valeurs
@@ -39,13 +39,14 @@ Et c'est terminé, le plugin Maps est installé :)
 
 ## Fond de carte
 
-{% include alert.html type="note" content="The provider setting appeared in
-version 2.3.0." %}
+{% include alert.html type="note" content="Le paramètre du fournisseur apparaît
+dans la version 2.3.0." %
 
 Le fournisseur est un paramètre depuis `Configuration Maps`, dans le menu
 `Configuration`.
 
-![The provider setting, in Maps settings](images/tiles_settings.png)
+![Le réglage du fournisseur, dans les paramètres
+Maps](images/tiles_settings.png)
 
 Plusieurs fournisseurs sont proposés :
 
