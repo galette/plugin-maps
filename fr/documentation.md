@@ -1,26 +1,27 @@
 ---
 title: Documentation
-description: Member geolocation and public map
+description: Géolocalisation des membres et carte publique
 ---
 
-This plugin provides:
+Ce plugin fournit :
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* la possibilité d'enregistrer les coordonnées géographiques des adhérents
+  (latitude et longitude),
+* une carte publique pour afficher les membres à jour qui ont choisi d'être
+  affichés publiquement.
 
 ## Installation
 
-First of all, download the plugin:
+Tout d'abord, téléchargez le plugin :
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+Extrayez l'archive téléchargée dans le dossier `plugins` de Galette. Par
+exemple, sous linux (en remplaçant `{url}` et `{version}` par les valeurs
+adéquates) :
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,97 +29,104 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## Initialisation de la base de données
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
-interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
+Pour fonctionner, ce plugin requiert des tables dans la base de données.
+Référez-vous [à l'interface de gestion des plugins de
+Galette](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+Et c'est terminé, le plugin Maps est installé :)
 
-## Background map
+## Fond de carte
 
 {% include alert.html type="note" content="The provider setting appeared in
 version 2.3.0." %}
 
-The provider is a setting from `Maps settings`, in the `Configuration` menu.
+Le fournisseur est un paramètre depuis `Configuration Maps`, dans le menu
+`Configuration`.
 
 ![The provider setting, in Maps settings](images/tiles_settings.png)
 
-Several providers are proposed:
+Plusieurs fournisseurs sont proposés :
 
-* **OpenFreeMap, light grey** — the default. Vector tiles, in a discreet grey
-  that lets member markers stand out. No account, no API key, and the service
-  can be [self-hosted](https://openfreemap.org).
-* **OpenFreeMap, colours** — the same service, rendered in full colour.
-* **OpenStreetMap** — the standard rendering, from the OpenStreetMap Foundation
-  servers.
-* **OpenStreetMap France** and **Humanitarian OSM Team** — hosted by the OSM-FR
-  association; the second one gives more weight to roads and facilities.
-* **OpenStreetMap Germany** — German rendering, favouring local names.
-* **Esri, light grey** — a very light grey rendering, close to what the plugin
-  displayed before.
+* **OpenFreeMap, gris clair** — par défaut. Les tuiles vectorisées, dans un gris
+  discret qui permet aux marqueurs membres de se démarquer. Aucun compte, aucune
+  clé API, et le service peut être [auto-hébergé](https://openfreemap.org).
+* **OpenFreeMap, couleurs** — le même service, rendu en couleur.
+* **OpenStreetMap** — le rendu standard, depuis serveurs de la fondation
+  OpenStreetMap.
+* **OpenStreetMap France** et **Équipe Humanitaire OSM** - hébergés par
+  l'association OSM-FR ; le second donne plus de poids aux routes et aux
+  installations.
+* **OpenStreetMap Allemagne** — Le rendu allemand, en faveur des noms locaux.
+* **Esri, gris clair** — un rendu gris très clair, proche de ce que le plugin
+  affichait avant.
 
-### Your own values
+### Vos propres valeurs
 
 {% include alert.html type="warning" content="Check the usage policy of the
 provider you choose. Most of them are run by associations or by volunteers, and
 they set conditions on the traffic they accept." %}
 
-The last entry of the list, `Your own values`, replaces the proposed providers
-with an address of your own — a provider that is not listed, or your own tile
-server.
+La dernière entrée de la liste, « Vos propres valeurs », remplace les
+fournisseurs proposés par votre propre adresse — un fournisseur qui n'est pas
+répertorié, ou votre propre serveur de tuiles.
 
 ![The fields of the Your own values entry](images/tiles_custom.png)
 
-* **Vector tiles** tells the plugin what it is being given: a MapLibre style
-  when ticked, classic raster tiles when not.
-* **Address** is the style address for vector tiles, and the tiles address for
-  raster ones, such as `https://tile.openstreetmap.org/{z}/{x}/{y}.png`.
-* **Attribution** is the credit the provider requires. HTML is allowed. It is
-  not a formality: data licences make it mandatory.
-* **Maximum zoom** is the deepest zoom level the provider serves. Going past it
-  displays empty tiles.
-* **Subdomains** lists the letters the `{s}` token of the address is replaced
-  with, for instance `abc`. Raster tiles only.
+* **Tuiles vectorisées** configure le plugin pour ce qu'il va recevoir : un
+  style MapLibre si coché, des tuiles classiques sinon.
+* **Adresse** est l'adresse de style pour les tuiles vectorisées, et l'adresse
+  des tuiles classiques, comme `https://tile.openstreetmap.org/{z}/{x}/{y}.png`.
+* **Attribution** est le crédit demandé par le fournisseur. Le HTML est
+  autorisé. Ce n'est pas une formalité : les licences le rendent obligatoire.
+* **Zoom maximal** est le niveau de zoom le plus profond que le fournisseur
+  serve. Après ça il affiche des tuiles vides.
+* **Les sous-domaines** Lettres par lesquelles le jeton `{s}` dans l'adresse est
+  remplacé, telles que abc. Tuiles classiques uniquement.
 
-## Plugin usage
+## Utilisation du plugin
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+Lorsque le plugin est installé, un groupe `Cartes` est ajouté au menu de Galette
+lorsqu'un adhérent est connecté, qui contient l'entrée `Ma localisation`. Cette
+page permet à l'adhérent d'enregistrer sa localisation.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+Un bouton `Géolocaliser` est également ajouté à l'affichage d'une fiche
+adhérent, qui permet aux administrateurs de définir les coordonnées de
+l'adhérent.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+De plus, une entrée `Carte` est ajoutée à la liste des pages publiques, qui
+affiche la géolocalisation des adhérents à jour. Les administrateurs et membres
+du bureau verront tous les adhérents, alors que les simples adhérents et les
+visiteurs verront uniquement ceux à jour et publics.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+Tout d'abord, les adhérents entreront leurs coordonnées géographiques. Plusieurs
+options sont fournies :
 
-* if town has been set in member information, a list of possible places will be
-  proposed (via [Nominatim online
-  service](https://nominatim.openstreetmap.org)),
-* additionally, a search zone (provided from
+* si la ville a été renseignée dans la fiche de l'adhérent, une liste des
+  localisations possibles sera proposée (via [le service en ligne
+  Nominatim](https://nominatim.openstreetmap.org)),
+* en complément, une zone de recherche (fournie depuis
   [OpenStreetMap](https://nominatim.openstreetmap.org/)),
-* and also a geolocalize button using browser capacities.
+* et également une bouton de géolocalisation qui utilise les possibilités du
+  navigateur.
 
-The search zone can be used when saving members location, and when displaying
-the maps.
+La zone de recherche peut être utilisée lorsque vous renseignez la localisation
+d'un adhérent, et aussi à l'affichage des cartes.
 
 ![The list of towns proposed for a member](images/towns_list.png)
 
-A member can define its location (with the precision he wants) on the map
-selecting one of the propositions:
+Un adhérent peut définir a propre localisation (avec la précision qu'il
+souhaite) sur la carte en sélectionnant une des propositions :
 
 ![Selecting a location on the map](images/location_select.png)
 
-Using the geolocalization button will define its position from the browser:
+Utiliser le bouton géolocalisation déterminera sa position depuis son navigateur
+:
 
 ![The geolocalize button](images/geoloc.png)
 
-Then, member location is displayed on map, and can be removed:
+Alors, la localisation de l'adhérent est affichée sur la carte, et peut être
+supprimée :
 
 ![The selected location, displayed on the map](images/location_selected.png)
