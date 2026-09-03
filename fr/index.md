@@ -26,8 +26,8 @@ Pour l'utiliser, vous avez besoin d'une Galette assez récente — la version
 requise est affichée en haut de cette page — et le plugin lui-même, soit par :
 
 * le télécharger à l'aide des boutons en haut de la page,
-* or using the [source code from the
-  repository](https://github.com/galette-plugins/plugin-maps), which requires
-  some technical skills.
+* ou utiliser le [code source depuis le
+  dépôt](https://github.com/galette-plugins/plugin-maps), ce qui demandes
+  quelques compétences techniques.
 
-See the [documentation](documentation.html) for the installation steps.
+Voir la [documentation](documentation.html) pour les étapes d'installation.
