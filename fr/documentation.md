@@ -65,15 +65,16 @@ Plusieurs fournisseurs sont proposés :
 
 ### Vos propres valeurs
 
-{% include alert.html type="warning" content="Check the usage policy of the
-provider you choose. Most of them are run by associations or by volunteers, and
-they set conditions on the traffic they accept." %}
+{% include alert.html type="warning" content="Vérifiez la politique
+d'utilisation du fournisseur que vous choisissez. La plupart d'entre eux sont
+gérés par des associations ou des bénévoles, et ils établissent des conditions
+sur le trafic qu'ils acceptent. » %
 
 La dernière entrée de la liste, « Vos propres valeurs », remplace les
 fournisseurs proposés par votre propre adresse — un fournisseur qui n'est pas
 répertorié, ou votre propre serveur de tuiles.
 
-![The fields of the Your own values entry](images/tiles_custom.png)
+![Les champs de l'entrée Vos propres valeurs](images/tiles_custom.png)
 
 * **Tuiles vectorisées** configure le plugin pour ce qu'il va recevoir : un
   style MapLibre si coché, des tuiles classiques sinon.
