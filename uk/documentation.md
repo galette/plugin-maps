@@ -1,26 +1,25 @@
 ---
-title: Documentation
+title: Документація
 description: Member geolocation and public map
 ---
 
-This plugin provides:
+Це розширення надає:
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* можливість зберігати географічні координати для членів (широта та довгота),
+* прилюдна мапа, на якій показані актуальні члени, яких обрали як прилюдно
+  видимих.
 
-## Installation
+## Встановлення
 
-First of all, download the plugin:
+Перш за все, завантажте розширення:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+Витягніть завантажений архів у каталог Galette `plugins`. Наприклад, ось
+вказівки під Linux (замініть `{url}` та `{version}` правильними значеннями):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,13 +27,13 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## Започаткування бази даних
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
-interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
+Для роботи цього розширення потрібно кілька таблиць у базі даних. Див [Інтерфейс
+управління розширеннями
+Galette](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+Усе завершено. Розширення "Maps" установлено :)
 
 ## Background map
 
@@ -82,43 +81,43 @@ server.
 * **Subdomains** lists the letters the `{s}` token of the address is replaced
   with, for instance `abc`. Raster tiles only.
 
-## Plugin usage
+## Використання розширення
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+Коли розширення встановлено, група `Maps` додається до меню Galette, коли член
+увійшов у систему, яка містить поле `Моє розташування`. Ця сторінка дозволяє
+членові зберігати своє місцеперебування.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+Кнопка `Geolocalize` також додається при відображенні члена, що дозволяє
+адміністраторам встановлювати координати членів.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+Також до списку прилюдних сторінок додано запис `Мапа`, який відображає
+геолокалізованих актуальних членів. Адміністратори та співробітники бачитимуть
+усіх членів, тоді як прості члени та відвідувачі бачитимуть лише оновлених
+прилюдних.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+Перш за все, члени вводять координати свого місцеперебування. Надано кілька
+варіантів:
 
-* if town has been set in member information, a list of possible places will be
-  proposed (via [Nominatim online
-  service](https://nominatim.openstreetmap.org)),
-* additionally, a search zone (provided from
+* Якщо місто було вказано у даних члена, то буде запропонований список можливих
+  місць (через [Онлайн-сервіс Nominatim](https://nominatim.openstreetmap.org)),
+* крім того, зона пошуку (надана з
   [OpenStreetMap](https://nominatim.openstreetmap.org/)),
-* and also a geolocalize button using browser capacities.
+* а також кнопка геолокалізації за допомогою можливостей браузера.
 
-The search zone can be used when saving members location, and when displaying
-the maps.
+Зона пошуку може бути використана під час збереження місцеперебування членів та
+під час відображення мап.
 
 ![The list of towns proposed for a member](images/towns_list.png)
 
-A member can define its location (with the precision he wants) on the map
-selecting one of the propositions:
+Член може визначити своє місце розташування (з бажаною точністю) на мапі,
+вибравши одну з пропозицій:
 
 ![Selecting a location on the map](images/location_select.png)
 
-Using the geolocalization button will define its position from the browser:
+За допомогою кнопки геолокалізації буде визначено його розташування з браузера:
 
 ![The geolocalize button](images/geoloc.png)
 
-Then, member location is displayed on map, and can be removed:
+Потім місцеперебування члена відображається на мапі та може бути видалено:
 
 ![The selected location, displayed on the map](images/location_selected.png)
