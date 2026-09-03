@@ -126,9 +126,9 @@ souhaite) sur la carte en sélectionnant une des propositions :
 Utiliser le bouton géolocalisation déterminera sa position depuis son navigateur
 :
 
-![The geolocalize button](images/geoloc.png)
+![Le bouton géolocaliser](images/geoloc.png)
 
 Alors, la localisation de l'adhérent est affichée sur la carte, et peut être
 supprimée :
 
-![The selected location, displayed on the map](images/location_selected.png)
+![L'emplacement sélectionné, affiché sur la carte](images/location_selected.png)
