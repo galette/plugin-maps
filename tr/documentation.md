@@ -3,24 +3,22 @@ title: Documentation
 description: Member geolocation and public map
 ---
 
-This plugin provides:
+Bu eklenti şunları sağlar:
 
-* possibility to store geographical coordinates for members (latitude and
-  longitude),
-* a public map displaying up to date members that have chosen to be publicly
-  visible.
+* üyelerin coğrafi koordinatlarını (enlem ve boylam) saklama imkanı,
+* kamuya açık bir harita, kamuya açık olmayı seçmiş güncel üyeleri gösterir.
 
-## Installation
+## Kurulum
 
-First of all, download the plugin:
+Öncelikle, eklentiyi indirin:
 
 * [Get latest Maps
   plugin!](https://github.com/galette-plugins/plugin-maps/releases/latest)
 * [Get Maps plugin nightly
   build!](https://github.com/galette-plugins/plugin-maps/releases/tag/nightly)
 
-Extract the downloaded archive in Galette `plugins` directory. For example,
-under linux (replacing `{url}` and `{version}` with correct values):
+İndirilen arşivi Galette `plugins` dizinine çıkarın. Örneğin, Linux altında
+(`{url}` ve `{version}` değerlerini doğru değerlerle değiştirerek):
 
 ```bash
 $ cd /var/www/html/galette/plugins
@@ -28,13 +26,13 @@ $ wget {url}
 $ tar xjvf galette-plugin-maps-{version}.tar.bz2
 ```
 
-## Database initialisation
+## Veritabanı başlatma
 
-In order to work, this plugin requires several tables in the database. See
-[Galette plugins management
-interface](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
+Çalışabilmesi için, bu eklenti veritabanında birkaç tablo gerektirir. Bkz.
+[Galette eklenti yönetim
+arayüzü](https://doc.galette.eu/en/master/plugins/index.html#plugins-managment).
 
-And this is finished; Maps plugin is installed :)
+Ve bu işlem tamamlandı; Haritalar eklentisi yüklendi :)
 
 ## Background map
 
@@ -82,43 +80,46 @@ server.
 * **Subdomains** lists the letters the `{s}` token of the address is replaced
   with, for instance `abc`. Raster tiles only.
 
-## Plugin usage
+## Eklenti kullanımı
 
-When the plugin is installed, a group `Maps` is added to Galette menu when a
-member is logged in, which contains `My location` entry. This page allow member
-to store its location.
+Eklenti yüklendiğinde, üye oturum açtığında Galette menüsüne `Haritalar` grubu
+eklenir ve bu grup `Benim konumum` girişini içerir. Bu sayfa, üyenin konumunu
+kaydetmesine olanak tanır.
 
-A `Geolocalize` button is also added when displaying a member, that allows
-administrators to set member coordinates.
+Bir üye görüntülenirken, yöneticilerin üye koordinatlarını ayarlamasına olanak
+tanıyan bir `Geolocalize` düğmesi de eklenmiştir.
 
-Also, a `Map` entry is added in public pages list, that displays geolocalized
-members that are up to date. Administrators and staff members will see all
-members, while simple members and visitors will only see up to date public ones.
+Ayrıca, güncel coğrafi konum bilgisi olan üyeleri gösteren bir `Harita` girişi
+genel sayfalar listesine eklenmiştir. Yöneticiler ve personel tüm üyeleri
+görebilirken, basit üyeler ve ziyaretçiler yalnızca güncel genel üyeleri
+görebilir.
 
-First of all, members will enter their location coordinates. Several options are
-provided:
+Öncelikle, üyeler konum koordinatlarını gireceklerdir. Birkaç seçenek
+sunulmaktadır:
 
-* if town has been set in member information, a list of possible places will be
-  proposed (via [Nominatim online
-  service](https://nominatim.openstreetmap.org)),
-* additionally, a search zone (provided from
-  [OpenStreetMap](https://nominatim.openstreetmap.org/)),
-* and also a geolocalize button using browser capacities.
+* üye bilgilerinde kasaba ayarlanmışsa, olası yerlerin bir listesi önerilecektir
+  ([Nominatim çevrimiçi hizmeti](https://nominatim.openstreetmap.org)
+  aracılığıyla),
+* ek olarak, bir arama bölgesi
+  ([OpenStreetMap](https://nominatim.openstreetmap.org/) tarafından
+  sağlanmaktadır),
+* ve ayrıca tarayıcı özelliklerini kullanan bir coğrafi konum belirleme düğmesi.
 
-The search zone can be used when saving members location, and when displaying
-the maps.
+Arama bölgesi, üyelerin konumunu kaydederken ve haritaları görüntülerken
+kullanılabilir.
 
 ![The list of towns proposed for a member](images/towns_list.png)
 
-A member can define its location (with the precision he wants) on the map
-selecting one of the propositions:
+Bir üye, harita üzerinde konumunu (istediği hassasiyetle) aşağıdaki
+seçeneklerden birini seçerek tanımlayabilir:
 
 ![Selecting a location on the map](images/location_select.png)
 
-Using the geolocalization button will define its position from the browser:
+Coğrafi konum belirleme düğmesini kullanarak tarayıcıdan konumunu
+belirleyebilirsiniz:
 
 ![The geolocalize button](images/geoloc.png)
 
-Then, member location is displayed on map, and can be removed:
+Ardından, üye konumu haritada görüntülenir ve kaldırılabilir:
 
 ![The selected location, displayed on the map](images/location_selected.png)
