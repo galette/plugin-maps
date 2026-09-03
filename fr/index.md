@@ -25,7 +25,7 @@ adresse, depuis la configuration. La recherche est fournie via l'API
 Pour l'utiliser, vous avez besoin d'une Galette assez récente — la version
 requise est affichée en haut de cette page — et le plugin lui-même, soit par :
 
-* downloading it with the buttons at the top of this page,
+* le télécharger à l'aide des boutons en haut de la page,
 * or using the [source code from the
   repository](https://github.com/galette-plugins/plugin-maps), which requires
   some technical skills.
