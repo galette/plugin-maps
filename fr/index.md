@@ -1,11 +1,11 @@
 ---
 title: Galette Maps
-description: Member geolocation and public map
+description: Géolocalisation des membres et carte publique
 ---
 
-A [Galette](https://galette.eu) plugin to geolocalize members: it stores
-geographical coordinates for each member, and displays the ones who agreed to be
-publicly visible on a map.
+Un plugin [Galette](https://galette.eu) pour géolocaliser les adhérents : il
+stocke les coordonnées géographiques de chaque adhérent, et affiche ceux qui ont
+accepté que leur profil soit publiquement visible sur une carte.
 
 Maps are rendered with [MapLibre GL](https://maplibre.org/) from
 [OpenFreeMap](https://openfreemap.org/) vector tiles by default — no API key, no
